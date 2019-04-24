@@ -1,0 +1,46 @@
+<div class="ui-block">
+    <h3 class="ui-block-heading">Pwstrength-bootstrap</h3>
+    <a target="_blank" href="https://github.com/ablanco/jquery.pwstrength.bootstrap" class="ui-block-description">https://github.com/ablanco/jquery.pwstrength.bootstrap</a>
+
+    <samp class="cui-example-code-static">
+        &lt;script src="~/vendor/libs/pwstrength-bootstrap/pwstrength-bootstrap.js"&gt;&lt;/script&gt;
+    </samp>
+
+    <h4 class="ui-block-heading">Examples</h4>
+
+    <div class="cui-example">
+        <input type="password" class="form-control" id="pwstrength-example">
+
+        <!-- Styles -->
+        <style>
+            .pwstrength-progress.progress {
+                margin: 3px 0;
+                height: 3px;
+            }
+            .password-verdict {
+                font-size: 12px;
+                font-weight: 700;
+                display: block;
+                text-align: right;
+            }
+            [dir=rtl] .password-verdict {
+                text-align: left;
+            }
+        </style>
+        <!-- / Styles -->
+
+        <!-- Javascript -->
+        <script>
+            $(function() {
+                $('#pwstrength-example').pwstrength({
+                    ui: {
+                        progressExtraCssClasses: 'pwstrength-progress',
+                        useVerdictCssClass: true,
+                        showErrors: true
+                    }
+                });
+            });
+        </script>
+        <!-- / Javascript -->
+    </div>
+</div>

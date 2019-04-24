@@ -1,0 +1,102 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ngx-charts</h3>
+  <a target="_blank" href="https://github.com/swimlane/ngx-charts" class="ui-block-description">https://github.com/swimlane/ngx-charts</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-lg">
+    <div style="height: 300px">
+      <ngx-charts-bar-vertical
+        [results]="singleData"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="true"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [scheme]="'vivid'"
+        xAxisLabel="Country"
+        yAxisLabel="Population">
+      </ngx-charts-bar-vertical>
+    </div>
+
+    <div style="height: 300px">
+      <ngx-charts-bar-horizontal
+        [results]="singleData"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="true"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [scheme]="'vivid'"
+        xAxisLabel="Country"
+        yAxisLabel="Population">
+      </ngx-charts-bar-horizontal>
+    </div>
+
+    <div style="height: 300px">
+      <ngx-charts-bar-vertical-2d
+        [results]="multiData"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="true"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [scheme]="'vivid'"
+        xAxisLabel="Country"
+        yAxisLabel="Population">
+      </ngx-charts-bar-vertical-2d>
+    </div>
+
+    <div style="height: 300px">
+      <ngx-charts-line-chart
+        [results]="multiData"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="true"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [scheme]="'vivid'"
+        xAxisLabel="Country"
+        yAxisLabel="Population">
+      </ngx-charts-line-chart>
+    </div>
+
+    <div style="height: 300px">
+      <ngx-charts-area-chart
+        [results]="multiData"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="true"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [scheme]="'vivid'"
+        xAxisLabel="Country"
+        yAxisLabel="Population">
+      </ngx-charts-area-chart>
+    </div>
+
+    <div style="height: 300px">
+      <ngx-charts-pie-chart
+        [results]="singleData"
+        [legend]="true"
+        [explodeSlices]="true"
+        [labels]="true"
+        [scheme]="'vivid'">
+      </ngx-charts-pie-chart>
+    </div>
+
+    <div style="height: 300px">
+      <ngx-charts-advanced-pie-chart
+        [results]="singleData"
+        [scheme]="'vivid'">
+      </ngx-charts-advanced-pie-chart>
+    </div>
+
+    <div style="height: 300px">
+      <ngx-charts-number-card
+        [results]="singleData"
+        [scheme]="'vivid'">
+      </ngx-charts-number-card>
+    </div>
+  </div>
+</div>

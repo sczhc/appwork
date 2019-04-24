@@ -1,0 +1,33 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ngx-color-picker</h3>
+  <a target="_blank" href="https://github.com/zefoy/ngx-color-picker" class="ui-block-description">https://github.com/zefoy/ngx-color-picker</a>
+
+  <div class="no-ie10" data-name="ngx-color-picker"></div>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing">
+    <input class="form-control" [value]="defaultColor"
+      [(colorPicker)]="defaultColor"
+      [style.background]="defaultColor"
+      [cpOKButton]="true"
+      [cpSaveClickOutside]="false"
+      [cpOKButtonClass]= "'btn btn-primary btn-xs md-btn-flat'"
+      [cpPresetColors]="presetColors"
+      [cpPosition]="'bottom'">
+
+    <input class="form-control" [value]="rgbaColor"
+      [(colorPicker)]="rgbaColor"
+      [style.background]="rgbaColor"
+      [cpOutputFormat]="'rgba'"
+      [cpPosition]="'bottom'">
+
+    <div class="color-picker-inline"
+      [(colorPicker)]="defaultColor"
+      [cpDialogDisplay]="'inline'"
+      [cpCancelButton]="true"
+      [cpCancelButtonClass]="'btn btn-primary btn-xs md-btn-flat'"
+      [cpToggle]="true">
+    </div>
+  </div>
+</div>

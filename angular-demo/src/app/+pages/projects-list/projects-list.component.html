@@ -1,0 +1,58 @@
+<h4 class="d-flex justify-content-between align-items-center w-100 font-weight-bold py-3 mb-4">
+  <div>Projects</div>
+  <button type="button" class="btn btn-primary btn-round d-block"><span class="ion ion-md-add"></span>&nbsp; Create project</button>
+</h4>
+
+<div class="row">
+  <div *ngFor="let project of projectsData" class="col-sm-6 col-xl-4">
+    <div class="card mb-4">
+
+      <div class="card-body d-flex justify-content-between align-items-start pb-3">
+        <div>
+          <a href="javascript:void(0)" class="text-dark text-big font-weight-semibold">{{project.title}}</a>
+          <span class="badge align-text-bottom ml-1" [ngClass]="'badge-' + statuses[project.status].color">{{statuses[project.status].title}}</span>
+          <div class="text-muted small mt-1">{{project.tasks - project.completedTasks}} opened tasks, {{project.completedTasks}} tasks completed</div>
+        </div>
+
+        <div class="btn-group" ngbDropdown [placement]="!isRTL ? 'bottom-right' : 'bottom-left'">
+          <button type="button" class="btn btn-default btn-sm icon-btn borderless btn-round md-btn-flat hide-arrow" ngbDropdownToggle><i class="ion ion-ios-more"></i></button>
+          <div ngbDropdownMenu [class.dropdown-menu-right]="!isRTL">
+            <a class="dropdown-item" href="javascript:void(0)">View</a>
+            <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+            <a class="dropdown-item" href="javascript:void(0)">Remove</a>
+          </div>
+        </div>
+      </div>
+
+      <ngb-progressbar [value]="completedPercent(project.tasks, project.completedTasks)" height="3px"></ngb-progressbar>
+      <div class="card-body small pt-2 pb-0">
+        <strong>{{completedPercent(project.tasks, project.completedTasks)}}%</strong> completed
+      </div>
+
+      <div class="card-body pb-3">
+        {{project.shortDescription}}
+      </div>
+
+      <div class="card-body pt-0">
+        <div class="row">
+          <div class="col">
+            <div class="text-muted small">Created</div>
+            <div class="font-weight-bold">{{project.created}}</div>
+          </div>
+          <div class="col">
+            <div class="text-muted small">Deadline</div>
+            <div class="font-weight-bold">{{project.deadline}}</div>
+          </div>
+        </div>
+      </div>
+      <hr class="m-0">
+      <div class="card-body py-3">
+        <div class="text-muted small mb-2">Team</div>
+        <div class="d-flex flex-wrap">
+          <a *ngFor="let member of project.team" href="javascript:void(0)" class="d-block mr-1 mb-1"><img [src]="'assets/img/avatars/' + member.avatar" alt="" class="ui-w-30 rounded-circle"></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">Tables /</span> Ngx Datatable
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-4">
+
+<div class="demo-vertical-spacing">
+  <div>
+    <div class="row">
+      <div class="col-sm-6 col-md-5 col-lg-3 mb-3 ml-auto">
+        <input class="form-control" type='text' placeholder='Filter by name...' (keyup)='updateFilter($event)'>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <ngx-datatable #table style="min-width: 500px"
+        [rows]="rows"
+        [loadingIndicator]="loadingIndicator"
+        [columnMode]="'force'"
+        [headerHeight]="43"
+        [footerHeight]="'auto'"
+        [rowHeight]="'auto'"
+        [reorderable]="true"
+        [selected]="selected"
+        [selectionType]="'checkbox'"
+        [limit]="10"
+        (select)='onSelect($event)'>
+        <ngx-datatable-column
+          [width]="40"
+          [sortable]="false"
+          [canAutoResize]="false"
+          [draggable]="false"
+          [resizeable]="false"
+          [headerCheckboxable]="true"
+          [checkboxable]="true">
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Name"></ngx-datatable-column>
+        <ngx-datatable-column name="Gender"></ngx-datatable-column>
+        <ngx-datatable-column name="Company"></ngx-datatable-column>
+      </ngx-datatable>
+    </div>
+  </div>
+
+  <pre>Selected: {{selected | json}}</pre>
+
+  <!-- Within card -->
+
+  <div class="card">
+    <h6 class="card-header">
+      Within card
+    </h6>
+    <div class="card-ngx-datatable table-responsive">
+      <ngx-datatable #table style="min-width: 550px"
+        [rows]="rows"
+        [loadingIndicator]="loadingIndicator"
+        [columnMode]="'force'"
+        [headerHeight]="43"
+        [footerHeight]="'auto'"
+        [rowHeight]="'auto'"
+        [reorderable]="true"
+        [selectionType]="'cell'"
+        [limit]="10">
+        <ngx-datatable-column name="Name"></ngx-datatable-column>
+        <ngx-datatable-column name="Gender"></ngx-datatable-column>
+        <ngx-datatable-column name="Company"></ngx-datatable-column>
+      </ngx-datatable>
+    </div>
+  </div>
+</div>

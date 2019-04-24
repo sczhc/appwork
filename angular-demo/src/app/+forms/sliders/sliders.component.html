@@ -1,0 +1,50 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">Forms /</span> Sliders
+</h4>
+
+<div class="card mb-4">
+  <h6 class="card-header">
+    ng2-nouislider
+  </h6>
+  <div class="card-body demo-vertical-spacing-lg p-5 mb-4">
+    <nouislider
+      [connect]="[true, false]"
+      [min]="0"
+      [max]="100"
+      [config]="singleConfig"
+      [(ngModel)]="singleValue1">
+    </nouislider>
+
+    <nouislider
+      [connect]="[true, false]"
+      [min]="0"
+      [max]="100"
+      [config]="verticalSingleConfig"
+      [(ngModel)]="singleValue2">
+    </nouislider>
+
+    <nouislider [config]="rangeConfig" [(ngModel)]="rangeValue1"></nouislider>
+
+    <!-- Full -->
+
+    <nouislider [config]="fullConfig" [(ngModel)]="fullValue1"></nouislider>
+
+    <nouislider [config]="verticalFullConfig" [(ngModel)]="fullValue2"></nouislider>
+
+    <!-- Variations -->
+
+    <nouislider class="noUi-primary" [behaviour]="'tap-drag'" [tooltips]="true" [config]="rangeConfig" [(ngModel)]="rangeValue2"></nouislider>
+
+    <nouislider class="noUi-secondary" [behaviour]="'tap-drag'" [tooltips]="true" [config]="rangeConfig" [(ngModel)]="rangeValue3"></nouislider>
+
+    <nouislider class="noUi-success" [behaviour]="'tap-drag'" [tooltips]="true" [config]="rangeConfig" [(ngModel)]="rangeValue4"></nouislider>
+
+    <nouislider class="noUi-warning" [behaviour]="'tap-drag'" [tooltips]="true" [config]="rangeConfig" [(ngModel)]="rangeValue5"></nouislider>
+
+    <nouislider class="noUi-info" [behaviour]="'tap-drag'" [tooltips]="true" [config]="rangeConfig" [(ngModel)]="rangeValue6"></nouislider>
+
+    <nouislider class="noUi-danger" [behaviour]="'tap-drag'" [tooltips]="true" [config]="rangeConfig" [(ngModel)]="rangeValue7"></nouislider>
+
+    <nouislider class="noUi-dark" [behaviour]="'tap-drag'" [tooltips]="true" [config]="rangeConfig" [(ngModel)]="rangeValue8"></nouislider>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<h4 class="d-flex flex-wrap justify-content-between align-items-center pt-3 mb-4">
+  <ol class="breadcrumb font-weight-bold mb-3">
+    <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="ion ion-ios-chatbubbles"></i></a></li>
+    <li class="breadcrumb-item"><a href="javascript:void(0)">Getting started</a></li>
+    <li class="breadcrumb-item active">Research in advertising
+      <small *ngIf="discussionData.tags && discussionData.tags.length">
+        <span *ngFor="let tag of discussionData.tags" class="badge align-text-bottom ml-1" [ngClass]="'badge-' + this.tags[tag].color">{{tags[tag].title}}</span>
+      </small>
+    </li>
+  </ol>
+  <div class="col-12 col-md-3 p-0 mb-3">
+    <input type="text" class="form-control" placeholder="Search...">
+  </div>
+</h4>
+
+<div class="card mb-4">
+  <div class="card-header">
+    <div class="media flex-wrap align-items-center">
+      <img [src]="'assets/img/avatars/' + discussionData.author.avatar" class="d-block ui-w-40 rounded-circle" alt>
+      <div class="media-body ml-3">
+        <a href="javascript:void(0)">{{discussionData.author.name}}</a>
+        <div class="text-muted small">{{discussionData.date}} ago</div>
+      </div>
+      <div class="text-muted small ml-3">
+        <div>Member since <strong>{{discussionData.author.memberSince}}</strong></div>
+        <div><strong>{{formatInt(discussionData.author.posts)}}</strong> posts</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body" [innerHTML]="discussionData.text"></div>
+
+  <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
+    <div class="px-4 pt-3">
+      <a href="javascript:void(0)" class="text-muted">
+        <i class="ion ion-ios-heart-empty text-danger text-large align-middle"></i>&nbsp;
+        <span class="align-middle">{{formatInt(discussionData.likes)}}</span>
+      </a>
+      <span class="text-muted ml-4">
+        <i class="ion ion-ios-eye text-lighter text-large align-middle"></i>&nbsp;
+        <span class="align-middle">{{formatInt(discussionData.views)}}</span>
+      </span>
+    </div>
+    <div class="px-4 pt-3">
+      <button type="button" class="btn btn-primary"><i class="ion ion-md-create"></i>&nbsp; Reply</button>
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let reply of discussionData.replies" class="card mb-3">
+  <div class="card-body">
+
+    <div class="media">
+      <img [src]="'assets/img/avatars/' + reply.author.avatar" alt class="d-block ui-w-40 rounded-circle">
+      <div class="media-body ml-4">
+        <div class="float-right text-muted small">{{reply.date}}</div>
+        <a href="javascript:void(0)">{{reply.author.name}}</a>
+        <div class="text-muted small">Member since {{reply.author.memberSince}} &nbsp;·&nbsp; {{formatInt(reply.author.posts)}} posts</div>
+        <div class="mt-2" [innerHTML]="reply.text"></div>
+        <div class="small mt-2">
+          <a href="javascript:void(0)" class="text-light">Reply</a>
+          <a href="javascript:void(0)" class="text-light ml-3">
+            <i class="ion ion-ios-thumbs-up"></i> {{reply.likes}}</a>
+          <a href="javascript:void(0)" class="text-light ml-3">
+            <i class="ion ion-ios-thumbs-down"></i> {{reply.dislikes}}</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

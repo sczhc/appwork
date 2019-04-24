@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en" class="default-style">
+<head>
+  <title><%= @title %> - Rails Demo</title>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+
+  <!-- Icon fonts -->
+  <%= stylesheet_link_tag 'fontawesome.css', media: 'all' %>
+  <%= stylesheet_link_tag 'ionicons.css', media: 'all' %>
+  <%= stylesheet_link_tag 'linearicons.css', media: 'all' %>
+  <%= stylesheet_link_tag 'open-iconic.css', media: 'all' %>
+  <%= stylesheet_link_tag 'pe-icon-7-stroke.css', media: 'all' %>
+
+  <!-- Core stylesheets -->
+  <%= stylesheet_link_tag 'rtl/bootstrap.css', media: 'all', class: 'theme-settings-bootstrap-css' %>
+  <%= stylesheet_link_tag 'rtl/appwork.css', media: 'all', class: 'theme-settings-appwork-css' %>
+  <%= stylesheet_link_tag 'rtl/theme-corporate.css', media: 'all', class: 'theme-settings-theme-css' %>
+  <%= stylesheet_link_tag 'rtl/colors.css', media: 'all', class: 'theme-settings-colors-css' %>
+  <%= stylesheet_link_tag 'rtl/uikit.css', media: 'all' %>
+  <%= stylesheet_link_tag 'demo.css', media: 'all' %>
+
+  <%= javascript_include_tag 'material-ripple.js' %>
+  <%= javascript_include_tag 'layout-helpers.js' %>
+
+  <!-- Theme settings -->
+  <!-- This file MUST be included after core stylesheets and layout-helpers.js in the <head> section -->
+  <%= javascript_include_tag 'theme-settings.js' %>
+  <script>
+    window.themeSettings = new ThemeSettings({
+      cssPath: '',
+      themesPath: '',
+      pathResolver: function(path) {
+        var resolvedPaths = {
+          // Core stylesheets
+        <%- ['bootstrap', 'appwork', 'colors'].each do |name| %>
+          '<%= name %>.css': '<%= asset_path "rtl/#{name}.css" %>',
+          '<%= name %>-material.css': '<%= asset_path "rtl/#{name}-material.css" %>',
+        <% end %>
+
+          // UI Kit
+          'uikit.css': '<%= asset_path "rtl/uikit.css" %>',
+
+          // Themes
+        <%- ['air', 'corporate', 'cotton', 'gradient', 'paper', 'shadow', 'soft', 'sunrise', 'twitlight', 'vibrant'].each do |name| %>
+          'theme-<%= name %>.css': '<%= asset_path "rtl/theme-#{name}.css" %>',
+          'theme-<%= name %>-material.css': '<%= asset_path "rtl/theme-#{name}-material.css" %>',
+        <% end %>
+        };
+
+        return resolvedPaths[path] || path;
+      }
+    });
+  </script>
+
+  <!-- Core scripts -->
+  <%= javascript_include_tag 'pace.js' %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Libs -->
+  <%= stylesheet_link_tag 'perfect-scrollbar/perfect-scrollbar.css', media: 'all' %>
+  
+  <%= yield :styles %>
+</head>
+<body>
+  <div class="page-loader"><div class="bg-primary"></div></div>
+
+  <%= content_for?(:content) ? yield(:content) : yield %>
+
+  <!-- Core scripts -->
+  <%= javascript_include_tag 'popper/popper.js' %>
+  <%= javascript_include_tag 'bootstrap.js' %>
+  <%= javascript_include_tag 'sidenav.js' %>
+
+  <!-- Scripts -->
+  <%= javascript_include_tag 'perfect-scrollbar/perfect-scrollbar.js' %>
+  <%= javascript_include_tag 'demo.js' %>
+
+  <%= yield :scripts %>
+</body>
+</html>

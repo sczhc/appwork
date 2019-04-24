@@ -1,0 +1,9 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">Miscellaneous /</span> Masonry
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-4">
+
+<div class="masonry-grid" #masonryContainer>
+  <div class="masonry-item" [ngClass]="item.class" *ngFor="let item of items">{{item.title}}</div>
+</div>

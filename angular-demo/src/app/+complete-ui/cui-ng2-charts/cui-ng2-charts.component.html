@@ -1,0 +1,68 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ng2-charts</h3>
+  <a target="_blank" href="https://github.com/valor-software/ng2-charts" class="ui-block-description">https://github.com/valor-software/ng2-charts</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-lg">
+    <div style="height: 250px">
+      <canvas baseChart height="250"
+        [datasets]="data1"
+        [labels]="['January', 'February', 'March', 'April', 'May', 'June', 'July']"
+        [options]="options"
+        [chartType]="'line'"
+        [colors]="colors1">
+      </canvas>
+    </div>
+
+    <div style="height: 250px">
+      <canvas baseChart height="250"
+        [datasets]="data2"
+        [labels]="['Italy', 'UK', 'USA', 'Germany', 'France', 'Japan']"
+        [options]="options"
+        [chartType]="'bar'"
+        [colors]="colors2">
+      </canvas>
+    </div>
+
+    <div style="height: 250px">
+      <canvas baseChart height="250"
+        [datasets]="data3"
+        [labels]="['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running']"
+        [options]="options"
+        [chartType]="'radar'"
+        [colors]="colors3">
+      </canvas>
+    </div>
+
+    <div style="height: 250px">
+      <canvas baseChart height="250"
+        [datasets]="data4"
+        [labels]="['Red', 'Green', 'Yellow', 'Grey', 'Blue']"
+        [options]="options"
+        [chartType]="'polarArea'"
+        [colors]="colors4">
+      </canvas>
+    </div>
+
+    <div style="height: 250px">
+      <canvas baseChart height="250"
+        [datasets]="data5"
+        [labels]="['Red', 'Blue', 'Yellow']"
+        [options]="options"
+        [chartType]="'pie'"
+        [colors]="colors5">
+      </canvas>
+    </div>
+
+    <div style="height: 250px">
+      <canvas baseChart height="250"
+        [datasets]="data6"
+        [labels]="['Red', 'Blue', 'Yellow']"
+        [options]="options"
+        [chartType]="'doughnut'"
+        [colors]="colors6">
+      </canvas>
+    </div>
+  </div>
+</div>

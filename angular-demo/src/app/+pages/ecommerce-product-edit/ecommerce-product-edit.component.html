@@ -1,0 +1,302 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  Edit product <span class="text-muted">#{{productData.id}}</span>
+</h4>
+
+<ngb-tabset class="nav-tabs-top nav-responsive-sm">
+  <ngb-tab title="Basic info">
+    <ng-template ngbTabContent>
+
+      <div class="card-body">
+
+        <div class="form-group">
+          <label class="form-label">Title</label>
+          <input type="text" class="form-control" [(ngModel)]="productData.title">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Price</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">$</div>
+            </div>
+            <input type="text" class="form-control" [(ngModel)]="productData.price">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Items in stock</label>
+          <input type="text" class="form-control" [(ngModel)]="productData.inStock">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Tax</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="productData.tax">
+            <div class="input-group-append">
+              <div class="input-group-text">%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Status</label>
+          <select class="custom-select" [(ngModel)]="productData.status">
+            <option *ngFor="let i of statuses" [value]="i[0]">{{i[1]}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Category</label>
+          <select class="custom-select" [(ngModel)]="productData.category">
+            <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+          </select>
+        </div>
+
+      </div>
+      <hr class="m-0">
+
+      <div class="card-body">
+        <h6 class="small font-weight-semibold mb-4">Options <span class="text-muted font-weight-normal">(depending on category)</span></h6>
+
+        <div class="form-group">
+          <label class="form-label">Brand</label>
+          <select class="custom-select" [(ngModel)]="productData.options.brand">
+            <option *ngFor="let brand of brands" [value]="brand">{{brand}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Storages</label>
+          <ng-select
+            [items]="storages"
+            bindLabel="label"
+            bindValue="value"
+            [multiple]="true"
+            [(ngModel)]="productData.options.storages">
+          </ng-select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Colors</label>
+          <ng-select
+            [items]="colors"
+            bindLabel="label"
+            bindValue="value"
+            [multiple]="true"
+            [(ngModel)]="productData.options.colors">
+            <ng-template ng-label-tmp let-item="item" let-clear="clear">
+              <span class="ng-value-label line-height-1">
+                <span class="ui-product-color ui-product-color-sm" [style.background]="item.value"></span>
+                <span class="align-middle">{{item.label}}</span>
+              </span>
+              <span class="ng-value-icon right" (click)="clear(item)" aria-hidden="true">×</span>
+            </ng-template>
+
+            <ng-template ng-option-tmp let-item="item">
+              <span class="ng-value-label">
+                <span class="ui-product-color ui-product-color-sm" [style.background]="item.value"></span>
+                <span class="align-middle">{{item.label}}</span>
+              </span>
+            </ng-template>
+          </ng-select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Warranties</label>
+          <ng-select
+            [items]="warranties"
+            bindLabel="label"
+            bindValue="value"
+            [multiple]="true"
+            [(ngModel)]="productData.options.warranties">
+          </ng-select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Ships from</label>
+          <ng-select
+            [items]="shipsFrom"
+            bindLabel="label"
+            bindValue="value"
+            [multiple]="true"
+            [(ngModel)]="productData.options.shipsFrom">
+          </ng-select>
+        </div>
+
+      </div>
+      <hr class="m-0">
+
+      <div class="card-body">
+        <h6 class="small font-weight-semibold mb-4">Meta</h6>
+
+        <div class="form-group">
+          <label class="form-label">Title</label>
+          <input type="text" class="form-control" [(ngModel)]="productData.meta.title">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Description</label>
+          <textarea class="form-control" rows="3" [(ngModel)]="productData.meta.description"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Keywords</label>
+          <input type="text" class="form-control" [(ngModel)]="productData.meta.keywords">
+        </div>
+
+      </div>
+
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Description">
+    <ng-template ngbTabContent>
+      <div class="card-body">
+
+        <quill-editor [(ngModel)]="productData.description" placeholder="Type something" *ngIf="!isIE10">
+          <div quill-editor-toolbar>
+            <span class="ql-formats">
+              <select class="ql-font"></select>
+              <select class="ql-size"></select>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-bold"></button>
+              <button class="ql-italic"></button>
+              <button class="ql-underline"></button>
+              <button class="ql-strike"></button>
+            </span>
+            <span class="ql-formats">
+              <select class="ql-color"></select>
+              <select class="ql-background"></select>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-script" value="sub"></button>
+              <button class="ql-script" value="super"></button>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-header" value="1"></button>
+              <button class="ql-header" value="2"></button>
+              <button class="ql-blockquote"></button>
+              <button class="ql-code-block"></button>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-list" value="ordered"></button>
+              <button class="ql-list" value="bullet"></button>
+              <button class="ql-indent" value="-1"></button>
+              <button class="ql-indent" value="+1"></button>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-direction" value="rtl"></button>
+              <select class="ql-align"></select>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-link"></button>
+              <button class="ql-image"></button>
+              <button class="ql-video"></button>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-clean"></button>
+            </span>
+          </div>
+        </quill-editor>
+
+        <!-- Fallback -->
+        <textarea [(ngModel)]="productData.description" class="form-control" style="height: 600px" *ngIf="isIE10"></textarea>
+
+      </div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Discounts">
+    <ng-template ngbTabContent>
+
+      <div class="card-body">
+
+        <div class="table-responsive">
+          <table class="table product-discounts-edit">
+            <thead>
+              <tr>
+                <th>Discount</th>
+                <th>Type</th>
+                <th>Code</th>
+                <th>Quantity</th>
+                <th>Period</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let discount of productData.discounts; let i = index">
+                <td>
+                  <div class="input-group">
+                    <input type="text" class="form-control" [(ngModel)]="discount.discount">
+                    <div class="input-group-append">
+                      <div class="input-group-text">%</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <select class="custom-select" [(ngModel)]="discount.type">
+                    <option *ngFor="let discountType of ['General', 'Code']" [value]="discountType">{{discountType}}</option>
+                  </select>
+                </td>
+                <td><input type="text" class="form-control" [(ngModel)]="discount.code" [disabled]="discount.type !== 'Code'"></td>
+                <td><input type="text" class="form-control" [(ngModel)]="discount.quantity"></td>
+                <td>
+                  <custom-daterange-picker [(ngModel)]="discount.period"></custom-daterange-picker>
+                </td>
+                <td>
+                  <a (click)="productData.discounts.splice(i, 1)" href="javascript:void(0)" class="btn btn-default md-btn-flat icon-btn btn-sm"><i class="ion ion-md-close"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <button (click)="productData.discounts.push({ discount: '', type: 'General', code: '', quantity: '', start_date: '', end_date: '' })" type="button" class="btn btn-outline-primary">
+          <i class="ion ion-md-add"></i>&nbsp; Add discount
+        </button>
+
+      </div>
+
+
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Images">
+    <ng-template ngbTabContent>
+      <div class="card-body">
+
+        <div [sortablejs]="productData.images" [sortablejsOptions]="{ animation: 150, handle: '.product-image-move' }">
+          <div *ngFor="let i of productData.images; let ind = index" class="media align-items-center bg-white ui-bordered py-3 mb-2">
+
+            <div class="product-image-move ion ion-ios-move text-muted text-big p-4"></div>
+            <a [href]="'assets/img/uikit/' + i.image" target="_blank" class="d-block ui-w-100 mr-4">
+              <img [src]="'assets/img/uikit/' + i.image" class="img-fluid" alt="">
+            </a>
+            <div class="media-body">
+              <input type="text" [value]="'example.com/assets/img/uikit/' + i.image" class="form-control form-control-sm bg-transparent border-light mb-2" readonly>
+              <label class="switcher switcher-sm">
+                <input type="radio" name="product-primary-image" class="switcher-input" [checked]="i.primary" (change)="setPrimaryImage(ind)">
+                <span class="switcher-indicator">
+                  <span class="switcher-yes"></span>
+                  <span class="switcher-no"></span>
+                </span>
+                <span class="switcher-label">Primary image</span>
+              </label>
+            </div>
+            <button (click)="productData.images.splice(ind, 1)" type="button" class="btn btn-outline-danger borderless icon-btn d-block mx-4">
+              <i class="ion ion-md-close"></i>
+            </button>
+
+          </div>
+        </div>
+        <button type="button" class="btn btn-outline-primary mt-3">
+          <i class="ion ion-md-cloud-upload"></i>&nbsp; Upload images
+        </button>
+
+      </div>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>
+
+<div class="text-right mt-3">
+  <button type="button" class="btn btn-default">Cancel</button> &nbsp;
+  <button type="button" class="btn btn-primary">Save changes</button>
+</div>

@@ -1,0 +1,45 @@
+// -------------------------------------------------------------------------------
+// Imports
+
+@import "~vendor/libs/ng2-nouislider/mixins";
+@import "~vendor/libs/quill/mixins";
+@import "~vendor/libs/ngx-dropzone-wrapper/mixins";
+@import "~vendor/libs/ngx-swiper-wrapper/mixins";
+@import "~vendor/libs/spinkit/mixins";
+@import "~vendor/libs/plyr/mixins";
+@import "~vendor/libs/ng-select/mixins";
+@import "~vendor/libs/ngx-chips/mixins";
+@import "~vendor/libs/ngx-datatable/mixins";
+@import "~vendor/libs/ng2-archwizard/mixins";
+@import "~vendor/libs/angular-calendar/mixins";
+
+// -------------------------------------------------------------------------------
+// Theme mixin
+
+@mixin appwork-libs-theme($background, $color: null) {
+  @include nouislider-theme($background);
+  @include quill-theme($background);
+  @include dropzone-theme($background);
+  @include swiper-theme($background);
+  @include spinkit-theme($background);
+  @include plyr-theme($background, $color);
+  @include ng-select-theme($background, $color);
+  @include ngx-chips-theme($background, $color);
+  @include ngx-datatable-theme($background, $color);
+  @include ng2-archwizard-theme($background);
+  @include angular-calendar-theme($background, $color);
+}
+
+@mixin appwork-libs-material-theme($background, $color: null) {
+  @include material-nouislider-theme($background);
+  @include quill-theme($background);
+  @include dropzone-theme($background);
+  @include swiper-theme($background);
+  @include spinkit-theme($background);
+  @include plyr-theme($background, $color);
+  @include material-ng-select-theme($background, $color);
+  @include ngx-chips-theme($background, $color);
+  @include ngx-datatable-theme($background, $color);
+  @include ng2-archwizard-theme($background);
+  @include angular-calendar-theme($background, $color);
+}

@@ -1,0 +1,131 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">App brand</h3>
+
+  <h4 class="ui-block-heading">Example</h4>
+
+  <div class="cui-example">
+    <div class="ui-bordered p-4 mb-4">
+      <div class="app-brand">
+        <a href="javascript:void(0)" class="app-brand-text text-dark text-big">Brand</a>
+      </div>
+    </div>
+
+    <div class="ui-bordered p-4">
+      <div class="app-brand">
+        <img src="assets/img/logo.png" alt="" class="app-brand-logo ui-w-40">
+        <a href="javascript:void(0)" class="app-brand-text text-dark text-big ml-2">Brand</a>
+      </div>
+    </div>
+  </div>
+
+  <h4 class="ui-block-heading">Within navbar</h4>
+
+  <div class="cui-example">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <!-- Brand -->
+      <a class="navbar-brand app-brand" href="javascript:void(0)">
+        <img src="assets/img/logo.png" alt="" class="app-brand-logo ui-w-40">
+        <span class="app-brand-text ml-2">Brand</span>
+      </a>
+      <!-- / Brand -->
+      
+      <button class="navbar-toggler" type="button" (click)="isNavbarExpanded = !isNavbarExpanded">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse" [ngbCollapse]="!isNavbarExpanded">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <h4 class="ui-block-heading">Within sidenav</h4>
+
+  <div class="cui-example">
+    <div>
+      <button type="button" class="btn btn-primary mb-4" (click)="isSidenavCollapsed = !isSidenavCollapsed">Toggle collapsed</button>
+    </div>
+
+    <!-- Simple text -->
+
+    <sidenav class="d-inline-flex bg-light align-top mr-4 mb-4" style="height: 400px" [ngClass]="{ 'sidenav-collapsed': isSidenavCollapsed }">
+      <!-- Brand -->
+      <div class="app-brand py-3">
+        <a href="javascript:void(0)" class="app-brand-text sidenav-text text-big">Brand</a>
+      </div>
+      <div class="sidenav-divider my-0"></div>
+      <!-- / Brand -->
+
+      <div class="sidenav-inner py-3">
+        <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Item 1</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-settings">Item 2</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-md-paper">Item 3</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 4</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 5</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 6</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 7</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 8</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 9</sidenav-link>
+      </div>
+    </sidenav>
+
+    <!-- With logo -->
+
+    <sidenav class="d-inline-flex bg-light align-top mr-4 mb-4" style="height: 400px" [ngClass]="{ 'sidenav-collapsed': isSidenavCollapsed }">
+      <!-- Brand -->
+      <div class="app-brand py-3">
+        <img src="assets/img/logo.png" alt="" class="app-brand-logo ui-w-40">
+        <a href="javascript:void(0)" class="app-brand-text sidenav-text text-big ml-2">
+          Brand<br>
+          <span class="text-tiny font-weight-semibold opacity-25">ADMIN AREA</span>
+        </a>
+      </div>
+      <div class="sidenav-divider my-0"></div>
+      <!-- / Brand -->
+
+      <div class="sidenav-inner py-3">
+        <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Item 1</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-settings">Item 2</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-md-paper">Item 3</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 4</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 5</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 6</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 7</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 8</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 9</sidenav-link>
+      </div>
+    </sidenav>
+
+    <!-- With layout sidenav toggle -->
+
+    <sidenav class="d-inline-flex bg-light align-top mr-4 mb-4" style="height: 400px" [ngClass]="{ 'sidenav-collapsed': isSidenavCollapsed }">
+      <!-- Brand -->
+      <div class="app-brand py-3">
+        <img src="assets/img/logo.png" alt="" class="app-brand-logo ui-w-40">
+        <a href="javascript:void(0)" class="app-brand-text sidenav-text text-big ml-2">Brand</a>
+        <a href="javascript:void(0)" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
+          <i class="ion ion-md-menu align-middle"></i>
+        </a>
+      </div>
+      <div class="sidenav-divider my-0"></div>
+      <!-- / Brand -->
+
+      <div class="sidenav-inner py-3">
+        <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Item 1</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-settings">Item 2</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-md-paper">Item 3</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 4</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 5</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 6</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 7</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 8</sidenav-link>
+        <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 9</sidenav-link>
+      </div>
+    </sidenav>
+  </div>
+
+</div>

@@ -1,0 +1,23 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">angular2-img-cropper</h3>
+  <a target="_blank" href="https://github.com/cstefanache/angular2-img-cropper" class="ui-block-description">https://github.com/cstefanache/angular2-img-cropper</a>
+
+  <div class="no-ie10" data-name="angular2-img-cropper"></div>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example">
+    <div class="mb-4">
+      <label class="btn btn-primary btn-lg">
+        Upload image
+        <input type="file" (change)="fileChangeListener($event)" class="sr-only">
+      </label>
+    </div>
+    <div class="d-flex">
+      <img-cropper #cropper [image]="data" [settings]="cropperSettings"></img-cropper>
+      <div *ngIf="data.image" class="ml-3">
+        <img [src]="data.image" [width]="cropperSettings.croppedWidth" [height]="cropperSettings.croppedHeight">
+      </div>
+    </div>
+  </div>
+</div>

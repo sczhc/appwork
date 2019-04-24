@@ -1,0 +1,7 @@
+@mixin ng2-archwizard-theme($color) {
+  wizard ul.steps-indicator li.current::before,
+  wizard ul.steps-indicator li.editing::before {
+    border-color: $color !important;
+    color: $color !important;
+  }
+}

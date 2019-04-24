@@ -1,0 +1,174 @@
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// Remove outline on desktops
+@media(min-width: 720px) {
+  ngb-carousel,
+  .dropdown-item,
+  ngb-datepicker,
+  ngb-rating {
+    outline: 0 !important;
+  }
+}
+
+.dropdown-menu-right {
+  right: auto !important;
+}
+
+// *******************************************************************************
+// * Page transition
+
+.router-transitions {
+  opacity: 1;
+  transition: opacity .2s;
+
+  body.app-loading & {
+    opacity: .75;
+  }
+}
+
+// *******************************************************************************
+// * Tooltip and popover animations
+
+@include keyframes(ngTooltipAnimation) {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+ngb-tooltip-window {
+  animation: ngTooltipAnimation .25s;
+}
+
+// *******************************************************************************
+// * Modal animations
+
+@include keyframes(ngModalBackdropAnimation) {
+  0% { opacity: 0; }
+  100% { opacity: .5; }
+}
+@include keyframes(ngMaterialModalBackdropAnimation) {
+  0% { opacity: 0; }
+  100% { opacity: .2; }
+}
+@include keyframes(ngDefaultModalAnimation) {
+  0% {
+    opacity: 0;
+    transform: translateY(150px) scale(.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@include keyframes(ngTopModalAnimation) {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@include keyframes(ngSlideModalAnimation) {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@include keyframes(ngRtlSlideModalAnimation) {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@include keyframes(ngFillInModalAnimation) {
+  0% {
+    opacity: 0;
+    transform: scale(.5, .5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+ngb-modal-backdrop.modal-backdrop {
+  opacity: .5;
+  animation: ngModalBackdropAnimation .15s ease-out;
+}
+
+ngb-modal-window {
+  &.modal .modal-dialog {
+    animation: ngDefaultModalAnimation .15s ease-out;
+  }
+
+  &.modal-top .modal-dialog {
+    animation: ngTopModalAnimation .15s ease-out;
+  }
+
+  &.modal-slide .modal-dialog {
+    animation: ngSlideModalAnimation .15s ease-out;
+  }
+
+  &.modal-fill-in .modal-dialog {
+    animation: ngFillInModalAnimation .15s ease-out;
+  }
+
+  [dir=rtl] &.modal-slide .modal-dialog {
+    animation: ngRtlSlideModalAnimation .15s ease-out;
+  }
+}
+
+.material-style ngb-modal-backdrop.modal-backdrop {
+  opacity: .2;
+  animation: ngMaterialModalBackdropAnimation .15s ease-out;
+}
+
+// Prevent horizontal scrollbar
+[dir=rtl] .dz-hidden-input {
+  right: 0 !important;
+  left: auto !important;
+}
+
+// *******************************************************************************
+// * Accordion
+
+ngb-accordion .card-header > * > .btn.btn-link {
+  width: 100%;
+  padding: 0;
+  text-align: inherit;
+  white-space: normal;
+  vertical-align: inherit;
+  border: 0;
+  font-size: .894rem;
+}
+
+.ngb-accordion-with-icon .card-header > * > .btn.btn-link {
+  display: flex;
+  justify-content: space-between;
+}
+
+// *******************************************************************************
+// * Typeahead
+
+ngb-typeahead-window .dropdown-item {
+  cursor: pointer;
+}

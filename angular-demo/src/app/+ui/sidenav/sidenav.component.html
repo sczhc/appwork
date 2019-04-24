@@ -1,0 +1,1376 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">UI elements /</span> Sidenav
+</h4>
+
+<h6 class="pb-1 mt-5 mb-4">Vertical</h6>
+
+<button type="button" class="btn btn-primary mb-4" (click)="sidenav1Collapsed = !sidenav1Collapsed">Toggle collapsed</button>
+
+<sidenav class="bg-dark" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav1Collapsed }">
+  <div class="sidenav-inner py-3">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<h6 class="pb-1 mt-5 mb-4">Horizontal</h6>
+
+<sidenav orientation="horizontal" class="bg-dark" style="position: relative;z-index: 100">
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<h6 class="pb-1 mt-5 mb-4">Horizontal (show dropdown on hover)</h6>
+
+<sidenav orientation="horizontal" [showDropdownOnHover]="true" class="bg-dark" style="position: relative;z-index: 99">
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<h6 class="pb-1 mt-5 mb-4">Horizontal (within container)</h6>
+
+<sidenav orientation="horizontal" class="bg-dark" style="position: relative;z-index: 98">
+  <div class="container d-flex">
+    <div class="sidenav-inner">
+      <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+      <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+      <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+        <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+        <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+        <sidenav-menu text="Item 2.2">
+          <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+          <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+          <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+        </sidenav-menu>
+        <sidenav-menu text="Item 2.3">
+          <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+          <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+          <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+        </sidenav-menu>
+      </sidenav-menu>
+      <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+      <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+      <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+      <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+      <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+      <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+    </div>
+  </div>
+</sidenav>
+
+<h6 class="pb-1 mt-5 mb-4">No animation</h6>
+
+<button type="button" class="btn btn-primary mb-4" (click)="sidenav2Collapsed = !sidenav2Collapsed">Toggle collapsed</button>
+
+<sidenav [animate]="false" class="bg-dark mb-4" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav2Collapsed }">
+  <div class="sidenav-inner py-3">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav orientation="horizontal" [animate]="false" class="bg-dark" style="position: relative;z-index: 97">
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<h6 class="pb-1 mt-5 mb-4">No accordion</h6>
+
+<button type="button" class="btn btn-primary mb-4" (click)="sidenav3Collapsed = !sidenav3Collapsed">Toggle collapsed</button>
+
+<sidenav [accordion]="false" class="bg-dark mb-4" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav3Collapsed }">
+  <div class="sidenav-inner py-3">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav orientation="horizontal" [accordion]="false" class="bg-dark" style="position: relative;z-index: 96">
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<h6 class="pb-1 mt-5 mb-4">Elements</h6>
+
+<div class="mb-4">
+  <button type="button" class="btn btn-primary" (click)="sidenav4Collapsed = !sidenav4Collapsed">Toggle collapsed</button>
+</div>
+
+<sidenav class="d-inline-flex bg-dark mr-4 mb-4" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav4Collapsed }">
+  <div class="sidenav-inner">
+    <sidenav-block class="my-1">
+      <div class="media align-items-center">
+        <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+        <div class="media-body pl-3">
+          <h5 class="sidenav-text mb-1">Mike Greene</h5>
+          <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+        </div>
+      </div>
+    </sidenav-block>
+    <sidenav-divider class="mt-0"></sidenav-divider>
+
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-block class="my-1">
+      <div class="small">
+        Milestone <div class="float-right">55%</div>
+      </div>
+      <div class="progress mt-1 mb-3" style="height: 4px;">
+        <div class="progress-bar bg-success" style="width: 55%;"></div>
+      </div>
+
+      <div class="small">
+        Release <div class="float-right">80%</div>
+      </div>
+      <div class="progress mb-1" style="height: 4px;">
+        <div class="progress-bar bg-danger" style="width: 80%;"></div>
+      </div>
+    </sidenav-block>
+  </div>
+</sidenav>
+
+<sidenav class="d-inline-flex bg-dark mr-4 mb-4" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav4Collapsed }">
+  <sidenav-block class="my-1">
+    <div class="media align-items-center">
+      <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+      <div class="media-body pl-3">
+        <h5 class="sidenav-text mb-1">Mike Greene</h5>
+        <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+      </div>
+    </div>
+  </sidenav-block>
+  <sidenav-divider class="mt-0"></sidenav-divider>
+
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+
+  <sidenav-divider class="mb-0"></sidenav-divider>
+  <sidenav-block class="my-1">
+    <div class="small">
+      Milestone <div class="float-right">55%</div>
+    </div>
+    <div class="progress mt-1 mb-3" style="height: 4px;">
+      <div class="progress-bar bg-success" style="width: 55%;"></div>
+    </div>
+
+    <div class="small">
+      Release <div class="float-right">80%</div>
+    </div>
+    <div class="progress mb-1" style="height: 4px;">
+      <div class="progress-bar bg-danger" style="width: 80%;"></div>
+    </div>
+  </sidenav-block>
+</sidenav>
+
+<h6 class="pb-1 mt-5 mb-4">Colors (vertical)</h6>
+
+<div class="mb-4">
+  <button type="button" class="btn btn-primary" (click)="sidenav5Collapsed = !sidenav5Collapsed">Toggle collapsed</button>
+</div>
+
+<sidenav class="d-inline-flex bg-sidenav-theme mr-4 mb-4" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav5Collapsed }">
+  <div class="sidenav-inner mb-2">
+    <sidenav-block class="my-1">
+      <div class="media align-items-center">
+        <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+        <div class="media-body pl-3">
+          <h5 class="sidenav-text mb-1">Mike Greene</h5>
+          <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+        </div>
+      </div>
+    </sidenav-block>
+    <sidenav-divider class="mt-0"></sidenav-divider>
+
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav class="d-inline-flex bg-primary mr-4 mb-4" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav5Collapsed }">
+  <div class="sidenav-inner mb-2">
+    <sidenav-block class="my-1">
+      <div class="media align-items-center">
+        <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+        <div class="media-body pl-3">
+          <h5 class="sidenav-text mb-1">Mike Greene</h5>
+          <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+        </div>
+      </div>
+    </sidenav-block>
+    <sidenav-divider class="mt-0"></sidenav-divider>
+
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav class="d-inline-flex bg-secondary mr-4 mb-4" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav5Collapsed }">
+  <div class="sidenav-inner mb-2">
+    <sidenav-block class="my-1">
+      <div class="media align-items-center">
+        <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+        <div class="media-body pl-3">
+          <h5 class="sidenav-text mb-1">Mike Greene</h5>
+          <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+        </div>
+      </div>
+    </sidenav-block>
+    <sidenav-divider class="mt-0"></sidenav-divider>
+
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav class="d-inline-flex bg-success mr-4 mb-4" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav5Collapsed }">
+  <div class="sidenav-inner mb-2">
+    <sidenav-block class="my-1">
+      <div class="media align-items-center">
+        <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+        <div class="media-body pl-3">
+          <h5 class="sidenav-text mb-1">Mike Greene</h5>
+          <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+        </div>
+      </div>
+    </sidenav-block>
+    <sidenav-divider class="mt-0"></sidenav-divider>
+
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav class="d-inline-flex bg-info mr-4 mb-4" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav5Collapsed }">
+  <div class="sidenav-inner mb-2">
+    <sidenav-block class="my-1">
+      <div class="media align-items-center">
+        <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+        <div class="media-body pl-3">
+          <h5 class="sidenav-text mb-1">Mike Greene</h5>
+          <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+        </div>
+      </div>
+    </sidenav-block>
+    <sidenav-divider class="mt-0"></sidenav-divider>
+
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav class="d-inline-flex bg-warning mr-4 mb-4" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav5Collapsed }">
+  <div class="sidenav-inner mb-2">
+    <sidenav-block class="my-1">
+      <div class="media align-items-center">
+        <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+        <div class="media-body pl-3">
+          <h5 class="sidenav-text mb-1">Mike Greene</h5>
+          <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+        </div>
+      </div>
+    </sidenav-block>
+    <sidenav-divider class="mt-0"></sidenav-divider>
+
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav class="d-inline-flex bg-danger mr-4 mb-4" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav5Collapsed }">
+  <div class="sidenav-inner mb-2">
+    <sidenav-block class="my-1">
+      <div class="media align-items-center">
+        <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+        <div class="media-body pl-3">
+          <h5 class="sidenav-text mb-1">Mike Greene</h5>
+          <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+        </div>
+      </div>
+    </sidenav-block>
+    <sidenav-divider class="mt-0"></sidenav-divider>
+
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav class="d-inline-flex bg-white mr-4 mb-4" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav5Collapsed }">
+  <div class="sidenav-inner mb-2">
+    <sidenav-block class="my-1">
+      <div class="media align-items-center">
+        <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+        <div class="media-body pl-3">
+          <h5 class="sidenav-text mb-1">Mike Greene</h5>
+          <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+        </div>
+      </div>
+    </sidenav-block>
+    <sidenav-divider class="mt-0"></sidenav-divider>
+
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav class="d-inline-flex bg-lighter mr-4 mb-4" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav5Collapsed }">
+  <div class="sidenav-inner mb-2">
+    <sidenav-block class="my-1">
+      <div class="media align-items-center">
+        <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+        <div class="media-body pl-3">
+          <h5 class="sidenav-text mb-1">Mike Greene</h5>
+          <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+        </div>
+      </div>
+    </sidenav-block>
+    <sidenav-divider class="mt-0"></sidenav-divider>
+
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav class="d-inline-flex bg-light mr-4 mb-4" style="height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav5Collapsed }">
+  <div class="sidenav-inner mb-2">
+    <sidenav-block class="my-1">
+      <div class="media align-items-center">
+        <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+        <div class="media-body pl-3">
+          <h5 class="sidenav-text mb-1">Mike Greene</h5>
+          <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+        </div>
+      </div>
+    </sidenav-block>
+    <sidenav-divider class="mt-0"></sidenav-divider>
+
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<h6 class="pb-1 mt-5 mb-4">Colors (horizontal)</h6>
+
+<sidenav orientation="horizontal" class="bg-sidenav-theme mb-4" style="position: relative;z-index: 95">
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav orientation="horizontal" class="bg-primary mb-4" style="position: relative;z-index: 94">
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav orientation="horizontal" class="bg-secondary mb-4" style="position: relative;z-index: 93">
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav orientation="horizontal" class="bg-success mb-4" style="position: relative;z-index: 92">
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav orientation="horizontal" class="bg-info mb-4" style="position: relative;z-index: 91">
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav orientation="horizontal" class="bg-warning mb-4" style="position: relative;z-index: 90">
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav orientation="horizontal" class="bg-danger mb-4" style="position: relative;z-index: 89">
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav orientation="horizontal" class="bg-white mb-4" style="position: relative;z-index: 88">
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav orientation="horizontal" class="bg-lighter mb-4" style="position: relative;z-index: 87">
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav orientation="horizontal" class="bg-light mb-4" style="position: relative;z-index: 86">
+  <div class="sidenav-inner">
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<h6 class="pb-1 mt-5 mb-4">With background</h6>
+
+<div class="mb-4">
+  <button type="button" class="btn btn-primary" (click)="sidenav6Collapsed = !sidenav6Collapsed">Toggle collapsed</button>
+</div>
+
+<sidenav class="sidenav-dark d-inline-flex ui-bg-cover ui-bg-overlay-container mr-4 mb-4" style="background-image: url('assets/img/bg/1.jpg'); height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav6Collapsed }">
+  <div class="ui-bg-overlay bg-dark opacity-25"></div>
+
+  <div class="sidenav-inner mb-2">
+    <sidenav-block class="my-1">
+      <div class="media align-items-center">
+        <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+        <div class="media-body pl-3">
+          <h5 class="sidenav-text mb-1">Mike Greene</h5>
+          <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+        </div>
+      </div>
+    </sidenav-block>
+    <sidenav-divider class="mt-0"></sidenav-divider>
+
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav class="sidenav-dark d-inline-flex ui-bg-cover ui-bg-overlay-container mr-4 mb-4" style="background-image: url('assets/img/bg/13.jpg'); height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav6Collapsed }">
+  <div class="ui-bg-overlay bg-warning opacity-25"></div>
+
+  <div class="sidenav-inner mb-2">
+    <sidenav-block class="my-1">
+      <div class="media align-items-center">
+        <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+        <div class="media-body pl-3">
+          <h5 class="sidenav-text mb-1">Mike Greene</h5>
+          <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+        </div>
+      </div>
+    </sidenav-block>
+    <sidenav-divider class="mt-0"></sidenav-divider>
+
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>
+
+<sidenav class="sidenav-light d-inline-flex ui-bg-cover ui-bg-overlay-container mr-4 mb-4" style="background-image: url('assets/img/bg/16.jpg'); height: 450px" [ngClass]="{ 'sidenav-collapsed': sidenav6Collapsed }">
+  <div class="ui-bg-overlay bg-white opacity-75"></div>
+
+  <div class="sidenav-inner mb-2">
+    <sidenav-block class="my-1">
+      <div class="media align-items-center">
+        <img src="assets/img/avatars/1-small.png" class="d-block ui-w-50 rounded-circle" alt="">
+        <div class="media-body pl-3">
+          <h5 class="sidenav-text mb-1">Mike Greene</h5>
+          <div class="small"><a href="javascript:void(0)" class="sidenav-link"><strong class="sidenav-text">5</strong> new messages</a></div>
+        </div>
+      </div>
+    </sidenav-block>
+    <sidenav-divider class="mt-0"></sidenav-divider>
+
+    <sidenav-router-link route="/complete-ui/plugins" icon="ion ion-md-link" [active]="true">Router link</sidenav-router-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-notifications-outline">Some Long Long Long Long Long Item</sidenav-link>
+    <sidenav-menu icon="ion ion-ios-settings" text="Item 1" [disabled]="true">
+      <sidenav-link href="javascript:void(0)">Item 1.1</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.2</sidenav-link>
+      <sidenav-link href="javascript:void(0)">Item 1.3</sidenav-link>
+    </sidenav-menu>
+    <sidenav-menu icon="ion ion-md-paper" text="Item 2">
+      <sidenav-link href="javascript:void(0)">Item 2.1</sidenav-link>
+      <sidenav-menu text="Item 2.2" [disabled]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.2.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.2.3</sidenav-link>
+      </sidenav-menu>
+      <sidenav-menu text="Item 2.3" [open]="true">
+        <sidenav-link href="javascript:void(0)">Item 2.3.1</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.2</sidenav-link>
+        <sidenav-link href="javascript:void(0)">Item 2.3.3</sidenav-link>
+      </sidenav-menu>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-0"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">SECTION HEADER</sidenav-header>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-flask">Item 3</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-basketball" [disabled]="true">Item 4</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-bonfire">Item 5</sidenav-link>
+
+    <sidenav-divider></sidenav-divider>
+
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cafe">Item 6</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-ios-cloud-outline">Item 7</sidenav-link>
+    <sidenav-link href="javascript:void(0)" icon="ion ion-md-code">Item 8</sidenav-link>
+  </div>
+</sidenav>

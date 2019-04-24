@@ -1,0 +1,295 @@
+:host /deep/ ng2-smart-table {
+  font-size: inherit;
+
+  table {
+    margin-bottom: .5rem;
+    line-height: inherit;
+
+    tr th {
+      font-weight: bold;
+    }
+
+    tr section {
+      font-weight: bold;
+      font-size: inherit;
+    }
+
+    tr td,
+    tr th {
+      padding: .5em 1em;
+      font-size: inherit;
+    }
+  }
+
+  .ng2-smart-pagination[class] .ng2-smart-page-item[class] {
+    display: block;
+  }
+
+  .ng2-smart-filters > th {
+    vertical-align: middle;
+  }
+
+  th[ng2-st-checkbox-select-all],
+  td.ng2-smart-action-multiple-select {
+    text-align: center !important;
+
+    .form-control[type=checkbox] {
+      height: auto !important;
+      min-height: 0 !important;
+      width: auto !important;
+    }
+  }
+
+  .ng2-smart-action-multiple-select {
+    input[type=checkbox].form-control {
+      border: initial !important;
+      padding: initial !important;
+      background: initial !important;
+      min-height: 0 !important;
+    }
+  }
+
+  input[type=checkbox] {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+:host /deep/ .card-ng2-smart-table ng2-smart-table {
+  table {
+    border: 0 !important;
+
+    thead:first-child th {
+      border-top: 0 !important;
+    }
+  }
+
+  table th,
+  td {
+    html:not([dir=rtl]) & {
+      &:first-child {
+        border-left: 0 !important;
+      }
+
+      &:last-child {
+        border-right: 0 !important;
+      }
+    }
+
+    [dir=rtl] & {
+      &:first-child {
+        border-right: 0 !important;
+      }
+
+      &:last-child {
+        border-left: 0 !important;
+      }
+    }
+  }
+}
+
+.default-style :host /deep/ {
+  @import "~vendor/styles/_appwork/include";
+
+  ng2-smart-table {
+    table tr th,
+    table tr section {
+      font-weight: $font-weight-bold;
+    }
+
+    table tr td,
+    table tr th {
+      padding: $table-cell-padding;
+    }
+
+    th a,
+    td a {
+      color: $link-color;
+      text-decoration: $link-decoration;
+
+      &:hover,
+      &:focus {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+      }
+    }
+
+    .ng2-smart-titles a {
+      color: $body-color !important;
+    }
+
+    input:not([type=checkbox]):not([type=radio]),
+    select {
+      padding: $input-btn-padding-y-sm $input-padding-x-sm;
+      height: $input-height-sm !important;
+      font-size: $font-size-sm;
+      line-height: $input-line-height-sm;
+    }
+
+    .ng2-smart-row.selected {
+      border-color: rgba($table-accent-bg, .05) !important;
+      background-color: $table-accent-bg !important;
+    }
+
+    .ng2-smart-pagination {
+      padding: 0;
+      font-size: $font-size-sm;
+
+      .page-link-next,
+      .page-link-prev {
+        font-size: inherit;
+      }
+    }
+
+    .ng2-smart-page-link {
+      display: block;
+      padding: $pagination-padding-y-sm $pagination-padding-x-sm;
+      min-width: calc(#{($font-size-sm * $pagination-line-height) + ($pagination-padding-y-sm * 2)} + #{$pagination-border-width * 2});
+      color: $pagination-color;
+      text-decoration: none !important;
+      font-size: inherit;
+
+      @include hover-focus {
+        color: $pagination-hover-color;
+      }
+    }
+  }
+
+  .card-ng2-smart-table ng2-smart-table-pager {
+    padding-right: $card-spacer-x !important;
+    padding-left: $card-spacer-x !important;
+  }
+}
+
+.default-style:not([dir=rtl]) :host /deep/ .card-ng2-smart-table ng2-smart-table {
+  @import "~vendor/styles/_appwork/include";
+
+  table th,
+  td {
+    &:first-child {
+      padding-left: $card-spacer-x !important;
+    }
+
+    &:last-child {
+      padding-right: $card-spacer-x !important;
+    }
+  }
+}
+
+.default-style[dir=rtl] :host /deep/ .card-ng2-smart-table ng2-smart-table {
+  @import "~vendor/styles/_appwork/include";
+
+  table th,
+  td {
+    &:first-child {
+      padding-right: $card-spacer-x !important;
+    }
+
+    &:last-child {
+      padding-left: $card-spacer-x !important;
+    }
+  }
+}
+
+.material-style :host /deep/ {
+  @import "~vendor/styles/_appwork/include-material";
+
+  ng2-smart-table {
+    table tr th,
+    table tr section {
+      font-weight: $font-weight-bold;
+    }
+
+    table tr td,
+    table tr th {
+      padding: $table-cell-padding;
+    }
+
+    th a,
+    td a {
+      color: $link-color;
+      text-decoration: $link-decoration;
+
+      &:hover,
+      &:focus {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+      }
+    }
+
+    .ng2-smart-titles a {
+      color: $body-color !important;
+    }
+
+    input:not([type=checkbox]):not([type=radio]),
+    select {
+      padding: $input-btn-padding-y-sm $input-padding-x-sm;
+      height: $input-height-sm !important;
+      font-size: $font-size-sm;
+      line-height: $input-line-height-sm;
+    }
+
+    .ng2-smart-row.selected {
+      border-color: rgba($table-accent-bg, .05) !important;
+      background-color: $table-accent-bg !important;
+    }
+
+    .ng2-smart-pagination {
+      padding: 0;
+      font-size: $font-size-sm;
+
+      .page-link-next,
+      .page-link-prev {
+        font-size: inherit;
+      }
+    }
+
+    .ng2-smart-page-link {
+      display: block;
+      padding: $pagination-padding-y-sm $pagination-padding-x-sm;
+      min-width: calc(#{($font-size-sm * $pagination-line-height) + ($pagination-padding-y-sm * 2)} + #{$pagination-border-width * 2});
+      color: $pagination-color;
+      text-decoration: none !important;
+      font-size: inherit;
+
+      @include hover-focus {
+        color: $pagination-hover-color;
+      }
+    }
+  }
+
+  .card-ng2-smart-table ng2-smart-table-pager {
+    padding-right: $card-spacer-x !important;
+    padding-left: $card-spacer-x !important;
+  }
+}
+
+.material-style:not([dir=rtl]) :host /deep/ .card-ng2-smart-table ng2-smart-table {
+  @import "~vendor/styles/_appwork/include-material";
+
+  table th,
+  td {
+    &:first-child {
+      padding-left: $card-spacer-x !important;
+    }
+
+    &:last-child {
+      padding-right: $card-spacer-x !important;
+    }
+  }
+}
+
+.material-style[dir=rtl] :host /deep/ .card-ng2-smart-table ng2-smart-table {
+  @import "~vendor/styles/_appwork/include-material";
+
+  table th,
+  td {
+    &:first-child {
+      padding-right: $card-spacer-x !important;
+    }
+
+    &:last-child {
+      padding-left: $card-spacer-x !important;
+    }
+  }
+}

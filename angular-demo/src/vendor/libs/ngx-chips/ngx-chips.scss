@@ -1,0 +1,233 @@
+@import '~vendor/styles/_custom-variables/libs';
+@import 'mixins';
+
+$ngx-chips-tag-line-height: 1.5rem !default;
+$ngx-chips-encapsulated: false !default;
+$parent: if($ngx-chips-encapsulated, ':host /deep/', 'tag-input');
+
+#{$parent} tag-ripple {
+  display: none !important;
+}
+
+#{$parent} .ng2-tag-input[class] {
+  tag,
+  .ng2-tag-input__text-input {
+    min-height: $ngx-chips-tag-line-height;
+    height: $ngx-chips-tag-line-height;
+    letter-spacing: normal;
+    line-height: $ngx-chips-tag-line-height;
+  }
+
+  tag {
+    &:not(.tag--editing) {
+      box-shadow: none !important;
+    }
+
+    &.tag--editing {
+      border: 0;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .2) inset;
+    }
+  }
+
+  tag delete-icon {
+    opacity: .5;
+
+    [dir=rtl] & {
+      text-align: left;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  tag delete-icon svg {
+    height: $ngx-chips-tag-line-height !important;
+  }
+
+  &.ng2-tag-input--disabled {
+    tag {
+      cursor: default !important;
+    }
+
+    .ng2-tag-input__text-input {
+      display: none !important;
+    }
+  }
+}
+
+#{$parent} .ng2-tag-input__text-input {
+  background: none;
+
+  &::placeholder {
+    opacity: 1;
+  }
+}
+
+.default-style #{$parent} {
+  @import "~vendor/styles/_appwork/include";
+
+  $ngx-chips-tag-spacer: px-to-rem(floor(rem-to-px(($input-height-inner - $ngx-chips-tag-line-height) / 2)));
+
+  .ng2-tag-input {
+    padding: 0 0 $ngx-chips-tag-spacer 0;
+    min-height: $input-height;
+    border-color: $input-border-color;
+  }
+
+  .ng2-tag-input tag,
+  .ng2-tag-input .ng2-tag-input__text-input {
+    margin: $ngx-chips-tag-spacer $ngx-chips-tag-spacer 0 0;
+    padding: 0 $badge-padding-x;
+    color: $body-color;
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+  }
+
+  .ng2-tag-input tag {
+    background-color: $badge-default-bg;
+
+    @include border-radius($badge-border-radius);
+
+    &:not(:focus):not(.tag--editing):not(:active):not(.readonly):hover {
+      background-color: $badge-default-bg;
+      color: $body-color;
+    }
+
+    &:not(.readonly):not(.tag--editing):focus,
+    &:not(.readonly):not(.tag--editing):active {
+      background-color: $gray-300;
+      color: $body-color;
+    }
+
+    path {
+      fill: $body-color !important;
+    }
+  }
+
+  .ng2-tag-input.ng2-tag-input--disabled {
+    tag:not(.readonly):not(.tag--editing):focus,
+    tag:not(.readonly):not(.tag--editing):active,
+    tag:not(:focus):not(.tag--editing):not(:active):not(.readonly):hover {
+      background-color: $badge-default-bg;
+      color: $body-color;
+    }
+  }
+
+  .ng2-tag-input__text-input::placeholder {
+    color: $input-placeholder-color;
+  }
+}
+
+.default-style {
+  @import "~vendor/styles/_appwork/include";
+
+  @include ngx-chips-validation-state("valid", $form-feedback-valid-color, $ngx-chips-encapsulated);
+  @include ngx-chips-validation-state("invalid", $form-feedback-invalid-color, $ngx-chips-encapsulated);
+
+  @each $color, $value in $theme-colors {
+    @if $color != primary {
+      @if ($ngx-chips-encapsulated) {
+        :host /deep/ .ngx-chips-#{$color} { @include ngx-chips-variant($value); }
+      } @else {
+        .ngx-chips-#{$color} { @include ngx-chips-variant($value); }
+      }
+    }
+  }
+}
+
+.default-style[dir=rtl] #{$parent} .ng2-tag-input {
+  @import "~vendor/styles/_appwork/include";
+
+  $ngx-chips-tag-spacer: px-to-rem(floor(rem-to-px(($input-height-inner - $ngx-chips-tag-line-height) / 2)));
+
+  tag,
+  .ng2-tag-input__text-input {
+    margin: $ngx-chips-tag-spacer 0 0 $ngx-chips-tag-spacer;
+  }
+}
+
+.material-style #{$parent} {
+  @import "~vendor/styles/_appwork/include-material";
+
+  $ngx-chips-tag-spacer: px-to-rem(floor(rem-to-px(($input-height-inner - $ngx-chips-tag-line-height) / 2)));
+
+  .ng2-tag-input {
+    padding: 0 0 $ngx-chips-tag-spacer 0;
+    min-height: $input-height;
+    border-color: $input-border-color;
+  }
+
+  .ng2-tag-input tag,
+  .ng2-tag-input .ng2-tag-input__text-input {
+    margin: $ngx-chips-tag-spacer $ngx-chips-tag-spacer 0 0;
+    padding: 0 $badge-padding-x;
+    color: $body-color;
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+  }
+
+  .ng2-tag-input tag {
+    background-color: $badge-default-bg;
+
+    @include border-radius($badge-border-radius);
+
+    &:not(:focus):not(.tag--editing):not(:active):not(.readonly):hover {
+      background-color: $badge-default-bg;
+      color: $body-color;
+    }
+
+    &:not(.readonly):not(.tag--editing):focus,
+    &:not(.readonly):not(.tag--editing):active {
+      background-color: $gray-300;
+      color: $body-color;
+    }
+
+    path {
+      fill: $body-color !important;
+    }
+  }
+
+  .ng2-tag-input.ng2-tag-input--disabled {
+    tag:not(.readonly):not(.tag--editing):focus,
+    tag:not(.readonly):not(.tag--editing):active,
+    tag:not(:focus):not(.tag--editing):not(:active):not(.readonly):hover {
+      background-color: $badge-default-bg;
+      color: $body-color;
+    }
+  }
+
+  .ng2-tag-input__text-input::placeholder {
+    color: $input-placeholder-color;
+  }
+}
+
+.material-style {
+  @import "~vendor/styles/_appwork/include-material";
+
+  @include ngx-chips-validation-state("valid", $form-feedback-valid-color, $ngx-chips-encapsulated);
+  @include ngx-chips-validation-state("invalid", $form-feedback-invalid-color, $ngx-chips-encapsulated);
+
+  @each $color, $value in $theme-colors {
+    @if $color != primary {
+      @if ($ngx-chips-encapsulated) {
+        :host /deep/ .ngx-chips-#{$color} { @include ngx-chips-variant($value); }
+      } @else {
+        .ngx-chips-#{$color} { @include ngx-chips-variant($value); }
+      }
+    }
+  }
+}
+
+.material-style[dir=rtl] #{$parent} .ng2-tag-input {
+  @import "~vendor/styles/_appwork/include-material";
+
+  $ngx-chips-tag-spacer: px-to-rem(floor(rem-to-px(($input-height-inner - $ngx-chips-tag-line-height) / 2)));
+
+  tag,
+  .ng2-tag-input__text-input {
+    margin: $ngx-chips-tag-spacer 0 0 $ngx-chips-tag-spacer;
+  }
+}

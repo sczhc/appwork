@@ -1,0 +1,147 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">Button groups</h3>
+
+  <h4 class="ui-block-heading">Sizes</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-sm">
+    <!-- Extra-large -->
+    <div class="btn-group btn-group-xl">
+      <button type="button" class="btn btn-secondary">Left</button>
+      <button type="button" class="btn btn-secondary">Middle</button>
+      <button type="button" class="btn btn-secondary">Right</button>
+    </div>
+
+    <br>
+
+    <!-- Large -->
+    <div class="btn-group btn-group-lg">
+      <button type="button" class="btn btn-secondary">Left</button>
+      <button type="button" class="btn btn-secondary">Middle</button>
+      <button type="button" class="btn btn-secondary">Right</button>
+    </div>
+
+    <br>
+
+    <!-- Default -->
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary">Left</button>
+      <button type="button" class="btn btn-secondary">Middle</button>
+      <button type="button" class="btn btn-secondary">Right</button>
+    </div>
+
+    <br>
+
+    <!-- Small -->
+    <div class="btn-group btn-group-sm">
+      <button type="button" class="btn btn-secondary">Left</button>
+      <button type="button" class="btn btn-secondary">Middle</button>
+      <button type="button" class="btn btn-secondary">Right</button>
+    </div>
+
+    <br>
+
+    <!-- Extra-small -->
+    <div class="btn-group btn-group-xs">
+      <button type="button" class="btn btn-secondary">Left</button>
+      <button type="button" class="btn btn-secondary">Middle</button>
+      <button type="button" class="btn btn-secondary">Right</button>
+    </div>
+  </div>
+
+  <h4 class="ui-block-heading">Button toolbars</h4>
+
+  <div class="cui-example">
+    <div class="btn-toolbar">
+      <div class="btn-group mr-2">
+        <button type="button" class="btn btn-secondary">1</button>
+        <button type="button" class="btn btn-secondary">2</button>
+        <button type="button" class="btn btn-secondary">3</button>
+        <button type="button" class="btn btn-secondary">4</button>
+      </div>
+      <div class="btn-group mr-2">
+        <button type="button" class="btn btn-secondary">5</button>
+        <button type="button" class="btn btn-secondary">6</button>
+        <button type="button" class="btn btn-secondary">7</button>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary">8</button>
+      </div>
+    </div>
+  </div>
+
+  <h4 class="ui-block-heading">Nesting</h4>
+
+  <div class="cui-example" id="nesting-button-group-demo">
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary">1</button>
+      <button type="button" class="btn btn-secondary">2</button>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Dropdown</button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+      $(function() {
+        if ($('html').attr('dir') === 'rtl' || $('body').attr('dir') === 'rtl') {
+          $('#nesting-button-group-demo .dropdown-menu').addClass('dropdown-menu-right')
+        }
+      });
+    </script>
+    <!-- / Javascript -->
+  </div>
+
+  <h4 class="ui-block-heading">Vertical</h4>
+
+  <div class="cui-example">
+    <div class="btn-group-vertical" id="vertical-button-group-demo">
+      <button type="button" class="btn btn-secondary">Button</button>
+      <button type="button" class="btn btn-secondary">Button</button>
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Dropdown</button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+        </div>
+      </div>
+      <button type="button" class="btn btn-secondary">Button</button>
+      <button type="button" class="btn btn-secondary">Button</button>
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Dropdown</button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Dropdown</button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Dropdown</button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+          <a class="dropdown-item" href="javascript:void(0)">Dropdown link</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+      $(function() {
+        if ($('html').attr('dir') === 'rtl' || $('body').attr('dir') === 'rtl') {
+          $('#vertical-button-group-demo .dropdown-menu').addClass('dropdown-menu-right')
+        }
+      });
+    </script>
+    <!-- / Javascript -->
+  </div>
+</div>

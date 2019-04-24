@@ -1,0 +1,33 @@
+<% content_for :styles do %>
+  <%= stylesheet_link_tag 'plyr/plyr.css', media: 'all' %>
+<% end %>
+
+<% content_for :scripts do %>
+  <!-- Dependencies -->
+  <%= javascript_include_tag 'plyr/plyr.js' %>
+  
+  <%= javascript_include_tag 'ui_media-player.js' %>
+<% end %>
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">UI elements /</span> Plyr
+</h4>
+
+<hr class="border-light container-m--x mt-0">
+
+<h5 class="font-weight-bold pt-1 pb-1 mt-4 mb-4">Video</h5>
+
+<div id="plyr-video-player" data-type="youtube" data-video-id="bTqVqk7FSmY"></div>
+
+<hr class="border-light container-m--x my-4">
+
+<h5 class="font-weight-bold pt-1 pb-1 mb-4">Audio</h5>
+
+<audio id="plyr-audio-player" controls>
+  <source src="/audio/Water_Lily.mp3" type="audio/mp3">
+</audio>

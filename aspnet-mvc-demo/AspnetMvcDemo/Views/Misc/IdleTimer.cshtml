@@ -1,0 +1,57 @@
+@{
+    ViewBag.Title = "Idle Timer - Miscellaneous";
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    @Scripts.Render("~/bundle/vendor/js/moment/moment")
+    @Scripts.Render("~/bundle/vendor/js/idletimer/idletimer")
+    
+    @Scripts.Render("~/bundle/js/misc_idle-timer")
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+    <span class="text-muted font-weight-light">Miscellaneous /</span> Idle Timer
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-4">
+
+<div class="row">
+    <div class="col-md-6">
+        <h5>Document
+            <small>5 second timeout</small>
+        </h5>
+        <div class="btn-group">
+            <button type="button" id="idletimer-doc-Pause" class="btn btn-default btn-sm">Pause</button>
+            <button type="button" id="idletimer-doc-Resume" class="btn btn-default btn-sm">Resume</button>
+            <button type="button" id="idletimer-doc-Elapsed" class="btn btn-default btn-sm">Elapsed</button>
+            <button type="button" id="idletimer-doc-Init" class="btn btn-default btn-sm">Init</button>
+            <button type="button" id="idletimer-doc-Destroy" class="btn btn-default btn-sm">Destroy</button>
+        </div>
+        <br>
+        <br>
+        <textarea rows="10" cols="30" id="idletimer-doc-Status" class="form-control"></textarea>
+        <br>
+    </div>
+    <div class="col-md-6">
+        <h5>Element
+            <small>3 second timeout</small>
+        </h5>
+        <div class="btn-group">
+            <button type="button" id="idletimer-el-Reset" class="btn btn-default btn-sm">Reset</button>
+            <button type="button" id="idletimer-el-LastActive" class="btn btn-default btn-sm">Last Active</button>
+            <button type="button" id="idletimer-el-Remaining" class="btn btn-default btn-sm">Remaining</button>
+            <button type="button" id="idletimer-el-State" class="btn btn-default btn-sm">State</button>
+        </div>
+        <br>
+        <br>
+        <textarea rows="10" cols="30" id="idletimer-el-Status" class="form-control"></textarea>
+        <br>
+    </div>
+</div>

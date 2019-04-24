@@ -1,0 +1,69 @@
+<h4 class="d-flex justify-content-between align-items-center w-100 font-weight-bold py-3 mb-4">
+  <div>Teams</div>
+  <button type="button" class="btn btn-primary btn-round d-block"><span class="ion ion-md-add"></span>&nbsp; Add team</button>
+</h4>
+
+<div class="row">
+  <div *ngFor="let team of teamsData" class="col-sm-6 col-xl-4">
+
+    <div class="card mb-4">
+      <div class="card-body pb-0">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <a href="javascript:void(0)" class="text-dark text-big font-weight-semibold">{{team.title}}</a>
+            <span class="badge align-text-bottom ml-1" [ngClass]="'badge-' + statuses[team.status].color">{{statuses[team.status].title}}</span>
+          </div>
+          <div class="btn-group" ngbDropdown [placement]="!isRTL ? 'bottom-right' : 'bottom-left'">
+            <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat hide-arrow" ngbDropdownToggle>
+              <i class="ion ion-ios-more"></i>
+            </button>
+            <div ngbDropdownMenu [class.dropdown-menu-right]="!isRTL">
+              <a class="dropdown-item" href="javascript:void(0)">View</a>
+              <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+              <a class="dropdown-item" href="javascript:void(0)">Remove</a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-3">
+          {{team.description}}
+        </div>
+      </div>
+      <div class="card-body pt-3 pb-0">
+        <div class="text-muted small mb-2">Leaders</div>
+        <div class="d-flex flex-wrap">
+          <a *ngFor="let leader of team.leaders" href="javascript:void(0)" class="d-block mr-1 mb-1"><img [src]="'assets/img/avatars/' + leader.avatar" alt="" class="ui-w-30 rounded-circle"></a>
+        </div>
+      </div>
+      <div class="card-body py-3">
+        <div class="text-muted small mb-2">Members</div>
+        <div class="d-flex flex-wrap">
+          <a *ngFor="let member of team.members" href="javascript:void(0)" class="d-block mr-1 mb-1"><img [src]="'assets/img/avatars/' + member.avatar" alt="" class="ui-w-30 rounded-circle"></a>
+        </div>
+      </div>
+      <hr class="m-0">
+      <div *ngIf="team.curProject" class="card-body">
+        <div class="text-muted small">Current project</div>
+        <div class="mb-3"><a href="javascript:void(0)" class="text-dark font-weight-semibold">{{team.curProject.title}}</a></div>
+        <div class="d-flex justify-content-between align-items-center small">
+          <div class="font-weight-bold">{{completedPercent(team.curProject.tasks, team.curProject.completedTasks)}}%</div>
+          <div class="text-muted">{{team.curProject.completedTasks}} / {{team.curProject.tasks}} tasks completed</div>
+        </div>
+        <ngb-progressbar [value]="completedPercent(team.curProject.tasks, team.curProject.completedTasks)" height="3px" class="d-block mt-1"></ngb-progressbar>
+        <div class="row mt-3">
+          <div class="col">
+            <div class="text-muted small">Created</div>
+            <div class="small font-weight-bold">{{team.curProject.created}}</div>
+          </div>
+          <div class="col">
+            <div class="text-muted small">Deadline</div>
+            <div class="small font-weight-bold">{{team.curProject.deadline}}</div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!team.curProject" class="card-body">
+        <div class="text-lighter">No current project</div>
+      </div>
+    </div>
+
+  </div>
+</div>

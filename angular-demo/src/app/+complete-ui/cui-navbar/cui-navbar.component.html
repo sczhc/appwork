@@ -1,0 +1,540 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">Navbar</h3>
+
+  <h4 class="ui-block-heading">Example</h4>
+
+  <div class="cui-example">
+    <nav class="navbar navbar-expand-lg bg-light" style="z-index: 20">
+      <a class="navbar-brand" href="javascript:void(0)">Navbar</a>
+      <button class="navbar-toggler" type="button" (click)="isExpanded1 = !isExpanded1">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse" [ngbCollapse]="!isExpanded1">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="javascript:void(0)">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Pricing</a>
+          </li>
+          <li class="nav-item" ngbDropdown [placement]="isRTL ? 'bottom-right' : 'bottom-left'">
+            <a class="nav-link" ngbDropdownToggle href="javascript:void(0)">Dropdown link</a>
+            <div ngbDropdownMenu [class.dropdown-menu-right]="isRTL">
+              <a class="dropdown-item" href="javascript:void(0)">Action</a>
+              <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+              <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="javascript:void(0)">Disabled</a>
+          </li>
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </div>
+
+  <h4 class="ui-block-heading">Elements</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-sm">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <a class="navbar-brand" href="javascript:void(0)">Navbar</a>
+      <button class="navbar-toggler" type="button" (click)="isExpanded2 = !isExpanded2">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse" [ngbCollapse]="!isExpanded2">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+        </div>
+
+        <span class="navbar-text">
+          Navbar text with an inline element
+        </span>
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+      <a class="navbar-brand" href="javascript:void(0)">Navbar</a>
+      <button class="navbar-toggler" type="button" (click)="isExpanded3 = !isExpanded3">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse" [ngbCollapse]="!isExpanded3">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+        </div>
+
+        <form class="form-inline">
+          <button class="btn btn-outline-success mr-3" type="button">Main button</button>
+          <button class="btn btn-sm btn-outline-secondary align-middle" type="button">Smaller button</button>
+        </form>
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+      <a class="navbar-brand" href="javascript:void(0)">Navbar</a>
+      <button class="navbar-toggler" type="button" (click)="isExpanded4 = !isExpanded4">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse" [ngbCollapse]="!isExpanded4">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+        </div>
+
+        <form class="form-inline">
+          <div class="input-group">
+            <span class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </span>
+            <input type="text" class="form-control" placeholder="Username">
+          </div>
+        </form>
+      </div>
+    </nav>
+  </div>
+
+  <h4 class="ui-block-heading">Styling</h4>
+
+  <div class="cui-example">
+    <div class="cui-example-vertical-spacing-sm bg-light p-3">
+      <!-- Theme navbar -->
+      <nav class="navbar navbar-expand-lg bg-navbar-theme">
+        <a class="navbar-brand" href="javascript:void(0)">.bg-navbar-theme</a>
+        <button class="navbar-toggler" type="button" (click)="isExpanded5 = !isExpanded5">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse" [ngbCollapse]="!isExpanded5">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+            <a class="nav-item nav-link disabled" href="javascript:void(0)">Disabled</a>
+          </div>
+
+          <span class="navbar-text">
+            Navbar text with an inline element
+          </span>
+        </div>
+      </nav>
+
+      <!-- White navbar -->
+      <nav class="navbar navbar-expand-lg bg-white">
+        <a class="navbar-brand" href="javascript:void(0)">.bg-white</a>
+        <button class="navbar-toggler" type="button" (click)="isExpanded6 = !isExpanded6">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse" [ngbCollapse]="!isExpanded6">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+            <a class="nav-item nav-link disabled" href="javascript:void(0)">Disabled</a>
+          </div>
+
+          <span class="navbar-text">
+            Navbar text with an inline element
+          </span>
+        </div>
+      </nav>
+
+      <!-- Primary navbar -->
+      <nav class="navbar navbar-expand-lg bg-primary">
+        <a class="navbar-brand" href="javascript:void(0)">.bg-primary</a>
+        <button class="navbar-toggler" type="button" (click)="isExpanded7 = !isExpanded7">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse" [ngbCollapse]="!isExpanded7">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+            <a class="nav-item nav-link disabled" href="javascript:void(0)">Disabled</a>
+          </div>
+
+          <span class="navbar-text">
+            Navbar text with an inline element
+          </span>
+        </div>
+      </nav>
+
+      <!-- Secondary navbar -->
+      <nav class="navbar navbar-expand-lg bg-secondary">
+        <a class="navbar-brand" href="javascript:void(0)">.bg-secondary</a>
+        <button class="navbar-toggler" type="button" (click)="isExpanded8 = !isExpanded8">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse" [ngbCollapse]="!isExpanded8">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+            <a class="nav-item nav-link disabled" href="javascript:void(0)">Disabled</a>
+          </div>
+
+          <span class="navbar-text">
+            Navbar text with an inline element
+          </span>
+        </div>
+      </nav>
+
+      <!-- Success navbar -->
+      <nav class="navbar navbar-expand-lg bg-success">
+        <a class="navbar-brand" href="javascript:void(0)">.bg-success</a>
+        <button class="navbar-toggler" type="button" (click)="isExpanded9 = !isExpanded9">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse" [ngbCollapse]="!isExpanded9">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+            <a class="nav-item nav-link disabled" href="javascript:void(0)">Disabled</a>
+          </div>
+
+          <span class="navbar-text">
+            Navbar text with an inline element
+          </span>
+        </div>
+      </nav>
+
+      <!-- Info navbar -->
+      <nav class="navbar navbar-expand-lg bg-info">
+        <a class="navbar-brand" href="javascript:void(0)">.bg-info</a>
+        <button class="navbar-toggler" type="button" (click)="isExpanded10 = !isExpanded10">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse" [ngbCollapse]="!isExpanded10">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+            <a class="nav-item nav-link disabled" href="javascript:void(0)">Disabled</a>
+          </div>
+
+          <span class="navbar-text">
+            Navbar text with an inline element
+          </span>
+        </div>
+      </nav>
+
+      <!-- Warning navbar -->
+      <nav class="navbar navbar-expand-lg bg-warning">
+        <a class="navbar-brand" href="javascript:void(0)">.bg-warning</a>
+        <button class="navbar-toggler" type="button" (click)="isExpanded11 = !isExpanded11">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse" [ngbCollapse]="!isExpanded11">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+            <a class="nav-item nav-link disabled" href="javascript:void(0)">Disabled</a>
+          </div>
+
+          <span class="navbar-text">
+            Navbar text with an inline element
+          </span>
+        </div>
+      </nav>
+
+      <!-- Danger navbar -->
+      <nav class="navbar navbar-expand-lg bg-danger">
+        <a class="navbar-brand" href="javascript:void(0)">.bg-danger</a>
+        <button class="navbar-toggler" type="button" (click)="isExpanded12 = !isExpanded12">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse" [ngbCollapse]="!isExpanded12">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+            <a class="nav-item nav-link disabled" href="javascript:void(0)">Disabled</a>
+          </div>
+
+          <span class="navbar-text">
+            Navbar text with an inline element
+          </span>
+        </div>
+      </nav>
+
+      <!-- Dark navbar -->
+      <nav class="navbar navbar-expand-lg bg-dark">
+        <a class="navbar-brand" href="javascript:void(0)">.bg-dark</a>
+        <button class="navbar-toggler" type="button" (click)="isExpanded13 = !isExpanded13">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse" [ngbCollapse]="!isExpanded13">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+            <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+            <a class="nav-item nav-link disabled" href="javascript:void(0)">Disabled</a>
+          </div>
+
+          <span class="navbar-text">
+            Navbar text with an inline element
+          </span>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <h4 class="ui-block-heading">Layouts</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-sm">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <a class="navbar-brand" href="javascript:void(0)">Brand</a>
+      <div class="navbar-text order-lg-2 small text-truncate">always show</div>
+      <button class="navbar-toggler" type="button" (click)="isExpanded14 = !isExpanded14">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse justify-content-lg-center order-lg-1" [ngbCollapse]="!isExpanded14">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+          <a class="nav-item nav-link disabled" href="javascript:void(0)">Disabled</a>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg justify-content-between bg-light">
+      <a href="javascript:void(0)" class="navbar-brand order-lg-2 mr-0">Brand</a>
+      <button class="navbar-toggler" type="button" (click)="isExpanded15 = !isExpanded15">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse order-lg-1 flex-basis-100" [ngbCollapse]="!isExpanded15">
+        <ul class="navbar-nav">
+          <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+          <a class="nav-item nav-link disabled" href="javascript:void(0)">Disabled</a>
+        </ul>
+      </div>
+      <div class="navbar-collapse order-lg-3 flex-basis-100" [ngbCollapse]="!isExpanded15">
+        <ul class="nav navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="javascript:void(0)"><i class="ion ion-logo-twitter"></i></a>
+          <a class="nav-item nav-link" href="javascript:void(0)"><i class="ion ion-logo-github"></i></a>
+        </ul>
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+      <a class="navbar-brand" href="javascript:void(0)">Brand</a>
+      <button class="navbar-toggler" type="button" (click)="isExpanded16 = !isExpanded16">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse" [ngbCollapse]="!isExpanded16">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+          <a class="nav-item nav-link disabled" href="javascript:void(0)">Disabled</a>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+      <a class="navbar-brand" href="javascript:void(0)">Brand</a>
+      <button class="navbar-toggler" type="button" (click)="isExpanded17 = !isExpanded17">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse" [ngbCollapse]="!isExpanded17">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+          <a class="nav-item nav-link disabled" href="javascript:void(0)">Disabled</a>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+      <a href="javascript:void(0)" class="navbar-brand">Brand</a>
+      <button class="navbar-toggler" type="button" (click)="isExpanded18 = !isExpanded18">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse justify-content-stretch" [ngbCollapse]="!isExpanded18">
+        <ul class="navbar-nav">
+          <a class="nav-item nav-link active" href="javascript:void(0)">Home</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Features</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Pricing</a>
+          <a class="nav-item nav-link disabled" href="javascript:void(0)">Disabled</a>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="javascript:void(0)">Sign In</a>
+          <a class="nav-item nav-link" href="javascript:void(0)">Sign Up</a>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <h4 class="ui-block-heading">Mega dropdown</h4>
+
+  <div class="cui-example cui-example-vertical-spacing">
+    <nav class="navbar navbar-expand-lg bg-light" style="z-index: 21">
+      <a class="navbar-brand" href="javascript:void(0)">Navbar</a>
+      <button class="navbar-toggler" type="button" (click)="isExpanded19 = !isExpanded19">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse" [ngbCollapse]="!isExpanded19">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" ngbDropdown [placement]="isRTL ? 'bottom-right' : 'bottom-left'">
+            <a class="nav-link" href="javascript:void(0)" ngbDropdownToggle>Dropdown</a>
+            <div ngbDropdownMenu [class.dropdown-menu-right]="isRTL">
+              <a class="dropdown-item" href="javascript:void(0)">Action</a>
+              <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+              <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item" megaDropdown>
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)">Mega (click)</a>
+            <div class="dropdown-menu p-4" [class.dropdown-menu-right]="isRTL">
+              <div class="alert alert-info">
+                Add <code>.mega-link</code> class to the element to close menu on click
+              </div>
+              <div class="row row-bordered ui-bordered">
+                <div class="col-sm-6 col-lg p-3"><a href="javascript:void(0)">Column</a></div>
+                <div class="col-sm-6 col-lg p-3"><a href="javascript:void(0)" class="mega-link">.mega-link</a></div>
+                <div class="col-sm-6 col-lg p-3"><a href="javascript:void(0)" class="btn btn-primary">Button</a></div>
+                <div class="col-sm-6 col-lg p-3"><input type="text" class="form-control" placeholder="Input"></div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item" megaDropdown trigger="hover">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)">Mega (hover)</a>
+            <div class="dropdown-menu p-4" [class.dropdown-menu-right]="isRTL">
+              <div class="alert alert-info">
+                Add <code>.mega-link</code> class to the element to close menu on click
+              </div>
+              <div class="row row-bordered ui-bordered">
+                <div class="col-sm-6 col-lg p-3"><a href="javascript:void(0)">Column</a></div>
+                <div class="col-sm-6 col-lg p-3"><a href="javascript:void(0)" class="mega-link">.mega-link</a></div>
+                <div class="col-sm-6 col-lg p-3"><a href="javascript:void(0)" class="btn btn-primary">Button</a></div>
+                <div class="col-sm-6 col-lg p-3"><input type="text" class="form-control" placeholder="Input"></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Within container
+         Note: Do not forget to add `.position-relative` to `.container`
+    -->
+    <nav class="navbar navbar-expand-lg bg-light" style="z-index: 20">
+      <div class="container position-relative">
+        <a class="navbar-brand" href="javascript:void(0)">Navbar</a>
+        <button class="navbar-toggler" type="button" (click)="isExpanded20 = !isExpanded20">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse" [ngbCollapse]="!isExpanded20">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item" ngbDropdown hoverDropdown [placement]="isRTL ? 'bottom-right' : 'bottom-left'">
+              <a class="nav-link" href="javascript:void(0)" ngbDropdownToggle>Dropdown (hover)</a>
+              <div ngbDropdownMenu [class.dropdown-menu-right]="isRTL">
+                <a class="dropdown-item" href="javascript:void(0)">Action</a>
+                <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+                <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item" megaDropdown>
+              <a class="nav-link dropdown-toggle" href="javascript:void(0)">Mega (click)</a>
+              <div class="dropdown-menu p-4" [class.dropdown-menu-right]="isRTL">
+                <div class="alert alert-info">
+                  Add <code>.mega-link</code> class to the element to close menu on click
+                </div>
+                <div class="row row-bordered ui-bordered">
+                  <div class="col-sm-6 col-lg p-3"><a href="javascript:void(0)">Column</a></div>
+                  <div class="col-sm-6 col-lg p-3"><a href="javascript:void(0)" class="mega-link">.mega-link</a></div>
+                  <div class="col-sm-6 col-lg p-3"><a href="javascript:void(0)" class="btn btn-primary">Button</a></div>
+                  <div class="col-sm-6 col-lg p-3"><input type="text" class="form-control" placeholder="Input"></div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item" megaDropdown trigger="hover">
+              <a class="nav-link dropdown-toggle" href="javascript:void(0)">Mega (hover)</a>
+              <div class="dropdown-menu p-4" [class.dropdown-menu-right]="isRTL">
+                <div class="alert alert-info">
+                  Add <code>.mega-link</code> class to the element to close menu on click
+                </div>
+                <div class="row row-bordered ui-bordered">
+                  <div class="col-sm-6 col-lg p-3"><a href="javascript:void(0)">Column</a></div>
+                  <div class="col-sm-6 col-lg p-3"><a href="javascript:void(0)" class="mega-link">.mega-link</a></div>
+                  <div class="col-sm-6 col-lg p-3"><a href="javascript:void(0)" class="btn btn-primary">Button</a></div>
+                  <div class="col-sm-6 col-lg p-3"><input type="text" class="form-control" placeholder="Input"></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+
+  <h4 class="ui-block-heading">Navbar search</h4>
+
+  <div class="cui-example">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <a class="navbar-brand" href="javascript:void(0)">Navbar</a>
+      <button class="navbar-toggler" type="button" (click)="isExpanded21 = !isExpanded21">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse" [ngbCollapse]="!isExpanded21">
+        <ul class="navbar-nav align-items-lg-center mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="javascript:void(0)">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <label class="nav-link navbar-search-box" [ngClass]="{ 'active': searchExpanded }">
+              <i class="ion ion-ios-search navbar-icon align-middle"></i>
+              <span class="navbar-search-input">
+                <input type="text" class="form-control mx-2" placeholder="Search..." style="width:140px" (focus)="searchExpanded=true">
+                <a href="javascript:void(0)" class="navbar-search-cancel" (click)="searchExpanded=false">&times;</a>
+              </span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+</div>

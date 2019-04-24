@@ -1,0 +1,1 @@
+require('../../../../node_modules/bootstrap-table/src/extensions/multiple-selection-row/bootstrap-table-multiple-selection-row.js');

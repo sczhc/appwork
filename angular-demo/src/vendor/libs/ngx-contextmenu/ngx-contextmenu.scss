@@ -1,0 +1,72 @@
+.dropdown.open.ngx-contextmenu > .dropdown-menu {
+  display: block !important;
+}
+
+.ngx-contextmenu .dropdown-menu {
+  outline: 0 !important;
+}
+
+.dropdown-menu > li > a {
+  position: relative;
+
+  &.hasSubMenu:before {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: .375rem;
+    height: .375rem;
+    transform: rotate(-45deg) translate(0, -50%);
+    content: "";
+  }
+}
+
+.cdk-overlay-container:empty {
+  display: none !important;
+}
+
+
+.default-style {
+  @import "~vendor/styles/_appwork/include";
+
+  .ngx-contextmenu .divider {
+    @include nav-divider($dropdown-divider-bg);
+  }
+
+  .ngx-contextmenu .dropdown-menu > li > a.hasSubMenu:before {
+    right: $dropdown-item-padding-x / 2;
+    border: 1px solid $text-muted;
+    border-top: 0;
+    border-left: 0;
+  }
+
+  &[dir=rtl] {
+    .ngx-contextmenu .dropdown-menu > li > a.hasSubMenu:before {
+      right: auto;
+      left: $dropdown-item-padding-x / 2;
+      transform: rotate(45deg) translate(0, -50%) scaleX(-1);
+    }
+  }
+}
+
+.material-style {
+  @import "~vendor/styles/_appwork/include-material";
+
+  .ngx-contextmenu .divider {
+    @include nav-divider($dropdown-divider-bg);
+  }
+
+  .ngx-contextmenu .dropdown-menu > li > a.hasSubMenu:before {
+    right: $dropdown-item-padding-x / 2;
+    border: 1px solid $text-muted;
+    border-top: 0;
+    border-left: 0;
+  }
+
+  &[dir=rtl] {
+    .ngx-contextmenu .dropdown-menu > li > a.hasSubMenu:before {
+      right: auto;
+      left: $dropdown-item-padding-x / 2;
+      transform: rotate(45deg) translate(0, -50%) scaleX(-1);
+    }
+  }
+}

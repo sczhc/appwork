@@ -1,0 +1,183 @@
+@page
+@model PluginsModel
+@{
+    ViewData["Title"] = "Plugins";
+    Layout = "Layouts/_CompleteUi";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/vendor/libs/bootstrap-slider/bootstrap-slider.css">
+    <link rel="stylesheet" href="~/vendor/libs/nouislider/nouislider.css">
+    <link rel="stylesheet" href="~/vendor/libs/select2/select2.css">
+    <link rel="stylesheet" href="~/vendor/libs/bootstrap-tagsinput/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="~/vendor/libs/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="~/vendor/libs/bootstrap-multiselect/bootstrap-multiselect.css">
+    <link rel="stylesheet" href="~/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css">
+    <link rel="stylesheet" href="~/vendor/libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.css">
+    <link rel="stylesheet" href="~/vendor/libs/timepicker/timepicker.css">
+    <link rel="stylesheet" href="~/vendor/libs/minicolors/minicolors.css">
+    <link rel="stylesheet" href="~/vendor/libs/fullcalendar/fullcalendar.css">
+    <link rel="stylesheet" href="~/vendor/libs/bootstrap-sweetalert/bootstrap-sweetalert.css">
+    <link rel="stylesheet" href="~/vendor/libs/growl/growl.css">
+    <link rel="stylesheet" href="~/vendor/libs/toastr/toastr.css">
+    <link rel="stylesheet" href="~/vendor/libs/bootstrap-markdown/bootstrap-markdown.css">
+    <link rel="stylesheet" href="~/vendor/libs/quill/typography.css">
+    <link rel="stylesheet" href="~/vendor/libs/quill/editor.css">
+    <link rel="stylesheet" href="~/vendor/libs/typeahead-js/typeahead.css">
+    <link rel="stylesheet" href="~/vendor/libs/datatables/datatables.css">
+    <link rel="stylesheet" href="~/vendor/libs/bootstrap-table/bootstrap-table.css">
+    <link rel="stylesheet" href="~/vendor/libs/bootstrap-sortable/bootstrap-sortable.css">
+    <link rel="stylesheet" href="~/vendor/libs/dropzone/dropzone.css">
+    <link rel="stylesheet" href="~/vendor/libs/flow-js/flow.css">
+    <link rel="stylesheet" href="~/vendor/libs/dragula/dragula.css">
+    <link rel="stylesheet" href="~/vendor/libs/bootstrap-duallistbox/bootstrap-duallistbox.css">
+    <link rel="stylesheet" href="~/vendor/libs/nestable/nestable.css">
+    <link rel="stylesheet" href="~/vendor/libs/jstree/themes/default/style.css">
+    <link rel="stylesheet" href="~/vendor/libs/ladda/ladda.css">
+    <link rel="stylesheet" href="~/vendor/libs/vegas/vegas.css">
+    <link rel="stylesheet" href="~/vendor/libs/swiper/swiper.css">
+    <link rel="stylesheet" href="~/vendor/libs/cropper/cropper.css">
+    <link rel="stylesheet" href="~/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.css">
+    <link rel="stylesheet" href="~/vendor/libs/bootstrap-tour/bootstrap-tour.css">
+    <link rel="stylesheet" href="~/vendor/libs/spinkit/spinkit.css">
+    <link rel="stylesheet" href="~/vendor/libs/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="~/vendor/libs/blueimp-gallery/gallery.css">
+    <link rel="stylesheet" href="~/vendor/libs/blueimp-gallery/gallery-indicator.css">
+    <link rel="stylesheet" href="~/vendor/libs/blueimp-gallery/gallery-video.css">
+    <link rel="stylesheet" href="~/vendor/libs/smartwizard/smartwizard.css">
+    <link rel="stylesheet" href="~/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="~/vendor/libs/plyr/plyr.css">
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    <script src="~/vendor/libs/numeral/numeral.js"></script>
+    <script src="~/vendor/libs/bootstrap-slider/bootstrap-slider.js"></script>
+    <script src="~/vendor/libs/nouislider/nouislider.js"></script>
+    <script src="~/vendor/libs/select2/select2.js"></script>
+    <script src="~/vendor/libs/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+    <script src="~/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
+    <script src="~/vendor/libs/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+    <script src="~/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+    <script src="~/vendor/libs/moment/moment.js"></script>
+    <script src="~/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js"></script>
+    <script src="~/vendor/libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.js"></script>
+    <script src="~/vendor/libs/timepicker/timepicker.js"></script>
+    <script src="~/vendor/libs/minicolors/minicolors.js"></script>
+    <script src="~/vendor/libs/fullcalendar/fullcalendar.js"></script>
+    <script src="~/vendor/libs/autosize/autosize.js"></script>
+    <script src="~/vendor/libs/vanilla-text-mask/vanilla-text-mask.js"></script>
+    <script src="~/vendor/libs/vanilla-text-mask/text-mask-addons.js"></script>
+    <script src="~/vendor/libs/bootbox/bootbox.js"></script>
+    <script src="~/vendor/libs/bootstrap-sweetalert/bootstrap-sweetalert.js"></script>
+    <script src="~/vendor/libs/growl/growl.js"></script>
+    <script src="~/vendor/libs/toastr/toastr.js"></script>
+    <script src="~/vendor/libs/markdown/markdown.js"></script>
+    <script src="~/vendor/libs/bootstrap-markdown/bootstrap-markdown.js"></script>
+    <script>
+        // Quill does not support IE 10 and below so don't load it to prevent console errors
+        if (typeof document.documentMode !== 'number' || document.documentMode > 10) {
+            document.open();
+            document.write('\x3Cscript src="/vendor/libs/quill/quill.js">\x3C/script>');
+            document.close();
+        }
+    </script>
+    <script src="~/vendor/libs/typeahead-js/typeahead.js"></script>
+    <script src="~/vendor/libs/datatables/datatables.js"></script>
+    <script src="~/vendor/libs/tableexport/tableexport.js"></script>
+    <script src="~/vendor/libs/bootstrap-table/bootstrap-table.js"></script>
+    <script src="~/vendor/libs/bootstrap-table/extensions/export/export.js"></script>
+    <script src="~/vendor/libs/bootstrap-sortable/bootstrap-sortable.js"></script>
+    <script src="~/vendor/libs/dropzone/dropzone.js"></script>
+    <script src="~/vendor/libs/flow-js/flow.js"></script>
+    <script src="~/vendor/libs/dragula/dragula.js"></script>
+    <script src="~/vendor/libs/sortablejs/sortable.js"></script>
+    <script src="~/vendor/libs/knob/knob.js"></script>
+    <script src="~/vendor/libs/bootstrap-menu/bootstrap-menu.js"></script>
+    <script src="~/vendor/libs/bootstrap-duallistbox/bootstrap-duallistbox.js"></script>
+    <script src="~/vendor/libs/nestable/nestable.js"></script>
+    <script src="~/vendor/libs/jstree/jstree.js"></script>
+    <script src="~/vendor/libs/spin/spin.js"></script>
+    <script src="~/vendor/libs/ladda/ladda.js"></script>
+    <script src="~/vendor/libs/validate/validate.js"></script>
+    <script src="~/vendor/libs/vegas/vegas.js"></script>
+    <script src="~/vendor/libs/swiper/swiper.js"></script>
+    <script src="~/vendor/libs/cropper/cropper.js"></script>
+    <script src="~/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+    <script src="~/vendor/libs/bootstrap-tour/bootstrap-tour.js"></script>
+    <script src="~/vendor/libs/pwstrength-bootstrap/pwstrength-bootstrap.js"></script>
+    <script src="~/vendor/libs/clipboard/clipboard.js"></script>
+    <script src="~/vendor/libs/masonry/masonry.js"></script>
+    <script src="~/vendor/libs/block-ui/block-ui.js"></script>
+    <script src="~/vendor/libs/photoswipe/photoswipe.js"></script>
+    <script src="~/vendor/libs/blueimp-gallery/gallery.js"></script>
+    <script src="~/vendor/libs/blueimp-gallery/gallery-fullscreen.js"></script>
+    <script src="~/vendor/libs/blueimp-gallery/gallery-indicator.js"></script>
+    <script src="~/vendor/libs/blueimp-gallery/gallery-video.js"></script>
+    <script src="~/vendor/libs/blueimp-gallery/gallery-vimeo.js"></script>
+    <script src="~/vendor/libs/blueimp-gallery/gallery-youtube.js"></script>
+    <script src="~/vendor/libs/idletimer/idletimer.js"></script>
+    <script src="~/vendor/libs/smartwizard/smartwizard.js"></script>
+    <script src="~/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="~/vendor/libs/plyr/plyr.js"></script>
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+@await Html.PartialAsync("CompleteUi/Numeral")
+@await Html.PartialAsync("CompleteUi/BootstrapSlider")
+@await Html.PartialAsync("CompleteUi/Nouislider")
+@await Html.PartialAsync("CompleteUi/Select2")
+@await Html.PartialAsync("CompleteUi/BootstrapTagsinput")
+@await Html.PartialAsync("CompleteUi/BootstrapSelect")
+@await Html.PartialAsync("CompleteUi/BootstrapMultiselect")
+@await Html.PartialAsync("CompleteUi/BootstrapDatepicker")
+@await Html.PartialAsync("CompleteUi/BootstrapDaterangepicker")
+@await Html.PartialAsync("CompleteUi/BootstrapMaterialDatetimepicker")
+@await Html.PartialAsync("CompleteUi/Timepicker")
+@await Html.PartialAsync("CompleteUi/Minicolors")
+@await Html.PartialAsync("CompleteUi/Fullcalendar")
+@await Html.PartialAsync("CompleteUi/Autosize")
+@await Html.PartialAsync("CompleteUi/VanillaTextMask")
+@await Html.PartialAsync("CompleteUi/Bootbox")
+@await Html.PartialAsync("CompleteUi/BootstrapSweetalert")
+@await Html.PartialAsync("CompleteUi/Growl")
+@await Html.PartialAsync("CompleteUi/Toastr")
+@await Html.PartialAsync("CompleteUi/BootstrapMarkdown")
+@await Html.PartialAsync("CompleteUi/Quill")
+@await Html.PartialAsync("CompleteUi/Typeahead")
+@await Html.PartialAsync("CompleteUi/Datatables")
+@await Html.PartialAsync("CompleteUi/BootstrapTable")
+@await Html.PartialAsync("CompleteUi/BootstrapSortable")
+@await Html.PartialAsync("CompleteUi/Dropzone")
+@await Html.PartialAsync("CompleteUi/Flow")
+@await Html.PartialAsync("CompleteUi/Dragula")
+@await Html.PartialAsync("CompleteUi/Sortablejs")
+@await Html.PartialAsync("CompleteUi/Swiper")
+@await Html.PartialAsync("CompleteUi/Knob")
+@await Html.PartialAsync("CompleteUi/BootstrapMenu")
+@await Html.PartialAsync("CompleteUi/BootstrapDuallistbox")
+@await Html.PartialAsync("CompleteUi/Nestable")
+@await Html.PartialAsync("CompleteUi/Jstree")
+@await Html.PartialAsync("CompleteUi/Ladda")
+@await Html.PartialAsync("CompleteUi/Validation")
+@await Html.PartialAsync("CompleteUi/Vegas")
+@await Html.PartialAsync("CompleteUi/Cropper")
+@await Html.PartialAsync("CompleteUi/BootstrapMaxlength")
+@await Html.PartialAsync("CompleteUi/BootstrapTour")
+@await Html.PartialAsync("CompleteUi/PwstrengthBootstrap")
+@await Html.PartialAsync("CompleteUi/Clipboard")
+@await Html.PartialAsync("CompleteUi/Masonry")
+@await Html.PartialAsync("CompleteUi/Spinkit")
+@await Html.PartialAsync("CompleteUi/Blockui")
+@await Html.PartialAsync("CompleteUi/Photoswipe")
+@await Html.PartialAsync("CompleteUi/BlueimpGallery")
+@await Html.PartialAsync("CompleteUi/Idletimer")
+@await Html.PartialAsync("CompleteUi/Smartwizard")
+@await Html.PartialAsync("CompleteUi/PerfectScrollbar")
+@await Html.PartialAsync("CompleteUi/Plyr")

@@ -1,0 +1,204 @@
+<div class="media align-items-center py-3 mb-3">
+  <img [src]="'assets/img/avatars/' + userData.avatar" alt="" class="d-block ui-w-100 rounded-circle">
+  <div class="media-body ml-4">
+    <h4 class="font-weight-bold mb-0">{{userData.name}} <span class="text-muted font-weight-normal">@{{userData.username}}</span></h4>
+    <div class="text-muted mb-2">ID: {{userData.id}}</div>
+    <a href="javascript:void(0)" class="btn btn-primary btn-sm">Edit</a>&nbsp;
+    <a href="javascript:void(0)" class="btn btn-default btn-sm">Profile</a>&nbsp;
+    <a href="javascript:void(0)" class="btn btn-default btn-sm icon-btn"><i class="ion ion-md-mail"></i></a>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <table class="table user-view-table m-0">
+      <tbody>
+        <tr>
+          <td>Registered:</td>
+          <td>{{userData.registered}}</td>
+        </tr>
+        <tr>
+          <td>Latest activity:</td>
+          <td>{{userData.latestActivity}}</td>
+        </tr>
+        <tr>
+          <td>Verified:</td>
+          <td>
+            <span *ngIf="userData.verified"><span class="ion ion-md-checkmark text-primary"></span>&nbsp; Yes</span>
+            <span *ngIf="!userData.verified"><span class="ion ion-md-close text-light"></span>&nbsp; No</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Role:</td>
+          <td>
+            <span *ngIf="userData.role === 1">User</span>
+            <span *ngIf="userData.role === 2">Author</span>
+            <span *ngIf="userData.role === 3">Staff</span>
+            <span *ngIf="userData.role === 4">Admin</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Status:</td>
+          <td>
+            <span class="badge badge-outline-success" *ngIf="userData.status === 1">Active</span>
+            <span class="badge badge-outline-danger" *ngIf="userData.status === 2">Banned</span>
+            <span class="badge badge-outline-default" *ngIf="userData.status === 3">Deleted</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr class="border-light m-0">
+  <div class="table-responsive">
+    <table class="table card-table m-0">
+      <tbody>
+        <tr>
+          <th>Module</th>
+          <th>Read</th>
+          <th>Write</th>
+          <th>Create</th>
+          <th>Delete</th>
+        </tr>
+        <tr *ngFor="let p of userData.permissions">
+          <td>{{p.module}}</td>
+          <td>
+            <span class="ion" [ngClass]="{'ion-md-checkmark text-primary': p.read, 'ion-md-close text-light': !p.read}"></span>
+          </td>
+          <td>
+            <span class="ion" [ngClass]="{'ion-md-checkmark text-primary': p.write, 'ion-md-close text-light': !p.write}"></span>
+          </td>
+          <td>
+            <span class="ion" [ngClass]="{'ion-md-checkmark text-primary': p.create, 'ion-md-close text-light': !p.create}"></span>
+          </td>
+          <td>
+            <span class="ion" [ngClass]="{'ion-md-checkmark text-primary': p.delete, 'ion-md-close text-light': !p.delete}"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <div class="row no-gutters row-bordered">
+    <div class="d-flex col-md align-items-center">
+      <a href="javascript:void(0)" class="card-body d-block text-dark">
+        <div class="text-muted small line-height-1">Posts</div>
+        <div class="text-xlarge">{{formatInt(userData.posts)}}</div>
+      </a>
+    </div>
+    <div class="d-flex col-md align-items-center">
+      <a href="javascript:void(0)" class="card-body d-block text-dark">
+        <div class="text-muted small line-height-1">Followers</div>
+        <div class="text-xlarge">{{formatInt(userData.followers)}}</div>
+      </a>
+    </div>
+    <div class="d-flex col-md align-items-center">
+      <a href="javascript:void(0)" class="card-body d-block text-dark">
+        <div class="text-muted small line-height-1">Following</div>
+        <div class="text-xlarge">{{formatInt(userData.following)}}</div>
+      </a>
+    </div>
+  </div>
+  <hr class="border-light m-0">
+  <div class="card-body">
+
+    <table class="table user-view-table m-0">
+      <tbody>
+        <tr>
+          <td>Username:</td>
+          <td>{{userData.username}}</td>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td>{{userData.name}}</td>
+        </tr>
+        <tr>
+          <td>E-mail:</td>
+          <td>{{userData.email}}</td>
+        </tr>
+        <tr>
+          <td>Company:</td>
+          <td>{{userData.company}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h6 class="mt-4 mb-3">Social links</h6>
+
+    <table class="table user-view-table m-0">
+      <tbody>
+        <tr *ngIf="userData.info.twitter">
+          <td>Twitter:</td>
+          <td><a href="javascript:void(0)">{{userData.info.twitter}}</a></td>
+        </tr>
+        <tr *ngIf="userData.info.facebook">
+          <td>Facebook:</td>
+          <td><a href="javascript:void(0)">{{userData.info.facebook}}</a></td>
+        </tr>
+        <tr *ngIf="userData.info.google">
+          <td>Google+:</td>
+          <td><a href="javascript:void(0)">{{userData.info.google}}</a></td>
+        </tr>
+        <tr *ngIf="userData.info.linkedin">
+          <td>LinkedIn:</td>
+          <td><a href="javascript:void(0)">{{userData.info.linkedin}}</a></td>
+        </tr>
+        <tr *ngIf="userData.info.instagram">
+          <td>Instagram:</td>
+          <td><a href="javascript:void(0)">{{userData.info.instagram}}</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h6 class="mt-4 mb-3">Personal info</h6>
+
+    <table class="table user-view-table m-0">
+      <tbody>
+        <tr *ngIf="userData.info.birthday">
+          <td>Birthday:</td>
+          <td>{{userData.info.birthday}}</td>
+        </tr>
+        <tr *ngIf="userData.info.country">
+          <td>Country:</td>
+          <td>{{userData.info.country}}</td>
+        </tr>
+        <tr *ngIf="userData.info.languages.length">
+          <td>Languages:</td>
+          <td>{{userData.info.languages.join(', ')}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h6 class="mt-4 mb-3">Contacts</h6>
+
+    <table class="table user-view-table m-0">
+      <tbody>
+        <tr *ngIf="userData.info.phone">
+          <td>Phone:</td>
+          <td>{{userData.info.phone}}</td>
+        </tr>
+        <tr *ngIf="userData.info.website">
+          <td>Website:</td>
+          <td>{{userData.info.website}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h6 class="mt-4 mb-3">Interests</h6>
+
+    <table class="table user-view-table m-0">
+      <tbody>
+        <tr *ngIf="userData.info.music.length">
+          <td>Favorite music:</td>
+          <td>{{userData.info.music.join(', ')}}</td>
+        </tr>
+        <tr *ngIf="userData.info.movies.length">
+          <td>Favorite movies:</td>
+          <td>{{userData.info.movies.join(', ')}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

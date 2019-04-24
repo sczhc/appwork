@@ -1,0 +1,75 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">Datepicker</h3>
+
+  <h4 class="ui-block-heading">Example</h4>
+
+  <div class="cui-example">
+    <ngb-datepicker
+      [(ngModel)]="model"
+      [displayMonths]="displayMonths"
+      [navigation]="navigation"
+      [disabled]="disabled">
+    </ngb-datepicker>
+
+    <hr/>
+
+    <form class="form-inline">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd" name="dp"
+            ngbDatepicker
+            [(ngModel)]="model"
+            [displayMonths]="displayMonths"
+            [navigation]="navigation"
+            [disabled]="disabled"
+            [placement]="isRTL ? 'bottom-right' : 'bottom-left'"
+            #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="input-group-text" [disabled]="disabled" (click)="d.toggle()" type="button">
+              <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <hr>
+
+    <select class="custom-select d-inline-block w-auto mr-1" [(ngModel)]="displayMonths">
+      <option [ngValue]="1">One month</option>
+      <option [ngValue]="2">Two months</option>
+      <option [ngValue]="3">Three months</option>
+    </select>
+
+    <select class="custom-select d-inline-block w-auto mr-1" [(ngModel)]="navigation">
+      <option value="none">Without navigation</option>
+      <option value="select">With select boxes</option>
+      <option value="arrows">Without select boxes</option>
+    </select>
+
+    <button class="btn" [class.btn-outline-danger]="disabled" [class.btn-outline-success]="!disabled" (click)="disabled = !disabled">
+      {{ disabled ? "Disabled" : "Enabled"}}
+    </button>
+  </div>
+
+  <h4 class="ui-block-heading">Range select</h4>
+
+  <div class="cui-example">
+    <ngb-datepicker #dp ngModel (ngModelChange)="onDateChange($event)" [displayMonths]="2" [dayTemplate]="t">
+    </ngb-datepicker>
+
+    <ng-template #t let-date="date" let-focused="focused">
+      <div class="ngb-range-day"
+        [ngClass]="{ 'bg-primary text-white': isFrom(date) || isTo(date), 'bg-light ngb-in-range': isHovered(date) || isInside(date) }"
+        (mouseenter)="hoveredDate = date"
+        (mouseleave)="hoveredDate = null">
+        {{ date.day }}
+      </div>
+    </ng-template>
+
+    <br><br>
+
+    <pre>From: {{ fromDate | json }} </pre>
+    <pre>To: {{ toDate | json }} </pre>
+  </div>
+</div>

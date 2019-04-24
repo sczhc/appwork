@@ -1,0 +1,115 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">Quill</h3>
+
+  <div class="no-ie10" data-name="Quill"></div>
+
+  <div class="alert alert-info mt-4">
+    <strong>Quill</strong> component is a copy of <strong>ngx-quill</strong> component with
+    small fixes that let prevent app crash in IE10. So you can find the documentation here:<br>
+    <a target="_blank" href="https://github.com/KillerCodeMonkey/ngx-quill" class="ui-block-description text-dark">https://github.com/KillerCodeMonkey/ngx-quill</a>
+  </div>
+
+  <div class="alert alert-warning mt-4">
+    Don't forget to sanitize HTML output on the server side to avoid XSS vulnerability.
+  </div>
+
+  <div class="alert alert-info mt-4">
+    Quill uses <code>.ql-*</code> classes for formatting. To display content
+    properly you need to include <code>vendor/libs/quill/typography.scss</code>
+    file and place Quill-generated content within <code>.ql-content</code> element.
+  </div>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing cui-example-blocks">
+    <quill-editor [(ngModel)]="editorContent" placeholder="Type something">
+      <div quill-editor-toolbar>
+        <span class="ql-formats">
+          <select class="ql-font"></select>
+          <select class="ql-size"></select>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-bold"></button>
+          <button class="ql-italic"></button>
+          <button class="ql-underline"></button>
+          <button class="ql-strike"></button>
+        </span>
+        <span class="ql-formats">
+          <select class="ql-color"></select>
+          <select class="ql-background"></select>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-script" value="sub"></button>
+          <button class="ql-script" value="super"></button>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-header" value="1"></button>
+          <button class="ql-header" value="2"></button>
+          <button class="ql-blockquote"></button>
+          <button class="ql-code-block"></button>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-list" value="ordered"></button>
+          <button class="ql-list" value="bullet"></button>
+          <button class="ql-indent" value="-1"></button>
+          <button class="ql-indent" value="+1"></button>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-direction" value="rtl"></button>
+          <select class="ql-align"></select>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-link"></button>
+          <button class="ql-image"></button>
+          <button class="ql-video"></button>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-clean"></button>
+        </span>
+      </div>
+    </quill-editor>
+
+    <pre>{{editorContent}}</pre>
+
+    <quill-editor [(ngModel)]="bubbleEditorContent" theme="bubble" placeholder="Compose an epic...">
+      <div quill-editor-toolbar>
+        <span class="ql-formats">
+          <button class="ql-bold"></button>
+          <button class="ql-italic"></button>
+          <button class="ql-underline"></button>
+        </span>
+        <span class="ql-formats">
+          <select class="ql-color"></select>
+          <select class="ql-background"></select>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-script" value="sub"></button>
+          <button class="ql-script" value="super"></button>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-header" value="1"></button>
+          <button class="ql-header" value="2"></button>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-list" value="ordered"></button>
+          <button class="ql-list" value="bullet"></button>
+          <button class="ql-indent" value="-1"></button>
+          <button class="ql-indent" value="+1"></button>
+        </span>
+        <span class="ql-formats">
+          <select class="ql-align"></select>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-link"></button>
+          <button class="ql-image"></button>
+          <button class="ql-video"></button>
+        </span>
+        <span class="ql-formats">
+          <button class="ql-clean"></button>
+        </span>
+      </div>
+    </quill-editor>
+
+    <pre>{{bubbleEditorContent}}</pre>
+  </div>
+</div>

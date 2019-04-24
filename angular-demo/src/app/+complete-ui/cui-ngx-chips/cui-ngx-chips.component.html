@@ -1,0 +1,39 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ngx-chips</h3>
+  <a target="_blank" href="https://github.com/Gbuomprisco/ngx-chips" class="ui-block-description">https://github.com/Gbuomprisco/ngx-chips</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-sm">
+    <tag-input
+      [(ngModel)]="items"
+      [editable]="!disabled"
+      [disable]="disabled">
+      <tag-input-dropdown
+        [showDropdownIfEmpty]="true"
+        [autocompleteItems]="autocompleteItems">
+      </tag-input-dropdown>
+    </tag-input>
+
+    <div>
+      <button type="button" class="btn btn-default" (click)="disabled = !disabled">
+        {{ disabled ? 'Enable' : 'Disable' }}
+      </button>
+    </div>
+
+    <!-- Variations -->
+
+    <tag-input class="ngx-chips-primary" [(ngModel)]="items" [editable]="!disabled" [disable]="disabled"></tag-input>
+    <tag-input class="ngx-chips-secondary" [(ngModel)]="items" [editable]="!disabled" [disable]="disabled"></tag-input>
+    <tag-input class="ngx-chips-success" [(ngModel)]="items" [editable]="!disabled" [disable]="disabled"></tag-input>
+    <tag-input class="ngx-chips-info" [(ngModel)]="items" [editable]="!disabled" [disable]="disabled"></tag-input>
+    <tag-input class="ngx-chips-warning" [(ngModel)]="items" [editable]="!disabled" [disable]="disabled"></tag-input>
+    <tag-input class="ngx-chips-danger" [(ngModel)]="items" [editable]="!disabled" [disable]="disabled"></tag-input>
+    <tag-input class="ngx-chips-dark" [(ngModel)]="items" [editable]="!disabled" [disable]="disabled"></tag-input>
+
+    <!-- Validation states -->
+
+    <tag-input class="is-valid" [(ngModel)]="items" [editable]="!disabled" [disable]="disabled"></tag-input>
+    <tag-input class="is-invalid" [(ngModel)]="items" [editable]="!disabled" [disable]="disabled"></tag-input>
+  </div>
+</div>

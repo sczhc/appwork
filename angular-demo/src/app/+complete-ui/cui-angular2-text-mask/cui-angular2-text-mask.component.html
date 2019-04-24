@@ -1,0 +1,24 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">angular2-text-mask</h3>
+  <a target="_blank" href="https://github.com/text-mask/text-mask/tree/master/angular2#readme" class="ui-block-description">https://github.com/text-mask/text-mask/tree/master/angular2#readme</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing">
+    <input type="text" class="form-control" placeholder="(___) ___-____"
+      [(ngModel)]="phoneModel"
+      [textMask]="phoneMaskOptions">
+
+    <input type="text" class="form-control" placeholder="$"
+      [(ngModel)]="numberModel"
+      [textMask]="numberMaskOptions">
+
+    <input type="text" class="form-control" placeholder=" @ ."
+      [(ngModel)]="emailModel"
+      [textMask]="emailMaskOptions">
+
+    <input type="text" class="form-control" placeholder="__/__/____"
+      [(ngModel)]="dateModel"
+      [textMask]="dateMaskOptions">
+  </div>
+</div>

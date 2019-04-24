@@ -1,0 +1,61 @@
+@import "~vendor/styles/_appwork/functions";
+
+@mixin ng-select-variant($background, $color: null) {
+  $color: if($color, $color, yiq($background));
+
+  &.ng-select-multiple .ng-value,
+  .ng-select-multiple .ng-value {
+    background: $background !important;
+    color: $color !important;
+  }
+}
+
+@mixin ng-select-validation-state($state, $color) {
+  .ng-select.is-#{$state} .ng-select-container,
+  .is-#{$state} .ng-select .ng-select-container {
+    border-color: $color;
+  }
+}
+
+@mixin ng-select-theme($background, $color: null) {
+  $color: if($color, $color, yiq($background));
+
+  .ng-select-focused .ng-select-container {
+    border-color: $background !important;
+  }
+
+  .ng-dropdown-panel .ng-option-marked {
+    background: $background !important;
+    color: $color !important;
+  }
+
+  .ng-select .ng-spinner-loader {
+    border-left-color: $background !important;
+  }
+
+  .ng-select-primary {
+    @include ng-select-variant($background, $color);
+  }
+}
+
+@mixin material-ng-select-theme($background, $color: null) {
+  $color: if($color, $color, yiq($background));
+
+  .ng-select-focused .ng-select-container {
+    border-color: $background !important;
+    box-shadow: 0 -1px 0 0 $background inset !important;
+  }
+
+  .ng-dropdown-panel .ng-option-marked {
+    background: $background !important;
+    color: $color !important;
+  }
+
+  .ng-select .ng-spinner-loader {
+    border-left-color: $background !important;
+  }
+
+  .ng-select-primary {
+    @include ng-select-variant($background, $color);
+  }
+}

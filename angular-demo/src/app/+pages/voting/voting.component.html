@@ -1,0 +1,28 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  Voting
+</h4>
+
+<div *ngFor="let voting of votingsData" class="card mb-3">
+  <div class="card-body">
+    <div class="media align-items-center">
+
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <a href="javascript:void(0)" class="d-block text-primary text-big line-height-1"><i class="ion ion-ios-arrow-up"></i></a>
+        <div class="text-xlarge font-weight-bolder line-height-1 my-2">{{voting.score}}</div>
+        <a href="javascript:void(0)" class="d-block text-primary text-big line-height-1"><i class="ion ion-ios-arrow-down"></i></a>
+      </div>
+
+      <div class="media-body ml-4">
+        <a href="javascript:void(0)" class="text-big">{{voting.title}}</a>
+        <div class="my-2">
+          {{voting.text}}
+        </div>
+        <div class="small">
+          <a href="javascript:void(0)" class="text-muted"><i class="ion ion-ios-text text-lighter text-big align-middle"></i>&nbsp; {{voting.comments}}</a>
+          <span class="text-muted ml-3"><i class="ion ion-md-time text-lighter text-big align-middle"></i>&nbsp; {{voting.lastUpdate}} ago</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

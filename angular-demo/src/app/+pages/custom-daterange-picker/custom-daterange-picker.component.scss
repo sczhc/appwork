@@ -1,0 +1,7 @@
+$ngb-datepicker-encapsulated: false;
+
+@import '~vendor/libs/ngb-datepicker/ngb-datepicker.scss';
+
+.default-style custom-daterange-picker .form-control {
+  background: #fff;
+}

@@ -1,0 +1,31 @@
+@{
+    ViewBag.Title = "Chart.js - Charts";
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    @Scripts.Render("~/bundle/vendor/js/chartjs/chartjs")
+    
+    @Scripts.Render("~/bundle/js/charts_chartjs")
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+    <span class="text-muted font-weight-light">Charts /</span> Chart.js
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-5">
+
+<div class="demo-vertical-spacing-lg">
+    <canvas id="chart-graph" height="250" class="chartjs-demo"></canvas>
+    <canvas id="chart-bars" height="250" class="chartjs-demo"></canvas>
+    <canvas id="chart-radar" height="250" class="chartjs-demo"></canvas>
+    <canvas id="chart-polar-area" height="250" class="chartjs-demo"></canvas>
+    <canvas id="chart-pie" height="250" class="chartjs-demo"></canvas>
+    <canvas id="chart-doughnut" height="250" class="chartjs-demo"></canvas>
+</div>

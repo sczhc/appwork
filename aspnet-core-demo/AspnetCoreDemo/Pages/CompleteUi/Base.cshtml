@@ -1,0 +1,57 @@
+@page
+@model BaseModel
+@{
+    ViewData["Title"] = "Base";
+    Layout = "Layouts/_CompleteUi";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    <script src="~/vendor/js/dropdown-hover.js"></script>
+    <script src="~/vendor/js/mega-dropdown.js"></script>
+    <script src="~/vendor/js/sidenav.js"></script>
+    <script src="~/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+@await Html.PartialAsync("CompleteUi/Typography")
+@await Html.PartialAsync("CompleteUi/Utilities")
+@await Html.PartialAsync("CompleteUi/Buttons")
+@await Html.PartialAsync("CompleteUi/Badges")
+@await Html.PartialAsync("CompleteUi/ButtonGroups")
+@await Html.PartialAsync("CompleteUi/ButtonDropdowns")
+@await Html.PartialAsync("CompleteUi/Dropdowns")
+@await Html.PartialAsync("CompleteUi/Navs")
+@await Html.PartialAsync("CompleteUi/Pagination")
+@await Html.PartialAsync("CompleteUi/ProgressBars")
+@await Html.PartialAsync("CompleteUi/ListGroups")
+@await Html.PartialAsync("CompleteUi/Alerts")
+@await Html.PartialAsync("CompleteUi/TooltipsAndPopovers")
+@await Html.PartialAsync("CompleteUi/Modals")
+@await Html.PartialAsync("CompleteUi/Breadcrumbs")
+@await Html.PartialAsync("CompleteUi/FormControls")
+@await Html.PartialAsync("CompleteUi/CustomCheckboxesAndRadios")
+@await Html.PartialAsync("CompleteUi/CustomSelect")
+@await Html.PartialAsync("CompleteUi/FileBrowser")
+@await Html.PartialAsync("CompleteUi/Forms")
+@await Html.PartialAsync("CompleteUi/InputGroups")
+@await Html.PartialAsync("CompleteUi/Switchers")
+@await Html.PartialAsync("CompleteUi/AppBrand")
+@await Html.PartialAsync("CompleteUi/Navbar")
+@await Html.PartialAsync("CompleteUi/Sidenav")
+@await Html.PartialAsync("CompleteUi/Footer")
+@await Html.PartialAsync("CompleteUi/Tables")
+@await Html.PartialAsync("CompleteUi/Media")
+@await Html.PartialAsync("CompleteUi/Thumbnails")
+@await Html.PartialAsync("CompleteUi/Cards")
+@await Html.PartialAsync("CompleteUi/Accordion")
+@await Html.PartialAsync("CompleteUi/Carousel")

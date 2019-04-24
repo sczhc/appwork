@@ -1,0 +1,270 @@
+@import '~vendor/styles/_custom-variables/libs';
+@import "node_modules/angular-calendar/scss/angular-calendar";
+@import "mixins";
+
+$angular-calendar-badge-padding: 1px 7px !default;
+$angular-calendar-weekend-color: darkred !default;
+$angular-calendar-open-day-events-bg: #444 !default;
+$angular-calendar-open-day-events-color: #fff !default;
+$angular-calendar-open-day-events-padding: 15px !default;
+
+.cal-event {
+  border-color: transparent !important;
+}
+
+.cal-event-action {
+  margin-right: .25rem;
+  vertical-align: middle;
+
+  [dir=rtl] & {
+    margin-right: 0;
+    margin-left: .25rem;
+  }
+}
+
+.cal-month-view .cal-open-day-events .cal-event-action {
+  margin-right: 0;
+  margin-left: .25rem;
+  color: inherit !important;
+  font-size: .8em;
+
+  [dir=rtl] & {
+    margin-right: .25rem;
+    margin-left: 0;
+  }
+}
+
+.cal-month-view .cal-day-badge {
+  padding: $angular-calendar-badge-padding;
+}
+
+.cal-month-view .cal-day-cell.cal-weekend .cal-day-number,
+.cal-week-view .cal-header.cal-weekend span {
+  color: $angular-calendar-weekend-color;
+}
+
+.cal-month-view .cal-open-day-events {
+  padding: $angular-calendar-open-day-events-padding;
+  background: $angular-calendar-open-day-events-bg;
+  box-shadow: none !important;
+  color: $angular-calendar-open-day-events-color;
+}
+
+.cal-week-view .cal-event,
+.cal-day-view .cal-event {
+  line-height: 29px;
+}
+
+.cal-month-view .cal-cell-row.cal-header .cal-cell {
+  border: 1px solid;
+  border-bottom: 0;
+
+  html:not([dir=rtl]) & + .cal-cell {
+    border-left: 0;
+  }
+
+  [dir=rtl] & + .cal-cell {
+    border-right: 0;
+  }
+}
+
+[dir=rtl] {
+  .cal-month-view {
+    .cal-cell {
+      float: right;
+    }
+
+    .cal-day-badge {
+      margin-right: 10px;
+      margin-left: 0;
+    }
+
+    .cal-day-number {
+      float: left;
+      margin-right: 0;
+      margin-left: 15px;
+    }
+  }
+
+  .cal-week-view {
+    .cal-event {
+      border-radius: 0;
+    }
+
+    .cal-starts-within-week .cal-event {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    .cal-ends-within-week .cal-event {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
+}
+
+.default-style {
+  @import "~vendor/styles/_appwork/include";
+
+  .cal-event {
+    color: $body-color;
+  }
+
+  .cal-week-view .cal-event,
+  .cal-day-view .cal-event {
+    padding: 0 10px;
+    font-size: $font-size-sm;
+  }
+
+  .cal-event-action {
+    color: $text-muted;
+  }
+
+  .cal-day-view .cal-hour-rows,
+  .cal-day-view .cal-hour:not(:last-child) .cal-hour-segment,
+  .cal-day-view .cal-hour:last-child :not(:last-child) .cal-hour-segment,
+  .cal-month-view .cal-days,
+  .cal-month-view .cal-day-cell:not(:last-child),
+  .cal-month-view .cal-days .cal-cell-row,
+  .cal-week-view .cal-day-headers,
+  .cal-week-view .cal-day-headers .cal-header:not(:last-child),
+  .cal-month-view .cal-cell-row.cal-header .cal-cell {
+    border-color: $table-border-color;
+  }
+
+  .cal-day-view .cal-hour:nth-child(odd),
+  .cal-month-view .cal-cell-row:hover,
+  .cal-month-view .cal-cell-row.cal-header,
+  .cal-week-view .cal-day-headers {
+    background-color: $table-accent-bg;
+  }
+
+  .cal-day-view .cal-hour-segment:hover,
+  .cal-day-view .cal-drag-over .cal-hour-segment,
+  .cal-month-view .cal-cell-row .cal-cell:hover,
+  .cal-week-view .cal-day-headers .cal-header:hover,
+  .cal-week-view .cal-day-headers .cal-drag-over {
+    background-color: $table-hover-bg;
+  }
+
+  .cal-month-view .cal-day-number {
+    font-size: $font-size-base;
+  }
+
+  .cal-month-view .cal-day-cell.cal-today .cal-day-number {
+    font-size: $big-font-size;
+  }
+
+  .cal-month-view .cal-header,
+  .cal-day-view .cal-time,
+  .cal-header b {
+    font-weight: $font-weight-semibold;
+  }
+
+  .cal-header span {
+    font-size: $font-size-sm;
+  }
+
+  .cal-month-view .cal-day-badge {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+
+  @each $color, $value in $theme-colors {
+    @if $color != primary {
+      @include angular-calendar-event-variant($color, $value);
+    }
+  }
+
+  &[dir=rtl] {
+    .cal-month-view .cal-day-cell:not(:last-child),
+    .cal-week-view .cal-day-headers .cal-header:not(:last-child) {
+      border-right: 0;
+      border-left: 1px solid $table-border-color;
+    }
+  }
+}
+
+.material-style {
+  @import "~vendor/styles/_appwork/include-material";
+
+  .cal-event {
+    color: $body-color;
+  }
+
+  .cal-week-view .cal-event,
+  .cal-day-view .cal-event {
+    padding: 0 10px;
+    font-size: $font-size-sm;
+  }
+
+  .cal-event-action {
+    color: $text-muted;
+  }
+
+  .cal-day-view .cal-hour-rows,
+  .cal-day-view .cal-hour:not(:last-child) .cal-hour-segment,
+  .cal-day-view .cal-hour:last-child :not(:last-child) .cal-hour-segment,
+  .cal-month-view .cal-days,
+  .cal-month-view .cal-day-cell:not(:last-child),
+  .cal-month-view .cal-days .cal-cell-row,
+  .cal-week-view .cal-day-headers,
+  .cal-week-view .cal-day-headers .cal-header:not(:last-child),
+  .cal-month-view .cal-cell-row.cal-header .cal-cell {
+    border-color: $table-border-color;
+  }
+
+  .cal-day-view .cal-hour:nth-child(odd),
+  .cal-month-view .cal-cell-row:hover,
+  .cal-month-view .cal-cell-row.cal-header,
+  .cal-week-view .cal-day-headers {
+    background-color: $table-accent-bg;
+  }
+
+  .cal-day-view .cal-hour-segment:hover,
+  .cal-day-view .cal-drag-over .cal-hour-segment,
+  .cal-month-view .cal-cell-row .cal-cell:hover,
+  .cal-week-view .cal-day-headers .cal-header:hover,
+  .cal-week-view .cal-day-headers .cal-drag-over {
+    background-color: $table-hover-bg;
+  }
+
+  .cal-month-view .cal-day-number {
+    font-size: $font-size-base;
+  }
+
+  .cal-month-view .cal-day-cell.cal-today .cal-day-number {
+    font-size: $big-font-size;
+  }
+
+  .cal-month-view .cal-header,
+  .cal-day-view .cal-time,
+  .cal-header b {
+    font-weight: $font-weight-semibold;
+  }
+
+  .cal-header span {
+    font-size: $font-size-sm;
+  }
+
+  .cal-month-view .cal-day-badge {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+
+  @each $color, $value in $theme-colors {
+    @if $color != primary {
+      @include angular-calendar-event-variant($color, $value);
+    }
+  }
+
+  &[dir=rtl] {
+    .cal-month-view .cal-day-cell:not(:last-child),
+    .cal-week-view .cal-day-headers .cal-header:not(:last-child) {
+      border-right: 0;
+      border-left: 1px solid $table-border-color;
+    }
+  }
+}

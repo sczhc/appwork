@@ -1,0 +1,194 @@
+:host /deep/ div.md-editor-container[class] {
+  .editor-container {
+    flex-direction: column;
+  }
+
+  .tool-bar {
+    background-color: #fff;
+  }
+
+  .md-footer {
+    background-color: #fff;
+  }
+
+  .preview-panel {
+    border-left-width: 0;
+  }
+
+  // Font Awesome 5
+  .fa.fa-header::before {
+    content: unquote("\"\f1dc\"");
+  }
+  .fa.fa-file-code-o::before {
+    content: unquote("\"\f121\"");
+  }
+
+  [dir=rtl] & .pull-right {
+    float: left !important;
+  }
+
+  [dir=rtl] & .tool-bar .btn-group > .btn:first-child::before {
+    right: -9px;
+    left: auto !important;
+  }
+}
+
+.default-style :host /deep/ div.md-editor-container {
+  @import "~vendor/styles/_appwork/include";
+
+  border-color: $card-border-color;
+
+  &.fullscreen {
+    z-index: $zindex-modal-top;
+  }
+
+  .tool-bar {
+    border-bottom: 1px dashed $card-border-color;
+
+    @include clearfix();
+  }
+
+  .md-footer {
+    border-top: 1px dashed $card-border-color;
+  }
+
+  .ace_gutter {
+    background: $gray-100;
+    color: $text-muted;
+  }
+
+  .ace_gutter-active-line {
+    background: $gray-100;
+  }
+
+  .preview-panel {
+    border-color: $card-border-color !important;
+    border-top: 1px solid;
+  }
+
+  .tool-bar .btn-group > .btn:first-child::before {
+    background-color: $card-border-color !important;
+  }
+
+  @media (max-width: (map-get($grid-breakpoints, md) - 1)) {
+    &.fullscreen {
+      .editor-panel,
+      .preview-panel {
+        border: 0 !important;
+      }
+
+      .editor-container > div:last-child {
+        position: relative;
+        z-index: 10;
+        transform: translateY(-100%);
+      }
+    }
+  }
+
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    .editor-container {
+      flex-direction: row;
+    }
+
+    .preview-panel {
+      border-top-width: 0;
+      border-left-width: 1px;
+    }
+
+    &.fullscreen .editor-panel,
+    &.fullscreen .preview-panel {
+      height: calc(100vh - 40px) !important;
+    }
+  }
+}
+
+.default-style[dir=rtl] :host /deep/ div.md-editor-container {
+  @import "~vendor/styles/_appwork/include";
+
+  @include media-breakpoint-up(md) {
+    .preview-panel {
+      border-right: 1px solid;
+      border-left-width: 0;
+    }
+  }
+}
+
+.material-style :host /deep/ div.md-editor-container {
+  @import "~vendor/styles/_appwork/include-material";
+
+  border-color: $card-border-color;
+
+  &.fullscreen {
+    z-index: $zindex-modal-top;
+  }
+
+  .tool-bar {
+    border-bottom: 1px dashed $card-border-color;
+
+    @include clearfix();
+  }
+
+  .md-footer {
+    border-top: 1px dashed $card-border-color;
+  }
+
+  .ace_gutter {
+    background: $gray-100;
+    color: $text-muted;
+  }
+
+  .ace_gutter-active-line {
+    background: $gray-100;
+  }
+
+  .preview-panel {
+    border-color: $card-border-color !important;
+    border-top: 1px solid;
+  }
+
+  .tool-bar .btn-group > .btn:first-child::before {
+    background-color: $card-border-color !important;
+  }
+
+  @media (max-width: (map-get($grid-breakpoints, md) - 1)) {
+    &.fullscreen {
+      .editor-panel,
+      .preview-panel {
+        border: 0 !important;
+      }
+
+      .editor-container > div:last-child {
+        position: relative;
+        z-index: 10;
+        transform: translateY(-100%);
+      }
+    }
+  }
+
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    .editor-container {
+      flex-direction: row;
+    }
+
+    .preview-panel {
+      border-top-width: 0;
+      border-left-width: 1px;
+    }
+
+    &.fullscreen .editor-panel,
+    &.fullscreen .preview-panel {
+      height: calc(100vh - 40px) !important;
+    }
+  }
+}
+
+.material-style[dir=rtl] :host /deep/ div.md-editor-container {
+  @import "~vendor/styles/_appwork/include-material";
+
+  @include media-breakpoint-up(md) {
+    .preview-panel {
+      border-right: 1px solid;
+      border-left-width: 0;
+    }
+  }
+}

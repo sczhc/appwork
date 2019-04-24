@@ -1,0 +1,21 @@
+<!-- Layout sidenav -->
+<div id="layout-sidenav" class="<% if local_assigns[:horizontal] == true %>layout-sidenav-horizontal sidenav-horizontal container-p-x flex-grow-0<% else %>layout-sidenav sidenav-vertical<% end %> sidenav bg-sidenav-theme">
+
+  <!-- Inner -->
+  <ul class="sidenav-inner<% if local_assigns[:horizontal] != true %> py-1<% end %>">
+
+    <li class="sidenav-item<%= current_page?(root_path) ? ' active' : '' %>">
+      <%= link_to root_path, class: "sidenav-link" do %>
+        <i class="sidenav-icon ion ion-ios-contact"></i><div>Home</div>
+      <% end %>
+    </li>
+
+    <li class="sidenav-item<%= current_page?(page2_path) ? ' active' : '' %>">
+      <%= link_to page2_path, class: "sidenav-link" do %>
+        <i class="sidenav-icon ion ion-md-desktop"></i><div>Page 2</div>
+      <% end %>
+    </li>
+
+  </ul>
+</div>
+<!-- / Layout sidenav -->

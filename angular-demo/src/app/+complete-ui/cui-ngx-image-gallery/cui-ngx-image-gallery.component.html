@@ -1,0 +1,26 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ngx-image-gallery</h3>
+  <a target="_blank" href="https://github.com/thatisuday/ngx-image-gallery" class="ui-block-description">https://github.com/thatisuday/ngx-image-gallery</a>
+
+  <div class="alert alert-warning rtl-only mt-5">
+    <strong>ngx-image-gallery</strong> does not support touch events and thumbnails in RTL mode.
+  </div>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example">
+    <!-- Gallery -->
+    <ngx-image-gallery
+      [images]="images"
+      [conf]="conf">
+    </ngx-image-gallery>
+
+    <div class="row">
+      <div class="col-md-3" *ngFor="let image of images">
+        <a href="javascript:void(0)" [title]="image.altText" (click)="openGallery(image)" class="img-thumbnail">
+          <img [src]="image.url" class="img-fluid" [alt]="image.altText">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

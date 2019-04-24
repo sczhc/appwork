@@ -1,0 +1,75 @@
+ng2-dropdown-menu .ng2-dropdown-menu[class] {
+  max-height: 250px;
+  width: auto;
+  background-clip: padding-box;
+
+  .ng2-menu-item {
+    overflow: hidden;
+    height: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: normal;
+  }
+}
+
+.default-style {
+  @import "~vendor/styles/_appwork/include";
+
+  .ng2-dropdown-menu[class] {
+    z-index: $zindex-popover;
+    padding: $dropdown-padding-y 0;
+    min-width: $dropdown-min-width;
+    border: $dropdown-border-width solid $dropdown-border-color;
+    background-color: $dropdown-bg;
+    box-shadow: $dropdown-box-shadow;
+
+    .ng2-menu-item {
+      padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+      color: $dropdown-link-color;
+      font-size: $font-size-base;
+      font-family: $font-family-base;
+      line-height: $dropdown-link-line-height;
+    }
+
+    .ng2-menu-item--selected {
+      background: $dropdown-link-hover-bg;
+      color: $dropdown-link-hover-color;
+    }
+
+    .ng2-menu-item:active {
+      background: $gray-200;
+      color: $dropdown-link-hover-color;
+    }
+  }
+}
+
+.material-style {
+  @import "~vendor/styles/_appwork/include-material";
+
+  .ng2-dropdown-menu[class] {
+    z-index: $zindex-popover;
+    padding: $dropdown-padding-y 0;
+    min-width: $dropdown-min-width;
+    border: 0;
+    background-color: $dropdown-bg;
+    box-shadow: $dropdown-box-shadow;
+
+    .ng2-menu-item {
+      padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+      color: $dropdown-link-color;
+      font-size: $font-size-base;
+      font-family: $font-family-base;
+      line-height: $dropdown-link-line-height;
+    }
+
+    .ng2-menu-item--selected {
+      background: $dropdown-link-hover-bg;
+      color: $dropdown-link-hover-color;
+    }
+
+    .ng2-menu-item:active {
+      background: $gray-200;
+      color: $dropdown-link-hover-color;
+    }
+  }
+}

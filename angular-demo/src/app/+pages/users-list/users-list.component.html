@@ -1,0 +1,160 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  Users
+</h4>
+
+<!-- Filters -->
+<div class="ui-bordered px-4 pt-4 mb-4">
+  <div class="form-row align-items-center">
+    <div class="col-md mb-4">
+      <label class="form-label">Verified</label>
+      <select class="custom-select" [(ngModel)]="filterVerified">
+        <option *ngFor="let item of ['Any', 'Yes', 'No']" [value]="item">{{item}}</option>
+      </select>
+    </div>
+    <div class="col-md mb-4">
+      <label class="form-label">Role</label>
+      <select class="custom-select" [(ngModel)]="filterRole">
+        <option *ngFor="let item of ['Any', 'User', 'Author', 'Staff', 'Admin']" [value]="item">{{item}}</option>
+      </select>
+    </div>
+    <div class="col-md mb-4">
+      <label class="form-label">Status</label>
+      <select class="custom-select" [(ngModel)]="filterStatus">
+        <option *ngFor="let item of ['Any', 'Active', 'Banned', 'Deleted']" [value]="item">{{item}}</option>
+      </select>
+    </div>
+    <div class="col-md mb-4">
+      <label class="form-label">Latest activity</label>
+      <custom-daterange-picker [(ngModel)]="filterLatestActivity"></custom-daterange-picker>
+    </div>
+    <div class="col-md col-xl-2 mb-4">
+      <label class="form-label d-none d-md-block">&nbsp;</label>
+      <button type="button" class="btn btn-secondary btn-block">Show</button>
+    </div>
+  </div>
+</div>
+<!-- / Filters -->
+
+<div class="card">
+
+  <!-- Table controls -->
+  <div class="card-body">
+
+    <div class="row">
+      <div class="col">
+        Per page: &nbsp;
+        <select
+          [(ngModel)]="perPage"
+          (change)="update()"
+          class="custom-select custom-select-sm d-inline-block w-auto">
+          <option *ngFor="let limit of [10, 20, 30, 40, 50]">{{limit}}</option>
+        </select>
+      </div>
+      <div class="col">
+        <input type="text"
+          [(ngModel)]="filterVal"
+          (input)="currentPage = 1; update()"
+          class="form-control form-control-sm d-inline-block w-auto float-sm-right"
+          placeholder="Search...">
+      </div>
+    </div>
+
+  </div>
+  <!-- / Table controls -->
+
+  <!-- Table -->
+  <hr class="border-light m-0">
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered card-table">
+      <thead>
+        <tr>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('id')">
+            ID<i class="ion text-muted ml-2" *ngIf="sortBy=='id'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('account')">
+            Account<i class="ion text-muted ml-2" *ngIf="sortBy=='account'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('email')">
+            Email<i class="ion text-muted ml-2" *ngIf="sortBy=='email'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('name')">
+            Name<i class="ion text-muted ml-2" *ngIf="sortBy=='name'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('latestActivity')">
+            Latest activity<i class="ion text-muted ml-2" *ngIf="sortBy=='latestActivity'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('verified')">
+            Verified<i class="ion text-muted ml-2" *ngIf="sortBy=='verified'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('role')">
+            Role<i class="ion text-muted ml-2" *ngIf="sortBy=='role'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('status')">
+            Status<i class="ion text-muted ml-2" *ngIf="sortBy=='status'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of usersData">
+          <td class="align-middle">{{user.id}}</td>
+          <td class="align-middle"><a href="javascript:void(0)">{{user.account}}</a></td>
+          <td class="align-middle">{{user.email}}</td>
+          <td class="align-middle">{{user.name}}</td>
+          <td class="align-middle">{{user.latestActivity}}</td>
+          <td class="align-middle">
+            <span class="ion" [ngClass]="{'ion-md-checkmark text-primary': user.verified, 'ion-md-close text-light': !user.verified}"></span>
+          </td>
+          <td class="align-middle">
+            <span *ngIf="user.role === 1">User</span>
+            <span *ngIf="user.role === 2">Author</span>
+            <span *ngIf="user.role === 3">Staff</span>
+            <span *ngIf="user.role === 4">Admin</span>
+          </td>
+          <td class="align-middle">
+            <span class="badge badge-outline-success" *ngIf="user.status === 1">Active</span>
+            <span class="badge badge-outline-danger" *ngIf="user.status === 2">Banned</span>
+            <span class="badge badge-outline-default" *ngIf="user.status === 3">Deleted</span>
+          </td>
+          <td class="text-center text-nowrap align-middle">
+            <a href="javascript:void(0)" class="btn btn-default btn-xs icon-btn md-btn-flat" ngbTooltip="Edit">
+              <i class="ion ion-md-create"></i>
+            </a>
+            <div class="btn-group" ngbDropdown [placement]="!isRTL ? 'bottom-right' : 'bottom-left'">
+              <button type="button" class="btn btn-default btn-xs icon-btn md-btn-flat hide-arrow" ngbDropdownToggle ngbTooltip="Actions">
+                <i class="ion ion-ios-settings"></i>
+              </button>
+              <div ngbDropdownMenu [class.dropdown-menu-right]="!isRTL">
+                <a class="dropdown-item" href="javascript:void(0)">View profile</a>
+                <a class="dropdown-item" href="javascript:void(0)">Ban user</a>
+                <a class="dropdown-item" href="javascript:void(0)">Remove</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- / Table -->
+
+  <!-- Pagination -->
+  <div class="card-body py-0">
+
+    <div class="row">
+      <div class="col-sm text-sm-left text-center pt-3">
+        <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+      </div>
+      <div class="col-sm pt-3">
+        <ngb-pagination
+          [collectionSize]="totalItems"
+          [pageSize]="perPage"
+          [(page)]="currentPage"
+          (pageChange)="update()"
+          size="sm"
+          class="d-flex justify-content-center justify-content-sm-end m-0"></ngb-pagination>
+      </div>
+    </div>
+
+  </div>
+  <!-- / Pagination -->
+</div>

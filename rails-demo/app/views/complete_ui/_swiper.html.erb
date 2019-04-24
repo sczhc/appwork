@@ -1,0 +1,313 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">Swiper</h3>
+  <a target="_blank" href="https://github.com/nolimits4web/swiper/" class="ui-block-description">https://github.com/nolimits4web/swiper/</a>
+
+  <samp class="cui-example-code-static">
+    &lt;%= stylesheet_link_tag 'swiper/swiper.css', media: 'all' %&gt;
+    &lt;%= javascript_include_tag 'swiper/swiper.js' %&gt;
+  </samp>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-lg">
+    <div class="swiper-container" id="swiper-default">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+    </div>
+
+    <!-- With arrows -->
+    <div class="swiper-container" id="swiper-with-arrows">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-button-next custom-icon"><i class="lnr lnr-chevron-right text-primary"></i></div>
+      <div class="swiper-button-prev custom-icon"><i class="lnr lnr-chevron-left text-primary"></i></div>
+    </div>
+
+    <!-- With pagination -->
+    <div class="swiper-container" id="swiper-with-pagination">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- With fraction pagination -->
+    <div class="swiper-container" id="swiper-with-fraction-pagination">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- With progress -->
+    <div class="swiper-container" id="swiper-with-progress">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next custom-icon"><i class="lnr lnr-chevron-right"></i></div>
+      <div class="swiper-button-prev custom-icon"><i class="lnr lnr-chevron-left"></i></div>
+    </div>
+
+    <!-- With scrollbar -->
+    <div class="swiper-container" id="swiper-with-scrollbar">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-scrollbar"></div>
+    </div>
+
+    <!-- Vertical -->
+    <div class="swiper-container" id="swiper-vertical">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Multiple slides -->
+    <div class="swiper-container" id="swiper-multiple-slides">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Fade effect -->
+    <div class="swiper-container" id="swiper-fade-effect">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination swiper-pagination-white"></div>
+      <div class="swiper-button-next custom-icon"><i class="lnr lnr-chevron-right small"></i></div>
+      <div class="swiper-button-prev custom-icon"><i class="lnr lnr-chevron-left small"></i></div>
+    </div>
+
+    <!-- 3D cube effect -->
+    <div class="swiper-container" id="swiper-3d-cube-effect">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- 3D coverflow effect -->
+    <div class="swiper-container" id="swiper-3d-coverflow-effect">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- 3D flip effect -->
+    <div class="swiper-container" id="swiper-3d-flip-effect">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next custom-icon"><i class="lnr lnr-chevron-right text-muted"></i></div>
+      <div class="swiper-button-prev custom-icon"><i class="lnr lnr-chevron-left text-muted"></i></div>
+    </div>
+
+    <!-- Styles -->
+    <style>
+      .swiper-container .swiper-slide {
+        padding: 5rem 0;
+        text-align: center;
+        font-size: 1.5rem;
+        background: #ecebed;
+      }
+
+      #swiper-vertical {
+        max-height: 195px;
+      }
+
+      #swiper-3d-cube-effect {
+        max-width: 300px;
+      }
+
+      #swiper-3d-coverflow-effect .swiper-slide {
+        max-width: 300px;
+      }
+
+      #swiper-3d-flip-effect,
+      #swiper-3d-flip-effect .swiper-slide {
+        max-width: 300px;
+      }
+
+      #swiper-3d-flip-effect {
+        padding: 50px;
+      }
+    </style>
+    <!-- / Styles -->
+
+    <!-- Javascript -->
+    <script>
+      $(function() {
+        var defaultSwiper = new Swiper('#swiper-default');
+
+        var swiperWithArrows = new Swiper('#swiper-with-arrows', {
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }
+        });
+
+        var swiperWithPagination = new Swiper('#swiper-with-pagination', {
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          }
+        });
+
+        var swiperWithFractionPagination = new Swiper('#swiper-with-fraction-pagination', {
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction'
+          }
+        });
+
+        var swiperWithProgress = new Swiper('#swiper-with-progress', {
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar'
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }
+        });
+
+        var swiperWithScrollbar = new Swiper('#swiper-with-scrollbar', {
+          scrollbar: {
+            el: '.swiper-scrollbar',
+            hide: true
+          }
+        });
+
+        var verticalSwiper = new Swiper('#swiper-vertical', {
+          direction: 'vertical',
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          }
+        });
+
+        var swiperMultipleSlides = new Swiper('#swiper-multiple-slides', {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          }
+        });
+
+        var swiperFadeEffect = new Swiper('#swiper-fade-effect', {
+          effect: 'fade',
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }
+        });
+
+        var swiper3dCubeEffect = new Swiper('#swiper-3d-cube-effect', {
+          effect: 'cube',
+          grabCursor: true,
+          cubeEffect: {
+            shadow: true,
+            slideShadows: true,
+            shadowOffset: 20,
+            shadowScale: 0.94
+          },
+          pagination: {
+            el: '.swiper-pagination'
+          }
+        });
+
+        var swiper3dCoverflowEffect = new Swiper('#swiper-3d-coverflow-effect', {
+          effect: 'coverflow',
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows : true
+          },
+          pagination: {
+            el: '.swiper-pagination'
+          }
+        });
+
+        var swiper3dFlipEffect = new Swiper('#swiper-3d-flip-effect', {
+          effect: 'flip',
+          grabCursor: true,
+          pagination: {
+            el: '.swiper-pagination'
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }
+        });
+      });
+    </script>
+    <!-- / Javascript -->
+  </div>
+</div>

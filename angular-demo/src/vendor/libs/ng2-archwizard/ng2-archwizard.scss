@@ -1,0 +1,400 @@
+@import '~vendor/styles/_custom-variables/libs';
+
+$ng2-archwizard-icon-size: 2.5rem !default;
+$ng2-archwizard-icon-border-width: 2px !default;
+$ng2-archwizard-icon-font-size: 1rem !default;
+$ng2-archwizard-spacer: 2rem !default;
+
+:host /deep/ wizard {
+  display: flex;
+  justify-content: flex-start;
+
+  &.vertical {
+    flex-direction: row;
+  }
+
+  &.horizontal {
+    flex-direction: column;
+  }
+
+  &.horizontal ul.steps-indicator {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &.vertical ul.steps-indicator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &.horizontal ul.steps-indicator li div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &.vertical ul.steps-indicator li div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+:host /deep/ wizard ul.steps-indicator {
+  flex-wrap: wrap;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  li {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0 $ng2-archwizard-spacer 0 ($ng2-archwizard-icon-size + 1.25rem) !important;
+    min-height: $ng2-archwizard-icon-size;
+    width: auto !important;
+
+    [dir=rtl] & {
+      padding: 0 ($ng2-archwizard-icon-size + 1.25rem) 0 $ng2-archwizard-spacer !important;
+    }
+
+    &[style*="Ionicons"]::before {
+      vertical-align: middle;
+      font-size: 115%;
+    }
+
+    &::before {
+      content: attr(step-symbol);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      margin-top: -($ng2-archwizard-icon-size / 2);
+      width: $ng2-archwizard-icon-size;
+      height: $ng2-archwizard-icon-size;
+      border: $ng2-archwizard-icon-border-width solid;
+      border-radius: 50%;
+      text-align: center;
+      line-height: calc(#{$ng2-archwizard-icon-size} - #{$ng2-archwizard-icon-border-width * 2});
+
+      [dir=rtl] & {
+        right: 0;
+        left: auto;
+      }
+    }
+
+    a {
+      margin: 0 !important;
+      padding: 0 !important;
+      text-align: inherit !important;
+      text-transform: none !important;
+      line-height: inherit !important;
+    }
+  }
+}
+
+:host /deep/ .wizard-steps.vertical {
+  flex-grow: 1;
+  min-width: 0 !important;
+  width: auto !important;
+}
+
+:host /deep/ wizard-navigation-bar.vertical {
+  position: sticky;
+  margin-top: -$ng2-archwizard-spacer !important;
+  max-width: none !important;
+  width: auto !important;
+
+  ul.steps-indicator {
+    margin-top: $ng2-archwizard-spacer !important;
+  }
+}
+
+.default-style :host /deep/  {
+  @import "~vendor/styles/_appwork/include";
+
+  wizard[class] wizard-navigation-bar[class].horizontal ul.steps-indicator[class] li div a,
+  wizard[class] wizard-navigation-bar[class].vertical ul.steps-indicator[class] li div a {
+    color: $body-color;
+    font-weight: $font-weight-semibold;
+  }
+
+  wizard ul.steps-indicator li {
+    margin: 0 0 map-get($spacers, 3) 0 !important;
+  }
+
+  wizard.ng2-archwizard-bottom:not(.ng2-archwizard-boxed-steps) ul.steps-indicator li {
+    margin: map-get($spacers, 3) 0 0 0 !important;
+  }
+
+  wizard ul.steps-indicator li {
+    &::before {
+      border-color: $border-color;
+      color: $body-color;
+      opacity: .4;
+    }
+
+    div a {
+      font-family: $font-family-base !important;
+      opacity: .4;
+    }
+
+    &.current div a,
+    &.done div a,
+    &.editing div a,
+    &.current::before,
+    &.editing::before {
+      opacity: 1;
+    }
+  }
+
+  // Boxed
+
+  .ng2-archwizard-boxed-steps {
+    ul.steps-indicator {
+      margin-bottom: map-get($spacers, 3) !important;
+      padding: map-get($spacers, 3) 0 0 $card-spacer-x !important;
+      border: $card-border-width solid $card-border-color;
+      background: $card-bg;
+      background-clip: padding-box;
+      box-shadow: $card-shadow;
+
+      @include border-radius($border-radius);
+
+      li {
+        margin-bottom: map-get($spacers, 3) !important;
+        padding: 0 $card-spacer-x 0 ($ng2-archwizard-icon-size + 1.25rem) !important;
+      }
+    }
+
+    &.ng2-archwizard-bottom ul.steps-indicator {
+      margin-top: map-get($spacers, 3) !important;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  // Vertical
+
+  wizard.vertical {
+    @media (max-width: (map-get($grid-breakpoints, md) - 1)) {
+      flex-direction: column !important;
+
+      wizard-navigation-bar {
+        position: relative !important;
+        margin-top: 0 !important;
+      }
+
+      ul.steps-indicator {
+        flex-direction: row !important;
+        margin-top: 0 !important;
+      }
+
+      &.ng2-archwizard-right {
+        flex-direction: column-reverse !important;
+      }
+    }
+
+    @media (min-width: map-get($grid-breakpoints, md)) {
+      &.ng2-archwizard-right:not(.ng2-archwizard-boxed-steps) ul.steps-indicator li {
+        padding: 0 0 0 ($ng2-archwizard-spacer + $ng2-archwizard-icon-size + 1.25rem) !important;
+
+        &::before {
+          left: $ng2-archwizard-spacer;
+        }
+      }
+
+      &.ng2-archwizard-boxed-steps ul.steps-indicator {
+        padding-top: $card-spacer-x !important;
+        padding-bottom: $card-spacer-x - map-get($spacers, 3) !important;
+      }
+
+      &.ng2-archwizard-boxed-steps.ng2-archwizard-left ul.steps-indicator {
+        margin-right: map-get($spacers, 3) !important;
+        margin-bottom: 0 !important;
+      }
+
+      &.ng2-archwizard-boxed-steps.ng2-archwizard-right ul.steps-indicator {
+        margin-bottom: 0 !important;
+        margin-left: map-get($spacers, 3) !important;
+      }
+    }
+  }
+}
+
+.default-style[dir=rtl] :host /deep/  {
+  @import "~vendor/styles/_appwork/include";
+
+  .ng2-archwizard-boxed-steps ul.steps-indicator {
+    padding: map-get($spacers, 3) $card-spacer-x 0 0 !important;
+
+    li {
+      padding: 0 ($ng2-archwizard-icon-size + 1.25rem) 0 $card-spacer-x !important;
+    }
+  }
+
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    wizard.vertical.ng2-archwizard-right:not(.ng2-archwizard-boxed-steps) ul.steps-indicator li {
+      padding: 0 ($ng2-archwizard-spacer + $ng2-archwizard-icon-size + 1.25rem) 0 0 !important;
+
+      &::before {
+        right: $ng2-archwizard-spacer;
+        left: auto;
+      }
+    }
+
+    wizard.vertical.ng2-archwizard-left ul.steps-indicator {
+      margin-right: 0 !important;
+      margin-left: map-get($spacers, 3) !important;
+    }
+
+    wizard.vertical.ng2-archwizard-right ul.steps-indicator {
+      margin-right: map-get($spacers, 3) !important;
+      margin-left: 0 !important;
+    }
+  }
+}
+
+.material-style :host /deep/ {
+  @import "~vendor/styles/_appwork/include-material";
+
+  wizard[class] wizard-navigation-bar[class].horizontal ul.steps-indicator[class] li div a,
+  wizard[class] wizard-navigation-bar[class].vertical ul.steps-indicator[class] li div a {
+    color: $body-color;
+    font-weight: $font-weight-semibold;
+  }
+
+  wizard ul.steps-indicator li {
+    margin: 0 0 map-get($spacers, 3) 0 !important;
+  }
+
+  wizard.ng2-archwizard-bottom:not(.ng2-archwizard-boxed-steps) ul.steps-indicator li {
+    margin: map-get($spacers, 3) 0 0 0 !important;
+  }
+
+  wizard ul.steps-indicator li {
+    &::before {
+      border-color: $border-color;
+      color: $body-color;
+      opacity: .4;
+    }
+
+    div a {
+      font-family: $font-family-base !important;
+      opacity: .4;
+    }
+
+    &.current div a,
+    &.done div a,
+    &.editing div a,
+    &.current::before,
+    &.editing::before {
+      opacity: 1;
+    }
+  }
+
+  // Boxed
+
+  .ng2-archwizard-boxed-steps {
+    ul.steps-indicator {
+      margin-bottom: map-get($spacers, 3) !important;
+      padding: map-get($spacers, 3) 0 0 $card-spacer-x !important;
+      border: $card-border-width solid $card-border-color;
+      background: $card-bg;
+      background-clip: padding-box;
+      box-shadow: $card-shadow;
+
+      @include border-radius($border-radius);
+
+      li {
+        margin-bottom: map-get($spacers, 3) !important;
+        padding: 0 $card-spacer-x 0 ($ng2-archwizard-icon-size + 1.25rem) !important;
+      }
+    }
+
+    &.ng2-archwizard-bottom ul.steps-indicator {
+      margin-top: map-get($spacers, 3) !important;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  // Vertical
+
+  wizard.vertical {
+    @media (max-width: (map-get($grid-breakpoints, md) - 1)) {
+      flex-direction: column !important;
+
+      wizard-navigation-bar {
+        position: relative !important;
+        margin-top: 0 !important;
+      }
+
+      ul.steps-indicator {
+        flex-direction: row !important;
+        margin-top: 0 !important;
+      }
+
+      &.ng2-archwizard-right {
+        flex-direction: column-reverse !important;
+      }
+    }
+
+    @media (min-width: map-get($grid-breakpoints, md)) {
+      &.ng2-archwizard-right:not(.ng2-archwizard-boxed-steps) ul.steps-indicator li {
+        padding: 0 0 0 ($ng2-archwizard-spacer + $ng2-archwizard-icon-size + 1.25rem) !important;
+
+        &::before {
+          left: $ng2-archwizard-spacer;
+        }
+      }
+
+      &.ng2-archwizard-boxed-steps ul.steps-indicator {
+        padding-top: $card-spacer-x !important;
+        padding-bottom: $card-spacer-x - map-get($spacers, 3) !important;
+      }
+
+      &.ng2-archwizard-boxed-steps.ng2-archwizard-left ul.steps-indicator {
+        margin-right: map-get($spacers, 3) !important;
+        margin-bottom: 0 !important;
+      }
+
+      &.ng2-archwizard-boxed-steps.ng2-archwizard-right ul.steps-indicator {
+        margin-bottom: 0 !important;
+        margin-left: map-get($spacers, 3) !important;
+      }
+    }
+  }
+}
+
+.material-style[dir=rtl] :host /deep/  {
+  @import "~vendor/styles/_appwork/include-material";
+
+  .ng2-archwizard-boxed-steps ul.steps-indicator {
+    padding: map-get($spacers, 3) $card-spacer-x 0 0 !important;
+
+    li {
+      padding: 0 ($ng2-archwizard-icon-size + 1.25rem) 0 $card-spacer-x !important;
+    }
+  }
+
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    wizard.vertical.ng2-archwizard-right:not(.ng2-archwizard-boxed-steps) ul.steps-indicator li {
+      padding: 0 ($ng2-archwizard-spacer + $ng2-archwizard-icon-size + 1.25rem) 0 0 !important;
+
+      &::before {
+        right: $ng2-archwizard-spacer;
+        left: auto;
+      }
+    }
+
+    wizard.vertical.ng2-archwizard-left ul.steps-indicator {
+      margin-right: 0 !important;
+      margin-left: map-get($spacers, 3) !important;
+    }
+
+    wizard.vertical.ng2-archwizard-right ul.steps-indicator {
+      margin-right: map-get($spacers, 3) !important;
+      margin-left: 0 !important;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<% content_for :styles do %>
+  <%= stylesheet_link_tag 'flot/flot.css', media: 'all' %>
+<% end %>
+
+<% content_for :scripts do %>
+  <!-- Dependencies -->
+  <%= javascript_include_tag 'flot/flot.js' %>
+  
+  <%= javascript_include_tag 'charts_flot.js' %>
+<% end %>
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">Charts /</span> Flot.js
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-5">
+
+<div class="demo-vertical-spacing-lg">
+  <div id="flot-graph" style="height: 250px"></div>
+  <div id="flot-bars" style="height: 250px"></div>
+  <div id="flot-categories" style="height: 250px"></div>
+  <div id="flot-pie" style="height: 250px"></div>
+</div>

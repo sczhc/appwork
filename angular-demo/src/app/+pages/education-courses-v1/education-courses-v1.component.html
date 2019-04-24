@@ -1,0 +1,66 @@
+<h4 class="d-flex flex-wrap justify-content-between align-items-center w-100 font-weight-bold pt-2 mb-4">
+  <div class="col-12 col-md px-0 pb-2">Courses</div>
+  <div class="col-12 col-md-3 px-0 pb-2">
+    <input type="text" class="form-control" placeholder="Search...">
+  </div>
+</h4>
+
+<ul class="nav bg-lighter container-p-x py-1 container-m--x mb-4">
+  <li class="nav-item">
+    <a class="nav-link text-dark font-weight-bold pl-0" href="javascript:void(0)">Development</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-muted" href="javascript:void(0)">Web Development</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-muted" href="javascript:void(0)">Mobile Apps</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-muted" href="javascript:void(0)">Programming Languages</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-muted" href="javascript:void(0)">Databases</a>
+  </li>
+</ul>
+
+<div class="row">
+  <div *ngFor="let course of coursesData" class="col-sm-6 col-xl-4">
+
+    <div class="card mb-4">
+      <div class="w-100">
+        <a href="javascript:void(0)" class="card-img-top d-block ui-rect-60 ui-bg-cover" [style.backgroundImage]="'url(\'assets/img/bg/' + course.image + '\')'">
+          <div class="d-flex justify-content-between align-items-end ui-rect-content p-3">
+            <div class="flex-shrink-1">
+              <span *ngFor="let tag of course.tags" class="badge badge-primary mr-1">{{tag}}</span>
+            </div>
+            <div class="text-big"><div class="badge badge-dark font-weight-bold">{{course.price ? formatPrice(course.price) : 'FREE'}}</div></div>
+          </div>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="mb-3"><a href="javascript:void(0)" class="text-dark">{{course.title}}</a></h5>
+        <p class="text-muted mb-3">{{course.description}}</p>
+        <div class="media">
+          <div class="media-body">
+            <div class="ui-stars">
+              <div class="ui-star" *ngFor="let i of [1, 2, 3, 4, 5]" [ngClass]="uiStarClass(i, course.rating)">
+                <i class="ion ion-md-star"></i>
+                <i class="ion ion-md-star"></i>
+              </div>
+            </div>
+            <a href="javascript:void(0)" class="text-muted small">{{course.votes}}</a>
+          </div>
+          <div class="text-muted small">
+            <i class="ion ion-md-time text-primary"></i>
+            <span>{{course.duration}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="border-light mt-2 mb-4">
+
+<ngb-pagination [collectionSize]="50" class="d-flex justify-content-center"></ngb-pagination>

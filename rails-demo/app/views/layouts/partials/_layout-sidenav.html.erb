@@ -1,0 +1,623 @@
+
+<!-- Layout sidenav -->
+<div id="layout-sidenav" class="<% if local_assigns[:horizontal] == true %>layout-sidenav-horizontal sidenav-horizontal container-p-x flex-grow-0<% else %>layout-sidenav sidenav-vertical<% end %> sidenav bg-sidenav-theme">
+  <% if local_assigns[:horizontal] != true %>
+  <!-- Brand demo (see assets/css/demo/demo.css) -->
+  <div class="app-brand demo">
+    <span class="app-brand-logo demo bg-primary">
+      <svg viewBox="0 0 148 80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient id="a" x1="46.49" x2="62.46" y1="53.39" y2="48.2" gradientUnits="userSpaceOnUse"><stop stop-opacity=".25" offset="0"></stop><stop stop-opacity=".1" offset=".3"></stop><stop stop-opacity="0" offset=".9"></stop></linearGradient><linearGradient id="e" x1="76.9" x2="92.64" y1="26.38" y2="31.49" xlink:href="#a"></linearGradient><linearGradient id="d" x1="107.12" x2="122.74" y1="53.41" y2="48.33" xlink:href="#a"></linearGradient></defs><path style="fill: #fff;" transform="translate(-.1)" d="M121.36,0,104.42,45.08,88.71,3.28A5.09,5.09,0,0,0,83.93,0H64.27A5.09,5.09,0,0,0,59.5,3.28L43.79,45.08,26.85,0H.1L29.43,76.74A5.09,5.09,0,0,0,34.19,80H53.39a5.09,5.09,0,0,0,4.77-3.26L74.1,35l16,41.74A5.09,5.09,0,0,0,94.82,80h18.95a5.09,5.09,0,0,0,4.76-3.24L148.1,0Z"></path><path transform="translate(-.1)" d="M52.19,22.73l-8.4,22.35L56.51,78.94a5,5,0,0,0,1.64-2.19l7.34-19.2Z" fill="url(#a)"></path><path transform="translate(-.1)" d="M95.73,22l-7-18.69a5,5,0,0,0-1.64-2.21L74.1,35l8.33,21.79Z" fill="url(#e)"></path><path transform="translate(-.1)" d="M112.73,23l-8.31,22.12,12.66,33.7a5,5,0,0,0,1.45-2l7.3-18.93Z" fill="url(#d)"></path></svg>
+    </span>
+    <a href="/" class="app-brand-text demo sidenav-text font-weight-normal ml-2">Appwork</a>
+    <a href="javascript:void(0)" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
+      <i class="ion ion-md-menu align-middle"></i>
+    </a>
+  </div>
+
+  <div class="sidenav-divider mt-0"></div>
+  <% end %>
+
+  <!-- Links -->
+  <ul class="sidenav-inner<% if local_assigns[:horizontal] != true %> py-1<% end %>">
+
+    <!-- Dashboards -->
+    <li class="sidenav-item<%= current_page_path?('/dashboards/') || request.path == '/' ? ' active open' : '' %>">
+      <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-speedometer"></i><div>Dashboards</div></a>
+
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page?(dashboards_dashboard_1_path)|| request.path == '/' ? ' active' : '' %>">
+          <%= link_to dashboards_dashboard_1_path, class: "sidenav-link" do %><div>Dashboard 1</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(dashboards_dashboard_2_path) ? ' active' : '' %>">
+          <%= link_to dashboards_dashboard_2_path, class: "sidenav-link" do %><div>Dashboard 2</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(dashboards_dashboard_3_path) ? ' active' : '' %>">
+          <%= link_to dashboards_dashboard_3_path, class: "sidenav-link" do %><div>Dashboard 3</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(dashboards_dashboard_4_path) ? ' active' : '' %>">
+          <%= link_to dashboards_dashboard_4_path, class: "sidenav-link" do %><div>Dashboard 4</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(dashboards_dashboard_5_path) ? ' active' : '' %>">
+          <%= link_to dashboards_dashboard_5_path, class: "sidenav-link" do %><div>Dashboard 5</div><% end %>
+        </li>
+      </ul>
+    </li>
+
+    <!-- Layouts -->
+    <li class="sidenav-item<%= current_page_path?('/layout-examples/') ? ' active open' : '' %>">
+      <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-ios-albums"></i><div>Layouts</div></a>
+
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page?(layout_examples_options_path) ? ' active' : '' %>">
+          <%= link_to layout_examples_options_path, class: "sidenav-link" do %><div>Layout options</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(layout_examples_helpers_path) ? ' active' : '' %>">
+          <%= link_to layout_examples_helpers_path, class: "sidenav-link" do %><div>Layout helpers</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(layout_examples_layout_1_path) ? ' active' : '' %>">
+          <%= link_to layout_examples_layout_1_path, class: "sidenav-link" do %><div>Layout 1</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(layout_examples_layout_1_flex_path) ? ' active' : '' %>">
+          <%= link_to layout_examples_layout_1_flex_path, class: "sidenav-link" do %><div>Layout 1 (Flex)</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(layout_examples_layout_2_path) ? ' active' : '' %>">
+          <%= link_to layout_examples_layout_2_path, class: "sidenav-link" do %><div>Layout 2</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(layout_examples_layout_2_flex_path) ? ' active' : '' %>">
+          <%= link_to layout_examples_layout_2_flex_path, class: "sidenav-link" do %><div>Layout 2 (Flex)</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(layout_examples_without_navbar_path) ? ' active' : '' %>">
+          <%= link_to layout_examples_without_navbar_path, class: "sidenav-link" do %><div>Without navbar</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(layout_examples_without_navbar_flex_path) ? ' active' : '' %>">
+          <%= link_to layout_examples_without_navbar_flex_path, class: "sidenav-link" do %><div>Without navbar (Flex)</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(layout_examples_without_sidenav_path) ? ' active' : '' %>">
+          <%= link_to layout_examples_without_sidenav_path, class: "sidenav-link" do %><div>Without sidenav</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(layout_examples_horizontal_sidenav_path) ? ' active' : '' %>">
+          <%= link_to layout_examples_horizontal_sidenav_path, class: "sidenav-link" do %><div>Horizontal sidenav</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(layout_examples_blank_path) ? ' active' : '' %>">
+          <%= link_to layout_examples_blank_path, class: "sidenav-link" do %><div>Blank</div><% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="sidenav-divider mb-1"></li>
+    <li class="sidenav-header small font-weight-semibold">ELEMENTS</li>
+
+    <li class="sidenav-item<%= current_page?(typography_typography_path) ? ' active' : '' %>">
+      <%= link_to typography_typography_path, class: "sidenav-link" do %><i class="sidenav-icon ion ion-md-quote"></i><div>Typography</div><% end %>
+    </li>
+
+    <!-- UI elements -->
+    <li class="sidenav-item<%= current_page_path?('/ui/') ? ' active open' : '' %>">
+      <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-cube"></i><div>User inteface</div></a>
+
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page?(ui_buttons_path) ? ' active' : '' %>">
+          <%= link_to ui_buttons_path, class: "sidenav-link" do %><div>Buttons</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_badges_path) ? ' active' : '' %>">
+          <%= link_to ui_badges_path, class: "sidenav-link" do %><div>Badges</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_button_groups_path) ? ' active' : '' %>">
+          <%= link_to ui_button_groups_path, class: "sidenav-link" do %><div>Button groups</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_dropdowns_path) ? ' active' : '' %>">
+          <%= link_to ui_dropdowns_path, class: "sidenav-link" do %><div>Dropdowns</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_navs_path) ? ' active' : '' %>">
+          <%= link_to ui_navs_path, class: "sidenav-link" do %><div>Navs</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_pagination_path) ? ' active' : '' %>">
+          <%= link_to ui_pagination_path, class: "sidenav-link" do %><div>Pagination and breadcrumbs</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_progress_path) ? ' active' : '' %>">
+          <%= link_to ui_progress_path, class: "sidenav-link" do %><div>Progress bars</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_list_groups_path) ? ' active' : '' %>">
+          <%= link_to ui_list_groups_path, class: "sidenav-link" do %><div>List groups</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_notifications_path) ? ' active' : '' %>">
+          <%= link_to ui_notifications_path, class: "sidenav-link" do %><div>Notifications</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_modals_path) ? ' active' : '' %>">
+          <%= link_to ui_modals_path, class: "sidenav-link" do %><div>Modals</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_tooltips_path) ? ' active' : '' %>">
+          <%= link_to ui_tooltips_path, class: "sidenav-link" do %><div>Tooltips and popovers</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_thumbnails_path) ? ' active' : '' %>">
+          <%= link_to ui_thumbnails_path, class: "sidenav-link" do %><div>Thumbnails</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_cards_path) ? ' active' : '' %>">
+          <%= link_to ui_cards_path, class: "sidenav-link" do %><div>Cards</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_accordion_path) ? ' active' : '' %>">
+          <%= link_to ui_accordion_path, class: "sidenav-link" do %><div>Accordion</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_app_brand_path) ? ' active' : '' %>">
+          <%= link_to ui_app_brand_path, class: "sidenav-link" do %><div>App brand</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_navbar_path) ? ' active' : '' %>">
+          <%= link_to ui_navbar_path, class: "sidenav-link" do %><div>Navbar</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_sidenav_path) ? ' active' : '' %>">
+          <%= link_to ui_sidenav_path, class: "sidenav-link" do %><div>Sidenav</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_footer_path) ? ' active' : '' %>">
+          <%= link_to ui_footer_path, class: "sidenav-link" do %><div>Footer</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_carousel_path) ? ' active' : '' %>">
+          <%= link_to ui_carousel_path, class: "sidenav-link" do %><div>Carousel</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_lightbox_path) ? ' active' : '' %>">
+          <%= link_to ui_lightbox_path, class: "sidenav-link" do %><div>Lightbox</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_drag_and_drop_path) ? ' active' : '' %>">
+          <%= link_to ui_drag_and_drop_path, class: "sidenav-link" do %><div>Drag&amp;Drop</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_treeview_path) ? ' active' : '' %>">
+          <%= link_to ui_treeview_path, class: "sidenav-link" do %><div>Treeview</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_media_player_path) ? ' active' : '' %>">
+          <%= link_to ui_media_player_path, class: "sidenav-link" do %><div>Plyr</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_cropper_path) ? ' active' : '' %>">
+          <%= link_to ui_cropper_path, class: "sidenav-link" do %><div>Cropper.js</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_tour_path) ? ' active' : '' %>">
+          <%= link_to ui_tour_path, class: "sidenav-link" do %><div>Bootstrap tour</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(ui_fullcalendar_path) ? ' active' : '' %>">
+          <%= link_to ui_fullcalendar_path, class: "sidenav-link" do %><div>Fullcalendar</div><% end %>
+        </li>
+      </ul>
+    </li>
+
+    <!-- Forms -->
+    <li class="sidenav-item<%= current_page_path?('/forms/') ? ' active open' : '' %>">
+      <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-switch"></i><div>Forms</div></a>
+
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page?(forms_layouts_path) ? ' active' : '' %>">
+          <%= link_to forms_layouts_path, class: "sidenav-link" do %><div>Layouts and elements</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(forms_controls_path) ? ' active' : '' %>">
+          <%= link_to forms_controls_path, class: "sidenav-link" do %><div>Controls</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(forms_custom_controls_path) ? ' active' : '' %>">
+          <%= link_to forms_custom_controls_path, class: "sidenav-link" do %><div>Custom controls</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(forms_input_groups_path) ? ' active' : '' %>">
+          <%= link_to forms_input_groups_path, class: "sidenav-link" do %><div>Input groups</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(forms_switchers_path) ? ' active' : '' %>">
+          <%= link_to forms_switchers_path, class: "sidenav-link" do %><div>Switchers</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(forms_sliders_path) ? ' active' : '' %>">
+          <%= link_to forms_sliders_path, class: "sidenav-link" do %><div>Sliders</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(forms_selects_path) ? ' active' : '' %>">
+          <%= link_to forms_selects_path, class: "sidenav-link" do %><div>Selects and tags</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(forms_pickers_path) ? ' active' : '' %>">
+          <%= link_to forms_pickers_path, class: "sidenav-link" do %><div>Pickers</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(forms_editors_path) ? ' active' : '' %>">
+          <%= link_to forms_editors_path, class: "sidenav-link" do %><div>Editors</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(forms_file_upload_path) ? ' active' : '' %>">
+          <%= link_to forms_file_upload_path, class: "sidenav-link" do %><div>File upload</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(forms_validation_path) ? ' active' : '' %>">
+          <%= link_to forms_validation_path, class: "sidenav-link" do %><div>jQuery Validation</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(forms_wizard_path) ? ' active' : '' %>">
+          <%= link_to forms_wizard_path, class: "sidenav-link" do %><div>SmartWizard</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(forms_typeahead_path) ? ' active' : '' %>">
+          <%= link_to forms_typeahead_path, class: "sidenav-link" do %><div>Typeahead</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(forms_dual_listbox_path) ? ' active' : '' %>">
+          <%= link_to forms_dual_listbox_path, class: "sidenav-link" do %><div>Bootstrap Dual Listbox</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(forms_extras_path) ? ' active' : '' %>">
+          <%= link_to forms_extras_path, class: "sidenav-link" do %><div>Extras</div><% end %>
+        </li>
+      </ul>
+    </li>
+
+    <!--  Tables -->
+    <li class="sidenav-item<%= current_page_path?('/tables/') ? ' active open' : '' %>">
+      <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-grid"></i><div>Tables</div></a>
+
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page?(tables_bootstrap_path) ? ' active' : '' %>">
+          <%= link_to tables_bootstrap_path, class: "sidenav-link" do %><div>Bootstrap</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(tables_datatables_path) ? ' active' : '' %>">
+          <%= link_to tables_datatables_path, class: "sidenav-link" do %><div>DataTables</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(tables_bootstrap_table_path) ? ' active' : '' %>">
+          <%= link_to tables_bootstrap_table_path, class: "sidenav-link" do %><div>Bootstrap table</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(tables_bootstrap_sortable_path) ? ' active' : '' %>">
+          <%= link_to tables_bootstrap_sortable_path, class: "sidenav-link" do %><div>Bootstrap Sortable</div><% end %>
+        </li>
+      </ul>
+    </li>
+
+    <!-- Charts -->
+    <li class="sidenav-item<%= current_page_path?('/charts/') ? ' active open' : '' %>">
+      <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-pie"></i><div>Charts</div></a>
+
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page?(charts_gmaps_path) ? ' active' : '' %>">
+          <%= link_to charts_gmaps_path, class: "sidenav-link" do %><div>GMaps</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(charts_mapael_path) ? ' active' : '' %>">
+          <%= link_to charts_mapael_path, class: "sidenav-link" do %><div>Mapael</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(charts_flot_path) ? ' active' : '' %>">
+          <%= link_to charts_flot_path, class: "sidenav-link" do %><div>Flot.js</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(charts_c3_path) ? ' active' : '' %>">
+          <%= link_to charts_c3_path, class: "sidenav-link" do %><div>C3.js</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(charts_chartist_path) ? ' active' : '' %>">
+          <%= link_to charts_chartist_path, class: "sidenav-link" do %><div>Chartist</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(charts_chartjs_path) ? ' active' : '' %>">
+          <%= link_to charts_chartjs_path, class: "sidenav-link" do %><div>Chart.js</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(charts_morrisjs_path) ? ' active' : '' %>">
+          <%= link_to charts_morrisjs_path, class: "sidenav-link" do %><div>Morris.js</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(charts_sparkline_path) ? ' active' : '' %>">
+          <%= link_to charts_sparkline_path, class: "sidenav-link" do %><div>Sparkline</div><% end %>
+        </li>
+      </ul>
+    </li>
+
+    <!--  Icons -->
+    <li class="sidenav-item<%= current_page_path?('/icons/') ? ' active open' : '' %>">
+      <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-ios-heart"></i><div>Icons</div></a>
+
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page?(icons_font_awesome_path) ? ' active' : '' %>">
+          <%= link_to icons_font_awesome_path, class: "sidenav-link" do %><div>Font Awesome 5</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(icons_ionicons_path) ? ' active' : '' %>">
+          <%= link_to icons_ionicons_path, class: "sidenav-link" do %><div>Ionicons</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(icons_linearicons_path) ? ' active' : '' %>">
+          <%= link_to icons_linearicons_path, class: "sidenav-link" do %><div>Linearicons</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(icons_openiconic_path) ? ' active' : '' %>">
+          <%= link_to icons_openiconic_path, class: "sidenav-link" do %><div>Open Iconic</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(icons_stroke7_path) ? ' active' : '' %>">
+          <%= link_to icons_stroke7_path, class: "sidenav-link" do %><div>Stroke Icons 7</div><% end %>
+        </li>
+      </ul>
+    </li>
+
+    <!--  Miscellaneous -->
+    <li class="sidenav-item<%= current_page_path?('/misc/') ? ' active open' : '' %>">
+      <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-ios-flask"></i><div>Miscellaneous</div></a>
+
+      <ul class="sidenav-menu">
+        <li class="sidenav-item<%= current_page?(misc_masonry_path) ? ' active' : '' %>">
+          <%= link_to misc_masonry_path, class: "sidenav-link" do %><div>Masonry</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(misc_spinkit_path) ? ' active' : '' %>">
+          <%= link_to misc_spinkit_path, class: "sidenav-link" do %><div>SpinKit</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(misc_ladda_path) ? ' active' : '' %>">
+          <%= link_to misc_ladda_path, class: "sidenav-link" do %><div>Ladda</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(misc_vegasjs_path) ? ' active' : '' %>">
+          <%= link_to misc_vegasjs_path, class: "sidenav-link" do %><div>Vegas.js</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(misc_numeraljs_path) ? ' active' : '' %>">
+          <%= link_to misc_numeraljs_path, class: "sidenav-link" do %><div>Numeral.js</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(misc_blockui_path) ? ' active' : '' %>">
+          <%= link_to misc_blockui_path, class: "sidenav-link" do %><div>BlockUI</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(misc_idle_timer_path) ? ' active' : '' %>">
+          <%= link_to misc_idle_timer_path, class: "sidenav-link" do %><div>Idle Timer</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(misc_perfect_scrollbar_path) ? ' active' : '' %>">
+          <%= link_to misc_perfect_scrollbar_path, class: "sidenav-link" do %><div>Perfect Scrollbar</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(misc_clipboardjs_path) ? ' active' : '' %>">
+          <%= link_to misc_clipboardjs_path, class: "sidenav-link" do %><div>Clipboard.js</div><% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="sidenav-divider mb-1"></li>
+    <li class="sidenav-header small font-weight-semibold">EXTRAS</li>
+
+    <!-- Pages -->
+    <li class="sidenav-item<%= current_page_path?('/pages/') ? ' active open' : '' %>">
+      <a href="javascript:void(0)" class="sidenav-link sidenav-toggle">
+        <i class="sidenav-icon ion ion-md-document"></i>
+        <div>Pages</div>
+        <div class="pl-1 ml-auto"><div class="badge badge-primary">59</div></div>
+      </a>
+      <ul class="sidenav-menu">
+
+        <li class="sidenav-item<%= current_page_path?('/pages/articles/') ? ' active open' : '' %>">
+          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Articles</div></a>
+
+          <ul class="sidenav-menu">
+            <li class="sidenav-item<%= current_page?(pages_articles_list_path) ? ' active' : '' %>">
+              <%= link_to pages_articles_list_path, class: "sidenav-link" do %><div>List</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_articles_edit_path) ? ' active' : '' %>">
+              <%= link_to pages_articles_edit_path, class: "sidenav-link" do %><div>Edit</div><% end %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sidenav-item<%= current_page_path?('/pages/authentication/') ? ' active open' : '' %>">
+          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Authentication</div></a>
+
+          <ul class="sidenav-menu">
+            <li class="sidenav-item<%= current_page?(pages_authentication_login_v1_path) ? ' active' : '' %>">
+              <%= link_to pages_authentication_login_v1_path, class: "sidenav-link" do %><div>Login v1</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_authentication_register_v1_path) ? ' active' : '' %>">
+              <%= link_to pages_authentication_register_v1_path, class: "sidenav-link" do %><div>Register v1</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_authentication_login_v2_path) ? ' active' : '' %>">
+              <%= link_to pages_authentication_login_v2_path, class: "sidenav-link" do %><div>Login v2</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_authentication_register_v2_path) ? ' active' : '' %>">
+              <%= link_to pages_authentication_register_v2_path, class: "sidenav-link" do %><div>Register v2</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_authentication_login_v3_path) ? ' active' : '' %>">
+              <%= link_to pages_authentication_login_v3_path, class: "sidenav-link" do %><div>Login v3</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_authentication_register_v3_path) ? ' active' : '' %>">
+              <%= link_to pages_authentication_register_v3_path, class: "sidenav-link" do %><div>Register v3</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_authentication_login_and_register_path) ? ' active' : '' %>">
+              <%= link_to pages_authentication_login_and_register_path, class: "sidenav-link" do %><div>Login + Register</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_authentication_lock_screen_v1_path) ? ' active' : '' %>">
+              <%= link_to pages_authentication_lock_screen_v1_path, class: "sidenav-link" do %><div>Lock screen v1</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_authentication_lock_screen_v2_path) ? ' active' : '' %>">
+              <%= link_to pages_authentication_lock_screen_v2_path, class: "sidenav-link" do %><div>Lock screen v2</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_authentication_password_reset_path) ? ' active' : '' %>">
+              <%= link_to pages_authentication_password_reset_path, class: "sidenav-link" do %><div>Password reset</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_authentication_email_confirm_path) ? ' active' : '' %>">
+              <%= link_to pages_authentication_email_confirm_path, class: "sidenav-link" do %><div>Email confirm</div><% end %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sidenav-item<%= current_page_path?('/pages/education/') ? ' active open' : '' %>">
+          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Education</div></a>
+
+          <ul class="sidenav-menu">
+            <li class="sidenav-item<%= current_page?(pages_education_courses_v1_path) ? ' active' : '' %>">
+              <%= link_to pages_education_courses_v1_path, class: "sidenav-link" do %><div>Courses v1</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_education_courses_v2_path) ? ' active' : '' %>">
+              <%= link_to pages_education_courses_v2_path, class: "sidenav-link" do %><div>Courses v2</div><% end %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sidenav-item<%= current_page_path?('/pages/e-commerce/') ? ' active open' : '' %>">
+          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>E-commerce</div></a>
+
+          <ul class="sidenav-menu">
+            <li class="sidenav-item<%= current_page?(pages_e_commerce_product_list_path) ? ' active' : '' %>">
+              <%= link_to pages_e_commerce_product_list_path, class: "sidenav-link" do %><div>Product list</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_e_commerce_product_item_path) ? ' active' : '' %>">
+              <%= link_to pages_e_commerce_product_item_path, class: "sidenav-link" do %><div>Product item</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_e_commerce_product_edit_path) ? ' active' : '' %>">
+              <%= link_to pages_e_commerce_product_edit_path, class: "sidenav-link" do %><div>Product edit</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_e_commerce_order_list_path) ? ' active' : '' %>">
+              <%= link_to pages_e_commerce_order_list_path, class: "sidenav-link" do %><div>Order list</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_e_commerce_order_detail_path) ? ' active' : '' %>">
+              <%= link_to pages_e_commerce_order_detail_path, class: "sidenav-link" do %><div>Order detail</div><% end %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sidenav-item<%= current_page_path?('/pages/forums/') ? ' active open' : '' %>">
+          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Forums</div></a>
+
+          <ul class="sidenav-menu">
+            <li class="sidenav-item<%= current_page?(pages_forums_list_path) ? ' active' : '' %>">
+              <%= link_to pages_forums_list_path, class: "sidenav-link" do %><div>List</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_forums_threads_path) ? ' active' : '' %>">
+              <%= link_to pages_forums_threads_path, class: "sidenav-link" do %><div>Threads</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_forums_discussion_path) ? ' active' : '' %>">
+              <%= link_to pages_forums_discussion_path, class: "sidenav-link" do %><div>Discussion</div><% end %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sidenav-item<%= current_page_path?('/pages/messages-v1/') ? ' active open' : '' %>">
+          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Messages v1</div></a>
+
+          <ul class="sidenav-menu">
+            <li class="sidenav-item<%= current_page?(pages_messages_v1_list_path) ? ' active' : '' %>">
+              <%= link_to pages_messages_v1_list_path, class: "sidenav-link" do %><div>List</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_messages_v1_item_path) ? ' active' : '' %>">
+              <%= link_to pages_messages_v1_item_path, class: "sidenav-link" do %><div>Item</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_messages_v1_compose_path) ? ' active' : '' %>">
+              <%= link_to pages_messages_v1_compose_path, class: "sidenav-link" do %><div>Compose</div><% end %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sidenav-item<%= current_page_path?('/pages/messages-v2/') ? ' active open' : '' %>">
+          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Messages v2</div></a>
+
+          <ul class="sidenav-menu">
+            <li class="sidenav-item<%= current_page?(pages_messages_v2_list_path) ? ' active' : '' %>">
+              <%= link_to pages_messages_v2_list_path, class: "sidenav-link" do %><div>List</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_messages_v2_item_path) ? ' active' : '' %>">
+              <%= link_to pages_messages_v2_item_path, class: "sidenav-link" do %><div>Item</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_messages_v2_compose_path) ? ' active' : '' %>">
+              <%= link_to pages_messages_v2_compose_path, class: "sidenav-link" do %><div>Compose</div><% end %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sidenav-item<%= current_page_path?('/pages/messages-v3/') ? ' active open' : '' %>">
+          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Messages v3</div></a>
+
+          <ul class="sidenav-menu">
+            <li class="sidenav-item<%= current_page?(pages_messages_v3_list_path) ? ' active' : '' %>">
+              <%= link_to pages_messages_v3_list_path, class: "sidenav-link" do %><div>List</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_messages_v3_item_path) ? ' active' : '' %>">
+              <%= link_to pages_messages_v3_item_path, class: "sidenav-link" do %><div>Item</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_messages_v3_compose_path) ? ' active' : '' %>">
+              <%= link_to pages_messages_v3_compose_path, class: "sidenav-link" do %><div>Compose</div><% end %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sidenav-item<%= current_page_path?('/pages/projects/') ? ' active open' : '' %>">
+          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Projects</div></a>
+
+          <ul class="sidenav-menu">
+            <li class="sidenav-item<%= current_page?(pages_projects_list_path) ? ' active' : '' %>">
+              <%= link_to pages_projects_list_path, class: "sidenav-link" do %><div>List</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_projects_item_path) ? ' active' : '' %>">
+              <%= link_to pages_projects_item_path, class: "sidenav-link" do %><div>Item</div><% end %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sidenav-item<%= current_page_path?('/pages/tickets/') ? ' active open' : '' %>">
+          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Tickets</div></a>
+
+          <ul class="sidenav-menu">
+            <li class="sidenav-item<%= current_page?(pages_tickets_list_path) ? ' active' : '' %>">
+              <%= link_to pages_tickets_list_path, class: "sidenav-link" do %><div>List</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_tickets_edit_path) ? ' active' : '' %>">
+              <%= link_to pages_tickets_edit_path, class: "sidenav-link" do %><div>Edit</div><% end %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sidenav-item<%= current_page_path?('/pages/users/') ? ' active open' : '' %>">
+          <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><div>Users</div></a>
+
+          <ul class="sidenav-menu">
+            <li class="sidenav-item<%= current_page?(pages_users_list_path) ? ' active' : '' %>">
+              <%= link_to pages_users_list_path, class: "sidenav-link" do %><div>List</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_users_view_path) ? ' active' : '' %>">
+              <%= link_to pages_users_view_path, class: "sidenav-link" do %><div>View</div><% end %>
+            </li>
+            <li class="sidenav-item<%= current_page?(pages_users_edit_path) ? ' active' : '' %>">
+              <%= link_to pages_users_edit_path, class: "sidenav-link" do %><div>Edit</div><% end %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sidenav-item<%= current_page?(pages_account_settings_path) ? ' active' : '' %>">
+          <%= link_to pages_account_settings_path, class: "sidenav-link" do %><div>Account settings</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_chat_path) ? ' active' : '' %>">
+          <%= link_to pages_chat_path, class: "sidenav-link" do %><div>Chat</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_clients_path) ? ' active' : '' %>">
+          <%= link_to pages_clients_path, class: "sidenav-link" do %><div>Clients</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_contacts_path) ? ' active' : '' %>">
+          <%= link_to pages_contacts_path, class: "sidenav-link" do %><div>Contacts</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_faq_path) ? ' active' : '' %>">
+          <%= link_to pages_faq_path, class: "sidenav-link" do %><div>FAQ</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_file_manager_path) ? ' active' : '' %>">
+          <%= link_to pages_file_manager_path, class: "sidenav-link" do %><div>File manager</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_gallery_path) ? ' active' : '' %>">
+          <%= link_to pages_gallery_path, class: "sidenav-link" do %><div>Gallery</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_help_center_path) ? ' active' : '' %>">
+          <%= link_to pages_help_center_path, class: "sidenav-link" do %><div>Help center</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_invoice_path) ? ' active' : '' %>">
+          <%= link_to pages_invoice_path, class: "sidenav-link" do %><div>Invoice</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_kanban_board_path) ? ' active' : '' %>">
+          <%= link_to pages_kanban_board_path, class: "sidenav-link" do %><div>Kanban board</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_pricing_path) ? ' active' : '' %>">
+          <%= link_to pages_pricing_path, class: "sidenav-link" do %><div>Pricing</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_profile_v1_path) ? ' active' : '' %>">
+          <%= link_to pages_profile_v1_path, class: "sidenav-link" do %><div>Profile v1</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_profile_v2_path) ? ' active' : '' %>">
+          <%= link_to pages_profile_v2_path, class: "sidenav-link" do %><div>Profile v2</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_search_results_path) ? ' active' : '' %>">
+          <%= link_to pages_search_results_path, class: "sidenav-link" do %><div>Search results</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_task_list_path) ? ' active' : '' %>">
+          <%= link_to pages_task_list_path, class: "sidenav-link" do %><div>Task list</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_teams_path) ? ' active' : '' %>">
+          <%= link_to pages_teams_path, class: "sidenav-link" do %><div>Teams</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_vacancies_path) ? ' active' : '' %>">
+          <%= link_to pages_vacancies_path, class: "sidenav-link" do %><div>Vacancies</div><% end %>
+        </li>
+        <li class="sidenav-item<%= current_page?(pages_voting_path) ? ' active' : '' %>">
+          <%= link_to pages_voting_path, class: "sidenav-link" do %><div>Voting</div><% end %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="sidenav-item">
+      <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-logo-buffer"></i><div>Complete UI</div></a>
+
+      <ul class="sidenav-menu">
+        <li class="sidenav-item">
+          <%= link_to complete_ui_base_path, class: "sidenav-link", target: "blank" do %><div>Base</div><% end %>
+        </li>
+        <li class="sidenav-item">
+          <%= link_to complete_ui_plugins_path, class: "sidenav-link", target: "blank" do %><div>Plugins</div><% end %>
+        </li>
+        <li class="sidenav-item">
+          <%= link_to complete_ui_charts_path, class: "sidenav-link", target: "blank" do %><div>Charts</div><% end %>
+        </li>
+      </ul>
+    </li>
+    
+  </ul>
+</div>
+<!-- / Layout sidenav -->

@@ -1,0 +1,108 @@
+<!-- `.chat-wrapper` fills all available space of container -->
+<div class="chat-wrapper container-p-x container-p-y" [ngClass]="{'chat-sidebox-open': sideboxOpen}">
+
+  <!-- Make card full height of `.chat-wrapper` -->
+  <div class="card flex-grow-1 position-relative overflow-hidden">
+
+    <!-- Make row full height of `.card` -->
+    <div class="row no-gutters h-100">
+      <div class="chat-sidebox col">
+
+        <!-- Chat contacts header -->
+        <div class="flex-grow-0 px-4">
+          <div class="media align-items-center">
+            <div class="media-body">
+              <input type="text" class="form-control chat-search my-3" placeholder="Search...">
+            </div>
+            <a (click)="sideboxOpen = !sideboxOpen" href="javascript:void(0)" class="chat-sidebox-toggler d-lg-none d-block text-muted text-large font-weight-light pl-3">&times;</a>
+          </div>
+          <hr class="border-light m-0">
+        </div>
+        <!-- / Chat contacts header -->
+
+        <!-- Wrap `.chat-scroll` to properly position scroll area. Remove this wtapper if you don't need scroll -->
+        <div class="flex-grow-1 position-relative">
+          <div [perfectScrollbar]="{ suppressScrollX: true, wheelPropagation: true }" class="chat-contacts list-group chat-scroll py-3">
+
+            <a *ngFor="let contact of chatContacts" [ngClass]="{online: contact.online, active: chatData && chatData.user === contact.username}" href="javascript:void(0)" class="list-group-item list-group-item-action">
+              <img [src]="'assets/img/avatars/' + contact.avatar" class="d-block ui-w-40 rounded-circle" alt="">
+              <div class="media-body ml-3">
+                {{contact.name}}
+                <div *ngIf="contact.online" class="chat-status small"><span class="badge badge-dot"></span>&nbsp; Online</div>
+                <div *ngIf="!contact.online" class="chat-status small"><span class="badge badge-dot"></span>&nbsp; Offline</div>
+              </div>
+              <div *ngIf="contact.newMessages" class="badge badge-outline-success">{{contact.newMessages}}</div>
+            </a>
+
+          </div><!-- / .chat-contacts -->
+        </div>
+
+      </div>
+      <div *ngIf="!chatData" class="d-flex col justify-content-center align-items-center">
+        <div class="text-lighter text-large">Select a chat</div>
+      </div>
+      <div *ngIf="chatData" class="d-flex col flex-column">
+
+        <!-- Chat header -->
+        <div class="flex-grow-0 py-3 pr-4 pl-lg-4">
+
+          <div class="media align-items-center">
+            <a (click)="sideboxOpen = !sideboxOpen" href="javascript:void(0)" class="chat-sidebox-toggler d-lg-none d-block text-muted text-large px-4 mr-2"><i class="ion ion-md-more"></i></a>
+
+            <div class="position-relative">
+              <span class="badge badge-dot indicator" [ngClass]="'badge-' + (chatUser.online ? 'success' : 'danger')"></span>
+              <img [src]="'assets/img/avatars/' + chatUser.avatar" class="ui-w-40 rounded-circle" alt="">
+            </div>
+            <div class="media-body pl-3">
+              <strong>{{chatUser.name}}</strong>
+              <div class="text-muted small"><em>{{chatData.status}}</em></div>
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary btn-round icon-btn mr-1"><i class="ion ion-ios-call"></i></button>
+              <button type="button" class="btn btn-secondary btn-round icon-btn mr-1"><i class="ion ion-md-videocam"></i></button>
+              <button type="button" class="btn btn-default btn-round icon-btn"><i class="ion ion-ios-more"></i></button>
+            </div>
+          </div>
+
+        </div>
+        <hr class="flex-grow-0 border-light m-0">
+        <!-- / Chat header -->
+
+        <!-- Wrap `.chat-scroll` to properly position scroll area. Remove this wtapper if you don't need scroll -->
+        <div class="flex-grow-1 position-relative">
+
+          <!-- Remove `.chat-scroll` and add `.flex-grow-1` if you don't need scroll -->
+          <div [perfectScrollbar]="{ suppressScrollX: true, wheelPropagation: true }" class="chat-messages chat-scroll p-4">
+
+            <div *ngFor="let message of chatData.messages" [ngClass]="'chat-message-' + (message.you ? 'right' : 'left')" class="mb-4">
+              <div>
+                <img [src]="'assets/img/avatars/' + (message.you ? user.avatar : chatUser.avatar)" class="ui-w-40 rounded-circle" alt>
+                <div class="text-muted small text-nowrap mt-2">{{message.date}}</div>
+              </div>
+              <div class="flex-shrink-1 bg-lighter rounded py-2 px-3" [ngClass]="message.you ? 'mr-3' : 'ml-3'">
+                <div class="font-weight-semibold mb-1">{{message.you ? 'You' : chatUser.name}}</div>
+                {{message.text}}
+              </div>
+            </div>
+
+          </div><!-- / .chat-messages -->
+        </div>
+
+        <!-- Chat footer -->
+        <hr class="border-light m-0">
+        <div class="flex-grow-0 py-3 px-4">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Type your message">
+            <div class="input-group-append">
+              <button type="button" class="btn btn-primary">Send</button>
+            </div>
+          </div>
+        </div>
+        <!-- / Chat footer -->
+
+      </div>
+    </div><!-- / .row -->
+
+  </div><!-- / .card -->
+
+</div><!-- / .chat-wrapper -->

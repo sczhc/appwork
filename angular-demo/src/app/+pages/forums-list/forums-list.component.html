@@ -1,0 +1,51 @@
+<h4 class="d-flex flex-wrap justify-content-between align-items-center pt-3 mb-4">
+  <ol class="breadcrumb font-weight-bold mb-3">
+    <li class="breadcrumb-item active"><i class="ion ion-ios-chatbubbles"></i>&nbsp; Forums</li>
+  </ol>
+  <div class="col-12 col-md-3 p-0 mb-3">
+    <input type="text" class="form-control" placeholder="Search...">
+  </div>
+</h4>
+
+<div *ngFor="let section of sectionsData" class="card mb-3">
+
+  <div class="card-header row no-gutters align-items-center">
+    <div class="col font-weight-bold">{{section.title}}</div>
+    <div class="d-none d-md-block col-6 text-muted">
+      <div class="row no-gutters align-items-center">
+        <div class="col-3">Threads</div>
+        <div class="col-3">Replies</div>
+        <div class="col-6">Last update</div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngFor="let forum of section.forums; let i = index">
+    <div class="card-body py-3">
+
+      <div class="row no-gutters align-items-center">
+        <div class="col"><a href="javascript:void(0)" class="text-big font-weight-semibold">{{forum.title}}</a></div>
+        <div class="d-none d-md-block col-6">
+
+          <div class="row no-gutters align-items-center">
+            <div class="col-3">{{forum.threads}}</div>
+            <div class="col-3">{{forum.replies}}</div>
+            <div class="col-6">
+              <div v-if="forum.lastUpdate" class="media align-items-center">
+                <img [src]="'assets/img/avatars/' + forum.lastUpdate.user.avatar" alt="" class="d-block ui-w-30 rounded-circle">
+                <div class="media-body flex-truncate ml-2">
+                  <a href="javascript:void(0)" class="d-block text-truncate">{{forum.lastUpdate.thread.title}}</a>
+                  <div class="text-muted small text-truncate">{{forum.lastUpdate.date}} ago &nbsp;·&nbsp; <a href="javascript:void(0)" class="text-muted">{{forum.lastUpdate.user.name}}</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <hr class="m-0" *ngIf="i !== (section.forums.length - 1)">
+  </div>
+
+</div>

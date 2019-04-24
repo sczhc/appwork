@@ -1,0 +1,135 @@
+@import '../_custom-variables/pages';
+
+$clients-content-bg: transparent !default;
+$clients-sidebox-bg: #f3f3f3 !default;
+$clients-sidebox-width: 20rem !default;
+$clients-transition-duration: .2s !default;
+
+// Make wrapper full page height
+:host /deep/ .clients-wrapper {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex: 1 1 100%;
+  width: 100%;
+}
+
+:host /deep/ .clients-sidebox,
+:host /deep/ .clients-content {
+  transition: all $clients-transition-duration;
+}
+
+:host /deep/ .clients-content {
+  background: $clients-content-bg;
+}
+
+:host /deep/ .clients-sidebox {
+  position: fixed;
+  top: 0;
+  right: -$clients-sidebox-width;
+  height: 100%;
+  width: $clients-sidebox-width;
+  background: $clients-sidebox-bg;
+
+  [dir=rtl] & {
+    right: auto;
+    left: -$clients-sidebox-width;
+  }
+}
+
+:host /deep/ .layout-sidenav-100vh .clients-sidebox {
+  height: 100vh;
+}
+
+:host /deep/ .clients-sidebox-open .clients-sidebox {
+  right: 0;
+
+  [dir=rtl] & {
+    right: auto;
+    left: 0;
+  }
+}
+
+:host /deep/ .clients-sidebox-close {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+  display: block;
+  line-height: 1;
+
+  [dir=rtl] & {
+    right: 1rem;
+    left: auto;
+  }
+}
+
+:host /deep/ .clients-table tr,
+:host /deep/ .clients-table tr > * {
+  cursor: pointer;
+}
+
+:host /deep/ .clients-scroll {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+}
+
+.default-style :host /deep/ {
+  @import "../_appwork/include";
+
+  .clients-sidebox {
+    z-index: $zindex-layout-fixed + 1;
+  }
+
+  @include media-breakpoint-up(lg) {
+    .clients-sidebox {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .clients-sidebox-open .clients-content {
+      right: $clients-sidebox-width;
+    }
+  }
+}
+
+.default-style[dir=rtl] :host /deep/ .clients-sidebox-open .clients-content {
+  @import "../_appwork/include";
+
+  @include media-breakpoint-up(lg) {
+    right: 0;
+    left: $clients-sidebox-width;
+  }
+}
+
+.material-style :host /deep/ {
+  @import "../_appwork/include-material";
+
+  .clients-sidebox {
+    z-index: $zindex-layout-fixed + 1;
+  }
+
+  @include media-breakpoint-up(lg) {
+    .clients-sidebox {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .clients-sidebox-open .clients-content {
+      right: $clients-sidebox-width;
+    }
+  }
+}
+
+.material-style[dir=rtl] :host /deep/ .clients-sidebox-open .clients-content {
+  @import "../_appwork/include-material";
+
+  @include media-breakpoint-up(lg) {
+    right: 0;
+    left: $clients-sidebox-width;
+  }
+}

@@ -1,0 +1,55 @@
+@{
+    ViewBag.Title = "Base";
+    Layout = "~/Views/Shared/Layouts/_CompleteUi.cshtml";
+}
+
+@section Styles {
+    @Styles.Render("~/bundle/vendor/css/perfect-scrollbar/perfect-scrollbar")
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    @Scripts.Render("~/bundle/vendor/js/dropdown-hover")
+    @Scripts.Render("~/bundle/vendor/js/mega-dropdown")
+    @Scripts.Render("~/bundle/vendor/js/sidenav")
+    @Scripts.Render("~/bundle/vendor/js/perfect-scrollbar/perfect-scrollbar")
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+@Html.Partial("~/Views/CompleteUi/Typography.cshtml")
+@Html.Partial("~/Views/CompleteUi/Utilities.cshtml")
+@Html.Partial("~/Views/CompleteUi/Buttons.cshtml")
+@Html.Partial("~/Views/CompleteUi/Badges.cshtml")
+@Html.Partial("~/Views/CompleteUi/ButtonGroups.cshtml")
+@Html.Partial("~/Views/CompleteUi/ButtonDropdowns.cshtml")
+@Html.Partial("~/Views/CompleteUi/Dropdowns.cshtml")
+@Html.Partial("~/Views/CompleteUi/Navs.cshtml")
+@Html.Partial("~/Views/CompleteUi/Pagination.cshtml")
+@Html.Partial("~/Views/CompleteUi/ProgressBars.cshtml")
+@Html.Partial("~/Views/CompleteUi/ListGroups.cshtml")
+@Html.Partial("~/Views/CompleteUi/Alerts.cshtml")
+@Html.Partial("~/Views/CompleteUi/TooltipsAndPopovers.cshtml")
+@Html.Partial("~/Views/CompleteUi/Modals.cshtml")
+@Html.Partial("~/Views/CompleteUi/Breadcrumbs.cshtml")
+@Html.Partial("~/Views/CompleteUi/FormControls.cshtml")
+@Html.Partial("~/Views/CompleteUi/CustomCheckboxesAndRadios.cshtml")
+@Html.Partial("~/Views/CompleteUi/CustomSelect.cshtml")
+@Html.Partial("~/Views/CompleteUi/FileBrowser.cshtml")
+@Html.Partial("~/Views/CompleteUi/Forms.cshtml")
+@Html.Partial("~/Views/CompleteUi/InputGroups.cshtml")
+@Html.Partial("~/Views/CompleteUi/Switchers.cshtml")
+@Html.Partial("~/Views/CompleteUi/AppBrand.cshtml")
+@Html.Partial("~/Views/CompleteUi/Navbar.cshtml")
+@Html.Partial("~/Views/CompleteUi/Sidenav.cshtml")
+@Html.Partial("~/Views/CompleteUi/Footer.cshtml")
+@Html.Partial("~/Views/CompleteUi/Tables.cshtml")
+@Html.Partial("~/Views/CompleteUi/Media.cshtml")
+@Html.Partial("~/Views/CompleteUi/Thumbnails.cshtml")
+@Html.Partial("~/Views/CompleteUi/Cards.cshtml")
+@Html.Partial("~/Views/CompleteUi/Accordion.cshtml")
+@Html.Partial("~/Views/CompleteUi/Carousel.cshtml")

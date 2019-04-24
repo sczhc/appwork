@@ -1,0 +1,16 @@
+﻿@{bool isHorizontal = ViewData["LayoutSidenavHorizontal"] != null && ViewData["LayoutSidenavHorizontal"].ToString() == "True";}
+@{string currentPage = ViewContext.RouteData.Values["Controller"].ToString() + "/" + ViewContext.RouteData.Values["Action"].ToString();}
+
+<!-- Layout sidenav -->
+<div id="layout-sidenav" class="@(isHorizontal ? "layout-sidenav-horizontal sidenav-horizontal container-p-x flex-grow-0" : "layout-sidenav sidenav-vertical") sidenav bg-sidenav-theme">
+    <!-- Inner -->
+    <ul class="sidenav-inner@(!isHorizontal ? " py-1" : "")">
+        <li class="sidenav-item@(currentPage == "Home/Index" ? " active" : "")">
+            <a href="@Url.Action("Index", "Home")" class="sidenav-link"><i class="sidenav-icon ion ion-ios-contact"></i><div>Home</div></a>
+        </li>
+        <li class="sidenav-item@(currentPage == "Page2/Index" ? " active" : "")">
+            <a href="@Url.Action("Index", "Page2")" class="sidenav-link"><i class="sidenav-icon ion ion-md-desktop"></i><div>Page 2</div></a>
+        </li>
+    </ul>
+</div>
+<!-- / Layout sidenav -->

@@ -1,0 +1,236 @@
+<sidenav [orientation]="orientation" [ngClass]="getClasses()">
+
+  <!-- Brand demo (see src/demo.css) -->
+  <div class="app-brand demo" *ngIf="orientation !== 'horizontal'">
+    <span class="app-brand-logo demo bg-primary">
+      <svg viewBox="0 0 148 80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient id="a" x1="46.49" x2="62.46" y1="53.39" y2="48.2" gradientUnits="userSpaceOnUse"><stop stop-opacity=".25" offset="0"></stop><stop stop-opacity=".1" offset=".3"></stop><stop stop-opacity="0" offset=".9"></stop></linearGradient><linearGradient id="e" x1="76.9" x2="92.64" y1="26.38" y2="31.49" xlink:href="#a"></linearGradient><linearGradient id="d" x1="107.12" x2="122.74" y1="53.41" y2="48.33" xlink:href="#a"></linearGradient></defs><path style="fill: #fff;" transform="translate(-.1)" d="M121.36,0,104.42,45.08,88.71,3.28A5.09,5.09,0,0,0,83.93,0H64.27A5.09,5.09,0,0,0,59.5,3.28L43.79,45.08,26.85,0H.1L29.43,76.74A5.09,5.09,0,0,0,34.19,80H53.39a5.09,5.09,0,0,0,4.77-3.26L74.1,35l16,41.74A5.09,5.09,0,0,0,94.82,80h18.95a5.09,5.09,0,0,0,4.76-3.24L148.1,0Z"></path><path transform="translate(-.1)" d="M52.19,22.73l-8.4,22.35L56.51,78.94a5,5,0,0,0,1.64-2.19l7.34-19.2Z" fill="url(#a)"></path><path transform="translate(-.1)" d="M95.73,22l-7-18.69a5,5,0,0,0-1.64-2.21L74.1,35l8.33,21.79Z" fill="url(#e)"></path><path transform="translate(-.1)" d="M112.73,23l-8.31,22.12,12.66,33.7a5,5,0,0,0,1.45-2l7.3-18.93Z" fill="url(#d)"></path></svg>
+    </span>
+    <a routerLink="/" class="app-brand-text demo sidenav-text font-weight-normal ml-2">Appwork</a>
+    <a href="javascript:void(0)" class="layout-sidenav-toggle sidenav-link text-large ml-auto" (click)="toggleSidenav()">
+      <i class="ion ion-md-menu align-middle"></i>
+    </a>
+  </div>
+  <div class="sidenav-divider mt-0" *ngIf="orientation !== 'horizontal'"></div>
+
+  <!-- Links -->
+  <div class="sidenav-inner" [ngClass]="{ 'py-1': orientation !== 'horizontal' }">
+
+    <!-- Dashboards -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Dashboards" [active]="isMenuActive('/dashboards')" [open]="isMenuOpen('/dashboards')">
+      <sidenav-router-link route="/dashboards/dashboard-1" [active]="isActive('/dashboards/dashboard-1')">Dashboard 1</sidenav-router-link>
+      <sidenav-router-link route="/dashboards/dashboard-2" [active]="isActive('/dashboards/dashboard-2')">Dashboard 2</sidenav-router-link>
+      <sidenav-router-link route="/dashboards/dashboard-3" [active]="isActive('/dashboards/dashboard-3')">Dashboard 3</sidenav-router-link>
+      <sidenav-router-link route="/dashboards/dashboard-4" [active]="isActive('/dashboards/dashboard-4')">Dashboard 4</sidenav-router-link>
+      <sidenav-router-link route="/dashboards/dashboard-5" [active]="isActive('/dashboards/dashboard-5')">Dashboard 5</sidenav-router-link>
+    </sidenav-menu>
+
+    <!-- Layouts -->
+    <sidenav-menu icon="ion ion-ios-albums" text="Layouts" [active]="isMenuActive('/layouts')" [open]="isMenuOpen('/layouts')">
+      <sidenav-router-link route="/layouts/options" [active]="isActive('/layouts/options')">Layout options</sidenav-router-link>
+      <sidenav-router-link route="/layouts/helpers" [active]="isActive('/layouts/helpers')">Layout helpers</sidenav-router-link>
+      <sidenav-router-link route="/layouts/layout-1" [active]="isActive('/layouts/layout-1')">Layout 1</sidenav-router-link>
+      <sidenav-router-link route="/layouts/layout-1-flex" [active]="isActive('/layouts/layout-1-flex')">Layout 1 (Flex)</sidenav-router-link>
+      <sidenav-router-link route="/layouts/layout-2" [active]="isActive('/layouts/layout-2')">Layout 2</sidenav-router-link>
+      <sidenav-router-link route="/layouts/layout-2-flex" [active]="isActive('/layouts/layout-2-flex')">Layout 2 (Flex)</sidenav-router-link>
+      <sidenav-router-link route="/layouts/without-navbar" [active]="isActive('/layouts/without-navbar')">Without navbar</sidenav-router-link>
+      <sidenav-router-link route="/layouts/without-navbar-flex" [active]="isActive('/layouts/without-navbar-flex')">Without navbar (Flex)</sidenav-router-link>
+      <sidenav-router-link route="/layouts/without-sidenav" [active]="isActive('/layouts/without-sidenav')">Without sidenav</sidenav-router-link>
+      <sidenav-router-link route="/layouts/horizontal-sidenav" [active]="isActive('/layouts/horizontal-sidenav')">Horizontal sidenav</sidenav-router-link>
+      <sidenav-router-link route="/layouts/blank" [active]="isActive('/layouts/blank')">Blank</sidenav-router-link>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-1"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">ELEMENTS</sidenav-header>
+
+    <sidenav-router-link icon="ion ion-md-quote" route="/typography" [active]="isActive('/typography')">Typography</sidenav-router-link>
+
+    <!-- User inteface -->
+    <sidenav-menu icon="ion ion-md-cube" text="User inteface" [active]="isMenuActive('/ui')" [open]="isMenuOpen('/ui')">
+      <sidenav-router-link route="/ui/buttons" [active]="isActive('/ui/buttons')">Buttons</sidenav-router-link>
+      <sidenav-router-link route="/ui/badges" [active]="isActive('/ui/badges')">Badges</sidenav-router-link>
+      <sidenav-router-link route="/ui/button-groups" [active]="isActive('/ui/button-groups')">Button groups</sidenav-router-link>
+      <sidenav-router-link route="/ui/dropdowns" [active]="isActive('/ui/dropdowns')">Dropdowns</sidenav-router-link>
+      <sidenav-router-link route="/ui/navs" [active]="isActive('/ui/navs')">Navs</sidenav-router-link>
+      <sidenav-router-link route="/ui/pagination-and-breadcrumbs" [active]="isActive('/ui/pagination-and-breadcrumbs')">Pagination and breadcrumbs</sidenav-router-link>
+      <sidenav-router-link route="/ui/progress-bars" [active]="isActive('/ui/progress-bars')">Progress bars</sidenav-router-link>
+      <sidenav-router-link route="/ui/list-groups" [active]="isActive('/ui/list-groups')">List groups</sidenav-router-link>
+      <sidenav-router-link route="/ui/notifications" [active]="isActive('/ui/notifications')">Notifications</sidenav-router-link>
+      <sidenav-router-link route="/ui/modals" [active]="isActive('/ui/modals')">Modals</sidenav-router-link>
+      <sidenav-router-link route="/ui/tooltips-and-popovers" [active]="isActive('/ui/tooltips-and-popovers')">Tooltips and popovers</sidenav-router-link>
+      <sidenav-router-link route="/ui/thumbnails" [active]="isActive('/ui/thumbnails')">Thumbnails</sidenav-router-link>
+      <sidenav-router-link route="/ui/cards" [active]="isActive('/ui/cards')">Cards</sidenav-router-link>
+      <sidenav-router-link route="/ui/ngb-accordion" [active]="isActive('/ui/ngb-accordion')">Ngb Accordion</sidenav-router-link>
+      <sidenav-router-link route="/ui/app-brand" [active]="isActive('/ui/app-brand')">App brand</sidenav-router-link>
+      <sidenav-router-link route="/ui/navbar" [active]="isActive('/ui/navbar')">Navbar</sidenav-router-link>
+      <sidenav-router-link route="/ui/sidenav" [active]="isActive('/ui/sidenav')">Sidenav</sidenav-router-link>
+      <sidenav-router-link route="/ui/footer" [active]="isActive('/ui/footer')">Footer</sidenav-router-link>
+      <sidenav-router-link route="/ui/carousel" [active]="isActive('/ui/carousel')">Carousel</sidenav-router-link>
+      <sidenav-router-link route="/ui/lightbox" [active]="isActive('/ui/lightbox')">Lightbox</sidenav-router-link>
+      <sidenav-router-link route="/ui/drag-and-drop" [active]="isActive('/ui/drag-and-drop')">Drag&amp;Drop</sidenav-router-link>
+      <sidenav-router-link route="/ui/plyr" [active]="isActive('/ui/plyr')">Plyr</sidenav-router-link>
+      <sidenav-router-link route="/ui/ng2-img-cropper" [active]="isActive('/ui/ng2-img-cropper')">Ng2 Img Cropper</sidenav-router-link>
+      <sidenav-router-link route="/ui/ngx-tour" [active]="isActive('/ui/ngx-tour')">Ngx Tour</sidenav-router-link>
+      <sidenav-router-link route="/ui/angular-calendar" [active]="isActive('/ui/angular-calendar')">Angular Calendar</sidenav-router-link>
+    </sidenav-menu>
+
+    <!-- Forms -->
+    <sidenav-menu icon="ion ion-md-switch" text="Forms" [active]="isMenuActive('/forms')" [open]="isMenuOpen('/forms')">
+      <sidenav-router-link route="/forms/layouts-and-elements" [active]="isActive('/forms/layouts-and-elements')">Layouts and elements</sidenav-router-link>
+      <sidenav-router-link route="/forms/controls" [active]="isActive('/forms/controls')">Controls</sidenav-router-link>
+      <sidenav-router-link route="/forms/custom-controls" [active]="isActive('/forms/custom-controls')">Custom controls</sidenav-router-link>
+      <sidenav-router-link route="/forms/input-groups" [active]="isActive('/forms/input-groups')">Input groups</sidenav-router-link>
+      <sidenav-router-link route="/forms/switchers" [active]="isActive('/forms/switchers')">Switchers</sidenav-router-link>
+      <sidenav-router-link route="/forms/sliders" [active]="isActive('/forms/sliders')">Sliders</sidenav-router-link>
+      <sidenav-router-link route="/forms/selects-and-tags" [active]="isActive('/forms/selects-and-tags')">Selects and tags</sidenav-router-link>
+      <sidenav-router-link route="/forms/pickers" [active]="isActive('/forms/pickers')">Pickers</sidenav-router-link>
+      <sidenav-router-link route="/forms/editors" [active]="isActive('/forms/editors')">Editors</sidenav-router-link>
+      <sidenav-router-link route="/forms/file-upload" [active]="isActive('/forms/file-upload')">File upload</sidenav-router-link>
+      <sidenav-router-link route="/forms/ng2-archwizard" [active]="isActive('/forms/ng2-archwizard')">Ng2 Archwizard</sidenav-router-link>
+      <sidenav-router-link route="/forms/ngb-typeahead" [active]="isActive('/forms/ngb-typeahead')">Ngb Typeahead</sidenav-router-link>
+      <sidenav-router-link route="/forms/extras" [active]="isActive('/forms/extras')">Extras</sidenav-router-link>
+    </sidenav-menu>
+
+    <!-- Tables -->
+    <sidenav-menu icon="ion ion-md-grid" text="Tables" [active]="isMenuActive('/tables')" [open]="isMenuOpen('/tables')">
+      <sidenav-router-link route="/tables/bootstrap" [active]="isActive('/tables/bootstrap')">Bootstrap</sidenav-router-link>
+      <sidenav-router-link route="/tables/ngx-datatable" [active]="isActive('/tables/ngx-datatable')">Ngx Datatable</sidenav-router-link>
+      <sidenav-router-link route="/tables/ng2-smart-table" [active]="isActive('/tables/ng2-smart-table')">Ng2 Smart Table</sidenav-router-link>
+    </sidenav-menu>
+
+    <!-- Charts -->
+    <sidenav-menu icon="ion ion-md-pie" text="Charts" [active]="isMenuActive('/charts')" [open]="isMenuOpen('/charts')">
+      <sidenav-router-link route="/charts/angular-google-maps" [active]="isActive('/charts/angular-google-maps')">Angular Google Maps</sidenav-router-link>
+      <sidenav-router-link route="/charts/ngx-charts" [active]="isActive('/charts/ngx-charts')">Ngx Charts</sidenav-router-link>
+      <sidenav-router-link route="/charts/ng-chartist" [active]="isActive('/charts/ng-chartist')">Ng Chartist</sidenav-router-link>
+      <sidenav-router-link route="/charts/ng2-charts" [active]="isActive('/charts/ng2-charts')">Ng2 Charts</sidenav-router-link>
+      <sidenav-router-link route="/charts/ngx-trend" [active]="isActive('/charts/ngx-trend')">Ngx Trend</sidenav-router-link>
+    </sidenav-menu>
+
+    <!-- Icons -->
+    <sidenav-menu icon="ion ion-ios-heart" text="Icons" [active]="isMenuActive('/icons')" [open]="isMenuOpen('/icons')">
+      <sidenav-router-link route="/icons/font-awesome-5" [active]="isActive('/icons/font-awesome-5')">Font Awesome 5</sidenav-router-link>
+      <sidenav-router-link route="/icons/ionicons" [active]="isActive('/icons/ionicons')">Ionicons</sidenav-router-link>
+      <sidenav-router-link route="/icons/linearicons" [active]="isActive('/icons/linearicons')">Linearicons</sidenav-router-link>
+      <sidenav-router-link route="/icons/open-iconic" [active]="isActive('/icons/open-iconic')">Open Iconic</sidenav-router-link>
+      <sidenav-router-link route="/icons/stroke-icons-7" [active]="isActive('/icons/stroke-icons-7')">Stroke Icons 7</sidenav-router-link>
+    </sidenav-menu>
+
+    <!-- Miscellaneous -->
+    <sidenav-menu icon="ion ion-ios-flask" text="Miscellaneous" [active]="isMenuActive('/miscellaneous')" [open]="isMenuOpen('/miscellaneous')">
+      <sidenav-router-link route="/miscellaneous/ngb-rating" [active]="isActive('/miscellaneous/ngb-rating')">Ngb Rating</sidenav-router-link>
+      <sidenav-router-link route="/miscellaneous/masonry" [active]="isActive('/miscellaneous/masonry')">Masonry</sidenav-router-link>
+      <sidenav-router-link route="/miscellaneous/spinkit" [active]="isActive('/miscellaneous/spinkit')">SpinKit</sidenav-router-link>
+      <sidenav-router-link route="/miscellaneous/angular2-ladda" [active]="isActive('/miscellaneous/angular2-ladda')">Angular2 Ladda</sidenav-router-link>
+      <sidenav-router-link route="/miscellaneous/numeraljs" [active]="isActive('/miscellaneous/numeraljs')">Numeral.js</sidenav-router-link>
+      <sidenav-router-link route="/miscellaneous/ng-block-ui" [active]="isActive('/miscellaneous/ng-block-ui')">Ng Block UI</sidenav-router-link>
+      <sidenav-router-link route="/miscellaneous/ngx-perfect-scrollbar" [active]="isActive('/miscellaneous/ngx-perfect-scrollbar')">Ngx Perfect Scrollbar</sidenav-router-link>
+      <sidenav-router-link route="/miscellaneous/ngx-clipboard" [active]="isActive('/miscellaneous/ngx-clipboard')">Ngx Clipboard</sidenav-router-link>
+    </sidenav-menu>
+
+    <sidenav-divider class="mb-1"></sidenav-divider>
+    <sidenav-header class="small font-weight-semibold">EXTRAS</sidenav-header>
+
+    <sidenav-menu icon="ion ion-md-document" text="Pages" badge="59" badgeClass="badge-primary" [active]="isMenuActive('/pages')" [open]="isMenuOpen('/pages')">
+
+      <sidenav-menu text="Articles" [active]="isMenuActive('/pages/articles')" [open]="isMenuOpen('/pages/articles')">
+        <sidenav-router-link route="/pages/articles/list" [active]="isActive('/pages/articles/list')">List</sidenav-router-link>
+        <sidenav-router-link route="/pages/articles/edit" [active]="isActive('/pages/articles/edit')">Edit</sidenav-router-link>
+      </sidenav-menu>
+
+      <sidenav-menu text="Authentication" [active]="isMenuActive('/pages/authentication')" [open]="isMenuOpen('/pages/authentication')">
+        <sidenav-router-link route="/pages/authentication/login-v1" [active]="isActive('/pages/authentication/login-v1')">Login v1</sidenav-router-link>
+        <sidenav-router-link route="/pages/authentication/register-v1" [active]="isActive('/pages/authentication/register-v1')">Register v1</sidenav-router-link>
+        <sidenav-router-link route="/pages/authentication/login-v2" [active]="isActive('/pages/authentication/login-v2')">Login v2</sidenav-router-link>
+        <sidenav-router-link route="/pages/authentication/register-v2" [active]="isActive('/pages/authentication/register-v2')">Register v2</sidenav-router-link>
+        <sidenav-router-link route="/pages/authentication/login-v3" [active]="isActive('/pages/authentication/login-v3')">Login v3</sidenav-router-link>
+        <sidenav-router-link route="/pages/authentication/register-v3" [active]="isActive('/pages/authentication/register-v3')">Register v3</sidenav-router-link>
+        <sidenav-router-link route="/pages/authentication/login-and-register" [active]="isActive('/pages/authentication/login-and-register')">Login + Register</sidenav-router-link>
+        <sidenav-router-link route="/pages/authentication/lock-screen-v1" [active]="isActive('/pages/authentication/lock-screen-v1')">Lock screen v1</sidenav-router-link>
+        <sidenav-router-link route="/pages/authentication/lock-screen-v2" [active]="isActive('/pages/authentication/lock-screen-v2')">Lock screen v2</sidenav-router-link>
+        <sidenav-router-link route="/pages/authentication/password-reset" [active]="isActive('/pages/authentication/password-reset')">Password reset</sidenav-router-link>
+        <sidenav-router-link route="/pages/authentication/email-confirm" [active]="isActive('/pages/authentication/email-confirm')">Email confirm</sidenav-router-link>
+
+      </sidenav-menu>
+
+      <sidenav-menu text="Education" [active]="isMenuActive('/pages/education')" [open]="isMenuOpen('/pages/education')">
+        <sidenav-router-link route="/pages/education/courses-v1" [active]="isActive('/pages/education/courses-v1')">Courses v1</sidenav-router-link>
+        <sidenav-router-link route="/pages/education/courses-v2" [active]="isActive('/pages/education/courses-v2')">Courses v2</sidenav-router-link>
+      </sidenav-menu>
+
+      <sidenav-menu text="E-commerce" [active]="isMenuActive('/pages/e-commerce')" [open]="isMenuOpen('/pages/e-commerce')">
+        <sidenav-router-link route="/pages/e-commerce/product-list" [active]="isActive('/pages/e-commerce/product-list')">Product list</sidenav-router-link>
+        <sidenav-router-link route="/pages/e-commerce/product-item" [active]="isActive('/pages/e-commerce/product-item')">Product item</sidenav-router-link>
+        <sidenav-router-link route="/pages/e-commerce/product-edit" [active]="isActive('/pages/e-commerce/product-edit')">Product edit</sidenav-router-link>
+        <sidenav-router-link route="/pages/e-commerce/order-list" [active]="isActive('/pages/e-commerce/order-list')">Order list</sidenav-router-link>
+        <sidenav-router-link route="/pages/e-commerce/order-detail" [active]="isActive('/pages/e-commerce/order-detail')">Order detail</sidenav-router-link>
+      </sidenav-menu>
+
+      <sidenav-menu text="Forums" [active]="isMenuActive('/pages/forums')" [open]="isMenuOpen('/pages/forums')">
+        <sidenav-router-link route="/pages/forums/list" [active]="isActive('/pages/forums/list')">List</sidenav-router-link>
+        <sidenav-router-link route="/pages/forums/threads" [active]="isActive('/pages/forums/threads')">Threads</sidenav-router-link>
+        <sidenav-router-link route="/pages/forums/discussion" [active]="isActive('/pages/forums/discussion')">Discussion</sidenav-router-link>
+      </sidenav-menu>
+
+      <sidenav-menu text="Messages v1" [active]="isMenuActive('/pages/messages-v1')" [open]="isMenuOpen('/pages/messages-v1')">
+        <sidenav-router-link route="/pages/messages-v1/list" [active]="isActive('/pages/messages-v1/list')">List</sidenav-router-link>
+        <sidenav-router-link route="/pages/messages-v1/item" [active]="isActive('/pages/messages-v1/item')">Item</sidenav-router-link>
+        <sidenav-router-link route="/pages/messages-v1/compose" [active]="isActive('/pages/messages-v1/compose')">Compose</sidenav-router-link>
+      </sidenav-menu>
+
+      <sidenav-menu text="Messages v2" [active]="isMenuActive('/pages/messages-v2')" [open]="isMenuOpen('/pages/messages-v2')">
+        <sidenav-router-link route="/pages/messages-v2/list" [active]="isActive('/pages/messages-v2/list')">List</sidenav-router-link>
+        <sidenav-router-link route="/pages/messages-v2/item" [active]="isActive('/pages/messages-v2/item')">Item</sidenav-router-link>
+        <sidenav-router-link route="/pages/messages-v2/compose" [active]="isActive('/pages/messages-v2/compose')">Compose</sidenav-router-link>
+      </sidenav-menu>
+
+      <sidenav-menu text="Messages v3" [active]="isMenuActive('/pages/messages-v3')" [open]="isMenuOpen('/pages/messages-v3')">
+        <sidenav-router-link route="/pages/messages-v3/list" [active]="isActive('/pages/messages-v3/list')">List</sidenav-router-link>
+        <sidenav-router-link route="/pages/messages-v3/item" [active]="isActive('/pages/messages-v3/item')">Item</sidenav-router-link>
+        <sidenav-router-link route="/pages/messages-v3/compose" [active]="isActive('/pages/messages-v3/compose')">Compose</sidenav-router-link>
+      </sidenav-menu>
+
+      <sidenav-menu text="Projects" [active]="isMenuActive('/pages/projects')" [open]="isMenuOpen('/pages/projects')">
+        <sidenav-router-link route="/pages/projects/list" [active]="isActive('/pages/projects/list')">List</sidenav-router-link>
+        <sidenav-router-link route="/pages/projects/item" [active]="isActive('/pages/projects/item')">Item</sidenav-router-link>
+      </sidenav-menu>
+
+      <sidenav-menu text="Tickets" [active]="isMenuActive('/pages/tickets')" [open]="isMenuOpen('/pages/tickets')">
+        <sidenav-router-link route="/pages/tickets/list" [active]="isActive('/pages/tickets/list')">List</sidenav-router-link>
+        <sidenav-router-link route="/pages/tickets/edit" [active]="isActive('/pages/tickets/edit')">Edit</sidenav-router-link>
+      </sidenav-menu>
+
+      <sidenav-menu text="Users" [active]="isMenuActive('/pages/users')" [open]="isMenuOpen('/pages/users')">
+        <sidenav-router-link route="/pages/users/list" [active]="isActive('/pages/users/list')">List</sidenav-router-link>
+        <sidenav-router-link route="/pages/users/view" [active]="isActive('/pages/users/view')">View</sidenav-router-link>
+        <sidenav-router-link route="/pages/users/edit" [active]="isActive('/pages/users/edit')">Edit</sidenav-router-link>
+      </sidenav-menu>
+
+      <sidenav-router-link route="/pages/account-settings" [active]="isActive('/pages/account-settings')">Account settings</sidenav-router-link>
+      <sidenav-router-link route="/pages/chat" [active]="isActive('/pages/chat')">Chat</sidenav-router-link>
+      <sidenav-router-link route="/pages/clients" [active]="isActive('/pages/clients')">Clients</sidenav-router-link>
+      <sidenav-router-link route="/pages/contacts" [active]="isActive('/pages/contacts')">Contacts</sidenav-router-link>
+      <sidenav-router-link route="/pages/faq" [active]="isActive('/pages/faq')">FAQ</sidenav-router-link>
+      <sidenav-router-link route="/pages/file-manager" [active]="isActive('/pages/file-manager')">File manager</sidenav-router-link>
+      <sidenav-router-link route="/pages/gallery" [active]="isActive('/pages/gallery')">Gallery</sidenav-router-link>
+      <sidenav-router-link route="/pages/help-center" [active]="isActive('/pages/help-center')">Help center</sidenav-router-link>
+      <sidenav-router-link route="/pages/invoice" [active]="isActive('/pages/invoice')">Invoice</sidenav-router-link>
+      <sidenav-router-link route="/pages/kanban-board" [active]="isActive('/pages/kanban-board')">Kanban board</sidenav-router-link>
+      <sidenav-router-link route="/pages/pricing" [active]="isActive('/pages/pricing')">Pricing</sidenav-router-link>
+      <sidenav-router-link route="/pages/profile-v1" [active]="isActive('/pages/profile-v1')">Profile v1</sidenav-router-link>
+      <sidenav-router-link route="/pages/profile-v2" [active]="isActive('/pages/profile-v2')">Profile v2</sidenav-router-link>
+      <sidenav-router-link route="/pages/search-results" [active]="isActive('/pages/search-results')">Search results</sidenav-router-link>
+      <sidenav-router-link route="/pages/task-list" [active]="isActive('/pages/task-list')">Task list</sidenav-router-link>
+      <sidenav-router-link route="/pages/teams" [active]="isActive('/pages/teams')">Teams</sidenav-router-link>
+      <sidenav-router-link route="/pages/vacancies" [active]="isActive('/pages/vacancies')">Vacancies</sidenav-router-link>
+      <sidenav-router-link route="/pages/voting" [active]="isActive('/pages/voting')">Voting</sidenav-router-link>
+
+    </sidenav-menu>
+
+    <sidenav-menu icon="ion ion-logo-buffer" text="Complete UI">
+      <sidenav-router-link route="/complete-ui">Base</sidenav-router-link>
+      <sidenav-router-link route="/complete-ui/plugins">Plugins</sidenav-router-link>
+      <sidenav-router-link route="/complete-ui/charts">Charts</sidenav-router-link>
+    </sidenav-menu>
+
+  </div>
+</sidenav>

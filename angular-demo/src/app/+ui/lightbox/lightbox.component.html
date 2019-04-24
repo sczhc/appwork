@@ -1,0 +1,21 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">UI elements /</span> Lightbox
+</h4>
+
+<hr class="border-light container-m--x mt-0">
+
+<h5 class="font-weight-bold pt-1 pb-1 mt-4 mb-4">ngx-image-gallery</h5>
+
+<!-- Gallery -->
+<ngx-image-gallery
+  [images]="images"
+  [conf]="conf">
+</ngx-image-gallery>
+
+<div class="row">
+  <div class="col-md-3" *ngFor="let image of images">
+    <a href="javascript:void(0)" [title]="image.altText" (click)="openGallery(image)" class="img-thumbnail">
+      <img [src]="image.url" class="img-fluid" [alt]="image.altText">
+    </a>
+  </div>
+</div>

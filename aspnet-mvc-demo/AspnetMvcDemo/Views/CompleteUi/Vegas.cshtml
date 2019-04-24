@@ -1,0 +1,78 @@
+<div class="ui-block">
+    <h3 class="ui-block-heading">Vegas</h3>
+    <a target="_blank" href="https://vegas.jaysalvat.com" class="ui-block-description">https://vegas.jaysalvat.com</a>
+
+    <samp class="cui-example-code-static">
+        @("@")Styles.Render("~/bundle/vendor/css/vegas/vegas")
+        @("@")Scripts.Render("~/bundle/vendor/js/vegas/vegas")
+    </samp>
+
+    <h4 class="ui-block-heading">Examples</h4>
+
+    <div class="cui-example cui-example-vertical-spacing">
+        <div id="vegas-example" style="min-height: 500px;"></div>
+
+        <div id="vegas-dark-overlay-example" class="vegas-overlay-black">
+            <h3 class="text-center text-white py-4 my-5">Dark overlay</h3>
+        </div>
+
+        <div id="vegas-light-overlay-example" class="vegas-overlay-white">
+            <h3 class="text-default text-center py-4 my-5">Light overlay</h3>
+        </div>
+
+        <div id="vegas-fixed-bg-example" class="vegas-fixed-background">
+            <h3 class="text-center text-white py-4 my-5">Fixed background</h3>
+        </div>
+
+        <!-- Javascript -->
+        <script>
+            $(function() {
+                $('#vegas-example').vegas({
+                    slides: [
+                        { src: "/Images/bg/1.jpg" },
+                        { src: "/Images/bg/2.jpg" },
+                        { src: "/Images/bg/3.jpg" },
+                        { src: "/Images/bg/4.jpg" },
+                        { src: "/Images/bg/5.jpg" }
+                    ],
+                    transition: [ 'fade', 'zoomOut', 'zoomIn', 'blur' ],
+                    animation: [ 'kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight' ]
+                });
+
+                // Progess color
+                $('#vegas-example .vegas-timer-progress').css('background', 'rgba(0,0,0,.2)');
+
+                // Overlays
+                $('#vegas-dark-overlay-example, #vegas-light-overlay-example').vegas({
+                    overlay: true,
+                    timer: false,
+                    shuffle: true,
+                    slides: [
+                        { src: "/Images/bg/1.jpg" },
+                        { src: "/Images/bg/2.jpg" },
+                        { src: "/Images/bg/3.jpg" },
+                        { src: "/Images/bg/4.jpg" },
+                        { src: "/Images/bg/5.jpg" }
+                    ],
+                    transition: [ 'fade', 'blur' ],
+                });
+
+                // Fixed bg
+                $('#vegas-fixed-bg-example').vegas({
+                    overlay: false,
+                    timer: false,
+                    shuffle: true,
+                    slides: [
+                        { src: "/Images/bg/1.jpg" },
+                        { src: "/Images/bg/2.jpg" },
+                        { src: "/Images/bg/3.jpg" },
+                        { src: "/Images/bg/4.jpg" },
+                        { src: "/Images/bg/5.jpg" }
+                    ],
+                    transition: [ 'fade', 'blur' ],
+                });
+            });
+        </script>
+        <!-- / Javascript -->
+    </div>
+</div>

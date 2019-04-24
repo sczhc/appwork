@@ -1,0 +1,15 @@
+@import '../../../../node_modules/blueimp-gallery/css/blueimp-gallery-video';
+
+.blueimp-gallery > .slides > .slide {
+  > .video-content > a {
+    background-image: url('<%= asset_path 'blueimp-gallery/img/video-play.png' %>');
+  }
+
+  > .video-loading > a {
+    background-image: url('<%= asset_path 'blueimp-gallery/img/loading.gif' %>');
+  }
+
+  body:last-child & > .video-content:not(.video-loading) > a {
+    background-image: url('<%= asset_path 'blueimp-gallery/img/video-play.svg' %>');
+  }
+}

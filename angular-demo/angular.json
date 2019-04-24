@@ -1,0 +1,142 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "angular-demo": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss",
+          "inlineStyle": true,
+          "spec": false
+        },
+        "@schematics/angular:class": {
+          "spec": false
+        },
+        "@schematics/angular:directive": {
+          "spec": false
+        },
+        "@schematics/angular:guard": {
+          "spec": false
+        },
+        "@schematics/angular:module": {
+          "spec": false
+        },
+        "@schematics/angular:pipe": {
+          "spec": false
+        },
+        "@schematics/angular:service": {
+          "spec": false
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/angular-demo",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss",
+
+              { "input": "src/vendor/styles/rtl/appwork.scss", "bundleName": "vendor/styles/appwork", "lazy": true },
+              { "input": "src/vendor/styles/rtl/appwork-material.scss", "bundleName": "vendor/styles/appwork-material", "lazy": true },
+              { "input": "src/vendor/styles/rtl/bootstrap.scss", "bundleName": "vendor/styles/bootstrap", "lazy": true },
+              { "input": "src/vendor/styles/rtl/bootstrap-material.scss", "bundleName": "vendor/styles/bootstrap-material", "lazy": true },
+              { "input": "src/vendor/styles/rtl/colors.scss", "bundleName": "vendor/styles/colors", "lazy": true },
+              { "input": "src/vendor/styles/rtl/colors-material.scss", "bundleName": "vendor/styles/colors-material", "lazy": true },
+              { "input": "src/vendor/styles/rtl/uikit.scss", "bundleName": "vendor/styles/uikit", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-air.scss", "bundleName": "vendor/styles/theme-air", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-air-material.scss", "bundleName": "vendor/styles/theme-air-material", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-corporate.scss", "bundleName": "vendor/styles/theme-corporate", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-corporate-material.scss", "bundleName": "vendor/styles/theme-corporate-material", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-cotton.scss", "bundleName": "vendor/styles/theme-cotton", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-cotton-material.scss", "bundleName": "vendor/styles/theme-cotton-material", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-gradient.scss", "bundleName": "vendor/styles/theme-gradient", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-gradient-material.scss", "bundleName": "vendor/styles/theme-gradient-material", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-paper.scss", "bundleName": "vendor/styles/theme-paper", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-paper-material.scss", "bundleName": "vendor/styles/theme-paper-material", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-shadow.scss", "bundleName": "vendor/styles/theme-shadow", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-shadow-material.scss", "bundleName": "vendor/styles/theme-shadow-material", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-soft.scss", "bundleName": "vendor/styles/theme-soft", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-soft-material.scss", "bundleName": "vendor/styles/theme-soft-material", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-sunrise.scss", "bundleName": "vendor/styles/theme-sunrise", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-sunrise-material.scss", "bundleName": "vendor/styles/theme-sunrise-material", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-twitlight.scss", "bundleName": "vendor/styles/theme-twitlight", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-twitlight-material.scss", "bundleName": "vendor/styles/theme-twitlight-material", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-vibrant.scss", "bundleName": "vendor/styles/theme-vibrant", "lazy": true },
+              { "input": "src/vendor/styles/rtl/theme-vibrant-material.scss", "bundleName": "vendor/styles/theme-vibrant-material", "lazy": true }
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "serve": {
+              "extractCss": true,
+              "namedChunks": true,
+              "vendorChunk": true,
+              "commonChunk": true,
+              "verbose": false
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "angular-demo:build:serve"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-demo:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "angular-demo"
+}

@@ -1,0 +1,307 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">Forms /</span> Selects and tags
+</h4>
+
+<div class="card mb-4">
+  <h6 class="card-header">
+    angular-2-dropdown-multiselect
+  </h6>
+  <div class="card-body demo-vertical-spacing demo-blocks">
+    <!-- Default -->
+    <ss-multiselect-dropdown
+      [settings]="defaultSettings"
+      [options]="defaultOptions"
+      [(ngModel)]="defaultModel">
+    </ss-multiselect-dropdown>
+
+    <pre>{{ defaultModel | json }}</pre>
+
+    <!-- With search input -->
+    <ss-multiselect-dropdown
+      [settings]="searchSettings"
+      [options]="defaultOptions"
+      [(ngModel)]="defaultModel">
+    </ss-multiselect-dropdown>
+
+    <!-- With icons -->
+    <ss-multiselect-dropdown
+      [settings]="iconSettings"
+      [options]="defaultOptions"
+      [(ngModel)]="defaultModel">
+    </ss-multiselect-dropdown>
+
+    <!-- Single -->
+    <ss-multiselect-dropdown
+      [settings]="singleSettings"
+      [options]="singleOptions"
+      [(ngModel)]="singleModel">
+    </ss-multiselect-dropdown>
+
+    <pre>{{ singleModel | json }}</pre>
+
+    <!-- Grouped -->
+    <ss-multiselect-dropdown
+      [settings]="groupedSettings"
+      [options]="groupedOptions"
+      [(ngModel)]="groupedModel">
+    </ss-multiselect-dropdown>
+
+    <pre>{{ groupedModel | json }}</pre>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <h6 class="card-header">
+    ng-select
+  </h6>
+  <div class="card-body demo-vertical-spacing">
+
+    <!-- Default -->
+
+    <ng-select [items]="selectOptions"
+      bindLabel="label"
+      bindValue="value"
+      [(ngModel)]="singleSelectValue"
+      placeholder="Select state"
+      [disabled]="disabled">
+    </ng-select>
+
+    <ng-select [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [hideSelected]="true"
+      [disabled]="disabled">
+    </ng-select>
+
+    <pre>Single value: {{ singleSelectValue | json }}</pre>
+    <pre>Multiple value: {{ multipleSelectValue | json }}</pre>
+    
+    <button class="btn" [class.btn-outline-danger]="disabled" [class.btn-outline-success]="!disabled" (click)="disabled = !disabled">
+      {{ disabled ? "Disabled" : "Enabled"}}
+    </button>
+
+    <!-- Grouped -->
+
+    <ng-select [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      groupBy="timezone"
+      [selectableGroup]="true"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [hideSelected]="true"
+      [dropdownPosition]="'top'"
+      [disabled]="disabled">
+    </ng-select>
+
+    <ng-select [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      groupBy="timezone"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [disabled]="disabled"
+      [loading]="true">
+      <ng-template ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
+        <span class="small font-weight-semibold">{{item.timezone | uppercase}}</span>
+      </ng-template>
+      <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+        <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" class="mr-1" /> {{item.label}}
+      </ng-template>
+    </ng-select>
+
+    <!-- Custom template -->
+
+    <ng-select [items]="selectOptions"
+      bindLabel="label"
+      bindValue="value"
+      [(ngModel)]="singleSelectValue"
+      placeholder="Select state"
+      [disabled]="disabled">
+      <ng-template ng-label-tmp let-item="item">
+        <span class="ng-value-label"><img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + item['flag']" width="16px" height="16px" class="align-middle mr-1"> {{item['label']}}</span>
+      </ng-template>
+
+      <ng-template ng-option-tmp let-item="item">
+        <span class="ng-value-label"><img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + item['flag']" width="16px" height="16px" class="align-middle mr-1"> {{item['label']}}</span>
+      </ng-template>
+    </ng-select>
+
+    <ng-select [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [disabled]="disabled">
+      <ng-template ng-label-tmp let-item="item" let-clear="clear">
+        <span class="ng-value-label"><img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + item['flag']" width="16px" height="16px" class="align-middle mr-1"> {{item['label']}}</span>
+        <span class="ng-value-icon right" (click)="clear(item)" aria-hidden="true">×</span>
+      </ng-template>
+
+      <ng-template ng-option-tmp let-item="item">
+        <span class="ng-value-label"><img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + item['flag']" width="16px" height="16px" class="align-middle mr-1"> {{item['label']}}</span>
+      </ng-template>
+    </ng-select>
+
+    <!-- Custom Header/footer -->
+
+    <ng-select [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [hideSelected]="true"
+      [disabled]="disabled">
+      <ng-template ng-header-tmp>
+        <small>Selected count: {{multipleSelectValue.length}}</small>
+      </ng-template>
+    </ng-select>
+
+    <ng-select [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [hideSelected]="true"
+      [disabled]="disabled">
+      <ng-template ng-footer-tmp>
+        <small>Selected count: {{multipleSelectValue.length}}</small>
+      </ng-template>
+    </ng-select>
+
+    <!-- Variants -->
+
+    <ng-select class="ng-select-primary" [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [hideSelected]="true"
+      [disabled]="disabled">
+    </ng-select>
+
+    <ng-select class="ng-select-secondary" [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [hideSelected]="true"
+      [disabled]="disabled">
+    </ng-select>
+
+    <ng-select class="ng-select-success" [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [hideSelected]="true"
+      [disabled]="disabled">
+    </ng-select>
+
+    <ng-select class="ng-select-info" [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [hideSelected]="true"
+      [disabled]="disabled">
+    </ng-select>
+
+    <ng-select class="ng-select-warning" [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [hideSelected]="true"
+      [disabled]="disabled">
+    </ng-select>
+
+    <ng-select class="ng-select-danger" [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [hideSelected]="true"
+      [disabled]="disabled">
+    </ng-select>
+
+    <ng-select class="ng-select-dark" [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [hideSelected]="true"
+      [disabled]="disabled">
+    </ng-select>
+
+    <!-- States -->
+
+    <ng-select class="is-valid" [items]="selectOptions"
+      bindLabel="label"
+      bindValue="value"
+      [(ngModel)]="singleSelectValue"
+      placeholder="Select state"
+      [disabled]="disabled">
+    </ng-select>
+
+    <ng-select class="is-valid" [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [hideSelected]="true"
+      [disabled]="disabled">
+    </ng-select>
+
+    <ng-select class="is-invalid" [items]="selectOptions"
+      bindLabel="label"
+      bindValue="value"
+      [(ngModel)]="singleSelectValue"
+      placeholder="Select state"
+      [disabled]="disabled">
+    </ng-select>
+
+    <ng-select class="is-invalid" [items]="selectOptions"
+      [multiple]="true"
+      [closeOnSelect]="false"
+      bindLabel="label"
+      bindValue="value"
+      placeholder="Select states"
+      [(ngModel)]="multipleSelectValue"
+      [hideSelected]="true"
+      [disabled]="disabled">
+    </ng-select>
+  </div>
+</div>
+
+<ngx-chips-example></ngx-chips-example>

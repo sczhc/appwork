@@ -1,0 +1,61 @@
+<h4 class="d-flex flex-wrap justify-content-between align-items-center pt-3 mb-4">
+  <ol class="breadcrumb font-weight-bold mb-3">
+    <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="ion ion-ios-chatbubbles"></i></a></li>
+    <li class="breadcrumb-item active">Getting started</li>
+  </ol>
+  <div class="col-12 col-md-3 p-0 mb-3">
+    <input type="text" class="form-control" placeholder="Search...">
+  </div>
+</h4>
+
+<div class="mb-4">
+  <button type="button" class="btn btn-primary"><i class="ion ion-md-add"></i>&nbsp; New thread</button>
+</div>
+
+
+<div class="card mb-3">
+  <div class="card-header d-none d-md-block">
+    <div class="row no-gutters align-items-center">
+      <div class="col"></div>
+      <div class="col-4 text-muted">
+        <div class="row no-gutters align-items-center">
+          <div class="col-4">Replies</div>
+          <div class="col-8">Last update</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngFor="let thread of threadsData; let i = index">
+    <div class="card-body py-3">
+
+      <div class="row no-gutters align-items-center">
+        <div class="col">
+          <a href="javascript:void(0)" class="text-big">{{thread.title}}</a>
+          <span *ngIf="thread.tags && thread.tags.length">
+            <span *ngFor="let tag of thread.tags" [ngClass]="'badge-' + tags[tag].color" class="badge align-text-bottom ml-1">{{tags[tag].title}}</span>
+          </span>
+          <div class="text-muted small mt-1">Started {{thread.startedAt}} ago &nbsp;·&nbsp; <a href="javascript:void(0)" class="text-muted">{{thread.startedBy}}</a></div>
+        </div>
+        <div class="d-none d-md-block col-4">
+
+          <div class="row no-gutters align-items-center">
+            <div class="col-4">{{thread.replies}}</div>
+            <div class="media col-8 align-items-center">
+              <img [src]="'assets/img/avatars/' + thread.lastUpdate.user.avatar" alt="" class="d-block ui-w-30 rounded-circle">
+              <div class="media-body flex-truncate ml-2">
+                <div class="line-height-1 text-truncate">{{thread.lastUpdate.date}} ago</div>
+                <a href="javascript:void(0)" class="text-muted small text-truncate">by {{thread.lastUpdate.user.name}}</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <hr class="m-0" *ngIf="i !== (threadsData.length - 1)">
+  </div>
+</div>
+
+<ngb-pagination [collectionSize]="50"></ngb-pagination>

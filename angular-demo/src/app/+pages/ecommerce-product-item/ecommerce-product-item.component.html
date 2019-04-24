@@ -1,0 +1,222 @@
+<div class="media align-items-center py-3 mb-4">
+  <img [src]="'assets/img/uikit/' + productImage" alt="" class="d-block ui-w-80 ui-bordered">
+  <div class="media-body ml-4">
+    <h4 class="font-weight-bold mb-2">{{productData.title}} <span class="text-muted">#{{productData.id}}</span></h4>
+    <a href="javascript:void(0)" class="btn btn-primary btn-sm">Edit</a>&nbsp;
+    <a href="javascript:void(0)" class="btn btn-default btn-sm">Show item page</a>
+  </div>
+</div>
+
+<ngb-tabset class="nav-tabs-top nav-responsive-sm mb-4">
+  <ngb-tab title="Overview">
+    <ng-template ngbTabContent>
+
+      <div class="row no-gutters row-bordered">
+        <div class="d-flex col-md-6 col-lg align-items-center">
+
+          <div class="card-body d-flex align-items-center">
+            <div>
+              <div class="ui-stars text-large text-nowrap">
+                <div class="ui-star" *ngFor="let i of [1, 2, 3, 4, 5]" [ngClass]="uiStarClass(i)">
+                  <i class="ion ion-md-star"></i>
+                  <i class="ion ion-md-star"></i>
+                </div>
+              </div>
+              <a href="javascript:void(0)" class="d-block text-muted small">{{productData.reviews}} reviews</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="d-flex col-md-6 col-lg align-items-center">
+
+          <div class="card-body d-flex align-items-center">
+            <div class="lnr lnr-cart display-4 text-secondary"></div>
+            <div class="ml-3">
+              <div class="text-muted small line-height-1">Sales</div>
+              <div class="text-xlarge">{{formatInt(productData.sales)}}</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="d-flex col-md-6 col-lg align-items-center">
+
+          <div class="card-body d-flex align-items-center">
+            <div class="lnr lnr-earth display-4 text-secondary"></div>
+            <div class="ml-3">
+              <div class="text-muted small line-height-1">Views</div>
+              <div class="text-xlarge">{{formatInt(productData.views)}}</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="d-flex col-md-6 col-lg align-items-center">
+
+          <div class="card-body d-flex align-items-center">
+            <div class="lnr lnr-gift display-4 text-secondary"></div>
+            <div class="ml-3">
+              <div class="text-muted small line-height-1">Wished</div>
+              <div class="text-xlarge">{{formatInt(productData.wished)}}</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <hr class="m-0">
+
+      <div class="card-body">
+        <h6 class="small font-weight-semibold mb-4">Basic info</h6>
+
+        <table class="table product-item-table">
+          <tbody>
+            <tr>
+              <td>Price:</td>
+              <td><strong>{{formatPrice(productData.price)}}</strong></td>
+            </tr>
+            <tr>
+              <td>Category:</td>
+              <td>{{productData.category}}</td>
+            </tr>
+            <tr>
+              <td>Items in stock:</td>
+              <td>{{productData.inStock}}</td>
+            </tr>
+            <tr>
+              <td>Tax:</td>
+              <td>{{productData.tax}}%</td>
+            </tr>
+            <tr>
+              <td>Status:</td>
+              <td>
+                <span class="badge badge-success" *ngIf="productData.status === 1">Published</span>
+                <span class="badge badge-danger" *ngIf="productData.status === 2">Out of stock</span>
+                <span class="badge badge-info" *ngIf="productData.status === 3">Pending</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <hr class="m-0">
+
+      <div class="card-body">
+        <h6 class="small font-weight-semibold mb-4">Options</h6>
+
+        <table class="table product-item-table">
+          <tbody>
+            <tr>
+              <td>Brand:</td>
+              <td>{{productData.options.brand}}</td>
+            </tr>
+            <tr>
+              <td>Storages:</td>
+              <td>{{productData.options.storages.join(', ')}}</td>
+            </tr>
+            <tr>
+              <td>Colors:</td>
+              <td>
+                <span *ngFor="let color of productData.options.colors">
+                  <span class="ui-product-color align-middle" [style.background]="color[1]"></span> <span class="align-middle">{{color[0]}}</span> &nbsp;
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>Warranties:</td>
+              <td>{{productData.options.warranties.join(', ')}}</td>
+            </tr>
+            <tr>
+              <td>Ships from:</td>
+              <td>{{productData.options.ships_from.join(', ')}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <hr class="m-0">
+
+      <div class="card-body product-item-table">
+        <h6 class="small font-weight-semibold mb-4">Meta</h6>
+
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Title:</td>
+              <td>{{productData.meta.title}}</td>
+            </tr>
+            <tr>
+              <td>Description:</td>
+              <td>{{productData.meta.description}}</td>
+            </tr>
+            <tr>
+              <td>Keywords:</td>
+              <td>{{productData.meta.keywords}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Description">
+    <ng-template ngbTabContent>
+
+      <div class="card-body p-5" [innerHTML]="productData.description"></div>
+
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Discounts">
+    <ng-template ngbTabContent>
+      <div class="card-body">
+
+        <div class="table-responsive">
+          <table class="table product-item-discounts-table">
+            <thead>
+              <tr>
+                <th>Discount</th>
+                <th>Type</th>
+                <th>Code</th>
+                <th>Quantity</th>
+                <th>Done</th>
+                <th>Start date</th>
+                <th>End date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let discount of productData.discounts">
+                <th>{{discount.discount}}%</th>
+                <td>{{discount.type}}</td>
+                <td>{{discount.code}}</td>
+                <td>{{discount.quantity}}</td>
+                <td>{{discount.done}}</td>
+                <td>{{discount.startDate}}</td>
+                <td>{{discount.endDate}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Images">
+    <ng-template ngbTabContent>
+      <div class="card-body">
+
+        <div class="mb-4">
+          <span class="badge badge-dot badge-primary"></span> Primary image
+        </div>
+
+        <div class="row">
+
+          <div *ngFor="let i of productData.images" class="col-12 col-sm-6 col-md-4 col-xl-3 mb-4">
+            <a [href]="'assets/img/uikit/' + i.image" [ngClass]="{'border-primary': i.primary}" target="_blank" class="d-block ui-bordered">
+              <img [src]="'assets/img/uikit/' + i.image" class="img-fluid" alt="">
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>

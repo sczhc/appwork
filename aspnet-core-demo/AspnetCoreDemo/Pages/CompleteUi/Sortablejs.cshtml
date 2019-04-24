@@ -1,0 +1,96 @@
+<div class="ui-block">
+    <h3 class="ui-block-heading">Sortable.js</h3>
+    <a target="_blank" href="https://github.com/RubaXa/Sortable" class="ui-block-description">https://github.com/RubaXa/Sortable</a>
+
+    <samp class="cui-example-code-static">
+        &lt;script src="~/vendor/libs/sortablejs/sortable.js"&gt;&lt;/script&gt;
+    </samp>
+
+    <h4 class="ui-block-heading">Examples</h4>
+
+    <div class="cui-example cui-example-vertical-spacing">
+        <ul class="sortable-example" id="sortable-1">
+            <li style="background: #f3f3f3;">Item 1</li>
+            <li style="background: #f3f3f3;">Item 2</li>
+            <li style="background: #f3f3f3;">Item 3</li>
+            <li style="background: #f3f3f3;">Item 4</li>
+            <li style="background: #f3f3f3;">Item 5</li>
+        </ul>
+
+        <ul class="sortable-example sortable-example-inline" id="sortable-2">
+            <li style="background: #f3f3f3;">Item 1</li>
+            <li style="background: #f3f3f3;">Item 2</li>
+            <li style="background: #f3f3f3;">Item 3</li>
+            <li style="background: #f3f3f3;">Item 4</li>
+        </ul>
+
+        <div id="sortable-3" class="clearfix">
+            <img src="~/img/avatars/1.png" alt="">
+            <img src="~/img/avatars/2.png" alt="">
+            <img src="~/img/avatars/3.png" alt="">
+            <img src="~/img/avatars/4.png" alt="">
+        </div>
+
+        <ul class="sortable-example" id="sortable-4">
+            <li style="background: #f3f3f3;"><i class="ion ion-ios-move m-r-1"></i>&nbsp; Item 1</li>
+            <li style="background: #f3f3f3;"><i class="ion ion-ios-move m-r-1"></i>&nbsp; Item 2</li>
+            <li style="background: #f3f3f3;"><i class="ion ion-ios-move m-r-1"></i>&nbsp; Item 3</li>
+            <li style="background: #f3f3f3;"><i class="ion ion-ios-move m-r-1"></i>&nbsp; Item 4</li>
+            <li style="background: #f3f3f3;"><i class="ion ion-ios-move m-r-1"></i>&nbsp; Item 5</li>
+        </ul>
+
+        <!-- Styles -->
+        <style>
+            .sortable-example {
+                margin: 0;
+                padding: 0;
+            }
+            .sortable-example li {
+                padding: 6px 10px;
+                margin-bottom: 8px;
+                list-style: none;
+            }
+            .sortable-example-inline li {
+                margin-right: 8px;
+                display: inline-block;
+            }
+            [dir=rtl] .sortable-example-inline li {
+                margin-right: 0;
+                margin-left: 8px;
+            }
+
+            #sortable-3 {
+                width: 220px;
+            }
+            #sortable-3 img {
+                margin-right: 8px;
+                margin-bottom: 8px;
+                width: 100px;
+                height: 100px;
+                border-radius: 999px;
+                display: block;
+                float: left;
+            }
+            [dir=rtl] #sortable-3 img {
+                margin-right: 0;
+                margin-left: 8px;
+                float: right;
+            }
+        </style>
+        <!-- / Styles -->
+
+        <!-- Javascript -->
+        <script>
+            $(function() {
+                Sortable.create(document.getElementById('sortable-1'), { animation: 150 });
+                Sortable.create(document.getElementById('sortable-2'), { animation: 150 });
+                Sortable.create(document.getElementById('sortable-3'), { animation: 150 });
+                Sortable.create(document.getElementById('sortable-4'), {
+                    animation: 150,
+                    handle: '.ion'
+                });
+            });
+        </script>
+        <!-- / Javascript -->
+    </div>
+</div>

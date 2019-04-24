@@ -1,0 +1,42 @@
+@{
+    ViewBag.Title = "Order list - Pages";
+}
+
+@section Styles {
+    @Styles.Render("~/bundle/vendor/css/datatables/datatables")
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    @Scripts.Render("~/bundle/vendor/js/datatables/datatables")
+    @Scripts.Render("~/bundle/vendor/js/numeral/numeral")
+    
+    @Scripts.Render("~/bundle/js/pages_e-commerce_order-list")
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+    Orders
+</h4>
+
+<div class="card">
+    <div class="card-datatable table-responsive">
+        <table id="order-list" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Customer</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">UI elements /</span> Ng2 Img Cropper
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-4">
+
+<div class="mb-4">
+  <label class="btn btn-primary btn-lg">
+    Upload image
+    <input type="file" (change)="fileChangeListener($event)" class="sr-only">
+  </label>
+</div>
+<div class="d-flex">
+  <img-cropper #cropper [image]="data" [settings]="cropperSettings"></img-cropper>
+  <div *ngIf="data.image" class="ml-3">
+    <img [src]="data.image" [width]="cropperSettings.croppedWidth" [height]="cropperSettings.croppedHeight">
+  </div>
+</div>

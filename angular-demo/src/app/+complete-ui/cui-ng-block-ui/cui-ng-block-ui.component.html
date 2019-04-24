@@ -1,0 +1,56 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ng-block-ui</h3>
+  <a target="_blank" href="https://github.com/kuuurt13/ng-block-ui" class="ui-block-description">https://github.com/kuuurt13/ng-block-ui</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example">
+
+    <!-- Page blocking -->
+
+    <ng-template #pageBlockTemplate>
+      <div class="block-ui-template">
+        <div class="sk-folding-cube sk-primary"><div class="sk-cube1 sk-cube"></div><div class="sk-cube2 sk-cube"></div><div class="sk-cube4 sk-cube"></div><div class="sk-cube3 sk-cube"></div></div>
+        <h5 class="text-center mb-0">LOADING...</h5>
+      </div>
+    </ng-template>
+
+    <block-ui [template]="pageBlockTemplate" class="block-ui-white"></block-ui>
+
+    <!-- Element blocking -->
+
+    <ng-template #elementBlockTemplate>
+      <div class="block-ui-template">
+        <div class="sk-wave sk-primary"><div class="sk-rect sk-rect1"></div> <div class="sk-rect sk-rect2"></div> <div class="sk-rect sk-rect3"></div> <div class="sk-rect sk-rect4"></div> <div class="sk-rect sk-rect5"></div></div>
+      </div>
+    </ng-template>
+
+    <div class="card block-ui-white mb-3" *blockUI="'element'; template: elementBlockTemplate">
+      <div class="card-header">
+        Using <strong>directive</strong>
+      </div>
+      <div class="card-body">
+        <p>
+          Lorem ipsum dolor sit amet, an vel affert soleat possim. Usu meis
+          neglegentur ut, oporteat salutandi dignissim at mea. Pericula erroribus
+          quaerendum ex duo, his autem accusamus ad, alienum detracto rationibus
+          vis et. No est volumus ocurreret vituperata.
+        </p>
+        <p>
+          At pri facete recteque, eos omittam hendrerit maiestatis et. Ut aliquip
+          regione pericula mea, sed te ornatus vivendum, tritani persius atomorum
+          id pro. Laoreet epicurei ei duo. Ad nulla senserit sit, has ne prima option.
+        </p>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary mr-1" (click)="blockPage()">Block page</button>
+
+    <button type="button" class="btn"
+      (click)="toggleElementBlocking()"
+      [class.btn-primary]="!elementBlocked"
+      [class.btn-secondary]="elementBlocked">
+      {{ !elementBlocked ? 'Block' : 'Unblock' }} element
+    </button>
+  </div>
+</div>

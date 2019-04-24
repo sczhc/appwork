@@ -1,0 +1,83 @@
+@import '../_custom-variables/pages';
+
+$project-attachment-width: 18rem !default;
+$project-attachment-size: 4rem !default;
+$project-task-item-padding: .625rem 0 !default;
+
+// Attachments
+
+:host /deep/ .project-attachment {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+   > .media-body {
+    min-width: 0;
+  }
+}
+
+:host /deep/ .project-attachment-file,
+:host /deep/ .project-attachment-img {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: $project-attachment-size;
+  height: $project-attachment-size;
+}
+
+:host /deep/ .project-attachment-file {
+  display: inline-block;
+  text-align: center;
+  line-height: $project-attachment-size;
+}
+
+:host /deep/ .project-attachment-img {
+  background-color: transparent;
+  background-position: center center;
+  background-size: cover;
+}
+
+:host /deep/ .project-attachment-filename {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Tasks
+
+:host /deep/ .project-task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $project-task-item-padding;
+
+  .ui-todo-item {
+    margin: 0;
+  }
+}
+
+.default-style :host /deep/ {
+  @import "../_appwork/include";
+
+  .project-task-item {
+    background: $card-bg;
+
+    + .project-task-item {
+      border-top: 1px solid $gray-100;
+    }
+  }
+}
+
+.material-style :host /deep/ {
+  @import "../_appwork/include-material";
+
+  .project-task-item {
+    background: $card-bg;
+
+    + .project-task-item {
+      border-top: 1px solid $gray-100;
+    }
+  }
+}

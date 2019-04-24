@@ -1,0 +1,31 @@
+@{
+    ViewBag.Title = "Typeahead - Forms";
+}
+
+@section Styles {
+    @Styles.Render("~/bundle/vendor/css/typeahead-js/typeahead")
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    @Scripts.Render("~/bundle/vendor/js/typeahead-js/typeahead")
+    
+    @Scripts.Render("~/bundle/js/forms_typeahead")
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+    <span class="text-muted font-weight-light">Forms /</span> Typeahead
+</h4>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <label class="form-label">Enter a country name:</label>
+        <input id="typeahead-input" class="form-control" type="text" autocomplete="off">
+    </div>
+</div>

@@ -1,0 +1,175 @@
+<% content_for :styles do %>
+  <%= stylesheet_link_tag 'bootstrap-slider/bootstrap-slider.css', media: 'all' %>
+  <%= stylesheet_link_tag 'nouislider/nouislider.css', media: 'all' %>
+  <%= stylesheet_link_tag 'select2/select2.css', media: 'all' %>
+  <%= stylesheet_link_tag 'bootstrap-tagsinput/bootstrap-tagsinput.css', media: 'all' %>
+  <%= stylesheet_link_tag 'bootstrap-select/bootstrap-select.css', media: 'all' %>
+  <%= stylesheet_link_tag 'bootstrap-multiselect/bootstrap-multiselect.css', media: 'all' %>
+  <%= stylesheet_link_tag 'bootstrap-datepicker/bootstrap-datepicker.css', media: 'all' %>
+  <%= stylesheet_link_tag 'bootstrap-daterangepicker/bootstrap-daterangepicker.css', media: 'all' %>
+  <%= stylesheet_link_tag 'bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.css', media: 'all' %>
+  <%= stylesheet_link_tag 'timepicker/timepicker.css', media: 'all' %>
+  <%= stylesheet_link_tag 'minicolors/minicolors.css', media: 'all' %>
+  <%= stylesheet_link_tag 'fullcalendar/fullcalendar.css', media: 'all' %>
+  <%= stylesheet_link_tag 'bootstrap-sweetalert/bootstrap-sweetalert.css', media: 'all' %>
+  <%= stylesheet_link_tag 'growl/growl.css', media: 'all' %>
+  <%= stylesheet_link_tag 'toastr/toastr.css', media: 'all' %>
+  <%= stylesheet_link_tag 'bootstrap-markdown/bootstrap-markdown.css', media: 'all' %>
+  <%= stylesheet_link_tag 'quill/typography.css', media: 'all' %>
+  <%= stylesheet_link_tag 'quill/editor.css', media: 'all' %>
+  <%= stylesheet_link_tag 'typeahead-js/typeahead.css', media: 'all' %>
+  <%= stylesheet_link_tag 'datatables/datatables.css', media: 'all' %>
+  <%= stylesheet_link_tag 'bootstrap-table/bootstrap-table.css', media: 'all' %>
+  <%= stylesheet_link_tag 'bootstrap-sortable/bootstrap-sortable.css', media: 'all' %>
+  <%= stylesheet_link_tag 'dropzone/dropzone.css', media: 'all' %>
+  <%= stylesheet_link_tag 'flow-js/flow.css', media: 'all' %>
+  <%= stylesheet_link_tag 'dragula/dragula.css', media: 'all' %>
+  <%= stylesheet_link_tag 'bootstrap-duallistbox/bootstrap-duallistbox.css', media: 'all' %>
+  <%= stylesheet_link_tag 'nestable/nestable.css', media: 'all' %>
+  <%= stylesheet_link_tag 'jstree/themes/default/style.css', media: 'all' %>
+  <%= stylesheet_link_tag 'ladda/ladda.css', media: 'all' %>
+  <%= stylesheet_link_tag 'vegas/vegas.css', media: 'all' %>
+  <%= stylesheet_link_tag 'swiper/swiper.css', media: 'all' %>
+  <%= stylesheet_link_tag 'cropper/cropper.css', media: 'all' %>
+  <%= stylesheet_link_tag 'bootstrap-maxlength/bootstrap-maxlength.css', media: 'all' %>
+  <%= stylesheet_link_tag 'bootstrap-tour/bootstrap-tour.css', media: 'all' %>
+  <%= stylesheet_link_tag 'spinkit/spinkit.css', media: 'all' %>
+  <%= stylesheet_link_tag 'photoswipe/photoswipe.css', media: 'all' %>
+  <%= stylesheet_link_tag 'blueimp-gallery/gallery.css', media: 'all' %>
+  <%= stylesheet_link_tag 'blueimp-gallery/gallery-indicator.css', media: 'all' %>
+  <%= stylesheet_link_tag 'blueimp-gallery/gallery-video.css', media: 'all' %>
+  <%= stylesheet_link_tag 'smartwizard/smartwizard.css', media: 'all' %>
+  <%= stylesheet_link_tag 'perfect-scrollbar/perfect-scrollbar.css', media: 'all' %>
+  <%= stylesheet_link_tag 'plyr/plyr.css', media: 'all' %>
+<% end %>
+
+<% content_for :scripts do %>
+  <!-- Dependencies -->
+  <%= javascript_include_tag 'numeral/numeral.js' %>
+  <%= javascript_include_tag 'bootstrap-slider/bootstrap-slider.js' %>
+  <%= javascript_include_tag 'nouislider/nouislider.js' %>
+  <%= javascript_include_tag 'select2/select2.js' %>
+  <%= javascript_include_tag 'bootstrap-tagsinput/bootstrap-tagsinput.js' %>
+  <%= javascript_include_tag 'bootstrap-select/bootstrap-select.js' %>
+  <%= javascript_include_tag 'bootstrap-multiselect/bootstrap-multiselect.js' %>
+  <%= javascript_include_tag 'bootstrap-datepicker/bootstrap-datepicker.js' %>
+  <%= javascript_include_tag 'moment/moment.js' %>
+  <%= javascript_include_tag 'bootstrap-daterangepicker/bootstrap-daterangepicker.js' %>
+  <%= javascript_include_tag 'bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.js' %>
+  <%= javascript_include_tag 'timepicker/timepicker.js' %>
+  <%= javascript_include_tag 'minicolors/minicolors.js' %>
+  <%= javascript_include_tag 'fullcalendar/fullcalendar.js' %>
+  <%= javascript_include_tag 'autosize/autosize.js' %>
+  <%= javascript_include_tag 'vanilla-text-mask/vanilla-text-mask.js' %>
+  <%= javascript_include_tag 'vanilla-text-mask/text-mask-addons.js' %>
+  <%= javascript_include_tag 'bootbox/bootbox.js' %>
+  <%= javascript_include_tag 'bootstrap-sweetalert/bootstrap-sweetalert.js' %>
+  <%= javascript_include_tag 'growl/growl.js' %>
+  <%= javascript_include_tag 'toastr/toastr.js' %>
+  <%= javascript_include_tag 'markdown/markdown.js' %>
+  <%= javascript_include_tag 'bootstrap-markdown/bootstrap-markdown.js' %>
+  <script>
+    // Quill does not support IE 10 and below so don't load it to prevent console errors
+    if (typeof document.documentMode !== 'number' || document.documentMode > 10) {
+      document.open();
+      document.write('\x3Cscript src="<%= asset_path 'quill/quill.js' %>">\x3C/script>');
+      document.close();
+    }
+  </script>
+  <%= javascript_include_tag 'typeahead-js/typeahead.js' %>
+  <%= javascript_include_tag 'datatables/datatables.js' %>
+  <%= javascript_include_tag 'tableexport/tableexport.js' %>
+  <%= javascript_include_tag 'bootstrap-table/bootstrap-table.js' %>
+  <%= javascript_include_tag 'bootstrap-table/extensions/export/export.js' %>
+  <%= javascript_include_tag 'bootstrap-sortable/bootstrap-sortable.js' %>
+  <%= javascript_include_tag 'dropzone/dropzone.js' %>
+  <%= javascript_include_tag 'flow-js/flow.js' %>
+  <%= javascript_include_tag 'dragula/dragula.js' %>
+  <%= javascript_include_tag 'sortablejs/sortable.js' %>
+  <%= javascript_include_tag 'knob/knob.js' %>
+  <%= javascript_include_tag 'bootstrap-menu/bootstrap-menu.js' %>
+  <%= javascript_include_tag 'bootstrap-duallistbox/bootstrap-duallistbox.js' %>
+  <%= javascript_include_tag 'nestable/nestable.js' %>
+  <%= javascript_include_tag 'jstree/jstree.js' %>
+  <%= javascript_include_tag 'spin/spin.js' %>
+  <%= javascript_include_tag 'ladda/ladda.js' %>
+  <%= javascript_include_tag 'validate/validate.js' %>
+  <%= javascript_include_tag 'vegas/vegas.js' %>
+  <%= javascript_include_tag 'swiper/swiper.js' %>
+  <%= javascript_include_tag 'cropper/cropper.js' %>
+  <%= javascript_include_tag 'bootstrap-maxlength/bootstrap-maxlength.js' %>
+  <%= javascript_include_tag 'bootstrap-tour/bootstrap-tour.js' %>
+  <%= javascript_include_tag 'pwstrength-bootstrap/pwstrength-bootstrap.js' %>
+  <%= javascript_include_tag 'clipboard/clipboard.js' %>
+  <%= javascript_include_tag 'masonry/masonry.js' %>
+  <%= javascript_include_tag 'block-ui/block-ui.js' %>
+  <%= javascript_include_tag 'photoswipe/photoswipe.js' %>
+  <%= javascript_include_tag 'blueimp-gallery/gallery.js' %>
+  <%= javascript_include_tag 'blueimp-gallery/gallery-fullscreen.js' %>
+  <%= javascript_include_tag 'blueimp-gallery/gallery-indicator.js' %>
+  <%= javascript_include_tag 'blueimp-gallery/gallery-video.js' %>
+  <%= javascript_include_tag 'blueimp-gallery/gallery-vimeo.js' %>
+  <%= javascript_include_tag 'blueimp-gallery/gallery-youtube.js' %>
+  <%= javascript_include_tag 'idletimer/idletimer.js' %>
+  <%= javascript_include_tag 'smartwizard/smartwizard.js' %>
+  <%= javascript_include_tag 'perfect-scrollbar/perfect-scrollbar.js' %>
+  <%= javascript_include_tag 'plyr/plyr.js' %>
+<% end %>
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<%= render "complete_ui/numeral" %>
+<%= render "complete_ui/bootstrap_slider" %>
+<%= render "complete_ui/nouislider" %>
+<%= render "complete_ui/select2" %>
+<%= render "complete_ui/bootstrap_tagsinput" %>
+<%= render "complete_ui/bootstrap_select" %>
+<%= render "complete_ui/bootstrap_multiselect" %>
+<%= render "complete_ui/bootstrap_datepicker" %>
+<%= render "complete_ui/bootstrap_daterangepicker" %>
+<%= render "complete_ui/bootstrap_material_datetimepicker" %>
+<%= render "complete_ui/timepicker" %>
+<%= render "complete_ui/minicolors" %>
+<%= render "complete_ui/fullcalendar" %>
+<%= render "complete_ui/autosize" %>
+<%= render "complete_ui/vanilla_text_mask" %>
+<%= render "complete_ui/bootbox" %>
+<%= render "complete_ui/bootstrap_sweetalert" %>
+<%= render "complete_ui/growl" %>
+<%= render "complete_ui/toastr" %>
+<%= render "complete_ui/bootstrap_markdown" %>
+<%= render "complete_ui/quill" %>
+<%= render "complete_ui/typeahead" %>
+<%= render "complete_ui/datatables" %>
+<%= render "complete_ui/bootstrap_table" %>
+<%= render "complete_ui/bootstrap_sortable" %>
+<%= render "complete_ui/dropzone" %>
+<%= render "complete_ui/flow" %>
+<%= render "complete_ui/dragula" %>
+<%= render "complete_ui/sortablejs" %>
+<%= render "complete_ui/swiper" %>
+<%= render "complete_ui/knob" %>
+<%= render "complete_ui/bootstrap_menu" %>
+<%= render "complete_ui/bootstrap_duallistbox" %>
+<%= render "complete_ui/nestable" %>
+<%= render "complete_ui/jstree" %>
+<%= render "complete_ui/ladda" %>
+<%= render "complete_ui/validation" %>
+<%= render "complete_ui/vegas" %>
+<%= render "complete_ui/cropper" %>
+<%= render "complete_ui/bootstrap_maxlength" %>
+<%= render "complete_ui/bootstrap_tour" %>
+<%= render "complete_ui/pwstrength_bootstrap" %>
+<%= render "complete_ui/clipboard" %>
+<%= render "complete_ui/masonry" %>
+<%= render "complete_ui/spinkit" %>
+<%= render "complete_ui/blockui" %>
+<%= render "complete_ui/photoswipe" %>
+<%= render "complete_ui/blueimp_gallery" %>
+<%= render "complete_ui/idletimer" %>
+<%= render "complete_ui/smartwizard" %>
+<%= render "complete_ui/perfect_scrollbar" %>
+<%= render "complete_ui/plyr" %>

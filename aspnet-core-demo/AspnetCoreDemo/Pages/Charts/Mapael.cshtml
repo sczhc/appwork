@@ -1,0 +1,31 @@
+@page
+@model MapaelModel
+@{
+    ViewData["Title"] = "Mapael - Charts";
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    <script src="~/vendor/libs/eve/eve.js"></script>
+    <script src="~/vendor/libs/raphael/raphael.js"></script>
+    <script src="~/vendor/libs/mapael/mapael.js"></script>
+    <script src="~/vendor/libs/mapael/maps/world_countries.js"></script>
+    
+    <script src="~/js/charts_mapael.js"></script>
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+    <span class="text-muted font-weight-light">Charts /</span> Mapael
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-5">
+
+<div id="mapael-example">
+    <div class="map">Alternative content</div>
+</div>

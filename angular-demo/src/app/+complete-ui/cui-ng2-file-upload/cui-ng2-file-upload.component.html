@@ -1,0 +1,67 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ng2-file-upload</h3>
+  <a target="_blank" href="https://github.com/valor-software/ng2-file-upload" class="ui-block-description">https://github.com/valor-software/ng2-file-upload</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example">
+    <div class="ng2-file-upload-drop-zone text-center py-5 px-3"
+      ng2FileDrop
+      [ngClass]="{'ng2-file-upload-file-over': hasBaseDropZoneOver}"
+      (fileOver)="fileOver($event)"
+      [uploader]="uploader">
+
+      <h4>Drop files here to upload or</h4>
+      <label class="btn btn-secondary">
+        Select file
+        <input type="file" class="sr-only" ng2FileSelect [uploader]="uploader">
+      </label>
+      <label class="btn btn-secondary">
+        Select multiple files
+        <input type="file" class="sr-only" ng2FileSelect [uploader]="uploader" multiple>
+      </label>
+    </div>
+
+    <div class="media mt-4" [class.d-none]="!uploader?.queue?.length">
+      <div class="mr-3">
+        <button type="button" class="progress-resume-link btn icon-btn btn-primary" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length" ngbTooltip="Upload all"><i class="ion ion-md-play"></i></button>
+        <button type="button" class="progress-pause-link btn icon-btn btn-warning" (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading" ngbTooltip="Cancel all"><i class="ion ion-md-close"></i></button>
+        <button type="button" class="progress-cancel-link btn icon-btn btn-danger" (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length" ngbTooltip="Remove all"><i class="ion ion-md-trash"></i></button>
+      </div>
+      <div class="media-body align-self-center">
+        <div class="progress-container progress"><div class="progress-bar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div></div>
+      </div>
+    </div>
+
+    <ul class="list-group mt-4" [class.d-none]="!uploader?.queue?.length">
+
+      <!-- Files -->
+      <li class="list-group-item" *ngFor="let item of uploader.queue">
+        <div class="media">
+          <div class="media-body">
+            <div>
+              <span *ngIf="item.isSuccess"><i class="ion ion-md-checkmark text-success text-big mr-2"></i></span>
+              <span *ngIf="item.isCancel"><i class="ion ion-md-close text-warning text-big mr-2"></i></span>
+              <span *ngIf="item.isError"><i class="ion ion-md-alert text-danger text-big mr-2"></i></span>
+              <strong>{{ item?.file?.name }}</strong>
+              <span>
+                - <em class="text-muted">{{ item.progress + '%' }}</em>
+              </span>
+            </div>
+            <div>
+              <small class="text-muted" nowrap>
+                {{ item?.file?.size/1024/1024 | number:'.2' }} MB
+              </small>
+            </div>
+          </div>
+          <div class="align-self-center ml-3">
+            <button type="button" class="btn btn-sm icon-btn btn-outline-success" (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess"><i class="ion ion-md-play"></i></button>
+            <button type="button" class="btn btn-sm icon-btn btn-outline-warning" (click)="item.cancel()" [disabled]="!item.isUploading"><i class="ion ion-md-close"></i></button>
+            <button type="button" class="btn btn-sm icon-btn btn-outline-danger" (click)="item.remove()"><i class="ion ion-md-trash"></i></button>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>

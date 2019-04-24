@@ -1,0 +1,110 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ngx-toastr</h3>
+  <a target="_blank" href="https://github.com/scttcper/ngx-toastr" class="ui-block-description">https://github.com/scttcper/ngx-toastr</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example">
+    <div class="row">
+      <div class="col-xs-12 col-md-7">
+        <div class="form-group">
+          <label class="form-label">Title</label>
+          <input [(ngModel)]="title" type="text" class="form-control" placeholder="Enter a title...">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <input [(ngModel)]="message" type="text" class="form-control" placeholder="Enter a message...">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Type</label>
+          <select [(ngModel)]="type" class="custom-select form-control">
+            <option value="success">Success</option>
+            <option value="info">Info</option>
+            <option value="warning">Warning</option>
+            <option value="error">Error</option>
+          </select>
+        </div>
+        <div class="form-group custom-controls-stacked">
+          <label class="custom-control custom-checkbox">
+            <input [(ngModel)]="tapToDismiss" type="checkbox" class="custom-control-input">
+            <span class="custom-control-label">Tap to dismiss</span>
+          </label>
+          <label class="custom-control custom-checkbox">
+            <input [(ngModel)]="closeButton" type="checkbox" class="custom-control-input">
+            <span class="custom-control-label">Close button</span>
+          </label>
+          <label class="custom-control custom-checkbox">
+            <input [(ngModel)]="progressBar" type="checkbox" class="custom-control-input">
+            <span class="custom-control-label">Progress bar</span>
+          </label>
+          <label class="custom-control custom-checkbox">
+            <input [(ngModel)]="preventDuplicates" type="checkbox" class="custom-control-input">
+            <span class="custom-control-label">Prevent duplicates</span>
+          </label>
+          <label class="custom-control custom-checkbox">
+            <input [(ngModel)]="newestOnTop" type="checkbox" class="custom-control-input">
+            <span class="custom-control-label">Newest on top</span>
+          </label>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-5">
+        <div class="form-group custom-controls-stacked">
+          <label class="form-label mb-2">Progress bar animation</label>
+          <label class="custom-control custom-radio">
+            <input [(ngModel)]="progressAnimation" [disabled]="!progressBar" value="decreasing" name="toastr-progress-bar-animation" type="radio" class="custom-control-input">
+            <span class="custom-control-label">Decreasing</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input [(ngModel)]="progressAnimation" [disabled]="!progressBar" value="increasing" name="toastr-progress-bar-animation" type="radio" class="custom-control-input">
+            <span class="custom-control-label">Increasing</span>
+          </label>
+        </div>
+
+        <div class="form-group custom-controls-stacked">
+          <label class="form-label mb-2">Position</label>
+          <label class="custom-control custom-radio">
+            <input [(ngModel)]="positionClass" value="toast-top-right" name="toastr-position" type="radio" class="custom-control-input">
+            <span class="custom-control-label">Top Right</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input [(ngModel)]="positionClass" value="toast-bottom-right" name="toastr-position" type="radio" class="custom-control-input">
+            <span class="custom-control-label">Bottom Right</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input [(ngModel)]="positionClass" value="toast-bottom-left" name="toastr-position" type="radio" class="custom-control-input">
+            <span class="custom-control-label">Bottom Left</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input [(ngModel)]="positionClass" value="toast-top-left" name="toastr-position" type="radio" class="custom-control-input">
+            <span class="custom-control-label">Top Left</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input [(ngModel)]="positionClass" value="toast-top-full-width" name="toastr-position" type="radio" class="custom-control-input">
+            <span class="custom-control-label">Top Full Width</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input [(ngModel)]="positionClass" value="toast-bottom-full-width" name="toastr-position" type="radio" class="custom-control-input">
+            <span class="custom-control-label">Bottom Full Width</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input [(ngModel)]="positionClass" value="toast-top-center" name="toastr-position" type="radio" class="custom-control-input">
+            <span class="custom-control-label">Top Center</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input [(ngModel)]="positionClass" value="toast-bottom-center" name="toastr-position" type="radio" class="custom-control-input">
+            <span class="custom-control-label">Bottom Center</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input [(ngModel)]="positionClass" value="toast-center-center" name="toastr-position" type="radio" class="custom-control-input">
+            <span class="custom-control-label">Center Center</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <button class="btn btn-primary mr-1" (click)="showToast()">Show toast</button>
+    <button class="btn btn-default mr-1" (click)="clearToasts()">Clear toasts</button>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">angular2-ladda</h3>
+  <a target="_blank" href="https://github.com/moff/angular2-ladda" class="ui-block-description">https://github.com/moff/angular2-ladda</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing">
+    <div class="row">
+      <div class="col">
+        <h6>expand-left</h6>
+        <button [ladda]="loading[0]" (click)="startLoading(0)" data-style="expand-left" class="btn btn-primary">Submit</button>
+      </div>
+
+      <div class="col">
+        <h6>expand-right</h6>
+        <button [ladda]="loading[1]" (click)="startLoading(1)" data-style="expand-right" class="btn btn-primary">Submit</button>
+      </div>
+
+      <div class="col">
+        <h6>expand-up</h6>
+        <button [ladda]="loading[2]" (click)="startLoading(2)" data-style="expand-up" class="btn btn-primary">Submit</button>
+      </div>
+
+      <div class="col">
+        <h6>expand-down</h6>
+        <button [ladda]="loading[3]" (click)="startLoading(3)" data-style="expand-down" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+
+    <div class="row button-demo">
+      <div class="col">
+        <h6>contract</h6>
+        <button [ladda]="loading[4]" (click)="startLoading(4)" data-style="contract" class="btn btn-success">Submit</button>
+      </div>
+
+      <div class="col">
+        <h6>contract-overlay</h6>
+        <button [ladda]="loading[5]" (click)="startLoading(5)" data-style="contract-overlay" class="btn btn-success" style="z-index: 10;">Submit</button>
+      </div>
+
+      <div class="col">
+        <h6>zoom-in</h6>
+        <button [ladda]="loading[6]" (click)="startLoading(6)" data-style="zoom-in" class="btn btn-success">Submit</button>
+      </div>
+
+      <div class="col">
+        <h6>zoom-out</h6>
+        <button [ladda]="loading[7]" (click)="startLoading(7)" data-style="zoom-out" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+
+    <div class="row button-demo">
+      <div class="col">
+        <h6>slide-left</h6>
+        <button [ladda]="loading[8]" (click)="startLoading(8)" data-style="slide-left" class="btn btn-info">Submit</button>
+      </div>
+
+      <div class="col">
+        <h6>slide-right</h6>
+        <button [ladda]="loading[9]" (click)="startLoading(9)" data-style="slide-right" class="btn btn-info">Submit</button>
+      </div>
+
+      <div class="col">
+        <h6>slide-up</h6>
+        <button [ladda]="loading[10]" (click)="startLoading(10)" data-style="slide-up" class="btn btn-info">Submit</button>
+      </div>
+
+      <div class="col">
+        <h6>slide-down</h6>
+        <button [ladda]="loading[11]" (click)="startLoading(11)" data-style="slide-down" class="btn btn-info">Submit</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <h5 class="col mt-5 mb-4">Built-in progress bar</h5>
+    </div>
+
+    <div class="row progress-demo">
+      <div class="col">
+        <h6>expand-right</h6>
+        <button [ladda]="progress[0]" (click)="startProgress(0)" data-style="expand-right" class="btn btn-danger">Submit</button>
+      </div>
+
+      <div class="col">
+        <h6>contract</h6>
+        <button [ladda]="progress[1]" (click)="startProgress(1)" data-style="contract" class="btn btn-danger">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,349 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ng2-archwizard</h3>
+  <a target="_blank" href="https://github.com/madoar/ng2-archwizard" class="ui-block-description">https://github.com/madoar/ng2-archwizard</a>
+
+  <div class="no-ie10" data-name="ng2-archwizard"></div>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example">
+    <wizard [navBarLocation]="'top'" [navBarLayout]="'custom'">
+      <wizard-step navigationSymbol="1" navigationSymbolFontFamily="Roboto">
+        <ng-template wizardStepTitle><div class="text-muted small">FIRST STEP</div>Keyboard</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 1
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" nextStep>Next</button>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="2" navigationSymbolFontFamily="Roboto">
+        <ng-template wizardStepTitle><div class="text-muted small">SECOND STEP</div>Effects</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 2
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" previousStep>Previous</button>
+          <button type="button" class="btn btn-default" nextStep>Next</button>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="3" navigationSymbolFontFamily="Roboto">
+        <ng-template wizardStepTitle><div class="text-muted small">THIRD STEP</div>Pager</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 2
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" previousStep>Previous</button>
+          <button type="button" class="btn btn-default" nextStep>Next</button>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="4" navigationSymbolFontFamily="Roboto">
+        <ng-template wizardStepTitle><div class="text-muted small">FOURTH STEP</div>Notifications</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 3
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" previousStep>Previous</button>
+          <button type="button" class="btn btn-primary" (click)="finishFunction()">Finish</button>
+        </div>
+      </wizard-step>
+    </wizard>
+
+  </div>
+
+  <h4 class="ui-block-heading">With icons</h4>
+
+  <div class="cui-example">
+
+    <wizard [navBarLocation]="'top'" [navBarLayout]="'custom'">
+      <wizard-step navigationSymbol="&#62544;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">FIRST STEP</div>Keyboard</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 1
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" nextStep>Next</button>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="&#62163;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">SECOND STEP</div>Effects</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 2
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" previousStep>Previous</button>
+          <button type="button" class="btn btn-default" nextStep>Next</button>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="&#62170;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">THIRD STEP</div>Pager</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 2
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" previousStep>Previous</button>
+          <button type="button" class="btn btn-default" nextStep>Next</button>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="&#62263;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">FOURTH STEP</div>Notifications</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 3
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" previousStep>Previous</button>
+          <button type="button" class="btn btn-primary" (click)="finishFunction()">Finish</button>
+        </div>
+      </wizard-step>
+    </wizard>
+  </div>
+
+  <h4 class="ui-block-heading">Boxed steps</h4>
+
+  <div class="cui-example">
+    <wizard class="ng2-archwizard-boxed-steps" [navBarLocation]="'top'" [navBarLayout]="'custom'">
+      <wizard-step navigationSymbol="&#62544;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">FIRST STEP</div>Keyboard</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 1
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" nextStep>Next</button>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="&#62163;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">SECOND STEP</div>Effects</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 2
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" previousStep>Previous</button>
+          <button type="button" class="btn btn-default" nextStep>Next</button>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="&#62170;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">THIRD STEP</div>Pager</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 2
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" previousStep>Previous</button>
+          <button type="button" class="btn btn-default" nextStep>Next</button>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="&#62263;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">FOURTH STEP</div>Notifications</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 3
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" previousStep>Previous</button>
+          <button type="button" class="btn btn-primary" (click)="finishFunction()">Finish</button>
+        </div>
+      </wizard-step>
+    </wizard>
+  </div>
+
+  <h4 class="ui-block-heading">Bottom</h4>
+
+  <div class="cui-example">
+    <wizard [navBarLocation]="'bottom'" class="ng2-archwizard-bottom" [navBarLayout]="'custom'">
+      <wizard-step navigationSymbol="&#62544;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">FIRST STEP</div>Keyboard</ng-template>
+
+        <div class="card">
+          <div class="card-body">
+            <p>Content of Step 1</p>
+
+            <div class="text-right">
+              <button type="button" class="btn btn-default" nextStep>Next</button>
+            </div>
+          </div>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="&#62163;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">SECOND STEP</div>Effects</ng-template>
+
+        <div class="card">
+          <div class="card-body">
+            <p>Content of Step 2</p>
+
+            <div class="text-right">
+              <button type="button" class="btn btn-default" previousStep>Previous</button>
+              <button type="button" class="btn btn-default" nextStep>Next</button>
+            </div>
+          </div>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="&#62170;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">THIRD STEP</div>Pager</ng-template>
+
+        <div class="card">
+          <div class="card-body">
+            <p>Content of Step 3</p>
+
+            <div class="text-right">
+              <button type="button" class="btn btn-default" previousStep>Previous</button>
+              <button type="button" class="btn btn-default" nextStep>Next</button>
+            </div>
+          </div>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="&#62263;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">FOURTH STEP</div>Notifications</ng-template>
+
+        <div class="card">
+          <div class="card-body">
+            <p>Content of Step 4</p>
+
+            <div class="text-right">
+              <button type="button" class="btn btn-default" previousStep>Previous</button>
+              <button type="button" class="btn btn-primary" (click)="finishFunction()">Finish</button>
+            </div>
+          </div>
+        </div>
+      </wizard-step>
+    </wizard>
+  </div>
+
+  <h4 class="ui-block-heading">Vertical</h4>
+
+  <div class="cui-example cui-example-vertical-spacing">
+    <wizard [navBarLocation]="'left'" class="ng2-archwizard-left" [navBarLayout]="'custom'">
+      <wizard-step navigationSymbol="&#62544;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">FIRST STEP</div>Keyboard</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 1
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" nextStep>Next</button>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="&#62163;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">SECOND STEP</div>Effects</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 2
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" previousStep>Previous</button>
+          <button type="button" class="btn btn-default" nextStep>Next</button>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="&#62170;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">THIRD STEP</div>Pager</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 2
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" previousStep>Previous</button>
+          <button type="button" class="btn btn-primary" (click)="finishFunction()">Finish</button>
+        </div>
+      </wizard-step>
+    </wizard>
+
+    <wizard [navBarLocation]="'right'" class="ng2-archwizard-right" [navBarLayout]="'custom'">
+      <wizard-step navigationSymbol="&#62544;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">FIRST STEP</div>Keyboard</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 1
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" nextStep>Next</button>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="&#62163;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">SECOND STEP</div>Effects</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 2
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" previousStep>Previous</button>
+          <button type="button" class="btn btn-default" nextStep>Next</button>
+        </div>
+      </wizard-step>
+      <wizard-step navigationSymbol="&#62170;" navigationSymbolFontFamily="Ionicons">
+        <ng-template wizardStepTitle><div class="text-muted small">THIRD STEP</div>Pager</ng-template>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            Content of Step 2
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="button" class="btn btn-default" previousStep>Previous</button>
+          <button type="button" class="btn btn-primary" (click)="finishFunction()">Finish</button>
+        </div>
+      </wizard-step>
+    </wizard>
+  </div>
+
+</div>

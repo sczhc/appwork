@@ -1,0 +1,45 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  Gallery
+</h4>
+
+<ul class="nav nav-tabs tabs-alt mb-4">
+  <li class="nav-item">
+    <a class="nav-link" (click)="setTag('all')" [ngClass]="{active: curTag=='all'}" href="javascript:void(0)">All</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="setTag('nature')" [ngClass]="{active: curTag=='nature'}" href="javascript:void(0)">Nature</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="setTag('car')" [ngClass]="{active: curTag=='car'}" href="javascript:void(0)">Cars</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="setTag('animal')" [ngClass]="{active: curTag=='animal'}" href="javascript:void(0)">Animal</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="setTag('other')" [ngClass]="{active: curTag=='other'}" href="javascript:void(0)">Other</a>
+  </li>
+</ul>
+
+<ngx-image-gallery
+  [images]="images"
+  [conf]="conf">
+</ngx-image-gallery>
+
+<!-- Images -->
+<div class="row form-row" #galleryContainer>
+
+  <!-- Add this element to properly relayout grid -->
+  <div class="gallery-sizer col-sm-6 col-md-6 col-xl-3 position-absolute"></div>
+
+  <div *ngFor="let image of images" class="gallery-thumbnail col-sm-6 col-md-6 col-xl-3 mb-2">
+    <a href="javascript:void(0)" (click)="openGallery(image)" class="img-thumbnail img-thumbnail-zoom-in">
+      <span class="img-thumbnail-overlay bg-dark opacity-25"></span>
+      <span class="img-thumbnail-content display-4 text-white">
+        <i class="ion ion-ios-search"></i>
+      </span>
+      <img [src]="image.url" [alt]="image.altText" (load)="imgLoaded()" class="img-fluid">
+    </a>
+  </div>
+
+</div>
+<!-- / Images -->

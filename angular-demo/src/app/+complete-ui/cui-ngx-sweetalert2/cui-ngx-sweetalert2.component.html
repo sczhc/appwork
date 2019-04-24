@@ -1,0 +1,62 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ngx-sweetalert2</h3>
+  <a target="_blank" href="https://github.com/toverux/ngx-sweetalert2" class="ui-block-description">https://github.com/toverux/ngx-sweetalert2</a>
+
+  <div class="no-ie10" data-name="ngx-sweetalert2"></div>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example"  *ngIf="!isIE10">
+    <button [swal]="['Here\'s a message!']" class="btn btn-default mb-1">
+      Basic
+    </button>
+
+    <button [swal]="['The Internet?', 'That thing is still around?', 'question']" class="btn btn-default mb-1">
+      With text
+    </button>
+
+    <button [swal]="['Success!', 'Success message!', 'success']" class="btn btn-success mb-1">
+      Success
+    </button>
+
+    <button [swal]="['Oops...', 'Something went wrong!', 'error']" class="btn btn-danger mb-1">
+      Error
+    </button>
+
+    <button [swal]="['Warning!', 'Warning message!', 'warning']" class="btn btn-warning mb-1">
+      Warning
+    </button>
+
+    <button [swal]="['Info!', 'Info message!', 'info']" class="btn btn-info mb-1">
+      Info
+    </button>
+
+    <button [swal]="['Question!', 'Question message!', 'question']" class="btn btn-dark mb-1">
+      Question
+    </button>
+
+    <swal #successDialog title="Deleted!" message="Your file has been deleted." [options]="{confirmButtonClass:'btn btn-lg btn-success'}" type="success"></swal>
+    <swal #declineDialog title="Cancelled" message="Your imaginary file is safe :)" [options]="{confirmButtonClass:'btn btn-lg btn-danger'}" type="error"></swal>
+    <!-- <swal #successDialog title="Deleted!" message="Your file has been deleted." options="{confirmButtonClass:'btn btn-lg btn-success'}" type="success"></swal>
+    <swal #declineDialog title="Cancelled" message="Your imaginary file is safe :)" options="{confirmButtonClass:'btn btn-lg btn-danger'}" type="error"></swal> -->
+    <button [swal]="{title:'Are you sure?', text:'You won\'t be able to revert this!', type:'warning', showCancelButton:true, confirmButtonText:'Yes, delete it!', showCloseButton:true, confirmButtonClass:'btn btn-lg btn-warning'}" (confirm)="successDialog.show()" (cancel)="declineDialog.show()" class="btn btn-default mb-1">
+      With callbacks
+    </button>
+
+    <button [swal]="{title:'Sweet!', text:'Modal with a custom image.', imageUrl: '/assets/img/bg/1.jpg', imageWidth: 400, imageHeight: 'auto', imageAlt: 'Custom image'}" class="btn btn-default mb-1">
+      With image
+    </button>
+
+    <button [swal]="{title: 'What is your name?',input: 'text',inputPlaceholder: 'Enter your name or nickname',inputAttributes: {'maxlength': 10,'autocapitalize': 'off','autocorrect': 'off'}}" class="btn btn-default mb-1">
+      With text input
+    </button>
+
+    <button [swal]="{title: 'Select color',input: 'radio',inputOptions: {'#ff0000': 'Red','#00ff00': 'Green','#0000ff': 'Blue'}}" class="btn btn-default mb-1">
+      With radio buttons
+    </button>
+
+    <button [swal]="{title: 'Terms and conditions',input: 'checkbox',inputValue: 1,inputPlaceholder:'I agree with the terms and conditions',confirmButtonText:'Continue &rarr;',inputValidator:checkboxValidation}" class="btn btn-default mb-1">
+      With checkbox and validation
+    </button>
+  </div>
+</div>

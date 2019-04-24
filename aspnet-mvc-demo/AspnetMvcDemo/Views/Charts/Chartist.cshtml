@@ -1,0 +1,35 @@
+@{
+    ViewBag.Title = "Chartist - Charts";
+}
+
+@section Styles {
+    @Styles.Render("~/bundle/vendor/css/chartist/chartist")
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    @Scripts.Render("~/bundle/vendor/js/chartist/chartist")
+    
+    @Scripts.Render("~/bundle/js/charts_chartist")
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+    <span class="text-muted font-weight-light">Charts /</span> Chartist
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-5">
+
+<div class="demo-vertical-spacing-lg">
+    <div id="chartist-graph" style="height: 250px"></div>
+    <div id="chartist-bi-polar" style="height: 250px"></div>
+    <div id="chartist-bars" style="height: 250px"></div>
+    <div id="chartist-h-bars" style="height: 250px"></div>
+    <div id="chartist-pie" class="ct-negative-labels" style="height: 250px"></div>
+    <div id="chartist-gauge" style="height: 250px"></div>
+</div>

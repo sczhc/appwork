@@ -1,0 +1,73 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">Dropdowns</h3>
+
+  <h4 class="ui-block-heading">Example</h4>
+
+  <div class="cui-example clearfix">
+    <div class="dropdown-menu float-left" style="display: block; position: relative;">
+      <a class="dropdown-item" href="javascript:void(0)"><span class="badge badge-success float-right">34</span>Action</a>
+      <a class="dropdown-item" href="javascript:void(0)"><span class="badge badge-pill badge-primary float-right">16</span>Another action</a>
+      <a class="dropdown-item disabled" href="javascript:void(0)">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <h6 class="dropdown-header">Dropdown header</h6>
+      <a class="dropdown-item active" href="javascript:void(0)"><i class="ion ion-md-cloud"></i> &nbsp;With icon</a>
+      <a class="dropdown-item" href="javascript:void(0)">Last action</a>
+    </div>
+  </div>
+
+  <h4 class="ui-block-heading">Hover dropdowns</h4>
+
+  <div class="cui-example">
+    <div ngbDropdown hoverDropdown [placement]="isRTL ? 'bottom-right' : 'bottom-left'">
+      <button type="button" class="btn btn-primary dropdown-toggle" ngbDropdownToggle>Hover</button>
+      <div ngbDropdownMenu [class.dropdown-menu-right]="isRTL">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+  </div>
+
+  <h4 class="ui-block-heading">Nested</h4>
+
+  <div class="cui-example">
+    <div ngbDropdown [placement]="isRTL ? 'bottom-right' : 'bottom-left'">
+      <button class="btn btn-default" ngbDropdownToggle>Nested dropdowns</button>
+      <div ngbDropdownMenu [class.dropdown-menu-right]="isRTL">
+        <a class="dropdown-item" href="javascript:void(0)">First action</a>
+
+        <!-- Level two -->
+        <div class="dropdown-toggle">
+          <div class="dropdown-item">First menu</div>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:void(0)">First action</a>
+            <a class="dropdown-item" href="javascript:void(0)">Second action</a>
+
+            <!-- Level three -->
+            <div class="dropdown-toggle">
+              <div class="dropdown-item">Second menu</div>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="javascript:void(0)">First action</a>
+                <a class="dropdown-item" href="javascript:void(0)">Second action</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <a class="dropdown-item" href="javascript:void(0)">Second action</a>
+
+        <!-- Level two -->
+        <div class="dropdown-toggle">
+          <div class="dropdown-item">Second menu</div>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:void(0)">First action</a>
+            <a class="dropdown-item" href="javascript:void(0)">Second action</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

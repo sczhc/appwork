@@ -1,0 +1,27 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">Rating</h3>
+
+  <h4 class="ui-block-heading">Example</h4>
+
+  <div class="cui-example">
+    <ngb-rating [(rate)]="currentRate" (hover)="hoveredRate=$event" (leave)="hoveredRate=0" [readonly]="readonly"></ngb-rating>
+
+    <br><br>
+
+    <ngb-rating [(rate)]="currentRate" (hover)="hoveredRate=$event" (leave)="hoveredRate=0" [readonly]="readonly">
+      <ng-template let-fill="fill">
+        <span class="ion ion-md-heart text-danger text-large mr-1" [class.opacity-25]="fill !== 100"></span>
+      </ng-template>
+    </ngb-rating>
+
+
+    <br><br>
+    <pre>Rate: {{currentRate}}</pre>
+    <pre>Hovered: {{hoveredRate}}</pre>
+    <br>
+
+    <button class="btn btn-sm btn-outline-{{readonly ? 'danger' : 'success'}}" (click)="readonly = !readonly">
+      {{ readonly ? "readonly" : "editable"}}
+    </button>
+  </div>
+</div>

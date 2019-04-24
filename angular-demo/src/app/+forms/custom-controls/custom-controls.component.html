@@ -1,0 +1,242 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">Forms /</span> Custom controls
+</h4>
+
+<div class="card mb-4">
+  <h6 class="card-header">
+    Checkboxes and radios
+  </h6>
+  <div class="card-body demo-vertical-spacing-sm">
+    <!-- Custom checkbox -->
+    <label class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input">
+      <span class="custom-control-label">Check this custom checkbox</span>
+    </label>
+
+    <br>
+
+    <!-- Custom indeterminate checkbox -->
+    <label class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" [indeterminate]="true">
+      <span class="custom-control-label">Check this custom checkbox</span>
+    </label>
+
+    <br>
+
+    <!-- Custom radios -->
+    <label class="custom-control custom-radio">
+      <input name="custom-radio" type="radio" class="custom-control-input">
+      <span class="custom-control-label">Toggle this custom radio</span>
+    </label>
+    <label class="custom-control custom-radio">
+      <input name="custom-radio" type="radio" class="custom-control-input">
+      <span class="custom-control-label">Or toggle this other custom radio</span>
+    </label>
+  </div>
+  <hr class="m-0">
+  <div class="card-body demo-vertical-spacing-sm">
+    <div class="text-light small font-weight-semibold mb-3">Disabled</div>
+
+    <!-- Custom checkboxes -->
+    <div>
+      <label class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" disabled checked>
+        <span class="custom-control-label">Check this custom checkbox</span>
+      </label>
+      <label class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" [indeterminate]="true" disabled>
+        <span class="custom-control-label">Check this custom checkbox</span>
+      </label>
+      <label class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" disabled>
+        <span class="custom-control-label">Check this custom checkbox</span>
+      </label>
+    </div>
+
+    <!-- Custom radios -->
+    <fieldset disabled>
+      <label class="custom-control custom-radio">
+        <input name="custom-radio-2" type="radio" class="custom-control-input" checked>
+        <span class="custom-control-label">Toggle this custom radio</span>
+      </label>
+      <label class="custom-control custom-radio">
+        <input name="custom-radio-2" type="radio" class="custom-control-input">
+        <span class="custom-control-label">Or toggle this other custom radio</span>
+      </label>
+    </fieldset>
+  </div>
+  <hr class="m-0">
+  <div class="card-body">
+    <div class="text-light small font-weight-semibold mb-3">Validation states</div>
+
+    <div class="form-group">
+      <label class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input is-valid">
+        <span class="custom-control-label">Valid state</span>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input is-invalid">
+        <span class="custom-control-label">Invalid state</span>
+      </label>
+    </div>
+  </div>
+  <hr class="m-0">
+  <div class="card-body">
+    <div class="text-light small font-weight-semibold mb-3">Stacked</div>
+
+    <div class="custom-controls-stacked">
+      <label class="custom-control custom-radio">
+        <input name="custom-radio-3" type="radio" class="custom-control-input" checked>
+        <span class="custom-control-label">Toggle this custom radio</span>
+      </label>
+      <label class="custom-control custom-radio">
+        <input name="custom-radio-3" type="radio" class="custom-control-input">
+        <span class="custom-control-label">Or toggle this other custom radio</span>
+      </label>
+      <label class="custom-control custom-radio">
+        <input name="custom-radio-3" type="radio" class="custom-control-input">
+        <span class="custom-control-label">Or toggle this other custom radio</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <h6 class="card-header">
+    Selects
+  </h6>
+  <div class="card-body demo-vertical-spacing-sm">
+    <select class="custom-select">
+      <option selected>Open this select menu</option>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
+    <select class="custom-select" multiple>
+      <option>Open this select menu</option>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
+  </div>
+  <hr class="m-0">
+  <div class="card-body demo-vertical-spacing-sm">
+    <div class="text-light small font-weight-semibold mb-3">Sizes</div>
+
+    <select class="custom-select custom-select-lg">
+      <option selected>Open this select menu</option>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
+    <select class="custom-select custom-select-lg" multiple>
+      <option>Open this select menu</option>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
+
+    <select class="custom-select custom-select-sm">
+      <option selected>Open this select menu</option>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
+    <select class="custom-select custom-select-sm" multiple>
+      <option>Open this select menu</option>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
+  </div>
+  <hr class="m-0">
+  <div class="card-body bg-dark">
+    <div class="text-white small font-weight-semibold mb-3">Inverted</div>
+
+    <select class="custom-select custom-select-inverted">
+      <option selected>Open this select menu</option>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
+  </div>
+  <hr class="m-0">
+  <div class="card-body demo-vertical-spacing-sm">
+    <div class="text-light small font-weight-semibold mb-3">Disabled</div>
+
+    <select class="custom-select" disabled>
+      <option selected>Open this select menu</option>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
+  </div>
+  <div class="card-body bg-dark">
+    <select class="custom-select custom-select-inverted" disabled>
+      <option selected>Open this select menu</option>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
+  </div>
+  <hr class="m-0">
+  <div class="card-body demo-vertical-spacing-sm">
+    <div class="text-light small font-weight-semibold mb-3">Validation states</div>
+
+    <div class="form-group">
+      <select class="custom-select is-valid">
+        <option selected>Open this select menu</option>
+        <option>One</option>
+        <option>Two</option>
+        <option>Three</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <select class="custom-select is-invalid">
+        <option selected>Open this select menu</option>
+        <option>One</option>
+        <option>Two</option>
+        <option>Three</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <h6 class="card-header">
+    File browser
+  </h6>
+  <div class="card-body demo-vertical-spacing-sm">
+    <label class="custom-file">
+      <input type="file" class="custom-file-input">
+      <span class="custom-file-label"></span>
+    </label>
+  </div>
+  <hr class="m-0">
+  <div class="card-body demo-vertical-spacing-sm">
+    <div class="text-light small font-weight-semibold mb-3">Disabled</div>
+
+    <label class="custom-file">
+      <input type="file" class="custom-file-input" disabled>
+      <span class="custom-file-label"></span>
+    </label>
+  </div>
+  <hr class="m-0">
+  <div class="card-body demo-vertical-spacing-sm">
+    <div class="text-light small font-weight-semibold mb-3">Validation states</div>
+
+    <label class="custom-file">
+      <input type="file" class="custom-file-input is-valid">
+      <span class="custom-file-label"></span>
+    </label>
+
+    <label class="custom-file">
+      <input type="file" class="custom-file-input is-invalid">
+      <span class="custom-file-label"></span>
+    </label>
+  </div>
+</div>

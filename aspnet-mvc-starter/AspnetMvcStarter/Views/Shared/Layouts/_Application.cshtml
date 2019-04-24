@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="default-style">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>@ViewBag.Title - Asp.Net MVC Starter</title>
+
+    <!-- Main font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet" crossorigin="anonymous" />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <!-- @Styles.Render("~/bundle/vendor/fonts/fontawesome") -->
+    @Styles.Render("~/bundle/vendor/fonts/ionicons")
+    <!-- @Styles.Render("~/bundle/vendor/fonts/linearicons") -->
+    <!-- @Styles.Render("~/bundle/vendor/fonts/open-iconic") -->
+    <!-- @Styles.Render("~/bundle/vendor/fonts/pe-icon-7-stroke") -->
+
+    <!-- Core stylesheets -->
+    @Styles.Render("~/bundle/vendor/css/bootstrap")
+    @Styles.Render("~/bundle/vendor/css/appwork")
+    @Styles.Render("~/bundle/vendor/css/theme-corporate")
+    @Styles.Render("~/bundle/vendor/css/colors")
+    @Styles.Render("~/bundle/vendor/css/uikit")
+
+    <!-- Layout helpers -->
+    @Scripts.Render("~/bundle/vendor/js/layout-helpers")
+
+    <!-- Libs -->
+    <!-- `perfect-scrollbar` library required by SideNav plugin -->
+    @Styles.Render("~/bundle/vendor/css/perfect-scrollbar/perfect-scrollbar")
+
+    <!-- Application stylesheets -->
+    @Styles.Render("~/bundle/css/main")
+
+    @RenderSection("styles", required: false)
+</head>
+<body>
+
+    @RenderBody()
+
+    <!-- Core scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+    @Scripts.Render("~/bundle/vendor/js/popper/popper")
+    @Scripts.Render("~/bundle/vendor/js/bootstrap")
+    @Scripts.Render("~/bundle/vendor/js/sidenav")
+
+    <!-- Libs -->
+    <!-- `perfect-scrollbar` library required by SideNav plugin -->
+    @Scripts.Render("~/bundle/vendor/js/perfect-scrollbar/perfect-scrollbar")
+
+    <!-- Application javascripts -->
+    @Scripts.Render("~/bundle/js/main")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

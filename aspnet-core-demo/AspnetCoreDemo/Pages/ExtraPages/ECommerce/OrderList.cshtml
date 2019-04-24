@@ -1,0 +1,44 @@
+@page
+@model OrderListModel
+@{
+    ViewData["Title"] = "Order list - Pages";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/vendor/libs/datatables/datatables.css">
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    <script src="~/vendor/libs/datatables/datatables.js"></script>
+    <script src="~/vendor/libs/numeral/numeral.js"></script>
+    
+    <script src="~/js/pages_e-commerce_order-list.js"></script>
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+    Orders
+</h4>
+
+<div class="card">
+    <div class="card-datatable table-responsive">
+        <table id="order-list" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Customer</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>

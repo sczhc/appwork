@@ -1,0 +1,181 @@
+:host /deep/ .color-picker-inline + color-picker div.color-picker[class] {
+  z-index: 1;
+}
+
+:host /deep/ color-picker {
+  .arrow {
+    &.arrow-bottom,
+    &.arrow-top {
+      border-width: .625rem .5rem !important;
+    }
+    &.arrow-left,
+    &.arrow-right {
+      border-width: .5rem .625rem !important;
+    }
+  }
+
+  .color-picker[class] {
+    background-clip: padding-box;
+
+    .selected-color {
+      border-color: rgba(0, 0, 0, .2);
+    }
+
+    .preset-area hr {
+      margin-right: -1.1875rem;
+      margin-left: -1.1875rem;
+    }
+  }
+
+  .preset-label {
+    padding: .5rem 0 !important;
+  }
+
+  .preset-label + div {
+    line-height: 1;
+  }
+
+  .preset-color {
+    margin: 0 .3125rem .3125rem 0 !important;
+    width: 1rem !important;
+    height: 1rem !important;
+    border-color: rgba(0, 0, 0, .2) !important;
+  }
+}
+
+
+[dir=rtl] :host /deep/ color-picker {
+  .saturation-lightness,
+  .hue,
+  .alpha {
+    direction: ltr !important;
+  }
+
+  .type-policy {
+    right: auto !important;
+    left: .75rem !important;
+  }
+
+  .hsla-text input,
+  .rgba-text input {
+    margin: 0 0 0 .5rem !important;
+
+    &:last-child {
+      margin-left: 0 !important;
+    }
+  }
+
+  .hex-text .box,
+  .hsla-text .box,
+  .rgba-text .box {
+    padding: 0 .5rem .5rem 1.5rem !important;
+  }
+
+  .hsla-text .box div,
+  .rgba-text .box div {
+    margin-right: 0 !important;
+    margin-left: .5rem !important;
+
+    &:last-child {
+      margin-left: 0 !important;
+    }
+  }
+
+  .preset-label {
+    text-align: right !important;
+  }
+
+  .button-area {
+    text-align: left !important;
+  }
+
+  .preset-color {
+    margin: 0 0 .3125rem .3125rem !important;
+  }
+}
+
+.default-style :host /deep/ color-picker {
+  @import "~vendor/styles/_appwork/include";
+
+  .arrow {
+    &.arrow-bottom {
+      border-color: transparent transparent $popover-border-color;
+    }
+
+    &.arrow-top {
+      border-color: $popover-border-color transparent transparent;
+    }
+
+    &.arrow-left {
+      border-color: transparent transparent transparent $popover-border-color;
+    }
+
+    &.arrow-right {
+      border-color: transparent $popover-border-color transparent transparent;
+    }
+  }
+
+  .color-picker {
+    z-index: $zindex-popover;
+    border: $popover-border-width solid $popover-border-color;
+    box-shadow: $popover-box-shadow;
+
+    @include border-radius($border-radius);
+  }
+
+  .hsla-text input,
+  .rgba-text input,
+  .hex-text input {
+    outline: 0;
+    border-color: $input-border-color !important;
+    background: $input-bg !important;
+    color: $input-color !important;
+  }
+
+  .preset-color {
+    border-radius: $badge-border-radius !important;
+  }
+}
+
+.material-style :host /deep/ color-picker {
+  @import "~vendor/styles/_appwork/include-material";
+
+  .arrow {
+    &.arrow-bottom {
+      border-color: transparent transparent $popover-border-color;
+    }
+
+    &.arrow-top {
+      border-color: $popover-border-color transparent transparent;
+    }
+
+    &.arrow-left {
+      border-color: transparent transparent transparent $popover-border-color;
+    }
+
+    &.arrow-right {
+      border-color: transparent $popover-border-color transparent transparent;
+    }
+  }
+
+  .color-picker {
+    z-index: $zindex-popover;
+    border: 0;
+    box-shadow: $popover-box-shadow;
+
+    @include border-radius($border-radius);
+  }
+
+  .hsla-text input,
+  .rgba-text input,
+  .hex-text input {
+    outline: 0;
+    border-color: $input-border-color !important;
+    background: $input-bg !important;
+    color: $input-color !important;
+  }
+
+  .preset-color {
+    border-radius: $badge-border-radius !important;
+  }
+}

@@ -1,0 +1,153 @@
+<h4 class="d-flex justify-content-between align-items-center w-100 font-weight-bold py-3 mb-4">
+  <div>Tickets</div>
+  <button type="button" class="btn btn-primary btn-round d-block"><span class="ion ion-md-add"></span>&nbsp; Create ticket</button>
+</h4>
+
+<!-- Filters -->
+<div class="ui-bordered px-4 pt-4 mb-4">
+  <div class="form-row align-items-center">
+    <div class="col-md mb-4">
+      <label class="form-label">Priority</label>
+      <select class="custom-select" [(ngModel)]="filterPriority">
+        <option *ngFor="let item of ['Any', 'High', 'Medium', 'Low']" [value]="item">{{item}}</option>
+      </select>
+    </div>
+    <div class="col-md mb-4">
+      <label class="form-label">Status</label>
+      <select class="custom-select" [(ngModel)]="filterStatus">
+        <option *ngFor="let item of ['Any', 'Open', 'Reopened', 'In progress', 'Closed']" [value]="item">{{item}}</option>
+      </select>
+    </div>
+    <div class="col-md mb-4">
+      <label class="form-label">Created date</label>
+      <custom-daterange-picker [(ngModel)]="filterCreatedDate"></custom-daterange-picker>
+    </div>
+    <div class="col-md col-xl-2 mb-4">
+      <label class="form-label d-none d-md-block">&nbsp;</label>
+      <button type="button" class="btn btn-secondary btn-block">Show</button>
+    </div>
+  </div>
+</div>
+<!-- / Filters -->
+
+<div class="card">
+
+  <!-- Table controls -->
+  <div class="card-body">
+
+    <div class="row">
+      <div class="col">
+        Per page: &nbsp;
+        <select
+          [(ngModel)]="perPage"
+          (change)="update()"
+          class="custom-select custom-select-sm d-inline-block w-auto">
+          <option *ngFor="let limit of [10, 20, 30, 40, 50]">{{limit}}</option>
+        </select>
+      </div>
+      <div class="col">
+        <input type="text"
+          [(ngModel)]="filterVal"
+          (input)="currentPage = 1; update()"
+          class="form-control form-control-sm d-inline-block w-auto float-sm-right"
+          placeholder="Search...">
+      </div>
+    </div>
+
+  </div>
+  <!-- / Table controls -->
+
+  <!-- Table -->
+  <hr class="border-light m-0">
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered card-table">
+      <thead>
+        <tr>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('id')">
+            ID<i class="ion text-muted ml-2" *ngIf="sortBy=='id'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" style="min-width: 300px" (click)="setSort('subject')">
+            Subject<i class="ion text-muted ml-2" *ngIf="sortBy=='subject'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('createdAt')">
+            Created at<i class="ion text-muted ml-2" *ngIf="sortBy=='createdAt'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('lastUpdate')">
+            Last update<i class="ion text-muted ml-2" *ngIf="sortBy=='lastUpdate'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('priority')">
+            Priority<i class="ion text-muted ml-2" *ngIf="sortBy=='priority'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('status')">
+            Status<i class="ion text-muted ml-2" *ngIf="sortBy=='status'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ticket of ticketsData">
+          <td class="align-middle py-3">{{ticket.id}}</td>
+          <td class="align-middle py-3">{{ticket.subject}}</td>
+          <td class="align-middle py-3">{{ticket.createdAt}}</td>
+          <td class="align-middle py-3">{{ticket.lastUpdate}}</td>
+          <td class="align-middle py-3">
+            <div class="btn-group" ngbDropdown [placement]="!isRTL ? 'bottom-right' : 'bottom-left'">
+              <button type="button" class="btn btn-xs md-btn-flat" [ngClass]="priorityDropdownVariant(ticket.priority)" ngbDropdownToggle>
+                <span *ngIf="ticket.priority === 1">High</span>
+                <span *ngIf="ticket.priority === 2">Medium</span>
+                <span *ngIf="ticket.priority === 3">Low</span>
+              </button>
+              <div ngbDropdownMenu [class.dropdown-menu-right]="!isRTL">
+                <a class="dropdown-item" href="javascript:void(0)" [ngClass]="{active: ticket.priority === 1}">High</a>
+                <a class="dropdown-item" href="javascript:void(0)" [ngClass]="{active: ticket.priority === 2}">Medium</a>
+                <a class="dropdown-item" href="javascript:void(0)" [ngClass]="{active: ticket.priority === 3}">Low</a>
+              </div>
+            </div>
+          </td>
+          <td class="align-middle py-3">
+            <div class="btn-group" ngbDropdown [placement]="!isRTL ? 'bottom-right' : 'bottom-left'">
+              <button type="button" class="btn btn-outline-secondary btn-xs md-btn-flat" ngbDropdownToggle>
+                <span *ngIf="ticket.status === 1">Open</span>
+                <span *ngIf="ticket.status === 2">Reopened</span>
+                <span *ngIf="ticket.status === 3">In progress</span>
+                <span *ngIf="ticket.status === 4">Closed</span>
+              </button>
+              <div ngbDropdownMenu [class.dropdown-menu-right]="!isRTL">
+                <a class="dropdown-item" href="javascript:void(0)" [ngClass]="{active: ticket.status === 1}">Open</a>
+                <a class="dropdown-item" href="javascript:void(0)" [ngClass]="{active: ticket.status === 2}">Reopened</a>
+                <a class="dropdown-item" href="javascript:void(0)" [ngClass]="{active: ticket.status === 3}">In progress</a>
+                <a class="dropdown-item" href="javascript:void(0)" [ngClass]="{active: ticket.status === 4}">Closed</a>
+              </div>
+            </div>
+          </td>
+          <td class="text-center text-nowrap align-middle py-3">
+            <a href="javascript:void(0)" class="btn btn-default btn-xs icon-btn md-btn-flat" ngbTooltip="Edit"><i class="ion ion-md-create"></i></a>
+            <a href="javascript:void(0)" class="btn btn-default btn-xs icon-btn md-btn-flat" ngbTooltip="Remove"><i class="ion ion-md-close"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- / Table -->
+
+  <!-- Pagination -->
+  <div class="card-body py-0">
+
+    <div class="row">
+      <div class="col-sm text-sm-left text-center pt-3">
+        <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+      </div>
+      <div class="col-sm pt-3">
+        <ngb-pagination
+          [collectionSize]="totalItems"
+          [pageSize]="perPage"
+          [(page)]="currentPage"
+          (pageChange)="update()"
+          size="sm"
+          class="d-flex justify-content-center justify-content-sm-end m-0"></ngb-pagination>
+      </div>
+    </div>
+
+  </div>
+  <!-- / Pagination -->
+</div>

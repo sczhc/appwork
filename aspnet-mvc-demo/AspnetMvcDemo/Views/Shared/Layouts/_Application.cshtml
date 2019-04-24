@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en" class="default-style">
+<head>
+    <title>@ViewBag.Title - Asp.Net MVC Demo</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+
+    <!-- Icon fonts -->
+    @Styles.Render("~/bundle/vendor/fonts/fontawesome")
+    @Styles.Render("~/bundle/vendor/fonts/ionicons")
+    @Styles.Render("~/bundle/vendor/fonts/linearicons")
+    @Styles.Render("~/bundle/vendor/fonts/open-iconic")
+    @Styles.Render("~/bundle/vendor/fonts/pe-icon-7-stroke")
+
+    <!-- Core stylesheets -->
+    @Styles.RenderFormat(@"<link href=""{0}"" rel=""stylesheet"" class=""theme-settings-bootstrap-css"" />", "~/bundle/vendor/css/bootstrap")
+    @Styles.RenderFormat(@"<link href=""{0}"" rel=""stylesheet"" class=""theme-settings-appwork-css"" />", "~/bundle/vendor/css/appwork")
+    @Styles.RenderFormat(@"<link href=""{0}"" rel=""stylesheet"" class=""theme-settings-theme-css"" />", "~/bundle/vendor/css/theme-corporate")
+    @Styles.RenderFormat(@"<link href=""{0}"" rel=""stylesheet"" class=""theme-settings-colors-css"" />", "~/bundle/vendor/css/colors")
+    @Styles.Render("~/bundle/vendor/css/uikit")
+    @Styles.Render("~/bundle/css/demo")
+
+    @Scripts.Render("~/bundle/vendor/js/material-ripple")
+    @Scripts.Render("~/bundle/vendor/js/layout-helpers")
+
+    <!-- Theme settings -->
+    <!-- This file MUST be included after core stylesheets and layout-helpers.js in the <head> section -->
+    @Scripts.Render("~/bundle/vendor/js/theme-settings")
+    <script>
+        window.themeSettings = new ThemeSettings({
+            cssPath: '',
+            themesPath: '',
+            pathResolver: function (path) {
+                var resolvedPaths = {
+                    @foreach (string name in new string[] { "bootstrap", "appwork", "colors" })
+                    {
+                        <text>
+                            '@(name).css': '@Styles.Url("~/bundle/vendor/css/" + name)',
+                            '@(name)-material.css': '@Styles.Url("~/bundle/vendor/css/" + name + "-material")',
+                        </text>
+                    }
+
+                    // UI Kit
+                    'uikit.css': '@Styles.Url("~/bundle/vendor/css/uikit"))',
+
+                    @foreach (string name in new string[] { "air", "corporate", "cotton", "gradient", "paper", "shadow", "soft", "sunrise", "twitlight", "vibrant" })
+                    {
+                        <text>
+                            'theme-@(name).css': '@Styles.Url("~/bundle/vendor/css/theme-" + name)',
+                            'theme-@(name)-material.css': '@Styles.Url("~/bundle/vendor/css/theme-" + name + "-material")',
+                        </text>
+                    }
+                };
+
+                return resolvedPaths[path] || path;
+            }
+        });
+    </script>
+
+    <!-- Core scripts -->
+    @Scripts.Render("~/bundle/vendor/js/pace")
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Libs -->
+    @Styles.Render("~/bundle/vendor/css/perfect-scrollbar/perfect-scrollbar")
+    
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <div class="page-loader"><div class="bg-primary"></div></div>
+
+    @RenderBody()
+
+    <!-- Core scripts -->
+    @Scripts.Render("~/bundle/vendor/js/popper/popper")
+    @Scripts.Render("~/bundle/vendor/js/bootstrap")
+    @Scripts.Render("~/bundle/vendor/js/sidenav")
+
+    <!-- Scripts -->
+    @Scripts.Render("~/bundle/vendor/js/perfect-scrollbar/perfect-scrollbar")
+    @Scripts.Render("~/bundle/js/demo")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

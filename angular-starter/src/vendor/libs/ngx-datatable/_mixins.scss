@@ -1,0 +1,27 @@
+@import "~vendor/styles/_appwork/functions";
+
+@mixin ngx-datatable-theme($background, $color: null) {
+  $color: if($color, $color, yiq($background));
+
+  .ngx-datatable .datatable-pager ul li:not(.disabled).active a {
+    border-color: darken($background, 5%) !important;
+    background: $background !important;
+    color: $color !important;
+  }
+
+  .ngx-datatable .progress-linear .container {
+    background-color: $background !important;
+  }
+
+  .ngx-datatable:not(.cell-selection) .datatable-body-row.active,
+  .ngx-datatable:not(.cell-selection) .datatable-body-row.active .datatable-body-cell,
+  .ngx-datatable.cell-selection .datatable-body-row .datatable-body-cell.active {
+    background-color: $background !important;
+    border-color: rgba($table-accent-bg, .05) !important;
+
+    &,
+    .text-dark {
+      color: $color !important;
+    }
+  }
+}

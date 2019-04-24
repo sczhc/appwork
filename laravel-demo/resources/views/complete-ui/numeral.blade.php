@@ -1,0 +1,30 @@
+<div class="ui-block">
+    <h3 class="ui-block-heading">Numeral.js</h3>
+    <a target="_blank" href="https://github.com/adamwdraper/Numeral-js" class="ui-block-description">https://github.com/adamwdraper/Numeral-js</a>
+
+    <samp class="cui-example-code-static">
+        &lt;script src="&#123;&#123; mix('/vendor/libs/numeral/numeral.js') &#125;&#125;"&gt;&lt;/script&gt;
+    </samp>
+
+    <h4 class="ui-block-heading">Examples</h4>
+
+    <div class="cui-example cui-example-vertical-spacing-sm">
+        <p id="numeral-example-1"></p>
+        <p id="numeral-example-2"></p>
+        <p id="numeral-example-3"></p>
+        <p id="numeral-example-4"></p>
+        <p id="numeral-example-5"></p>
+
+        <!-- Javascript -->
+        <script>
+            $(function() {
+                $('#numeral-example-1').html(numeral(1000.1234).format('0,0'));
+                $('#numeral-example-2').html(numeral(1000.1234).format('0,0.00'));
+                $('#numeral-example-3').html(numeral(1000.1234).format('+0,0'));
+                $('#numeral-example-4').html(numeral(1000.1234).format('.00'));
+                $('#numeral-example-5').html(numeral(1000.1234).format('$0,0.00'));
+            });
+        </script>
+        <!-- / Javascript -->
+    </div>
+</div>

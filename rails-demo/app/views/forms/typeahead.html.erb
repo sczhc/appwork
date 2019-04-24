@@ -1,0 +1,26 @@
+<% content_for :styles do %>
+  <%= stylesheet_link_tag 'typeahead-js/typeahead.css', media: 'all' %>
+<% end %>
+
+<% content_for :scripts do %>
+  <!-- Dependencies -->
+  <%= javascript_include_tag 'typeahead-js/typeahead.js' %>
+  
+  <%= javascript_include_tag 'forms_typeahead.js' %>
+<% end %>
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">Forms /</span> Typeahead
+</h4>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <label class="form-label">Enter a country name:</label>
+    <input id="typeahead-input" class="form-control" type="text" autocomplete="off">
+  </div>
+</div>

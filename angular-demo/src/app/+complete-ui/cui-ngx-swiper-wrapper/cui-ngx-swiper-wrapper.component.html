@@ -1,0 +1,158 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ngx-swiper-wrapper</h3>
+  <a target="_blank" href="https://github.com/zefoy/ngx-swiper-wrapper" class="ui-block-description">https://github.com/zefoy/ngx-swiper-wrapper</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing">
+    <!-- Default -->
+    <div [swiper] class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+    </div>
+
+    <!-- With arrows -->
+    <div [swiper]="swiperWithArrows" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-button-next custom-icon"><i class="lnr lnr-chevron-right text-primary"></i></div>
+      <div class="swiper-button-prev custom-icon"><i class="lnr lnr-chevron-left text-primary"></i></div>
+    </div>
+
+    <!-- With pagination -->
+    <div [swiper]="swiperWithPagination" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- With fraction pagination -->
+    <div [swiper]="swiperWithFractionPagination" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- With progress -->
+    <div [swiper]="swiperWithProgress" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next custom-icon"><i class="lnr lnr-chevron-right"></i></div>
+      <div class="swiper-button-prev custom-icon"><i class="lnr lnr-chevron-left"></i></div>
+    </div>
+
+    <!-- With scrollbar -->
+    <div [swiper]="swiperWithScrollbar" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-scrollbar"></div>
+    </div>
+
+    <!-- Vertical -->
+    <div [swiper]="verticalSwiper" class="swiper-container" id="swiper-vertical">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Multiple slides -->
+    <div [swiper]="swiperMultipleSlides" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Fade effect -->
+    <div [swiper]="swiperFadeEffect" class="swiper-container" id="swiper-fade-effect">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination swiper-pagination-white"></div>
+      <div class="swiper-button-next custom-icon"><i class="lnr lnr-chevron-right small"></i></div>
+      <div class="swiper-button-prev custom-icon"><i class="lnr lnr-chevron-left small"></i></div>
+    </div>
+
+    <!-- 3D cube effect -->
+    <div [swiper]="swiper3dCubeEffect" class="swiper-container" id="swiper-3d-cube-effect">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- 3D coverflow effect -->
+    <div [swiper]="swiper3dCoverflowEffect" class="swiper-container" id="swiper-3d-coverflow-effect">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- 3D flip effect -->
+    <div [swiper]="swiper3dFlipEffect" class="swiper-container" id="swiper-3d-flip-effect">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next custom-icon"><i class="lnr lnr-chevron-right text-muted"></i></div>
+      <div class="swiper-button-prev custom-icon"><i class="lnr lnr-chevron-left text-muted"></i></div>
+    </div>
+  </div>
+</div>

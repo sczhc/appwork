@@ -1,0 +1,67 @@
+:host /deep/ ngx-image-gallery {
+  .info-container {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .images-container > .loading-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .images-container > .loading-animation > svg {
+    flex: none;
+  }
+
+  .images-container {
+    flex: 1 1 0%;
+  }
+  .galleria {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+[dir=rtl] :host /deep/ ngx-image-gallery > .control {
+  &.arrow {
+    transform: scaleX(-1) !important;
+
+    &.left {
+      right: 0 !important;
+      left: auto !important;
+    }
+
+    &.right {
+      right: auto !important;
+      left: 0 !important;
+    }
+  }
+
+  &.left-top,
+  &.right-top {
+    &.left-top {
+      right: 10px !important;
+      left: auto !important;
+    }
+
+    &.right-top {
+      right: auto !important;
+      left: 10px !important;
+    }
+  }
+}
+
+.default-style :host /deep/ ngx-image-gallery {
+  @import "~vendor/styles/_appwork/include";
+
+  z-index: $zindex-modal-top;
+}
+
+.material-style :host /deep/ ngx-image-gallery {
+  @import "~vendor/styles/_appwork/include-material";
+
+  z-index: $zindex-modal-top;
+}

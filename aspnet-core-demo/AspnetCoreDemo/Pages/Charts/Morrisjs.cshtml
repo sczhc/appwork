@@ -1,0 +1,37 @@
+@page
+@model MorrisjsModel
+@{
+    ViewData["Title"] = "Morris.js - Charts";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/vendor/libs/morris/morris.css">
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    <script src="~/vendor/libs/eve/eve.js"></script>
+    <script src="~/vendor/libs/raphael/raphael.js"></script>
+    <script src="~/vendor/libs/morris/morris.js"></script>
+    
+    <script src="~/js/charts_morrisjs.js"></script>
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+    <span class="text-muted font-weight-light">Charts /</span> Morris.js
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-5">
+
+<div class="demo-vertical-spacing-lg">
+    <div id="morrisjs-graph" style="height: 250px"></div>
+    <div id="morrisjs-bars" style="height: 250px"></div>
+    <div id="morrisjs-area" style="height: 250px"></div>
+    <div id="morrisjs-donut" style="height: 250px"></div>
+</div>

@@ -1,0 +1,312 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">Button dropdowns</h3>
+
+  <h4 class="ui-block-heading">Variations</h4>
+
+  <div class="cui-example cui-example-inline-spacing" id="button-dropdowns-demo">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Default</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Primary</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Secondary</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Success</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Info</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Warning</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Danger</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">Dark</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+      $(function() {
+        if ($('html').attr('dir') === 'rtl' || $('body').attr('dir') === 'rtl') {
+          $('#button-dropdowns-demo .dropdown-menu').addClass('dropdown-menu-right')
+        }
+      });
+    </script>
+    <!-- / Javascript -->
+  </div>
+
+  <h4 class="ui-block-heading">Hidden arrow</h4>
+
+  <div class="cui-example cui-example-inline-spacing" id="button-dropdowns-no-arrow-demo">
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle hide-arrow" data-toggle="dropdown">Primary</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group dropdown-toggle-hide-arrow">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Secondary</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+      $(function() {
+        if ($('html').attr('dir') === 'rtl' || $('body').attr('dir') === 'rtl') {
+          $('#button-dropdowns-no-arrow-demo .dropdown-menu').addClass('dropdown-menu-right')
+        }
+      });
+    </script>
+    <!-- / Javascript -->
+  </div>
+
+  <h4 class="ui-block-heading">Split</h4>
+
+  <div class="cui-example cui-example-inline-spacing" id="split-button-dropdowns-demo">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">Default</button>
+      <button type="button" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-dark">Dark</button>
+      <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+      $(function() {
+        if ($('html').attr('dir') === 'rtl' || $('body').attr('dir') === 'rtl') {
+          $('#split-button-dropdowns-demo .dropdown-menu').addClass('dropdown-menu-right')
+        }
+      });
+    </script>
+    <!-- / Javascript -->
+  </div>
+
+  <h4 class="ui-block-heading">Sizes</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-sm" id="sizes-button-dropdowns-demo">
+    <div class="btn-group">
+      <button class="btn btn-default btn-xl dropdown-toggle" type="button" data-toggle="dropdown">Extra large button</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+    <br>
+
+    <div class="btn-group">
+      <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">Large button</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+    <br>
+
+    <div class="btn-group">
+      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Small button</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+    <br>
+
+    <div class="btn-group">
+      <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Extra small button</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="javascript:void(0)">Action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Another action</a>
+        <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+      $(function() {
+        if ($('html').attr('dir') === 'rtl' || $('body').attr('dir') === 'rtl') {
+          $('#sizes-button-dropdowns-demo .dropdown-menu').addClass('dropdown-menu-right')
+        }
+      });
+    </script>
+    <!-- / Javascript -->
+  </div>
+</div>

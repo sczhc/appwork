@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="default-style">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>@ViewData["Title"] - Asp.Net Core Starter</title>
+
+    <!-- Main font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet" crossorigin="anonymous" />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <environment include="Development">
+        <!-- <link rel="stylesheet" href="~/vendor/fonts/fontawesome.css" /> -->
+        <link rel="stylesheet" href="~/vendor/fonts/ionicons.css" />
+        <!-- <link rel="stylesheet" href="~/vendor/fonts/linearicons.css" /> -->
+        <!-- <link rel="stylesheet" href="~/vendor/fonts/open-iconic.css" /> -->
+        <!-- <link rel="stylesheet" href="~/vendor/fonts/pe-icon-7-stroke.css" /> -->
+    </environment>
+    <environment exclude="Development">
+        <!-- <link rel="stylesheet" href="~/vendor/fonts/fontawesome.css" asp-append-version="true" /> -->
+        <link rel="stylesheet" href="~/vendor/fonts/ionicons.css" asp-append-version="true" />
+        <!-- <link rel="stylesheet" href="~/vendor/fonts/linearicons.css" asp-append-version="true" /> -->
+        <!-- <link rel="stylesheet" href="~/vendor/fonts/open-iconic.css" asp-append-version="true" /> -->
+        <!-- <link rel="stylesheet" href="~/vendor/fonts/pe-icon-7-stroke.css" asp-append-version="true" /> -->
+    </environment>
+
+    <!-- Core stylesheets -->
+    <environment include="Development">
+        <link rel="stylesheet" href="~/vendor/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/vendor/css/appwork.css" />
+        <link rel="stylesheet" href="~/vendor/css/theme-corporate.css" />
+        <link rel="stylesheet" href="~/vendor/css/colors.css" />
+        <link rel="stylesheet" href="~/vendor/css/uikit.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/vendor/css/bootstrap.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/vendor/css/appwork.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/vendor/css/theme-corporate.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/vendor/css/colors.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/vendor/css/uikit.min.css" asp-append-version="true" />
+    </environment>
+
+    <!-- Layout helpers -->
+    <environment include="Development">
+    <script src="~/vendor/js/layout-helpers.js"></script></environment>
+    <environment exclude="Development">
+    <script src="~/vendor/js/layout-helpers.js" asp-append-version="true"></script></environment>
+
+    <!-- Libs -->
+    <!-- `perfect-scrollbar` library required by SideNav plugin -->
+    <environment include="Development"><link rel="stylesheet" href="~/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" /></environment>
+    <environment exclude="Development"><link rel="stylesheet" href="~/vendor/libs/perfect-scrollbar/perfect-scrollbar.min.css" asp-append-version="true" /></environment>
+
+    <!-- Application stylesheets -->
+    <environment include="Development"><link rel="stylesheet" href="~/css/site.css" /></environment>
+    <environment exclude="Development"><link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" /></environment>
+
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+
+    @RenderBody()
+
+    <!-- Core scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+    <environment include="Development">
+        <script src="~/vendor/libs/popper/popper.js"></script>
+        <script src="~/vendor/js/bootstrap.js"></script>
+        <script src="~/vendor/js/sidenav.js"></script>
+
+        <!-- Libs -->
+        <!-- `perfect-scrollbar` library required by SideNav plugin -->
+        <script src="~/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+        <!-- Application javascripts -->
+        <script src="~/js/site.es5.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/vendor/libs/popper/popper.js" asp-append-version="true"></script>
+        <script src="~/vendor/js/bootstrap.js" asp-append-version="true"></script>
+        <script src="~/vendor/js/sidenav.js" asp-append-version="true"></script>
+
+        <!-- Libs -->
+        <!-- `perfect-scrollbar` library required by SideNav plugin -->
+        <script src="~/vendor/libs/perfect-scrollbar/perfect-scrollbar.js" asp-append-version="true"></script>
+
+        <!-- Application javascripts -->
+        <script src="~/js/site.es5.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

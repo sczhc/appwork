@@ -1,0 +1,48 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">angular-confirmation-popover</h3>
+  <a target="_blank" href="https://github.com/mattlewis92/angular-confirmation-popover" class="ui-block-description">https://github.com/mattlewis92/angular-confirmation-popover</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example">
+    <button class="btn btn-default"
+      mwlConfirmationPopover
+      popoverTitle="Popover title"
+      popoverMessage="Popover description"
+      [placement]="isRTL ? 'left' : 'right'"
+      (confirm)="confirm()"
+      (cancel)="cancel()">
+      Right
+    </button>
+
+    <button class="btn btn-default"
+      mwlConfirmationPopover
+      popoverTitle="Popover title"
+      popoverMessage="Popover description"
+      placement="top"
+      (confirm)="confirm()"
+      (cancel)="cancel()">
+      Top
+    </button>
+
+    <button class="btn btn-default"
+      mwlConfirmationPopover
+      popoverTitle="Popover title"
+      popoverMessage="Popover description"
+      placement="bottom"
+      (confirm)="confirm()"
+      (cancel)="cancel()">
+      Bottom
+    </button>
+
+    <button class="btn btn-default"
+      mwlConfirmationPopover
+      popoverTitle="Popover title"
+      popoverMessage="Popover description"
+      [placement]="isRTL ? 'right' : 'left'"
+      (confirm)="confirm()"
+      (cancel)="cancel()">
+      Left
+    </button>
+  </div>
+</div>

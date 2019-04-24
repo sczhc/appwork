@@ -1,0 +1,49 @@
+<% content_for :styles do %>
+  <%= stylesheet_link_tag 'perfect-scrollbar/perfect-scrollbar.css', media: 'all' %>
+<% end %>
+
+<% content_for :scripts do %>
+  <!-- Dependencies -->
+  <%= javascript_include_tag 'dropdown-hover.js' %>
+  <%= javascript_include_tag 'mega-dropdown.js' %>
+  <%= javascript_include_tag 'sidenav.js' %>
+  <%= javascript_include_tag 'perfect-scrollbar/perfect-scrollbar.js' %>
+<% end %>
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<%= render "complete_ui/typography" %>
+<%= render "complete_ui/utilities" %>
+<%= render "complete_ui/buttons" %>
+<%= render "complete_ui/badges" %>
+<%= render "complete_ui/button_groups" %>
+<%= render "complete_ui/button_dropdowns" %>
+<%= render "complete_ui/dropdowns" %>
+<%= render "complete_ui/navs" %>
+<%= render "complete_ui/pagination" %>
+<%= render "complete_ui/progress_bars" %>
+<%= render "complete_ui/list_groups" %>
+<%= render "complete_ui/alerts" %>
+<%= render "complete_ui/tooltips_and_popovers" %>
+<%= render "complete_ui/modals" %>
+<%= render "complete_ui/breadcrumbs" %>
+<%= render "complete_ui/form_controls" %>
+<%= render "complete_ui/custom_checkboxes_and_radios" %>
+<%= render "complete_ui/custom_select" %>
+<%= render "complete_ui/file_browser" %>
+<%= render "complete_ui/forms" %>
+<%= render "complete_ui/input_groups" %>
+<%= render "complete_ui/switchers" %>
+<%= render "complete_ui/app_brand" %>
+<%= render "complete_ui/navbar" %>
+<%= render "complete_ui/sidenav" %>
+<%= render "complete_ui/footer" %>
+<%= render "complete_ui/tables" %>
+<%= render "complete_ui/media" %>
+<%= render "complete_ui/thumbnails" %>
+<%= render "complete_ui/cards" %>
+<%= render "complete_ui/accordion" %>
+<%= render "complete_ui/carousel" %>

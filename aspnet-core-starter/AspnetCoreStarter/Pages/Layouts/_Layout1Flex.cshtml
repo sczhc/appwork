@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "Layouts/_Application";
+}
+
+@section Styles { @RenderSection("Styles", required: false) }
+@section Scripts { @RenderSection("Scripts", required: false) }
+
+<!-- Layout wrapper -->
+<div class="layout-wrapper layout-1">
+    <div class="layout-inner">
+        <!-- Layout navbar -->
+        @await Html.PartialAsync("Layouts/Partials/_LayoutNavbar")
+
+        <!-- Layout container -->
+        <div class="layout-container">
+            <!-- Layout sidenav -->
+            @await Html.PartialAsync("Layouts/Partials/_LayoutSidenav")
+
+            <!-- Layout content -->
+            <div class="layout-content">
+                <!-- Content -->
+                <div class="container-fluid d-flex align-items-stretch flex-grow-1 p-0">
+                    @RenderBody()
+                </div>
+                <!-- / Content -->
+                <!-- Layout footer -->
+                @await Html.PartialAsync("Layouts/Partials/_LayoutFooter")
+            </div>
+            <!-- Layout content -->
+        </div>
+        <!-- / Layout container -->
+    </div>
+    <!-- Overlay -->
+    <div class="layout-overlay layout-sidenav-toggle"></div>
+</div>
+<!-- / Layout wrapper -->

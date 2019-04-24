@@ -1,0 +1,48 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ng2-nouislider</h3>
+  <a target="_blank" href="https://github.com/tb/ng2-nouislider" class="ui-block-description">https://github.com/tb/ng2-nouislider</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-lg">
+    <nouislider
+      [connect]="[true, false]"
+      [min]="0"
+      [max]="100"
+      [config]="singleConfig"
+      [(ngModel)]="singleValue1">
+    </nouislider>
+
+    <nouislider
+      [connect]="[true, false]"
+      [min]="0"
+      [max]="100"
+      [config]="verticalSingleConfig"
+      [(ngModel)]="singleValue2">
+    </nouislider>
+
+    <nouislider [config]="rangeConfig" [(ngModel)]="rangeValue1"></nouislider>
+
+    <!-- Full -->
+
+    <nouislider [config]="fullConfig" [(ngModel)]="fullValue1"></nouislider>
+
+    <nouislider [config]="verticalFullConfig" [(ngModel)]="fullValue2"></nouislider>
+
+    <!-- Variations -->
+
+    <nouislider class="noUi-primary" [behaviour]="'tap-drag'" [tooltips]="true" [config]="rangeConfig" [(ngModel)]="rangeValue2"></nouislider>
+
+    <nouislider class="noUi-secondary" [behaviour]="'tap-drag'" [tooltips]="true" [config]="rangeConfig" [(ngModel)]="rangeValue3"></nouislider>
+
+    <nouislider class="noUi-success" [behaviour]="'tap-drag'" [tooltips]="true" [config]="rangeConfig" [(ngModel)]="rangeValue4"></nouislider>
+
+    <nouislider class="noUi-warning" [behaviour]="'tap-drag'" [tooltips]="true" [config]="rangeConfig" [(ngModel)]="rangeValue5"></nouislider>
+
+    <nouislider class="noUi-info" [behaviour]="'tap-drag'" [tooltips]="true" [config]="rangeConfig" [(ngModel)]="rangeValue6"></nouislider>
+
+    <nouislider class="noUi-danger" [behaviour]="'tap-drag'" [tooltips]="true" [config]="rangeConfig" [(ngModel)]="rangeValue7"></nouislider>
+
+    <nouislider class="noUi-dark" [behaviour]="'tap-drag'" [tooltips]="true" [config]="rangeConfig" [(ngModel)]="rangeValue8"></nouislider>
+  </div>
+</div>

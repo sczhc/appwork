@@ -1,0 +1,92 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  Tasks
+</h4>
+
+<div class="row">
+  <div class="col-md-4 col-lg-4 col-xl-3">
+
+    <div class="ui-bordered mb-4">
+      <div class="d-flex align-items-center w-100 py-2 px-3" [ngClass]="{'bg-lighter font-weight-bold': curView == 'inbox'}">
+        <i class="ion ion-ios-filing ui-w-20 mr-1"></i>
+        <a href="javascript:void(0)" class="d-block text-dark">Inbox</a>
+      </div>
+      <div class="d-flex align-items-center w-100 py-2 px-3" [ngClass]="{'bg-lighter font-weight-bold': curView == 'today'}">
+        <i class="ion ion-md-calendar ui-w-20 mr-1"></i>
+        <a href="javascript:void(0)" class="d-block text-dark">Today</a>
+      </div>
+      <div class="d-flex align-items-center w-100 py-2 px-3" [ngClass]="{'bg-lighter font-weight-bold': curView == '7days'}">
+        <i class="ion ion-ios-calendar ui-w-20 mr-1"></i>
+        <a href="javascript:void(0)" class="d-block text-dark">Next 7 days</a>
+      </div>
+
+      <ul class="nav nav-sm nav-tabs tabs-alt nav-justified mt-3">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="javascript:void(0)" [ngClass]="{active: curTab === 'projects'}" (click)="curTab = 'projects'">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="javascript:void(0)" [ngClass]="{active: curTab === 'tags'}" (click)="curTab = 'tags'">Tags</a>
+        </li>
+      </ul>
+
+      <div *ngIf="curTab === 'projects'" class="py-3">
+        <div class="py-2 px-3" *ngFor="let project of projects">
+          <a href="javascript:void(0)" class="text-dark">{{project.name}}</a>
+        </div>
+        <a href="javascript:void(0)" class="d-block text-light small py-2 px-3"><i class="ion ion-md-add"></i>&nbsp; Add project</a>
+      </div>
+      <div *ngIf="curTab === 'tags'" class="py-3">
+        <div class="py-2 px-3" *ngFor="let tagId of objectKeys(tags)">
+          <a href="javascript:void(0)" class="text-dark"><span class="badge badge-dot" [ngClass]="'badge-' + tags[tagId].color"></span> &nbsp; {{tags[tagId].title}}</a>
+        </div>
+        <a href="javascript:void(0)" class="d-block text-light small py-2 px-3"><i class="ion ion-md-add"></i>&nbsp; Add tag</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="col">
+
+    <div class="card">
+      <div class="card-header py-3">
+        <button type="button" class="btn btn-primary"><i class="ion ion-md-add"></i>&nbsp; Add task</button>&nbsp;
+        <button type="button" class="btn btn-default md-btn-flat"><i class="ion ion-md-close"></i>&nbsp; Clear</button>
+      </div>
+
+      <div *ngFor="let section of sectionsData; let i = index">
+        <div class="card-body">
+          <p class="text-muted small">{{section.title}}</p>
+
+          <div [sortablejs]="section.tasks" [sortablejsOptions]="sortablejsOptions" class="task-list custom-controls-stacked">
+            <div *ngFor="let task of section.tasks" class="task-list-item">
+
+              <label class="ui-todo-item custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" [(ngModel)]="task.completed">
+                <span class="custom-control-label">{{task.text}}</span>
+                <span *ngIf="task.tags && task.tags.length">
+                  <span *ngFor="let tag of task.tags" [ngClass]="'badge-' + tags[tag].color" class="badge font-weight-normal ml-2">{{tags[tag].title}}</span>
+                </span>
+                <span *ngIf="task.left" class="ui-todo-badge badge badge-outline-default font-weight-normal ml-2">{{task.left}} left</span>
+              </label>
+
+              <div class="d-flex align-items-center">
+                <div class="task-list-handle ion ion-ios-move text-lightest small mr-3"></div>
+
+                <div class="btn-group" ngbDropdown [placement]="!isRTL ? 'bottom-right' : 'bottom-left'">
+                  <button type="button" class="btn btn-default btn-xs btn-round icon-btn borderless md-btn-flat hide-arrow" ngbDropdownToggle><i class="ion ion-ios-more"></i></button>
+                  <div ngbDropdownMenu [class.dropdown-menu-right]="!isRTL">
+                    <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                    <a class="dropdown-item" href="javascript:void(0)">Remove</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <hr class="m-0" *ngIf="i !== (sectionsData.length - 1)">
+      </div>
+
+    </div>
+
+  </div>
+</div>

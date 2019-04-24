@@ -1,0 +1,101 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">Charts /</span> Ngx Charts
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-5">
+
+<div class="demo-vertical-spacing-lg">
+  <div style="height: 300px">
+    <ngx-charts-bar-vertical
+      [results]="singleData"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [scheme]="'vivid'"
+      xAxisLabel="Country"
+      yAxisLabel="Population">
+    </ngx-charts-bar-vertical>
+  </div>
+
+  <div style="height: 300px">
+    <ngx-charts-bar-horizontal
+      [results]="singleData"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [scheme]="'vivid'"
+      xAxisLabel="Country"
+      yAxisLabel="Population">
+    </ngx-charts-bar-horizontal>
+  </div>
+
+  <div style="height: 300px">
+    <ngx-charts-bar-vertical-2d
+      [results]="multiData"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [scheme]="'vivid'"
+      xAxisLabel="Country"
+      yAxisLabel="Population">
+    </ngx-charts-bar-vertical-2d>
+  </div>
+
+  <div style="height: 300px">
+    <ngx-charts-line-chart
+      [results]="multiData"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [scheme]="'vivid'"
+      xAxisLabel="Country"
+      yAxisLabel="Population">
+    </ngx-charts-line-chart>
+  </div>
+
+  <div style="height: 300px">
+    <ngx-charts-area-chart
+      [results]="multiData"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [scheme]="'vivid'"
+      xAxisLabel="Country"
+      yAxisLabel="Population">
+    </ngx-charts-area-chart>
+  </div>
+
+  <div style="height: 300px">
+    <ngx-charts-pie-chart
+      [results]="singleData"
+      [legend]="true"
+      [explodeSlices]="true"
+      [labels]="true"
+      [scheme]="'vivid'">
+    </ngx-charts-pie-chart>
+  </div>
+
+  <div style="height: 300px">
+    <ngx-charts-advanced-pie-chart
+      [results]="singleData"
+      [scheme]="'vivid'">
+    </ngx-charts-advanced-pie-chart>
+  </div>
+
+  <div style="height: 300px">
+    <ngx-charts-number-card
+      [results]="singleData"
+      [scheme]="'vivid'">
+    </ngx-charts-number-card>
+  </div>
+</div>

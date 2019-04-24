@@ -1,0 +1,161 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">noUiSlider</h3>
+  <a target="_blank" href="https://refreshless.com/nouislider/" class="ui-block-description">https://refreshless.com/nouislider/</a>
+
+  <samp class="cui-example-code-static">
+    &lt;%= stylesheet_link_tag 'nouislider/nouislider.css', media: 'all' %&gt;
+    &lt;%= javascript_include_tag 'nouislider/nouislider.js' %&gt;
+  </samp>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-lg" style="padding-bottom: 4rem !important;">
+    <div id="nouislider-1"></div>
+
+    <div id="nouislider-2"></div>
+
+    <div id="nouislider-3"></div>
+
+    <div id="nouislider-4"></div>
+
+    <div id="nouislider-5"></div>
+
+    <div id="nouislider-6" class="noUi-primary"></div>
+    <div id="nouislider-7" class="noUi-secondary"></div>
+    <div id="nouislider-8" class="noUi-success"></div>
+    <div id="nouislider-9" class="noUi-warning"></div>
+    <div id="nouislider-10" class="noUi-info"></div>
+    <div id="nouislider-11" class="noUi-danger"></div>
+    <div id="nouislider-12" class="noUi-dark"></div>
+
+    <!-- Javascript -->
+    <script>
+      $(function() {
+        var isRtl = $('body').attr('dir') === 'rtl' || $('html').attr('dir') === 'rtl';
+
+        noUiSlider.create(document.getElementById('nouislider-1'), {
+          start: [ 80 ],
+          connect: [true, false],
+          direction: isRtl ? 'rtl' : 'ltr',
+          range: {
+            'min': 0,
+            'max': 100,
+          }
+        });
+
+        // Vertical
+
+        var slider = document.getElementById('nouislider-2');
+
+        slider.style.height = '200px';
+        slider.style.margin = '0 auto 30px';
+
+        noUiSlider.create(slider, {
+          start: [ 1450 ],
+          connect: [true, false],
+          orientation: 'vertical',
+          direction: 'rtl',
+          step: 150,
+          range: {
+            'min': 1300,
+            'max': 3250
+          }
+        });
+
+        // Range
+
+        noUiSlider.create(document.getElementById('nouislider-3'), {
+          start: [ 4000, 8000 ],
+          step: 1000,
+          connect: true,
+          direction: isRtl ? 'rtl' : 'ltr',
+          range: {
+            'min': [  2000 ],
+            'max': [ 10000 ]
+          }
+        });
+
+        // Full
+
+        noUiSlider.create(document.getElementById('nouislider-4'), {
+          start: [ 1450, 2050, 2350, 3000 ],
+          connect: true,
+          behaviour: 'tap-drag',
+          step: 150,
+          tooltips: true,
+          range: {
+            'min': 1000,
+            'max': 3750
+          },
+          pips: {
+            mode: 'steps',
+            stepped: true,
+            density: 4
+          },
+          direction: isRtl ? 'rtl' : 'ltr',
+        });
+
+        var slider2 = document.getElementById('nouislider-5');
+
+        slider2.style.height = '400px';
+        slider2.style.margin = '0 auto 30px';
+
+        noUiSlider.create(slider2, {
+          start: [ 1450, 2050, 2350, 3000 ],
+          connect: true,
+          direction: 'rtl',
+          orientation: 'vertical',
+          behaviour: 'tap-drag',
+          step: 150,
+          tooltips: true,
+          range: {
+            'min': 1000,
+            'max': 3750
+          },
+          pips: {
+            mode: 'steps',
+            stepped: true,
+            density: 4
+          }
+        });
+
+        // Colors
+
+        var slider3 = document.getElementById('nouislider-6');
+        var slider4 = document.getElementById('nouislider-7');
+        var slider5 = document.getElementById('nouislider-8');
+        var slider6 = document.getElementById('nouislider-9');
+        var slider7 = document.getElementById('nouislider-10');
+        var slider8 = document.getElementById('nouislider-11');
+        var slider9 = document.getElementById('nouislider-12');
+
+        var options =  {
+          start: [ 2050, 3000 ],
+          connect: true,
+          behaviour: 'tap-drag',
+          step: 150,
+          tooltips: true,
+          range: {
+            'min': 1000,
+            'max': 3750
+          },
+          pips: {
+            mode: 'steps',
+            stepped: true,
+            density: 4
+          },
+          direction: isRtl ? 'rtl' : 'ltr'
+        };
+
+        noUiSlider.create(slider3, options);
+        noUiSlider.create(slider4, options);
+        noUiSlider.create(slider5, options);
+        noUiSlider.create(slider6, options);
+        noUiSlider.create(slider7, options);
+        noUiSlider.create(slider8, options);
+        noUiSlider.create(slider9, options);
+      });
+    </script>
+    <!-- / Javascript -->
+  </div>
+</div>

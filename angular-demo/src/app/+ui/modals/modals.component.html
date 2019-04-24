@@ -1,0 +1,186 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">UI elements /</span> Modals
+</h4>
+
+<div class="card mb-4">
+  <h6 class="card-header">
+    Bootstrap modals
+  </h6>
+  <div class="card-body">
+    <div class="text-light small font-weight-semibold mb-3">Default</div>
+
+    <button type="button" class="btn btn-default" (click)="open(defaultModal)">Default</button>
+    <button type="button" class="btn btn-default" (click)="open(defaultModal, { windowClass: 'modal-sm animate' })">Small</button>
+    <button type="button" class="btn btn-default" (click)="open(defaultModal, { windowClass: 'modal-lg animate' })">Large</button>
+
+    <!-- Modal template -->
+    <ng-template #defaultModal let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          Payment <span class="font-weight-light">Information</span><br>
+          <small class="text-muted">We need payment information to process your order.</small>
+        </h5>
+        <button type="button" class="close" (click)="d('Cross click')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <div class="form-group col">
+            <label class="form-label">Card number</label>
+            <input type="text" class="form-control" placeholder="XXXX XXXX XXXX XXXX">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col mb-0">
+            <label class="form-label">Expiration date</label>
+            <input type="text" class="form-control" placeholder="DD / MM">
+          </div>
+          <div class="form-group col mb-0">
+            <label class="form-label">Card holder</label>
+            <input type="text" class="form-control"  placeholder="Name on card">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="c('Close click')">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </ng-template>
+  </div>
+  <hr class="m-0">
+  <div class="card-body">
+    <div class="text-light small font-weight-semibold mb-3">Top</div>
+
+    <button type="button" class="btn btn-default" (click)="open(topModal, { windowClass: 'modal-top' })">Default</button>
+    <button type="button" class="btn btn-default" (click)="open(topModal, { windowClass: 'modal-top modal-sm' })">Small</button>
+    <button type="button" class="btn btn-default" (click)="open(topModal, { windowClass: 'modal-top modal-lg' })">Large</button>
+
+    <!-- Modal template -->
+    <ng-template #topModal let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          Payment <span class="font-weight-light">Information</span><br>
+          <small class="text-muted">We need payment information to process your order.</small>
+        </h5>
+        <button type="button" class="close" (click)="d('Cross click')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <div class="form-group col">
+            <label class="form-label">Card number</label>
+            <input type="text" class="form-control" placeholder="XXXX XXXX XXXX XXXX">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col mb-0">
+            <label class="form-label">Expiration date</label>
+            <input type="text" class="form-control" placeholder="DD / MM">
+          </div>
+          <div class="form-group col mb-0">
+            <label class="form-label">Card holder</label>
+            <input type="text" class="form-control"  placeholder="Name on card">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="c('Close click')">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </ng-template>
+  </div>
+  <hr class="m-0">
+  <div class="card-body">
+    <div class="text-light small font-weight-semibold mb-3">Slide</div>
+
+    <button type="button" class="btn btn-default" (click)="open(slideModal, { windowClass: 'modal-slide' })">Show</button>
+
+    <!-- Modal template -->
+    <ng-template #slideModal let-c="close" let-d="dismiss">
+      <button type="button" class="close" (click)="d('Cross click')">&times;</button>
+      <div class="modal-body">
+        <p class="text-center text-big mb-4">Before you proceed, you have to login to make the necessary changes</p>
+        <button type="button" class="btn btn-primary btn-block">Continue</button>
+        <button type="button" class="btn btn-default btn-block" (click)="c('Close click')">Cancel</button>
+      </div>
+    </ng-template>
+  </div>
+  <hr class="m-0">
+  <div class="card-body">
+    <div class="text-light small font-weight-semibold mb-3">Fill-In</div>
+
+    <button type="button" class="btn btn-default" (click)="open(fillInModal, { windowClass: 'modal-fill-in' })">Default</button>
+    <button type="button" class="btn btn-default" (click)="open(fillInModal, { windowClass: 'modal-fill-in modal-sm' })">Small</button>
+    <button type="button" class="btn btn-default" (click)="open(fillInModal, { windowClass: 'modal-fill-in modal-lg' })">Large</button>
+
+    <!-- Modal template -->
+    <ng-template #fillInModal let-c="close" let-d="dismiss">
+      <button type="button" class="close" (click)="d('Cross click')">&times;</button>
+      <div class="modal-body">
+        <p class="text-white text-large font-weight-light mb-3">Subscribe to our newsletter</p>
+        <div class="input-group input-group-lg mb-3">
+          <input type="text" class="form-control bg-white border-0" placeholder="Your email">
+          <span class="input-group-append">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </span>
+        </div>
+        <div class="text-center text-right text-white opacity-50">We will not sell/rent your email address</div>
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+<div class="card mb-4" *ngIf="!isIE10">
+  <h6 class="card-header">
+    ngx-sweetalert2
+  </h6>
+  <div class="card-body demo-inline-spacing">
+    <button [swal]="['Here\'s a message!']" class="btn btn-default mb-1">
+      Basic
+    </button>
+
+    <button [swal]="['The Internet?', 'That thing is still around?', 'question']" class="btn btn-default mb-1">
+      With text
+    </button>
+
+    <button [swal]="['Success!', 'Success message!', 'success']" class="btn btn-success mb-1">
+      Success
+    </button>
+
+    <button [swal]="['Oops...', 'Something went wrong!', 'error']" class="btn btn-danger mb-1">
+      Error
+    </button>
+
+    <button [swal]="['Warning!', 'Warning message!', 'warning']" class="btn btn-warning mb-1">
+      Warning
+    </button>
+
+    <button [swal]="['Info!', 'Info message!', 'info']" class="btn btn-info mb-1">
+      Info
+    </button>
+
+    <button [swal]="['Question!', 'Question message!', 'question']" class="btn btn-dark mb-1">
+      Question
+    </button>
+
+    <button [swal]="{title:'Are you sure?', text:'You won\'t be able to revert this!', type:'warning', showCancelButton:true, confirmButtonText:'Yes, delete it!', showCloseButton:true, confirmButtonClass:'btn btn-lg btn-warning'}" (confirm)="successDialog.show()" (cancel)="declineDialog.show()" class="btn btn-default mb-1">
+      With callbacks
+    </button>
+
+    <button [swal]="{title:'Sweet!', text:'Modal with a custom image.', imageUrl: '/assets/img/bg/1.jpg', imageWidth: 400, imageHeight: 'auto', imageAlt: 'Custom image'}" class="btn btn-default mb-1">
+      With image
+    </button>
+
+    <button [swal]="{title: 'What is your name?',input: 'text',inputPlaceholder: 'Enter your name or nickname',inputAttributes: {'maxlength': 10,'autocapitalize': 'off','autocorrect': 'off'}}" class="btn btn-default mb-1">
+      With text input
+    </button>
+
+    <button [swal]="{title: 'Select color',input: 'radio',inputOptions: {'#ff0000': 'Red','#00ff00': 'Green','#0000ff': 'Blue'}}" class="btn btn-default mb-1">
+      With radio buttons
+    </button>
+
+    <button [swal]="{title: 'Terms and conditions',input: 'checkbox',inputValue: 1,inputPlaceholder:'I agree with the terms and conditions',confirmButtonText:'Continue &rarr;',inputValidator:checkboxValidation}" class="btn btn-default mb-1">
+      With checkbox and validation
+    </button>
+  </div>
+  <swal #successDialog title="Deleted!" message="Your file has been deleted." [options]="{confirmButtonClass:'btn btn-lg btn-success'}" type="success"></swal>
+  <swal #declineDialog title="Cancelled" message="Your imaginary file is safe :)" [options]="{confirmButtonClass:'btn btn-lg btn-danger'}" type="error"></swal>
+</div>

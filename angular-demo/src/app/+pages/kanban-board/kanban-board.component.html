@@ -1,0 +1,108 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  Kanban board
+</h4>
+
+<div class="form-row">
+  <div class="col-md">
+
+    <div class="card mb-3">
+      <h6 class="card-header text-center">New</h6>
+
+      <div [sortablejs]="newTasks" [sortablejsOptions]="sortablejsOptions" class="kanban-box px-2 pt-2">
+        <div *ngFor="let task of newTasks" class="ui-bordered p-2 mb-2">
+          <div class="kanban-board-actions btn-group float-right ml-2" ngbDropdown [placement]="!isRTL ? 'bottom-right' : 'bottom-left'">
+            <button type="button" class="btn btn-default btn-xs btn-round icon-btn borderless md-btn-flat hide-arrow" ngbDropdownToggle><i class="ion ion-ios-more"></i></button>
+            <div ngbDropdownMenu [class.dropdown-menu-right]="!isRTL">
+              <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+              <a class="dropdown-item" href="javascript:void(0)">Remove</a>
+            </div>
+          </div>
+          {{task.text}}
+          <span *ngIf="task.tags && task.tags.length">
+            <span *ngFor="let tag of task.tags" [ngClass]="'badge-' + tags[tag].color" class="badge ml-1">{{tags[tag].title}}</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="card-footer text-center py-2">
+        <a href="javascript:void(0)"><i class="ion ion-md-add"></i>&nbsp; Add task</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md">
+
+    <div class="card border-info mb-3">
+      <h6 class="card-header text-center text-info">In progress</h6>
+
+      <div [sortablejs]="inProgressTasks" [sortablejsOptions]="sortablejsOptions" class="kanban-box px-2 pt-2">
+        <div *ngFor="let task of inProgressTasks" class="ui-bordered p-2 mb-2">
+          <div class="kanban-board-actions btn-group float-right ml-2" ngbDropdown [placement]="!isRTL ? 'bottom-right' : 'bottom-left'">
+            <button type="button" class="btn btn-default btn-xs btn-round icon-btn borderless md-btn-flat hide-arrow" ngbDropdownToggle><i class="ion ion-ios-more"></i></button>
+            <div ngbDropdownMenu [class.dropdown-menu-right]="!isRTL">
+              <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+              <a class="dropdown-item" href="javascript:void(0)">Remove</a>
+            </div>
+          </div>
+          {{task.text}}
+          <span *ngIf="task.tags && task.tags.length">
+            <span *ngFor="let tag of task.tags" [ngClass]="'badge-' + tags[tag].color" class="badge ml-1">{{tags[tag].title}}</span>
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="col-md">
+
+    <div class="card border-warning mb-3">
+      <h6 class="card-header text-center text-warning">Test</h6>
+
+      <div [sortablejs]="testTasks" [sortablejsOptions]="sortablejsOptions" class="kanban-box px-2 pt-2">
+        <div *ngFor="let task of testTasks" class="ui-bordered p-2 mb-2">
+          <div class="kanban-board-actions btn-group float-right ml-2" ngbDropdown [placement]="!isRTL ? 'bottom-right' : 'bottom-left'">
+            <button type="button" class="btn btn-default btn-xs btn-round icon-btn borderless md-btn-flat hide-arrow" ngbDropdownToggle><i class="ion ion-ios-more"></i></button>
+            <div ngbDropdownMenu [class.dropdown-menu-right]="!isRTL">
+              <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+              <a class="dropdown-item" href="javascript:void(0)">Remove</a>
+            </div>
+          </div>
+          {{task.text}}
+          <span *ngIf="task.tags && task.tags.length">
+            <span *ngFor="let tag of task.tags" [ngClass]="'badge-' + tags[tag].color" class="badge ml-1">{{tags[tag].title}}</span>
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="col-md">
+
+    <div class="card border-success mb-3">
+      <h6 class="card-header text-center text-success">Done</h6>
+
+      <div [sortablejs]="doneTasks" [sortablejsOptions]="sortablejsOptions" class="kanban-box px-2 pt-2">
+        <div *ngFor="let task of doneTasks" class="ui-bordered p-2 mb-2">
+          <div class="kanban-board-actions btn-group float-right ml-2" ngbDropdown [placement]="!isRTL ? 'bottom-right' : 'bottom-left'">
+            <button type="button" class="btn btn-default btn-xs btn-round icon-btn borderless md-btn-flat hide-arrow" ngbDropdownToggle><i class="ion ion-ios-more"></i></button>
+            <div ngbDropdownMenu [class.dropdown-menu-right]="!isRTL">
+              <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+              <a class="dropdown-item" href="javascript:void(0)">Remove</a>
+            </div>
+          </div>
+          {{task.text}}
+          <span *ngIf="task.tags && task.tags.length">
+            <span *ngFor="let tag of task.tags" [ngClass]="'badge-' + tags[tag].color" class="badge ml-1">{{tags[tag].title}}</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="card-footer text-center py-2">
+        <a href="javascript:void(0)"><i class="ion ion-md-close"></i>&nbsp; Clear completed tasks</a>
+      </div>
+    </div>
+
+  </div>
+</div>

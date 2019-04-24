@@ -1,0 +1,30 @@
+<div class="ui-block" style="overflow: hidden;">
+    <h3 class="ui-block-heading">Clipboard</h3>
+    <a target="_blank" href="https://clipboardjs.com" class="ui-block-description">https://clipboardjs.com</a>
+
+    <samp class="cui-example-code-static">
+        &lt;script src="~/vendor/libs/clipboard/clipboard.js"&gt;&lt;/script&gt;
+    </samp>
+
+    <h4 class="ui-block-heading">Examples</h4>
+
+    <div class="cui-example">
+        <textarea id="clipboard-example" rows="3" class="form-control">Lorem ipsum dolor sit amet, nec an eros dicam, vero apeirian ei est. Eu duo stet adhuc insolens, movet vitae audire duo an, mei in delectus luptatum.</textarea>
+        <br>
+
+        <button class="clipboard-example-btn btn btn-default" data-clipboard-action="copy" data-clipboard-target="#clipboard-example">Copy</button>
+        <button class="clipboard-example-btn btn btn-default" data-clipboard-action="cut" data-clipboard-target="#clipboard-example">Cut</button>
+
+        <!-- Javascript -->
+        <script>
+            $(function() {
+                if (Clipboard.isSupported()) {
+                    new Clipboard('.clipboard-example-btn');
+                } else {
+                    $('.clipboard-example-btn').prop('disabled', true);
+                }
+            });
+        </script>
+        <!-- / Javascript -->
+    </div>
+</div>

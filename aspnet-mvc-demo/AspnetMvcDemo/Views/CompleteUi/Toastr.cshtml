@@ -1,0 +1,138 @@
+<div class="ui-block">
+    <h3 class="ui-block-heading">Toastr</h3>
+    <a target="_blank" href="https://github.com/CodeSeven/toastr" class="ui-block-description">https://github.com/CodeSeven/toastr</a>
+
+    <samp class="cui-example-code-static">
+        @("@")Styles.Render("~/bundle/vendor/css/toastr/toastr")
+        @("@")Scripts.Render("~/bundle/vendor/js/toastr/toastr")
+    </samp>
+
+    <h4 class="ui-block-heading">Examples</h4>
+
+    <div class="cui-example">
+        <div class="row">
+            <div class="col-xs-12 col-md-7">
+                <div class="form-group">
+                    <label class="form-label" for="toastr-title">Title</label>
+                    <input id="toastr-title" name="toastr-title" type="text" class="form-control" placeholder="Enter a title...">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="toastr-message">Message</label>
+                    <input id="toastr-message" name="toastr-message" type="text" class="form-control" placeholder="Enter a message...">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="toastr-type">Type</label>
+                    <select class="custom-select form-control" id="toastr-type" name="toastr-type">
+                        <option value="success" selected>Success</option>
+                        <option value="info">Info</option>
+                        <option value="warning">Warning</option>
+                        <option value="error">Error</option>
+                    </select>
+                </div>
+                <div class="form-group custom-controls-stacked">
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="toastr-close-button">
+                        <span class="custom-control-label">Close button</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="toastr-progress-bar">
+                        <span class="custom-control-label">Progress bar</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="toastr-prevent-duplicates">
+                        <span class="custom-control-label">Prevent duplicates</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="toastr-newest-on-top">
+                        <span class="custom-control-label">Newest on top</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-5">
+                <div class="form-group custom-controls-stacked">
+                    <label class="form-label mb-2">Position</label>
+                    <label class="custom-control custom-radio">
+                        <input type="radio" name="toastr-position" class="custom-control-input" value="toast-top-right" checked>
+                        <span class="custom-control-label">Top Right</span>
+                    </label>
+                    <label class="custom-control custom-radio">
+                        <input type="radio" name="toastr-position" class="custom-control-input" value="toast-bottom-right">
+                        <span class="custom-control-label">Bottom Right</span>
+                    </label>
+                    <label class="custom-control custom-radio">
+                        <input type="radio" name="toastr-position" class="custom-control-input" value="toast-bottom-left">
+                        <span class="custom-control-label">Bottom Left</span>
+                    </label>
+                    <label class="custom-control custom-radio">
+                        <input type="radio" name="toastr-position" class="custom-control-input" value="toast-top-left">
+                        <span class="custom-control-label">Top Left</span>
+                    </label>
+                    <label class="custom-control custom-radio">
+                        <input type="radio" name="toastr-position" class="custom-control-input" value="toast-top-full-width">
+                        <span class="custom-control-label">Top Full Width</span>
+                    </label>
+                    <label class="custom-control custom-radio">
+                        <input type="radio" name="toastr-position" class="custom-control-input" value="toast-bottom-full-width">
+                        <span class="custom-control-label">Bottom Full Width</span>
+                    </label>
+                    <label class="custom-control custom-radio">
+                        <input type="radio" name="toastr-position" class="custom-control-input" value="toast-top-center">
+                        <span class="custom-control-label">Top Center</span>
+                    </label>
+                    <label class="custom-control custom-radio">
+                        <input type="radio" name="toastr-position" class="custom-control-input" value="toast-bottom-center">
+                        <span class="custom-control-label">Bottom Center</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <button class="btn btn-primary mr-1" id="toastr-show">Show toast</button>
+        <button class="btn btn-default mr-1" id="toastr-clear">Clear toasts</button>
+
+        <!-- Javascript -->
+        <script>
+            $(function() {
+                var curMsgIndex = -1;
+
+                function getMessage() {
+                    var msgs = [
+                        'My name is Inigo Montoya. You killed my father. Prepare to die!',
+                        'Are you the six fingered man?',
+                        'Inconceivable!',
+                        'I do not think that means what you think it means.',
+                        'Have fun storming the castle!',
+                    ];
+
+                    curMsgIndex++;
+
+                    if (curMsgIndex === msgs.length) { curMsgIndex = 0; }
+
+                    return msgs[curMsgIndex];
+                };
+
+                $('#toastr-show').click(function() {
+                    var msg   = $('#toastr-message').val() || getMessage();
+                    var title = $('#toastr-title').val() || '';
+                    var type  = $('#toastr-type').val();
+
+                    toastr[type](msg, title, {
+                        positionClass:     $('input[name="toastr-position"]:checked').val(),
+                        closeButton:       $('#toastr-close-button').prop('checked'),
+                        progressBar:       $('#toastr-progress-bar').prop('checked'),
+                        preventDuplicates: $('#toastr-prevent-duplicates').prop('checked'),
+                        newestOnTop:       $('#toastr-newest-on-top').prop('checked'),
+                        rtl:               $('body').attr('dir') === 'rtl' || $('html').attr('dir') === 'rtl'
+                    });
+                });
+
+                $('#toastr-clear').on('click', function() {
+                    toastr.clear();
+                });
+            });
+        </script>
+        <!-- / Javascript -->
+    </div>
+</div>

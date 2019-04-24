@@ -1,0 +1,58 @@
+@import "~vendor/styles/_appwork/functions";
+
+@mixin ngx-chips-validation-state($state, $color, $ngx-chips-encapsulated) {
+  $color: if($color, $color, yiq($background));
+
+  @if ($ngx-chips-encapsulated) {
+    :host /deep/ .is-#{$state} .ng2-tag-input:not(.ng2-tag-input--focused) {
+      border-color: $color !important;
+    }
+  } @else {
+    .is-#{$state} tag-input .ng2-tag-input:not(.ng2-tag-input--focused),
+    tag-input.is-#{$state} .ng2-tag-input:not(.ng2-tag-input--focused) {
+      border-color: $color !important;
+    }
+  }
+}
+
+@mixin ngx-chips-variant($background, $color: null) {
+  $color: if($color, $color, yiq($background));
+
+  .ng2-tag-input {
+    tag {
+      background-color: $background !important;
+      color: $color !important;
+
+      &:focus,
+      &:active {
+        background-color: darken($background, 12%) !important;
+        color: $color !important;
+      }
+
+      delete-icon svg path {
+        fill: $color !important;
+      }
+    }
+
+    &.ng2-tag-input--disabled {
+      tag,
+      tag:focus,
+      tag:active {
+        background-color: $background !important;
+        color: $color !important;
+      }
+    }
+  }
+}
+
+@mixin ngx-chips-theme($background, $color: null) {
+  $color: if($color, $color, yiq($background));
+
+  .ng2-tag-input--focused {
+    border-color: $background !important;
+  }
+
+  .ngx-chips-primary[class] {
+    @include ngx-chips-variant($background, $color);
+  }
+}

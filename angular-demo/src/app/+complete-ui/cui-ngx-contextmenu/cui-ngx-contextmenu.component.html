@@ -1,0 +1,35 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ngx-contextmenu</h3>
+  <a target="_blank" href="https://github.com/isaacplmann/ngx-contextmenu" class="ui-block-description">https://github.com/isaacplmann/ngx-contextmenu</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="alert alert-warning rtl-only mt-4">
+    <strong>ngx-contextmenu</strong> does not support RTL direction.
+  </div>
+
+  <div class="cui-example">
+    <div [contextMenu]="basicMenu" class="text-center" style="height: 300px; border:1px solid #ddd">
+      <span style="line-height: 300px">Right click anywhere inside this box</span>
+    </div>
+
+    <context-menu #basicMenu>
+      <ng-template contextMenuItem>View</ng-template>
+      <ng-template contextMenuItem>Copy</ng-template>
+      <ng-template contextMenuItem>Paste</ng-template>
+
+      <ng-template contextMenuItem [subMenu]="basicSubMenu">Actions</ng-template>
+
+      <context-menu #basicSubMenu>
+        <ng-template contextMenuItem>Lock</ng-template>
+        <ng-template contextMenuItem>Update</ng-template>
+        <ng-template contextMenuItem>Delete</ng-template>
+      </context-menu>
+
+      <ng-template contextMenuItem divider="true"></ng-template>
+      <ng-template contextMenuItem passive="true">
+        <input type="text" class="form-control form-control-sm" placeholder="Dropdown input">
+      </ng-template>
+    </context-menu>
+  </div>
+</div>

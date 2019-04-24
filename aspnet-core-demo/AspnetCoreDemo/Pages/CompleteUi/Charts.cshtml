@@ -1,0 +1,48 @@
+@page
+@model ChartsModel
+@{
+    ViewData["Title"] = "Charts";
+    Layout = "Layouts/_CompleteUi";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/vendor/libs/flot/flot.css">
+    <link rel="stylesheet" href="~/vendor/libs/c3/c3.css">
+    <link rel="stylesheet" href="~/vendor/libs/chartist/chartist.css">
+    <link rel="stylesheet" href="~/vendor/libs/morris/morris.css">
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    <!-- NOTE: When using Google Maps on your own site you MUST get your own API key:
+                         https://developers.google.com/maps/documentation/javascript/get-api-key
+                         After you got the key paste it in the URL below. -->
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyCHtdj4L66c05v1UZm-nte1FzUEAN6GKBI"></script>
+    <script src="~/vendor/libs/gmaps/gmaps.js"></script>
+    <script src="~/vendor/libs/eve/eve.js"></script>
+    <script src="~/vendor/libs/raphael/raphael.js"></script>
+    <script src="~/vendor/libs/mapael/mapael.js"></script>
+    <script src="~/vendor/libs/mapael/maps/world_countries.js"></script>
+    <script src="~/vendor/libs/flot/flot.js"></script>
+    <script src="~/vendor/libs/d3/d3.js"></script>
+    <script src="~/vendor/libs/c3/c3.js"></script>
+    <script src="~/vendor/libs/chartist/chartist.js"></script>
+    <script src="~/vendor/libs/chartjs/chartjs.js"></script>
+    <script src="~/vendor/libs/morris/morris.js"></script>
+    <script src="~/vendor/libs/sparkline/sparkline.js"></script>
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+@await Html.PartialAsync("CompleteUi/Gmaps")
+@await Html.PartialAsync("CompleteUi/Mapael")
+@await Html.PartialAsync("CompleteUi/Flot")
+@await Html.PartialAsync("CompleteUi/C3")
+@await Html.PartialAsync("CompleteUi/Chartist")
+@await Html.PartialAsync("CompleteUi/Chartjs")
+@await Html.PartialAsync("CompleteUi/Morris")
+@await Html.PartialAsync("CompleteUi/Sparkline")

@@ -1,0 +1,120 @@
+<div class="py-1 mb-2">
+  <div class="input-group">
+    <input [(ngModel)]="searchQuery" type="text" class="form-control">
+    <div class="input-group-append">
+      <button type="button" class="btn btn-primary"><i class="ion ion-ios-search"></i>&nbsp; Search</button>
+    </div>
+  </div>
+</div>
+
+<ul class="search-nav nav nav-tabs tabs-alt container-p-x container-m--x mb-4">
+  <li class="nav-item">
+    <a class="nav-link" [ngClass]="{active: curTab === 'pages'}" (click)="curTab = 'pages'"><i class="ion ion-md-copy"></i>&nbsp; Website</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [ngClass]="{active: curTab === 'people'}" (click)="curTab = 'people'"><i class="ion ion-ios-people"></i>&nbsp; People</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [ngClass]="{active: curTab === 'images'}" (click)="curTab = 'images'"><i class="ion ion-md-images"></i>&nbsp; Images</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [ngClass]="{active: curTab === 'videos'}" (click)="curTab = 'videos'"><i class="ion ion-md-film"></i>&nbsp; Videos</a>
+  </li>
+</ul>
+
+<div *ngIf="curTab === 'pages'">
+  <div class="card">
+    <ul class="list-group list-group-flush">
+
+      <li *ngFor="let page of searchData.pages" class="list-group-item py-4">
+        <a href="javascript:void(0)" class="text-big">{{page.title}}</a>
+
+        <div *ngIf="page.link || page.rating" class="small mt-1">
+          <a *ngIf="page.link" href="javascript:void(0)" class="text-success">{{page.link}}</a>
+          <span *ngIf="page.link && page.rating">&nbsp; <span class="text-muted">·</span> &nbsp;</span>
+          <span *ngIf="page.rating">
+            <div class="ui-stars">
+              <div class="ui-star" *ngFor="let i of [1, 2, 3, 4, 5]" [ngClass]="uiStarClass(i, page.rating)">
+                <i class="ion ion-md-star"></i>
+                <i class="ion ion-md-star"></i>
+              </div>
+            </div>
+            &nbsp;
+            <span class="text-muted">{{page.votes}} votes</span>
+          </span>
+        </div>
+
+        <div *ngIf="page.text" class="mt-2">
+          {{page.text}}
+        </div>
+
+        <div *ngIf="page.sublinks" class="ui-bordered px-3 pt-3 mt-3">
+          <div class="row">
+            <div *ngFor="let sublink of page.sublinks" class="col-sm-6 col-md-4 pb-3">
+              <a href="javascript:void(0)" class="text-big">{{sublink.title}}</a>
+              <div class="mt-1">{{sublink.text}}</div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+  <ngb-pagination [collectionSize]="50" class="d-block mt-3"></ngb-pagination>
+</div>
+<div *ngIf="curTab === 'people'">
+  <div class="row">
+
+    <div *ngFor="let user of searchData.people" class="col-md-6 col-xl-4">
+      <div class="card card-condenced mb-4">
+        <div class="card-body media align-items-center">
+          <img [src]="'assets/img/avatars/' + user.avatar" alt="" class="ui-w-40 rounded-circle">
+          <div class="media-body ml-3">
+            <a href="javascript:void(0)" class="text-dark font-weight-semibold mb-2">{{user.name}}</a>
+            <div class="text-muted small">@{{user.username}}</div>
+          </div>
+          <a *ngIf="!user.following" href="javascript:void(0)" class="btn btn-outline-primary btn-round btn-sm md-btn-flat d-block">Follow</a>
+          <a *ngIf="user.following" href="javascript:void(0)" class="btn btn-success btn-round btn-sm md-btn-flat d-block">Following</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <ngb-pagination [collectionSize]="50"></ngb-pagination>
+</div>
+<div *ngIf="curTab === 'images'">
+  <div class="form-row">
+
+    <div *ngFor="let image of searchData.images" class="col-sm-6 col-xl-4 mb-2">
+      <a href="javascript:void(0)" class="ui-rect-60 ui-bg-cover ui-bg-overlay-container text-white" [style.backgroundImage]="'url(\'' + image.path + '\')'">
+        <div class="ui-bg-overlay bg-dark opacity-25"></div>
+
+        <div *ngIf="image.title" class="d-flex align-items-end ui-rect-content p-3">
+          <div class="flex-shrink-1 font-weight-semibold">{{image.title}}</div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+  <ngb-pagination [collectionSize]="50" class="d-block mt-3"></ngb-pagination>
+</div>
+<div *ngIf="curTab === 'videos'">
+  <div class="row">
+
+    <div *ngFor="let video of searchData.videos" class="col-sm-6 col-md-4 col-xl-3 mb-4">
+      <a href="javascript:void(0)" class="ui-rect-60 ui-bg-cover text-white" [style.backgroundImage]="'url(\'' + video.preview + '\')'">
+        <div class="d-flex justify-content-end align-items-end ui-rect-content p-2">
+          <div class="bg-dark rounded text-white small font-weight-semibold line-height-1 p-1">{{video.duration}}</div>
+        </div>
+      </a>
+      <a href="javascript:void(0)" class="d-block text-dark mt-2">{{video.title}}</a>
+      <div>
+        <span class="text-muted small"> {{video.views}} views</span> &nbsp;
+        <a href="javascript:void(0)" class="text-muted small"> {{video.likes}} likes</a> &nbsp;
+        <span class="text-muted small"> {{video.reposts}} reposts</span>
+      </div>
+    </div>
+
+  </div>
+  <ngb-pagination [collectionSize]="50"></ngb-pagination>
+</div>

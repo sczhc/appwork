@@ -1,0 +1,195 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  Edit user <span class="text-muted">#{{userData.id}}</span>
+</h4>
+
+<ngb-tabset class="nav-tabs-top">
+  <ngb-tab title="Account">
+    <ng-template ngbTabContent>
+
+      <div class="card-body">
+
+        <div class="media align-items-center">
+          <img [src]="'assets/img/avatars/' + userData.avatar" alt="" class="d-block ui-w-80">
+          <div class="media-body ml-3">
+            <label class="form-label d-block mb-2">Avatar</label>
+            <button type="button" class="btn btn-outline-primary btn-sm">Change</button>&nbsp;
+            <button type="button" class="btn btn-default btn-sm md-btn-flat">Reset</button>
+          </div>
+        </div>
+
+      </div>
+      <hr class="border-light m-0">
+      <div class="card-body pb-2">
+
+        <div class="form-group">
+          <label class="form-label">Username</label>
+          <input [(ngModel)]="userData.username" type="text" class="form-control mb-1">
+          <a href="javascript:void(0)" class="small">Reset password</a>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Name</label>
+          <input [(ngModel)]="userData.name" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label">E-mail</label>
+          <input [(ngModel)]="userData.email" type="text" class="form-control mb-1">
+          <a href="javascript:void(0)" class="small">Resend confirmation</a>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Company</label>
+          <input [(ngModel)]="userData.company" type="text" class="form-control">
+        </div>
+
+      </div>
+      <hr class="border-light m-0">
+      <div class="card-body pb-2">
+
+        <div class="form-group">
+          <label class="form-label">Role</label>
+          <select class="custom-select" [(ngModel)]="userData.role">
+            <option *ngFor="let i of [[1, 'User'], [2, 'Author'], [3, 'Staff'], [4, 'Admin']]" [value]="i[0]">{{i[1]}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Status</label>
+          <select class="custom-select" [(ngModel)]="userData.status">
+            <option *ngFor="let i of [[1, 'Active'], [2, 'Banned'], [3, 'Deleted']]" [value]="i[0]">{{i[1]}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="custom-control custom-checkbox m-0">
+            <input type="checkbox" class="custom-control-input" [(ngModel)]="userData.verified">
+            <span class="custom-control-label">Verified</span>
+          </label>
+        </div>
+
+      </div>
+      <hr class="border-light m-0">
+      <div class="table-responsive">
+        <table class="table card-table m-0">
+          <tbody>
+            <tr>
+              <th>Module</th>
+              <th>Read</th>
+              <th>Write</th>
+              <th>Create</th>
+              <th>Delete</th>
+            </tr>
+            <tr *ngFor="let p of userData.permissions">
+              <td>{{p.module}}</td>
+              <td>
+                <label class="custom-control custom-checkbox px-2 m-0">
+                  <input type="checkbox" class="custom-control-input" [(ngModel)]="p.read">
+                  <span class="custom-control-label"></span>
+                </label>
+              </td>
+              <td>
+                <label class="custom-control custom-checkbox px-2 m-0">
+                  <input type="checkbox" class="custom-control-input"[(ngModel)]="p.write">
+                  <span class="custom-control-label"></span>
+                </label>
+              </td>
+              <td>
+                <label class="custom-control custom-checkbox px-2 m-0">
+                  <input type="checkbox" class="custom-control-input"[(ngModel)]="p.create">
+                  <span class="custom-control-label"></span>
+                </label>
+              </td>
+              <td>
+                <label class="custom-control custom-checkbox px-2 m-0">
+                  <input type="checkbox" class="custom-control-input"[(ngModel)]="p.delete">
+                  <span class="custom-control-label"></span>
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Information">
+    <ng-template ngbTabContent>
+
+      <div class="card-body pb-2">
+
+        <h6 class="mb-4">Social links</h6>
+        <div class="form-group">
+          <label class="form-label">Twitter</label>
+          <input [(ngModel)]="userData.info.twitter" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Facebook</label>
+          <input [(ngModel)]="userData.info.facebook" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Google+</label>
+          <input [(ngModel)]="userData.info.google" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label">LinkedIn</label>
+          <input [(ngModel)]="userData.info.linkedin" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Instagram</label>
+          <input [(ngModel)]="userData.info.instagram" type="text" class="form-control">
+        </div>
+
+      </div>
+      <hr class="border-light m-0">
+      <div class="card-body pb-2">
+
+        <h6 class="mb-4">Personal info</h6>
+        <div class="form-group">
+          <label class="form-label">Birthday</label>
+          <input [(ngModel)]="userData.info.birthday" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Country</label>
+          <select class="custom-select" [(ngModel)]="userData.info.country">
+            <option *ngFor="let country of ['USA', 'Canada', 'UK', 'Germany', 'France']" [value]="country">{{country}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Languages</label>
+          <ng-select [items]="languages" bindLabel="label" bindValue="value" [multiple]="true" [(ngModel)]="userData.info.languages"></ng-select>
+        </div>
+
+      </div>
+      <hr class="border-light m-0">
+      <div class="card-body pb-2">
+
+        <h6 class="mb-4">Contacts</h6>
+        <div class="form-group">
+          <label class="form-label">Phone</label>
+          <input [(ngModel)]="userData.info.phone" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Website</label>
+          <input [(ngModel)]="userData.info.website" type="text" class="form-control">
+        </div>
+
+      </div>
+      <hr class="border-light m-0">
+      <div class="card-body pb-2">
+
+        <h6 class="mb-4">Interests</h6>
+        <div class="form-group">
+          <label class="form-label">Favorite music</label>
+          <tag-input [(ngModel)]="userData.info.music"></tag-input>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Favorite movies</label>
+          <tag-input [(ngModel)]="userData.info.movies"></tag-input>
+        </div>
+
+      </div>
+
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>
+
+<div class="text-right mt-3">
+  <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
+  <button type="button" class="btn btn-default">Cancel</button>
+</div>

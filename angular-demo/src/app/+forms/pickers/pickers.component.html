@@ -1,0 +1,121 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">Forms /</span> Pickers
+</h4>
+
+<div class="card mb-4">
+  <h6 class="card-header">
+    Ngb Datepicker
+  </h6>
+  <div class="card-body demo-vertical-spacing">
+    <ngb-datepicker
+      [(ngModel)]="model"
+      [displayMonths]="displayMonths"
+      [navigation]="navigation"
+      [disabled]="disabled">
+    </ngb-datepicker>
+
+    <hr>
+
+    <form class="form-inline">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd" name="dp"
+            ngbDatepicker
+            [(ngModel)]="model"
+            [displayMonths]="displayMonths"
+            [navigation]="navigation"
+            [disabled]="disabled"
+            [placement]="isRTL ? 'bottom-right' : 'bottom-left'"
+            #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="input-group-text" [disabled]="disabled" (click)="d.toggle()" type="button">
+                <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+              </button>
+            </div>
+        </div>
+      </div>
+    </form>
+
+    <hr>
+
+    <select class="custom-select d-inline-block w-auto mr-1" [(ngModel)]="displayMonths">
+      <option [ngValue]="1">One month</option>
+      <option [ngValue]="2">Two months</option>
+      <option [ngValue]="3">Three months</option>
+    </select>
+
+    <select class="custom-select d-inline-block w-auto mr-1" [(ngModel)]="navigation">
+      <option value="none">Without navigation</option>
+      <option value="select">With select boxes</option>
+      <option value="arrows">Without select boxes</option>
+    </select>
+
+    <button class="btn" [class.btn-outline-danger]="disabled" [class.btn-outline-success]="!disabled" (click)="disabled = !disabled">
+      {{ disabled ? "Disabled" : "Enabled"}}
+    </button>
+  </div>
+  <hr class="m-0">
+  <div class="card-body">
+    <small class="text-light font-weight-semibold">Range select</small>
+
+    <div class="demo-vertical-spacing mt-4">
+      <ngb-datepicker #dp ngModel (ngModelChange)="onDateChange($event)" [displayMonths]="2" [dayTemplate]="t">
+      </ngb-datepicker>
+
+      <ng-template #t let-date="date" let-focused="focused">
+        <div class="ngb-range-day"
+          [ngClass]="{ 'bg-primary text-white': isFrom(date) || isTo(date), 'bg-light ngb-in-range': isHovered(date) || isInside(date) }"
+          (mouseenter)="hoveredDate = date"
+          (mouseleave)="hoveredDate = null">
+          {{ date.day }}
+        </div>
+      </ng-template>
+
+      <pre>From: {{ fromDate | json }} </pre>
+      <pre>To: {{ toDate | json }} </pre>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <h6 class="card-header">
+    Ngb Timepicker
+  </h6>
+  <div class="card-body demo-vertical-spacing">
+    <ngb-timepicker [(ngModel)]="time" [seconds]="true" [secondStep]="30"></ngb-timepicker>
+
+    <ngb-timepicker [(ngModel)]="time" [seconds]="true" [secondStep]="30" [meridian]="true"></ngb-timepicker>
+
+    <pre>Selected time: {{time | json}}</pre>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <h6 class="card-header">
+    ngx-color-picker
+  </h6>
+  <div class="card-body demo-vertical-spacing">
+    <input class="form-control" [value]="defaultColor"
+      [(colorPicker)]="defaultColor"
+      [style.background]="defaultColor"
+      [cpOKButton]="true"
+      [cpSaveClickOutside]="false"
+      [cpOKButtonClass]= "'btn btn-primary btn-xs md-btn-flat'"
+      [cpPresetColors]="presetColors"
+      [cpPosition]="'bottom'">
+
+    <input class="form-control" [value]="rgbaColor"
+      [(colorPicker)]="rgbaColor"
+      [style.background]="rgbaColor"
+      [cpOutputFormat]="'rgba'"
+      [cpPosition]="'bottom'">
+
+    <div class="color-picker-inline"
+      [(colorPicker)]="defaultColor"
+      [cpDialogDisplay]="'inline'"
+      [cpCancelButton]="true"
+      [cpCancelButtonClass]="'btn btn-primary btn-xs md-btn-flat'"
+      [cpToggle]="true">
+    </div>
+  </div>
+</div>

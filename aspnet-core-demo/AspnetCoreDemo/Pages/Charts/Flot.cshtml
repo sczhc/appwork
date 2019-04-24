@@ -1,0 +1,35 @@
+@page
+@model FlotModel
+@{
+    ViewData["Title"] = "Flot.js - Charts";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/vendor/libs/flot/flot.css">
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    <script src="~/vendor/libs/flot/flot.js"></script>
+    
+    <script src="~/js/charts_flot.js"></script>
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+    <span class="text-muted font-weight-light">Charts /</span> Flot.js
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-5">
+
+<div class="demo-vertical-spacing-lg">
+    <div id="flot-graph" style="height: 250px"></div>
+    <div id="flot-bars" style="height: 250px"></div>
+    <div id="flot-categories" style="height: 250px"></div>
+    <div id="flot-pie" style="height: 250px"></div>
+</div>

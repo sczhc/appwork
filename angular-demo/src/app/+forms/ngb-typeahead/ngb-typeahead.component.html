@@ -1,0 +1,29 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">Forms /</span> Ngb Typeahead
+</h4>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <!-- Default -->
+
+    <input type="text" class="form-control" [(ngModel)]="simpleModel" [ngbTypeahead]="search"
+      [placement]="isRTL ? 'bottom-right' : 'bottom-left'" placeholder="State">
+
+    <br>
+    <pre>{{ simpleModel }}</pre>
+    <br>
+
+    <!-- With template -->
+
+    <ng-template #rt let-r="result" let-t="term">
+      <img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + r['flag']" width="16" class="mr-1">
+      {{ r.name}}
+    </ng-template>
+
+    <input id="typeahead-template" type="text" class="form-control" [(ngModel)]="templateModel" [ngbTypeahead]="searchWithTemplate" [resultTemplate]="rt"
+      [inputFormatter]="formatter" [placement]="isRTL ? 'bottom-right' : 'bottom-left'" placeholder="State with flag">
+
+    <br>
+    <pre>{{ templateModel | json }}</pre>
+  </div>
+</div>

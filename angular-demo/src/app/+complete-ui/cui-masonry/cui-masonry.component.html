@@ -1,0 +1,12 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">Masonry</h3>
+  <a target="_blank" href="http://masonry.desandro.com" class="ui-block-description">http://masonry.desandro.com</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example">
+    <div class="masonry-grid" #masonryContainer>
+      <div class="masonry-item" [ngClass]="item.class" *ngFor="let item of items">{{item.title}}</div>
+    </div>
+  </div>
+</div>

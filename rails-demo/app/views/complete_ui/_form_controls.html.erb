@@ -1,0 +1,212 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">Form controls</h3>
+
+  <h4 class="ui-block-heading">Inputs</h4>
+
+  <div class="cui-example">
+    <input type="text" class="form-control" placeholder="Text input">
+  </div>
+
+  <h4 class="ui-block-heading">Textarea</h4>
+
+  <div class="cui-example">
+    <textarea class="form-control" rows="3"></textarea>
+  </div>
+
+  <h4 class="ui-block-heading">Checkboxes and radios</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-sm">
+    <!-- Checkboxes -->
+    <div>
+      <label class="form-check">
+        <input class="form-check-input" type="checkbox" value="">
+        <div class="form-check-label">
+          Option one is this and that&mdash;be sure to include why it's great
+        </div>
+      </label>
+      <label class="form-check">
+        <input class="form-check-input" type="checkbox" value="" disabled>
+        <div class="form-check-label">
+          Option two is disabled
+        </div>
+      </label>
+    </div>
+
+    <!-- Radios -->
+    <div>
+      <label class="form-check">
+        <input class="form-check-input" type="radio" value="option1" name="radios-example" checked>
+        <div class="form-check-label">
+          Option one is this and that&mdash;be sure to include why it's great
+        </div>
+      </label>
+      <label class="form-check">
+        <input class="form-check-input" type="radio" value="option2" name="radios-example">
+        <div class="form-check-label">
+          Option two can be something else and selecting it will deselect option one
+        </div>
+      </label>
+      <label class="form-check">
+        <input class="form-check-input" type="radio" value="option3" name="radios-example" disabled>
+        <div class="form-check-label">
+          Option three is disabled
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <h4 class="ui-block-heading">Inline checkboxes and radios</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-sm">
+    <!-- Checkboxes -->
+    <div>
+      <label class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="option1">
+        <span class="form-check-label">
+          1
+        </span>
+      </label>
+      <label class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="option2">
+        <span class="form-check-label">
+          2
+        </span>
+      </label>
+      <label class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="option3" disabled>
+        <span class="form-check-label">
+          3
+        </span>
+      </label>
+    </div>
+
+    <!-- Radios -->
+    <div>
+      <label class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inline-radios-example" value="option1">
+        <span class="form-check-label">
+          1
+        </span>
+      </label>
+      <label class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inline-radios-example" value="option2">
+        <span class="form-check-label">
+          2
+        </span>
+      </label>
+      <label class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inline-radios-example" value="option3" disabled>
+        <span class="form-check-label">
+          3
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <h4 class="ui-block-heading">Checkboxes and radios without label text</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-sm">
+    <label class="form-check">
+      <input class="form-check-input" type="checkbox" value="option1">
+    </label>
+
+    <label class="form-check">
+      <input class="form-check-input" type="radio" value="option1">
+    </label>
+  </div>
+
+  <h4 class="ui-block-heading">Selects</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-sm">
+    <select class="form-control">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+
+    <!-- Multiple -->
+    <select multiple class="form-control">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+  <h4 class="ui-block-heading">Inverted</h4>
+
+  <div class="cui-example">
+    <div class="cui-example-vertical-spacing-sm bg-dark p-4">
+      <input type="text" class="form-control form-control-inverted" placeholder="Text input">
+
+      <textarea class="form-control form-control-inverted" rows="3"></textarea>
+
+      <select class="form-control form-control-inverted">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+  </div>
+
+  <h4 class="ui-block-heading">Disabled</h4>
+
+  <div class="cui-example cui-example-vertical-spacing">
+    <fieldset disabled class="cui-example-vertical-spacing-sm">
+      <div class="form-group">
+        <label class="form-label">Disabled input</label>
+        <input type="text" class="form-control" placeholder="Disabled input">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Disabled select menu</label>
+        <select class="form-control">
+          <option>Disabled select</option>
+        </select>
+      </div>
+      <label class="form-check">
+        <input class="form-check-input" type="checkbox" value="" disabled>
+        <div class="form-check-label">
+          Can't check this
+        </div>
+      </label>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+
+    <div class="cui-example-vertical-spacing-sm bg-dark p-4">
+      <input type="text" class="form-control form-control-inverted" placeholder="Text input" disabled>
+
+      <textarea class="form-control form-control-inverted" rows="3" disabled></textarea>
+
+      <select class="form-control form-control-inverted" disabled>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+  </div>
+
+
+  <h4 class="ui-block-heading">Read only</h4>
+
+  <div class="cui-example">
+    <input class="form-control" type="text" placeholder="Readonly input here…" readonly>
+  </div>
+
+  <h4 class="ui-block-heading">Sizes</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-sm">
+    <input class="form-control form-control-lg" placeholder=".form-control-lg">
+    <input class="form-control" placeholder="Default input">
+    <input class="form-control form-control-sm" placeholder=".form-control-sm">
+    <select class="form-control form-control-lg"><option>.form-control-lg</option></select>
+    <select class="form-control"><option>Default select</option></select>
+    <select class="form-control form-control-sm"><option>.form-control-sm</option></select>
+  </div>
+</div>

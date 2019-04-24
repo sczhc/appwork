@@ -1,0 +1,56 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">Bootstrap Menu</h3>
+  <a target="_blank" href="https://github.com/dgoguerra/bootstrap-menu" class="ui-block-description">https://github.com/dgoguerra/bootstrap-menu</a>
+
+  <div class="no-ie10" data-name="Bootstrap Menu"></div>
+
+  <samp class="cui-example-code-static">
+    &lt;%= javascript_include_tag 'bootstrap-menu/bootstrap-menu.js' %&gt;
+  </samp>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example">
+    <div id="bs-menu-example" class="position-relative text-center" style="height: 300px; border:1px solid #ddd">
+      <span style="line-height: 300px">Right click anywhere inside this box</span>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+      $(function() {
+        var isRtl = $('body').attr('dir') === 'rtl' || $('html').attr('dir') === 'rtl';
+
+        new BootstrapMenu('#bs-menu-example', {
+          menuPosition: isRtl ? 'belowRight' : 'belowLeft',
+          actionsGroups: [
+            ['actionName', 'anotherActionName' ],
+            ['thirdActionName']
+          ],
+          actions: {
+            actionName: {
+              name: 'Action',
+              onClick: function() {
+                toastr.info("'Action' clicked!");
+              }
+            },
+            anotherActionName: {
+              name: 'Another action',
+              iconClass: 'ion ion-md-create',
+              onClick: function() {
+                toastr.info("'Another action' clicked!");
+              }
+            },
+            thirdActionName: {
+              name: 'A third action',
+              iconClass: 'ion ion-md-unlock',
+              onClick: function() {
+                toastr.info("'A third action' clicked!");
+              }
+            }
+          }
+        });
+      });
+    </script>
+    <!-- / Javascript -->
+  </div>
+</div>

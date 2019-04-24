@@ -1,0 +1,18 @@
+<div class="layout-wrapper layout-1" [ngClass]="{'layout-loading': !initialized}">
+  <div class="layout-inner">
+    <app-layout-navbar></app-layout-navbar>
+
+    <div class="layout-container">
+      <app-layout-sidenav></app-layout-sidenav>
+
+      <div class="layout-content">
+        <div class="container-fluid router-transitions flex-grow-1 container-p-y">
+          <router-outlet></router-outlet>
+        </div>
+
+        <app-layout-footer></app-layout-footer>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="layout-overlay" (click)="closeSidenav()"></div>

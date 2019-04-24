@@ -1,0 +1,8 @@
+:host /deep/ {
+  .ng2-file-upload-drop-zone {
+    border: 3px dashed rgba(24, 28, 33, 0.1);
+  }
+  .ng2-file-upload-file-over {
+    border-color: rgba(24, 28, 33, 0.3);
+  }
+}

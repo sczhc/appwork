@@ -1,0 +1,45 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">Forms /</span> Extras
+</h4>
+
+<div class="card mb-4">
+  <h6 class="card-header">
+    ng-autosize
+  </h6>
+  <div class="card-body">
+    <textarea class="form-control" autosize rows="3">Hello, this is an example of Autosize in Angular2 with a Min Height.</textarea>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <h6 class="card-header">
+    angular2-text-mask
+  </h6>
+  <div class="card-body demo-vertical-spacing">
+    <input type="text" class="form-control" placeholder="(___) ___-____"
+      [(ngModel)]="phoneModel"
+      [textMask]="phoneMaskOptions">
+
+    <input type="text" class="form-control" placeholder="$"
+      [(ngModel)]="numberModel"
+      [textMask]="numberMaskOptions">
+
+    <input type="text" class="form-control" placeholder=" @ ."
+      [(ngModel)]="emailModel"
+      [textMask]="emailMaskOptions">
+
+    <input type="text" class="form-control" placeholder="__/__/____"
+      [(ngModel)]="dateModel"
+      [textMask]="dateMaskOptions">
+  </div>
+</div>
+
+<div class="card mb-4">
+  <h6 class="card-header">
+    ng2-password-strength-bar
+  </h6>
+  <div class="card-body">
+    <input [(ngModel)]="password" type="password" class="form-control" placeholder="Enter password">
+    <ng2-password-strength-bar [passwordToCheck]="password"></ng2-password-strength-bar>
+  </div>
+</div>

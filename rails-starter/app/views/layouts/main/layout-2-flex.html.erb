@@ -1,0 +1,38 @@
+<% content_for :content do %>
+  <!-- Layout wrapper -->
+  <div class="layout-wrapper layout-2">
+    <div class="layout-inner">
+
+      <!-- Layout sidenav -->
+      <%= render "layouts/partials/layout-sidenav" %>
+
+      <!-- Layout container -->
+      <div class="layout-container">
+        <!-- Layout navbar -->
+        <%= render "layouts/partials/layout-navbar" %>
+
+        <!-- Layout content -->
+        <div class="layout-content">
+
+          <!-- Content -->
+          <div class="container-fluid d-flex align-items-stretch flex-grow-1 p-0">
+            <%= yield %>
+          </div>
+          <!-- / Content -->
+
+          <!-- Layout footer -->
+          <%= render "layouts/partials/layout-footer" %>
+        </div>
+        <!-- Layout content -->
+
+      </div>
+      <!-- / Layout container -->
+
+    </div>
+
+    <!-- Overlay -->
+    <div class="layout-overlay layout-sidenav-toggle"></div>
+  </div>
+  <!-- / Layout wrapper -->
+<% end %>
+<%= render template: "layouts/application" %>

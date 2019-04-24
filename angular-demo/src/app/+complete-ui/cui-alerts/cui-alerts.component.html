@@ -1,0 +1,19 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">Alerts</h3>
+
+  <h4 class="ui-block-heading">Light alerts</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-sm">
+    <p *ngFor="let alert of alerts">
+      <ngb-alert [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert>
+    </p>
+  </div>
+
+  <h4 class="ui-block-heading">Dark alerts</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-sm">
+    <p *ngFor="let alert of darkAlerts">
+      <ngb-alert [type]="alert.type" (close)="closeDarkAlert(alert)">{{ alert.message }}</ngb-alert>
+    </p>
+  </div>
+</div>

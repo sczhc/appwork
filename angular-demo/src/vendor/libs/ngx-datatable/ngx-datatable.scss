@@ -1,0 +1,380 @@
+.ngx-datatable {
+  box-shadow: none;
+}
+
+.ngx-datatable .datatable-checkbox {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.ngx-datatable .datatable-header {
+  height: unset !important;
+  border-top: 1px solid;
+  border-bottom: 2px solid;
+}
+
+.ngx-datatable .datatable-header-cell,
+.ngx-datatable .datatable-body-cell {
+  html:not([dir=rtl]) & {
+    border-right: 1px solid;
+
+    &:first-child {
+      border-left: 1px solid;
+    }
+  }
+
+  [dir=rtl] & {
+    border-left: 1px solid;
+
+    &:first-child {
+      border-right: 1px solid;
+    }
+  }
+}
+
+.ngx-datatable .datatable-header-cell {
+  vertical-align: bottom;
+  font-weight: bold;
+}
+
+.ngx-datatable .datatable-body-row {
+  border-bottom: 1px solid;
+  vertical-align: top;
+}
+
+.ngx-datatable .datatable-body-cell {
+  vertical-align: top;
+}
+
+.ngx-datatable .progress-linear {
+  position: relative;
+  position: absolute;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 4px;
+
+  .container {
+    display: block;
+    max-width: none;
+    width: 100%;
+    height: 4px;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-size: .75rem .75rem;
+    animation: progress-bar-stripes .3s linear infinite;
+  }
+
+  .container .bar {
+    display: none;
+  }
+}
+
+.ngx-datatable .datatable-footer {
+  display: flex;
+  margin-top: .25rem;
+  background: none;
+
+  .page-count {
+    flex-grow: 0;
+  }
+}
+
+.ngx-datatable .datatable-footer .datatable-pager {
+  flex-grow: 1;
+
+  ul.pager,
+  ul.pager li {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul.pager {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  ul.pager li {
+    display: block;
+
+    &.disabled a {
+      pointer-events: none;
+    }
+  }
+
+  a {
+    position: relative;
+    display: block;
+    text-align: center;
+  }
+
+  [class*="datatable-icon-"] {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1;
+
+    &:before {
+      vertical-align: middle;
+    }
+  }
+}
+
+.card-ngx-datatable .ngx-datatable .datatable-header {
+  border-top: 0;
+}
+
+[dir=rtl] .ngx-datatable [class*="datatable-icon-"] {
+  transform: scaleX(-1);
+}
+
+// Within card
+.card-ngx-datatable .datatable-header-cell,
+.card-ngx-datatable .datatable-body-cell {
+  html:not([dir=rtl]) & {
+    &:first-child {
+      border-left: 0;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  [dir=rtl] & {
+    &:first-child {
+      border-right: 0;
+    }
+
+    &:last-child {
+      border-left: 0;
+    }
+  }
+}
+
+.default-style {
+  @import "~vendor/styles/_appwork/include";
+
+  .ngx-datatable {
+    margin-bottom: $spacer;
+    background-color: $table-bg;
+  }
+
+  .ngx-datatable .datatable-header-cell,
+  .ngx-datatable .datatable-body-cell {
+    padding: $table-cell-padding;
+    border-color: $table-border-color !important;
+    line-height: $line-height-base;
+  }
+
+  .ngx-datatable .datatable-header {
+    border-color: $table-border-color;
+  }
+
+  .ngx-datatable .datatable-body-row {
+    border-color: $table-border-color;
+  }
+
+  .ngx-datatable .datatable-footer .page-count {
+    color: $text-muted;
+  }
+
+  .ngx-datatable:not(.cell-selection) .datatable-body-row:hover,
+  .ngx-datatable:not(.cell-selection) .datatable-body-row:hover .datatable-row-group,
+  .ngx-datatable.cell-selection .datatable-body-cell:hover,
+  .ngx-datatable.cell-selection .datatable-body-cell:hover .datatable-row-group {
+    background: rgba-to-hex($table-border-color);
+  }
+
+  .ngx-datatable:not(.cell-selection) .datatable-body-row:focus,
+  .ngx-datatable:not(.cell-selection) .datatable-body-row:focus .datatable-row-group,
+  .ngx-datatable.cell-selection .datatable-body-cell:focus,
+  .ngx-datatable.cell-selection .datatable-body-cell:focus .datatable-row-group {
+    background: rgba-to-hex($table-border-color);
+  }
+
+  .ngx-datatable .datatable-pager {
+    a {
+      margin: 0 0 0 $pagination-spacer;
+      min-width: calc(#{($font-size-sm * $pagination-line-height) + ($pagination-padding-y-sm * 2)} + #{$pagination-border-width * 2});
+      border: $pagination-border-width solid $pagination-border-color;
+      background-color: $pagination-bg;
+      color: $pagination-color;
+      font-size: $font-size-sm;
+      line-height: ($font-size-sm * $pagination-line-height) + ($pagination-padding-y-sm * 2);
+
+      @include border-radius($border-radius-sm);
+      @include hover-focus {
+        border-color: $pagination-hover-border-color;
+        background-color: $pagination-hover-bg;
+        color: $pagination-hover-color;
+        text-decoration: none;
+      }
+    }
+
+    ul li.disabled a {
+      border-color: $pagination-disabled-border-color;
+      background-color: $pagination-disabled-bg;
+      color: $pagination-disabled-color;
+      pointer-events: none;
+    }
+  }
+
+  &[dir=rtl] .ngx-datatable .datatable-pager a {
+    margin: 0 $pagination-spacer 0 0;
+  }
+
+  .ngx-datatable .empty-row {
+    padding: 2rem;
+    color: $gray-400;
+    text-align: center;
+    font-size: $big-font-size;
+  }
+
+  .card-ngx-datatable {
+    .ngx-datatable {
+      margin-bottom: $card-spacer-x;
+    }
+
+    .datatable-footer {
+      padding-right: $card-spacer-x;
+      padding-left: $card-spacer-x;
+    }
+  }
+
+  &:not([dir=rtl]) .card-ngx-datatable .datatable-header-cell,
+  &:not([dir=rtl]) .card-ngx-datatable .datatable-body-cell {
+    &:first-child {
+      padding-left: $card-spacer-x;
+    }
+
+    &:last-child {
+      padding-right: $card-spacer-x;
+    }
+  }
+
+  &[dir=rtl] .card-ngx-datatable .datatable-header-cell,
+  &[dir=rtl] .card-ngx-datatable .datatable-body-cell {
+    &:first-child {
+      padding-right: $card-spacer-x;
+    }
+
+    &:last-child {
+      padding-left: $card-spacer-x;
+    }
+  }
+}
+
+.material-style {
+  @import "~vendor/styles/_appwork/include-material";
+
+  .ngx-datatable {
+    margin-bottom: $spacer;
+    background-color: $table-bg;
+  }
+
+  .ngx-datatable .datatable-header-cell,
+  .ngx-datatable .datatable-body-cell {
+    padding: $table-cell-padding;
+    border-color: $table-border-color !important;
+    line-height: $line-height-base;
+  }
+
+  .ngx-datatable .datatable-header {
+    border-color: $table-border-color;
+  }
+
+  .ngx-datatable .datatable-body-row {
+    border-color: $table-border-color;
+  }
+
+  .ngx-datatable .datatable-footer .page-count {
+    color: $text-muted;
+  }
+
+  .ngx-datatable:not(.cell-selection) .datatable-body-row:hover,
+  .ngx-datatable:not(.cell-selection) .datatable-body-row:hover .datatable-row-group,
+  .ngx-datatable.cell-selection .datatable-body-cell:hover,
+  .ngx-datatable.cell-selection .datatable-body-cell:hover .datatable-row-group {
+    background: rgba-to-hex($table-border-color);
+  }
+
+  .ngx-datatable:not(.cell-selection) .datatable-body-row:focus,
+  .ngx-datatable:not(.cell-selection) .datatable-body-row:focus .datatable-row-group,
+  .ngx-datatable.cell-selection .datatable-body-cell:focus,
+  .ngx-datatable.cell-selection .datatable-body-cell:focus .datatable-row-group {
+    background: rgba-to-hex($table-border-color);
+  }
+
+  .ngx-datatable .datatable-pager {
+    a {
+      margin: 0 0 0 $pagination-spacer;
+      min-width: calc(#{($font-size-sm * $pagination-line-height) + ($pagination-padding-y-sm * 2)} + #{$pagination-border-width * 2});
+      border: $pagination-border-width solid $pagination-border-color;
+      background-color: $pagination-bg;
+      color: $pagination-color;
+      font-size: $font-size-sm;
+      line-height: ($font-size-sm * $pagination-line-height) + ($pagination-padding-y-sm * 2);
+
+      @include border-radius($border-radius-sm);
+      @include hover-focus {
+        border-color: $pagination-hover-border-color;
+        background-color: $pagination-hover-bg;
+        color: $pagination-hover-color;
+        text-decoration: none;
+      }
+    }
+
+    ul li.disabled a {
+      border-color: $pagination-disabled-border-color;
+      background-color: $pagination-disabled-bg;
+      color: $pagination-disabled-color;
+      pointer-events: none;
+    }
+  }
+
+  &[dir=rtl] .ngx-datatable .datatable-pager a {
+    margin: 0 $pagination-spacer 0 0;
+  }
+
+  .ngx-datatable .empty-row {
+    padding: 2rem;
+    color: $gray-400;
+    text-align: center;
+    font-size: $big-font-size;
+  }
+
+  .card-ngx-datatable {
+    .ngx-datatable {
+      margin-bottom: $card-spacer-x;
+    }
+
+    .datatable-footer {
+      padding-right: $card-spacer-x;
+      padding-left: $card-spacer-x;
+    }
+  }
+
+  &:not([dir=rtl]) .card-ngx-datatable .datatable-header-cell,
+  &:not([dir=rtl]) .card-ngx-datatable .datatable-body-cell {
+    &:first-child {
+      padding-left: $card-spacer-x;
+    }
+
+    &:last-child {
+      padding-right: $card-spacer-x;
+    }
+  }
+
+  &[dir=rtl] .card-ngx-datatable .datatable-header-cell,
+  &[dir=rtl] .card-ngx-datatable .datatable-body-cell {
+    &:first-child {
+      padding-right: $card-spacer-x;
+    }
+
+    &:last-child {
+      padding-left: $card-spacer-x;
+    }
+  }
+}

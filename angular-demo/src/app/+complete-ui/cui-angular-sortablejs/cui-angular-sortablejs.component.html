@@ -1,0 +1,26 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">angular-sortablejs</h3>
+  <a target="_blank" href="https://github.com/SortableJS/angular-sortablejs" class="ui-block-description">https://github.com/SortableJS/angular-sortablejs</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing">
+    <ul class="sortable-example" [sortablejs]="items" [sortablejsOptions]="{animation: 150}">
+      <li *ngFor="let item of items" style="background: #f3f3f3;">{{ item }}</li>
+    </ul>
+
+    <ul class="sortable-example sortable-example-inline" [sortablejs]="items" [sortablejsOptions]="{animation: 150}">
+      <li *ngFor="let item of items" style="background: #f3f3f3;">{{ item }}</li>
+    </ul>
+
+    <div class="sortable-example-3 clearfix" [sortablejs]="images" [sortablejsOptions]="{animation: 150}">
+      <img *ngFor="let img of images" [src]="img" alt="">
+    </div>
+
+    <ul class="sortable-example" [sortablejs]="items" [sortablejsOptions]="{animation: 150, handle: '.ion'}">
+      <li *ngFor="let item of items" style="background: #f3f3f3;">
+        <i class="ion ion-ios-move m-r-1"></i>&nbsp; {{ item }}
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="ui-block">
+    <h3 class="ui-block-heading">Plyr</h3>
+    <a target="_blank" href="https://github.com/Selz/plyr" class="ui-block-description">https://github.com/Selz/plyr</a>
+
+    <samp class="cui-example-code-static">
+        &lt;link rel="stylesheet" href="&#123;&#123; mix('/vendor/libs/plyr/plyr.css') &#125;&#125;"&gt;
+        &lt;script src="&#123;&#123; mix('/vendor/libs/plyr/plyr.js') &#125;&#125;"&gt;&lt;/script&gt;
+    </samp>
+
+    <h4 class="ui-block-heading">Examples</h4>
+
+    <div class="cui-example cui-example-vertical-spacing">
+        <div id="plyr-video-player" data-type="youtube" data-video-id="bTqVqk7FSmY"></div>
+
+        <audio id="plyr-audio-player" controls>
+            <source src="/audio/Water_Lily.mp3" type="audio/mp3">
+        </audio>
+
+        <!-- Javascript -->
+        <script>
+            $(function() {
+                var options = {
+                    tooltips: {
+                        controls: false,
+                        seek: true
+                    }
+                };
+
+                var videoPlayer = plyr.setup(document.getElementById('plyr-video-player'), options)[0];
+                var audioPlayer = plyr.setup(document.getElementById('plyr-audio-player'), options)[0];
+
+                // RTL: Fix time displaying
+                if ($('body').attr('dir') === 'rtl' || $('html').attr('dir') === 'rtl') {
+                    function plyrRtlTooltip(instance, e) {
+                        var duration = instance.getDuration();
+                        var container = instance.getContainer();
+
+                        if (!options.tooltips.seek || duration === 0 || !container) { return; }
+
+                        var clientRect = container.querySelector('.plyr__progress').getBoundingClientRect();
+
+                        // Revert percents
+                        var percent = 100 - (100 / clientRect.width * (e.pageX - clientRect.left));
+
+                        percent = percent < 0 ? 0 : (percent > 100 ? 100 : percent);
+
+                        var time = duration / 100 * percent;
+
+                        var secs = ("0" + parseInt(time % 60)).slice(-2);
+                        var mins = ("0" + parseInt((time / 60) % 60)).slice(-2);
+                        var hours = parseInt((time / 60 / 60) % 60);
+                        var displayHours = parseInt((duration / 60 / 60) % 60) > 0;
+
+                        container.querySelector('.plyr__progress .plyr__tooltip').innerHTML =
+                            (displayHours ? hours + ":" : "") + mins + ":" + secs;
+                    }
+
+                    videoPlayer.on('mouseenter mouseleave mousemove', function(e) {
+                        plyrRtlTooltip(videoPlayer, e);
+                    });
+                    audioPlayer.on('mouseenter mouseleave mousemove', function(e) {
+                        plyrRtlTooltip(audioPlayer, e);
+                    });
+                }
+            });
+        </script>
+        <!-- / Javascript -->
+    </div>
+</div>

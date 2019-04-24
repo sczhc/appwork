@@ -1,0 +1,37 @@
+@{
+    ViewBag.Title = "C3.js - Charts";
+}
+
+@section Styles {
+    @Styles.Render("~/bundle/vendor/css/c3/c3")
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    @Scripts.Render("~/bundle/vendor/js/d3/d3")
+    @Scripts.Render("~/bundle/vendor/js/c3/c3")
+    
+    @Scripts.Render("~/bundle/js/charts_c3")
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+    <span class="text-muted font-weight-light">Charts /</span> C3.js
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-5">
+
+<div class="demo-vertical-spacing-lg">
+    <div id="c3-graph" style="height: 250px"></div>
+    <div id="c3-spline" style="height: 250px"></div>
+    <div id="c3-area" style="height: 250px"></div>
+    <div id="c3-bar" style="height: 250px"></div>
+    <div id="c3-scatter" style="height: 250px"></div>
+    <div id="c3-donut" style="height: 250px"></div>
+    <div id="c3-gauge" style="height: 250px"></div>
+</div>

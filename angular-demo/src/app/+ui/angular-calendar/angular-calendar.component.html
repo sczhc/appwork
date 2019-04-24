@@ -1,0 +1,100 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">UI elements /</span> Angular Calendar
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-4">
+
+<div class="alert alert-warning">
+  <code>angular-calendar</code> does not support event resizing in RTL mode.
+</div>
+
+<div class="card">
+  <div class="card-body">
+
+    <!-- New event modal -->
+    <ng-template #newEventModal let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h5 class="modal-title">Add event</h5>
+        <button type="button" class="close" (click)="d()">&times;</button>
+      </div>
+      <form class="modal-body" (submit)="$event.preventDefault() || c()">
+        <div class="form-group">
+          <label class="form-label">Title</label>
+          <input type="text" class="form-control" name="newEventTitle" [(ngModel)]="newEventTitle">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Type</label>
+          <select class="custom-select" name="newEventType" [(ngModel)]="newEventType">
+            <option value="" selected>Default</option>
+            <option value="cal-event-secondary">Secondary</option>
+            <option value="cal-event-success">Success</option>
+            <option value="cal-event-info">Info</option>
+            <option value="cal-event-warning">Warning</option>
+            <option value="cal-event-danger">Danger</option>
+            <option value="cal-event-dark">Dark</option>
+          </select>
+        </div>
+      </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="d()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="c()">Save</button>
+      </div>
+    </ng-template>
+    <!-- / New event modal -->
+
+    <!-- Calendar header -->
+    <div class="d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center mb-4"> 
+      <h3 class="font-weight-light m-0">{{ viewDate | calendarDate:(view + 'ViewTitle'):locale }}</h3>
+      <div class="d-flex justify-content-center w-100 w-lg-auto mt-3 mt-lg-0">
+        <div class="btn-toolbar">
+          <div class="btn-group mr-1">
+            <div class="btn btn-primary btn-sm" (click)="view = 'month'" [class.active]="view === 'month'">Month</div>
+            <div class="btn btn-primary btn-sm" (click)="view = 'week'" [class.active]="view === 'week'">Week</div>
+            <div class="btn btn-primary btn-sm" (click)="view = 'day'" [class.active]="view === 'day'">Day</div>
+          </div>
+          <div class="btn btn-primary btn-sm" (click)="addEvent(newEventModal)">+ Add event</div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center w-100 w-lg-auto mt-3 mt-lg-0">
+        <div class="btn-group">
+          <div class="btn btn-primary btn-sm" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false"><i class="ion ion-ios-arrow-back scaleX--1-rtl"></i></div>
+          <div class="btn btn-primary btn-sm" mwlCalendarToday [(viewDate)]="viewDate">Today</div>
+          <div class="btn btn-primary btn-sm" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false"><i class="ion ion-ios-arrow-forward scaleX--1-rtl"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Set minimum width for the calendar (only month and week views) -->
+    <div [ngClass]="{'overflow-auto': view !== 'day'}">
+      <div [ngSwitch]="view" #calendarContainer [style.minWidth]="view !== 'day' ? '600px' : '0'">
+        <mwl-calendar-month-view
+          *ngSwitchCase="'month'"
+          [viewDate]="viewDate"
+          [events]="events"
+          [activeDayIsOpen]="activeDayIsOpen"
+          (dayClicked)="dayClicked($event.day)"
+          (eventClicked)="eventClicked($event.event)"
+          [refresh]="refresh"
+          (eventTimesChanged)="eventTimesChanged($event)">
+        </mwl-calendar-month-view>
+        <mwl-calendar-week-view
+          *ngSwitchCase="'week'"
+          [viewDate]="viewDate"
+          [events]="events"
+          (eventClicked)="eventClicked($event.event)"
+          [refresh]="refresh"
+          (eventTimesChanged)="eventTimesChanged($event)">
+        </mwl-calendar-week-view>
+        <mwl-calendar-day-view
+          *ngSwitchCase="'day'"
+          [viewDate]="viewDate"
+          [events]="events"
+          (eventClicked)="eventClicked($event.event)"
+          [refresh]="refresh"
+          (eventTimesChanged)="eventTimesChanged($event)">
+        </mwl-calendar-day-view>
+      </div>
+    </div>
+    
+  </div>
+</div>

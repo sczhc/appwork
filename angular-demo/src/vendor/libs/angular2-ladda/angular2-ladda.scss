@@ -1,0 +1,11 @@
+@import 'ladda';
+
+[dir="rtl"] :host /deep/ {
+  .ladda-button[data-style=slide-right] .ladda-spinner {
+  	right: auto;
+  }
+
+  .ladda-spinner > div {
+  	left: 25% !important;
+  }
+}

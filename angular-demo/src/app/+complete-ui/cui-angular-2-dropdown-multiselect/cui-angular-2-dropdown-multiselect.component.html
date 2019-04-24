@@ -1,0 +1,49 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">angular-2-dropdown-multiselect</h3>
+  <a target="_blank" href="https://github.com/softsimon/angular-2-dropdown-multiselect" class="ui-block-description">https://github.com/softsimon/angular-2-dropdown-multiselect</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing cui-example-blocks">
+    <!-- Default -->
+    <ss-multiselect-dropdown
+      [settings]="defaultSettings"
+      [options]="defaultOptions"
+      [(ngModel)]="defaultModel">
+    </ss-multiselect-dropdown>
+
+    <pre>{{ defaultModel | json }}</pre>
+
+    <!-- With search input -->
+    <ss-multiselect-dropdown
+      [settings]="searchSettings"
+      [options]="defaultOptions"
+      [(ngModel)]="defaultModel">
+    </ss-multiselect-dropdown>
+
+    <!-- With icons -->
+    <ss-multiselect-dropdown
+      [settings]="iconSettings"
+      [options]="defaultOptions"
+      [(ngModel)]="defaultModel">
+    </ss-multiselect-dropdown>
+
+    <!-- Single -->
+    <ss-multiselect-dropdown
+      [settings]="singleSettings"
+      [options]="singleOptions"
+      [(ngModel)]="singleModel">
+    </ss-multiselect-dropdown>
+
+    <pre>{{ singleModel | json }}</pre>
+
+    <!-- Grouped -->
+    <ss-multiselect-dropdown
+      [settings]="groupedSettings"
+      [options]="groupedOptions"
+      [(ngModel)]="groupedModel">
+    </ss-multiselect-dropdown>
+
+    <pre>{{ groupedModel | json }}</pre>
+  </div>
+</div>

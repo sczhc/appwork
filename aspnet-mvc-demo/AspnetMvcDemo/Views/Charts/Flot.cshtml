@@ -1,0 +1,33 @@
+@{
+    ViewBag.Title = "Flot.js - Charts";
+}
+
+@section Styles {
+    @Styles.Render("~/bundle/vendor/css/flot/flot")
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    @Scripts.Render("~/bundle/vendor/js/flot/flot")
+    
+    @Scripts.Render("~/bundle/js/charts_flot")
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+    <span class="text-muted font-weight-light">Charts /</span> Flot.js
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-5">
+
+<div class="demo-vertical-spacing-lg">
+    <div id="flot-graph" style="height: 250px"></div>
+    <div id="flot-bars" style="height: 250px"></div>
+    <div id="flot-categories" style="height: 250px"></div>
+    <div id="flot-pie" style="height: 250px"></div>
+</div>

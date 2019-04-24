@@ -1,0 +1,22 @@
+:host /deep/ ngb-timepicker {
+  .btn-link {
+    border: 0;
+    color: #000 !important;
+    opacity: .4;
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: .8;
+    }
+
+    &[disabled] {
+      opacity: .1 !important;
+    }
+  }
+
+  .chevron::before {
+    border-top-width: 1px !important;
+    border-right-width: 1px !important;
+  }
+}

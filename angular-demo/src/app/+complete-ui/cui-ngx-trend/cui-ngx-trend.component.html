@@ -1,0 +1,63 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ngx-trend</h3>
+  <a target="_blank" href="https://github.com/scttcper/ngx-trend" class="ui-block-description">https://github.com/scttcper/ngx-trend</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing-lg">
+    <div class="row">
+      <div class="col-md-6">
+        <ngx-trend class="d-block"
+          autoDraw="true"
+          autoDrawDuration="3000"
+          autoDrawEasing="ease-out"
+          smooth="true"
+          [data]="[0,2,5,9,5,10,3,5,0,0,1,8,2,9,0]"
+          [gradient]="['#00c6ff', '#F0F', '#FF0']"
+          radius="10"
+          strokeWidth="2"
+          strokeLinecap="butt">
+        </ngx-trend>
+      </div>
+      <div class="col-md-6">
+        <ngx-trend class="d-block"
+          autoDraw="true"
+          autoDrawDuration="3000"
+          autoDrawEasing="ease-out"
+          smooth="true"
+          [data]="[0,2,5,9,5,10,3,5,0,0,1,8,2,9,0]"
+          [gradient]="['red', 'orange', 'yellow']"
+          radius="0.5"
+          strokeWidth="0.9"
+          strokeLinecap="round">
+        </ngx-trend>
+      </div>
+      <div class="col-md-6">
+        <ngx-trend class="d-block"
+          autoDraw="true"
+          autoDrawDuration="3000"
+          autoDrawEasing="ease-out"
+          smooth="true"
+          [data]="[0,2,5,9,5,10,3,5,0,0,1,8,2,9,0]"
+          [gradient]="['#42b3f4']"
+          radius="25"
+          strokeWidth="0.4"
+          strokeLinecap="round">
+        </ngx-trend>
+      </div>
+      <div class="col-md-6">
+        <ngx-trend class="d-block"
+          autoDraw="true"
+          autoDrawDuration="3000"
+          autoDrawEasing="ease-out"
+          smooth="true"
+          [data]="[0,2,5,9,5,10,3,5,0,0,1,8,2,9,0]"
+          [gradient]="['#222']"
+          radius="4.8"
+          strokeWidth="1.2"
+          strokeLinecap="round">
+        </ngx-trend>
+      </div>
+    </div>
+  </div>
+</div>

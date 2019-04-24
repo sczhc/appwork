@@ -1,0 +1,8 @@
+.list-group-item {
+  outline: 0;
+  cursor: pointer;
+}
+
+// Turn on styles encapsulation
+$ngx-chips-encapsulated: true;
+@import '~vendor/libs/ngx-chips/ngx-chips.scss';

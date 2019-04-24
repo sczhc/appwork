@@ -1,0 +1,17 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">Timepicker</h3>
+
+  <h4 class="ui-block-heading">Example</h4>
+
+  <div class="cui-example">
+    <ngb-timepicker [(ngModel)]="time" [seconds]="true" [secondStep]="30"></ngb-timepicker>
+
+    <br>
+
+    <ngb-timepicker [(ngModel)]="time" [seconds]="true" [secondStep]="30" [meridian]="true"></ngb-timepicker>
+
+    <br>
+
+    <pre>Selected time: {{time | json}}</pre>
+  </div>
+</div>

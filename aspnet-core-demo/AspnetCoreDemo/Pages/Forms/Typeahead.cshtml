@@ -1,0 +1,33 @@
+@page
+@model TypeaheadModel
+@{
+    ViewData["Title"] = "Typeahead - Forms";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/vendor/libs/typeahead-js/typeahead.css">
+}
+
+@section Scripts {
+    <!-- Dependencies -->
+    <script src="~/vendor/libs/typeahead-js/typeahead.js"></script>
+    
+    <script src="~/js/forms_typeahead.js"></script>
+}
+
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<h4 class="font-weight-bold py-3 mb-4">
+    <span class="text-muted font-weight-light">Forms /</span> Typeahead
+</h4>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <label class="form-label">Enter a country name:</label>
+        <input id="typeahead-input" class="form-control" type="text" autocomplete="off">
+    </div>
+</div>

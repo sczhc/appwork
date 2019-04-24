@@ -1,0 +1,89 @@
+:host /deep/ { @import 'node_modules/swiper/dist/css/swiper'; }
+
+:host /deep/ .swiper-container {
+  overflow: hidden !important;
+  width: 100%;
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active.bg-transparent {
+    background: transparent !important;
+  }
+}
+
+:host /deep/ .swiper-button-prev,
+:host /deep/ .swiper-button-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.custom-icon {
+    background-image: none;
+    font-size: 2rem;
+    line-height: 1;
+
+    [dir=rtl] & {
+      transform: scaleX(-1);
+    }
+  }
+
+  &.swiper-button-white {
+    color: #fff;
+  }
+}
+
+[dir=rtl] :host /deep/ .swiper-button-next {
+  right: auto;
+  left: 10px;
+}
+
+[dir=rtl] :host /deep/ .swiper-button-prev {
+  right: 10px;
+  left: auto;
+}
+
+:host /deep/ .swiper-pagination-bullet {
+  background: rgba(0, 0, 0, .7);
+}
+
+:host /deep/ .swiper-pagination-progressbar,
+:host /deep/ .swiper-scrollbar {
+  background: rgba(0, 0, 0, .08);
+}
+
+:host /deep/ .swiper-scrollbar-drag {
+  background: rgba(0, 0, 0, .3);
+}
+
+:host /deep/ .swiper-pagination-white {
+  .swiper-pagination-bullet {
+    background: #fff !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #fff !important;
+  }
+}
+
+:host /deep/ .swiper-scrollbar-white {
+  background: rgba(255, 255, 255, .2) !important;
+
+  .swiper-scrollbar-drag {
+    background: #fff !important;
+  }
+}
+
+[dir=rtl] :host /deep/ .swiper-container-vertical {
+   > .swiper-pagination-bullets {
+    right: auto;
+    left: 10px;
+  }
+
+   > .swiper-pagination-progressbar {
+    right: 0;
+    left: auto;
+  }
+
+   > .swiper-scrollbar {
+    right: auto;
+    left: 3px;
+  }
+}

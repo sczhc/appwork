@@ -1,0 +1,98 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  Orders
+</h4>
+
+<div class="card">
+
+  <!-- Table controls -->
+  <div class="card-body">
+
+    <div class="row">
+      <div class="col">
+        Per page: &nbsp;
+        <select
+          [(ngModel)]="perPage"
+          (change)="update()"
+          class="custom-select custom-select-sm d-inline-block w-auto">
+          <option *ngFor="let limit of [10, 20, 30, 40, 50]">{{limit}}</option>
+        </select>
+      </div>
+      <div class="col">
+        <input type="text"
+          [(ngModel)]="filterVal"
+          (input)="currentPage = 1; update()"
+          class="form-control form-control-sm d-inline-block w-auto float-sm-right"
+          placeholder="Search...">
+      </div>
+    </div>
+
+  </div>
+  <!-- / Table controls -->
+
+  <!-- Table -->
+  <hr class="border-light m-0">
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered card-table">
+      <thead>
+        <tr>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('id')">
+            ID<i class="ion text-muted ml-2" *ngIf="sortBy=='id'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('customer')">
+            Customer<i class="ion text-muted ml-2" *ngIf="sortBy=='customer'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('amount')">
+            Amount<i class="ion text-muted ml-2" *ngIf="sortBy=='amount'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('date')">
+            Date<i class="ion text-muted ml-2" *ngIf="sortBy=='date'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th class="text-nowrap cursor-pointer" (click)="setSort('status')">
+            Status<i class="ion text-muted ml-2" *ngIf="sortBy=='status'" [ngClass]="'ion-md-arrow-' + (sortDesc ? 'down' : 'up')"></i>
+          </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of ordersData">
+          <td class="align-middle">{{order.id}}</td>
+          <td class="align-middle">{{order.customer}}</td>
+          <td class="align-middle">{{formatPrice(order.amount)}}</td>
+          <td class="align-middle">{{order.date}}</td>
+          <td class="align-middle">
+            <span class="badge badge-outline-success" *ngIf="order.status === 1">Shipped</span>
+            <span class="badge badge-outline-warning" *ngIf="order.status === 2">Pending</span>
+            <span class="badge badge-outline-info" *ngIf="order.status === 3">Sent</span>
+            <span class="badge badge-outline-danger" *ngIf="order.status === 4">Cancelled</span>
+          </td>
+          <td class="text-nowrap align-middle">
+            <a href="javascript:void(0)" class="btn btn-default btn-xs icon-btn md-btn-flat" ngbTooltip="Show"><i class="ion ion-md-eye"></i></a>&nbsp;
+            <a href="javascript:void(0)" class="btn btn-default btn-xs icon-btn md-btn-flat" ngbTooltip="Edit"><i class="ion ion-md-create"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- / Table -->
+
+  <!-- Pagination -->
+  <div class="card-body py-0">
+
+    <div class="row">
+      <div class="col-sm text-sm-left text-center pt-3">
+        <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+      </div>
+      <div class="col-sm pt-3">
+        <ngb-pagination
+          [collectionSize]="totalItems"
+          [pageSize]="perPage"
+          [(page)]="currentPage"
+          (pageChange)="update()"
+          size="sm"
+          class="d-flex justify-content-center justify-content-sm-end m-0"></ngb-pagination>
+      </div>
+    </div>
+
+  </div>
+  <!-- / Pagination -->
+</div>

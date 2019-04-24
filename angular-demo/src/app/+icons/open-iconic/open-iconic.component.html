@@ -1,0 +1,20 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">Icons /</span> Open Iconic
+</h4>
+
+<hr class="border-light container-m--x mt-0 mb-4">
+
+<div class="py-2 my-4 mx-auto" style="max-width:300px">
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><i class="ion ion-ios-search"></i></span>
+    </div>
+    <input type="text" class="form-control" placeholder="Search..." (input)="search($event)">
+  </div>
+</div>
+
+<div class="text-center">
+  <div *ngFor="let icon of icons" [attr.data-title]="getIconClass(icon)" class="card icon-example d-inline-flex justify-content-center align-items-center my-2 mx-2">
+    <i class="oi d-block" [ngClass]="'oi-' + icon"></i>
+  </div>
+</div>

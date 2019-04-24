@@ -1,0 +1,70 @@
+<div class="ui-block">
+  <h3 class="ui-block-heading">ngx-datatable</h3>
+  <a target="_blank" href="https://github.com/swimlane/ngx-datatable" class="ui-block-description">https://github.com/swimlane/ngx-datatable</a>
+
+  <h4 class="ui-block-heading">Examples</h4>
+
+  <div class="cui-example cui-example-vertical-spacing">
+    <div>
+      <div class="row">
+        <div class="col-sm-6 col-md-5 col-lg-3 mb-3 ml-auto">
+          <input class="form-control" type='text' placeholder='Filter by name...' (keyup)='updateFilter($event)'>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <ngx-datatable #table style="min-width: 500px"
+          [rows]="rows"
+          [loadingIndicator]="loadingIndicator"
+          [columnMode]="'force'"
+          [headerHeight]="43"
+          [footerHeight]="'auto'"
+          [rowHeight]="'auto'"
+          [reorderable]="true"
+          [selected]="selected"
+          [selectionType]="'checkbox'"
+          [limit]="10"
+          (select)='onSelect($event)'>
+          <ngx-datatable-column
+            [width]="40"
+            [sortable]="false"
+            [canAutoResize]="false"
+            [draggable]="false"
+            [resizeable]="false"
+            [headerCheckboxable]="true"
+            [checkboxable]="true">
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Name"></ngx-datatable-column>
+          <ngx-datatable-column name="Gender"></ngx-datatable-column>
+          <ngx-datatable-column name="Company"></ngx-datatable-column>
+        </ngx-datatable>
+      </div>
+    </div>
+
+    <pre>Selected: {{selected | json}}</pre>
+
+    <!-- Within card -->
+
+    <div class="card">
+      <h6 class="card-header">
+        Within card
+      </h6>
+      <div class="card-ngx-datatable table-responsive">
+        <ngx-datatable #table style="min-width: 550px"
+          [rows]="rows"
+          [loadingIndicator]="loadingIndicator"
+          [columnMode]="'force'"
+          [headerHeight]="43"
+          [footerHeight]="'auto'"
+          [rowHeight]="'auto'"
+          [reorderable]="true"
+          [selectionType]="'cell'"
+          [limit]="10">
+          <ngx-datatable-column name="Name"></ngx-datatable-column>
+          <ngx-datatable-column name="Gender"></ngx-datatable-column>
+          <ngx-datatable-column name="Company"></ngx-datatable-column>
+        </ngx-datatable>
+      </div>
+    </div>
+  </div>
+</div>
